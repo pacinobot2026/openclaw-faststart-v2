@@ -170,7 +170,7 @@ Do not summarize.
    - Default if no answer: WHITE
 
 2. **"Format: 9:16 or 16:9?"**
-   - Default if no answer: 9:16
+   - Default if no answer: 16:9 (horizontal)
 
 **DO NOT proceed without asking. This is NON-NEGOTIABLE.**
 
@@ -204,7 +204,8 @@ Do not summarize.
 - Text vertically centered
 
 **Format:**
-- 9:16 (vertical) or 16:9 (horizontal) based on user choice
+- 16:9 (horizontal) - default for VSLs
+- 9:16 (vertical) - available if specifically requested
 - No images, logos, or background music
 - Transitions: 0.3s fade
 

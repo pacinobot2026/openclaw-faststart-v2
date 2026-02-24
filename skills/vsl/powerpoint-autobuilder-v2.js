@@ -15,7 +15,7 @@ const { execSync } = require('child_process');
 const args = process.argv.slice(2);
 const scriptPath = args[0];
 const bgColor = (args.find(a => a.startsWith('--bg=')) || '--bg=white').split('=')[1];
-const format = (args.find(a => a.startsWith('--format=')) || '--format=9:16').split('=')[1];
+const format = (args.find(a => a.startsWith('--format=')) || '--format=16:9').split('=')[1];
 
 // Configuration
 const CONFIG = {
