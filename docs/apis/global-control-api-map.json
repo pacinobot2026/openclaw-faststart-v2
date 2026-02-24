@@ -1,0 +1,1127 @@
+{
+  "meta": {
+    "api_name": "Global Control API",
+    "doc_source": "Postman Collection Export (v2.1.0)",
+    "extraction_date": "2026-02-16",
+    "passes_completed": ["PASS2_BODY_EXTRACTION", "PASS3_DEDUPE", "PASS4_AUTH", "PASS5_ENVELOPE", "PASS6_EDGE_CASES", "PASS7_FINAL_MAP"]
+  },
+
+  "base_urls": [
+    {
+      "url": "https://api.globalcontrol.io/api",
+      "notes": "Production API - documented in collection description",
+      "confidence": "HIGH"
+    },
+    {
+      "url": "https://farming-simulator.pstmn.io",
+      "notes": "DOC ARTIFACT - Postman placeholder variable, NOT real URL",
+      "confidence": "IGNORE"
+    }
+  ],
+
+  "canonical_join_rule": "baseUrl + '/' + path (no double slashes - paths do NOT start with /)",
+
+  "auth_options": [
+    {
+      "type": "apikey",
+      "header_name": "X-API-KEY",
+      "format": "X-API-KEY: {{apiToken}}",
+      "token_variable_name": "apiToken",
+      "notes": "Primary auth method - documented in collection description and auth config",
+      "confidence": "HIGH"
+    }
+  ],
+
+  "auth_verification_endpoint": {
+    "method": "GET",
+    "path": "/me",
+    "purpose": "Returns authenticated user data - use to verify API key is valid",
+    "expected_success": "200 with user object containing _id, email, accessLevel"
+  },
+
+  "versioning": {
+    "statement": "This API uses URL versioning. The current version is v1. Breaking changes will be introduced in new versions while maintaining backward compatibility for existing versions.",
+    "format": "/v{version_number}/endpoint",
+    "observed_in_endpoints": false,
+    "notes": "Doc mentions versioning but NO endpoints in collection show /v1/ prefix - current endpoints appear unversioned"
+  },
+
+  "response_envelope": {
+    "success": {
+      "format": {
+        "type": "\"response\"",
+        "data": "{...actual payload...}"
+      },
+      "notes": "NOT the documented format! Doc says {success:true, data:{}, message:''} but actual responses use {type:'response', data:{...}}"
+    },
+    "error": {
+      "format": {
+        "type": "\"error\"",
+        "error": {
+          "name": "ErrorMessage",
+          "message": "Human-readable error",
+          "time": "ISO timestamp",
+          "status": "number (HTTP-like)",
+          "code": "string (often empty)",
+          "details": "string (often empty)",
+          "description": "Human-readable (duplicate of message)",
+          "errorData": "string (often empty)",
+          "logoutUser": "boolean"
+        }
+      },
+      "notes": "NOT the documented format! Doc says {success:false, error:{code, message, details}} but actual is different"
+    },
+    "doc_vs_reality_mismatch": true,
+    "parsing_guideline": "Check for type='response' for success, type='error' for failure. Extract data from response.data"
+  },
+
+  "rate_limiting": {
+    "tiers": {
+      "standard": "100 requests/minute",
+      "premium": "500 requests/minute",
+      "enterprise": "Custom"
+    },
+    "headers": {
+      "X-RateLimit-Limit": "Maximum requests allowed per window",
+      "X-RateLimit-Remaining": "Requests remaining in current window",
+      "X-RateLimit-Reset": "Unix timestamp when limit resets"
+    },
+    "observed_in_responses": false,
+    "notes": "Documented but not visible in example responses - may be present in live calls"
+  },
+
+  "pagination": {
+    "parameters": {
+      "page": {
+        "type": "number",
+        "default": 1,
+        "description": "Page number (1-indexed)"
+      },
+      "limit": {
+        "type": "number", 
+        "default": 10,
+        "description": "Results per page"
+      }
+    },
+    "response_fields": {
+      "total": "Total count of all records",
+      "page": "Current page number",
+      "total_new": "Count of new contacts (contacts endpoint)",
+      "total_inactive": "Count of inactive contacts",
+      "total_passive": "Count of passive contacts",
+      "total_active": "Count of active contacts",
+      "total_active_open": "Count who opened emails",
+      "total_active_click": "Count who clicked emails",
+      "total_dead": "Count of dead contacts",
+      "total_undeliverable": "Count of undeliverable"
+    },
+    "observed_on": ["/contacts"]
+  },
+
+  "filtering_sorting": {
+    "contacts_endpoint": {
+      "tags": "Filter by tag IDs",
+      "activity": "Filter by activity level",
+      "search": "Search term",
+      "phone": "Filter by phone",
+      "sort": "Sort field"
+    }
+  },
+
+  "sensitive_fields": {
+    "DO_NOT_LOG": [
+      "apiToken",
+      "current_password",
+      "password"
+    ],
+    "notes": "apiToken appears in /me response data.apiToken - do not log this"
+  },
+
+  "doc_artifacts": {
+    "postman_copy_paste": [
+      "Multiple descriptions reference 'collections' from Postman docs",
+      "farming-simulator.pstmn.io is a Postman placeholder",
+      "Some response examples show tag data for domains endpoints (copy-paste error)"
+    ]
+  },
+
+  "http_status_codes": {
+    "200": "OK - Request succeeded (also used for creates/updates)",
+    "201": "Created - Resource created (documented but 200 used in practice)",
+    "400": "Bad Request - Invalid parameters (returns in error.status)",
+    "401": "Unauthorized - Missing/invalid API token",
+    "403": "Forbidden - Insufficient permissions",
+    "404": "Not Found - Resource not found",
+    "429": "Too Many Requests - Rate limit exceeded",
+    "500": "Internal Server Error"
+  },
+
+  "VERIFIED_ENDPOINT_INVENTORY": {
+    "TOC_COUNT": 51,
+    "BODY_COUNT": 51,
+    "FINAL_COUNT": 51,
+    "mismatches": []
+  },
+
+  "endpoints": [
+    {
+      "category": "User",
+      "method": "GET",
+      "path": "/me",
+      "description": "Gets information about the authenticated user",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string (MongoDB ObjectId)",
+          "firstName": "string",
+          "lastName": "string",
+          "fullName": "string",
+          "email": "string",
+          "accessLevel": "string (e.g., 'PRO')",
+          "platformIds": "string[]",
+          "status": "boolean",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date",
+          "enterpriseSettings": "object",
+          "availableDaysTimes": "array",
+          "apiToken": "string (SENSITIVE)",
+          "current_password": "string (SENSITIVE)"
+        }
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Integrations",
+      "method": "GET",
+      "path": "/integrations",
+      "description": "Gets all integrations",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "array of integration objects"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Integrations",
+      "method": "GET",
+      "path": "/platform/connected-integrations",
+      "description": "Gets connected integrations for the platform",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "array of connected integration objects"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Integrations",
+      "method": "GET",
+      "path": "/integrations/connected-categories",
+      "description": "Gets connected integration categories",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "array of category objects"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Broadcast Emails",
+      "method": "POST",
+      "path": "/broadcast-emails/process-emails-beta",
+      "description": "Send broadcast email",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "schema": "Complex - see TOOLS.md for full documentation"
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "send result object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Broadcast Emails",
+      "method": "POST",
+      "path": "/broadcast-emails/create-field",
+      "description": "Create a broadcast email field (type/product)",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "label": {"type": "string", "required": true},
+        "type": {"type": "string", "required": true, "values": ["TYPE", "PRODUCT"]}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "userId": "string",
+          "type": "string",
+          "label": "string",
+          "_id": "string",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date"
+        }
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Broadcast Emails",
+      "method": "POST",
+      "path": "/broadcast-emails/q-active-contact-counts-n",
+      "description": "Get activity levels / contact counts for email targeting",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "tagId": {"type": "string|null", "required": false, "description": "Filter by tag"},
+        "excludeTags": {"type": "string[]", "required": false, "default": []},
+        "active": {
+          "type": "object",
+          "properties": {
+            "activityLevel": {"type": "boolean"},
+            "sentToAll": {"type": "boolean"},
+            "partialCount": {"type": "number"},
+            "count": {"type": "number|null"}
+          }
+        }
+      },
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "count": "number"
+        }
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Broadcast Emails",
+      "method": "GET",
+      "path": "/broadcast-emails/get-fields",
+      "description": "Get broadcast email fields",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [
+        {"name": "type", "type": "string", "description": "TYPE or PRODUCT", "required": false},
+        {"name": "search", "type": "string", "description": "Search term", "required": false}
+      ],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": [{
+          "_id": "string",
+          "userId": "string",
+          "type": "string",
+          "label": "string",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date"
+        }]
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Contacts",
+      "method": "GET",
+      "path": "/contacts/{contactId}",
+      "description": "Get a single contact by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "contactId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "firstName": "string",
+          "lastName": "string",
+          "name": "string",
+          "email": "string",
+          "phone": "string",
+          "platforms": "array",
+          "tags": "string[]",
+          "workflows": "array",
+          "workflowsFlows": "array",
+          "lastActiveAt": "ISO date",
+          "lastContactedAt": "ISO date",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date",
+          "isEmailValid": "boolean",
+          "isContactDead": "boolean",
+          "validationPerformed": "boolean",
+          "customFields": "array",
+          "geo": {"range": "array", "ll": "array"}
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Contacts",
+      "method": "GET",
+      "path": "/contacts",
+      "description": "Get all contacts with pagination and filtering",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [
+        {"name": "page", "type": "number", "default": 1, "required": false},
+        {"name": "limit", "type": "number", "default": 10, "required": false},
+        {"name": "tags", "type": "string", "description": "Tag ID filter", "required": false},
+        {"name": "activity", "type": "string", "description": "Activity level filter", "required": false},
+        {"name": "search", "type": "string", "description": "Search term", "required": false},
+        {"name": "phone", "type": "string", "description": "Phone filter", "required": false},
+        {"name": "sort", "type": "string", "description": "Sort field", "required": false}
+      ],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "contacts": "Contact[]",
+          "total": "number",
+          "page": "number",
+          "total_new": "number",
+          "total_inactive": "number",
+          "total_passive": "number",
+          "total_active": "number",
+          "total_active_open": "number",
+          "total_active_click": "number",
+          "total_dead": "number",
+          "total_undeliverable": "number"
+        }
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Contacts",
+      "method": "POST",
+      "path": "/contacts",
+      "description": "Create a new contact",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "firstName": {"type": "string", "required": false},
+        "lastName": {"type": "string", "required": false},
+        "email": {"type": "string", "required": true},
+        "phone": {"type": "string", "required": false},
+        "country": {"type": "string", "required": false},
+        "ip": {"type": "string", "required": false},
+        "address": {"type": "string", "required": false},
+        "meta": {"type": "array", "required": false},
+        "activitytype": {"type": "string", "required": false},
+        "activitydescription": {"type": "string", "required": false},
+        "activityurl": {"type": "string", "required": false},
+        "activitydata": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "Contact object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Contacts",
+      "method": "PUT",
+      "path": "/contacts/{contactId}",
+      "description": "Update an existing contact",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "contactId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "firstName": {"type": "string", "required": false},
+        "lastName": {"type": "string", "required": false},
+        "email": {"type": "string", "required": false},
+        "phone": {"type": "string", "required": false},
+        "country": {"type": "string", "required": false},
+        "ip": {"type": "string", "required": false},
+        "address": {"type": "string", "required": false},
+        "meta": {"type": "array", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "Contact object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Contacts",
+      "method": "DELETE",
+      "path": "/contacts/{contactId}",
+      "description": "Delete a contact",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "contactId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted contact object"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Sub Users",
+      "method": "GET",
+      "path": "/sub-users/{userId}",
+      "description": "Get a single sub-user by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "userId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "firstName": "string",
+          "lastName": "string",
+          "fullName": "string",
+          "email": "string",
+          "accessLevel": "string",
+          "status": "boolean",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date",
+          "availableDaysTimes": "array"
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Sub Users",
+      "method": "GET",
+      "path": "/sub-users",
+      "description": "Get all sub-users",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "SubUser[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Sub Users",
+      "method": "POST",
+      "path": "/sub-users",
+      "description": "Create a new sub-user",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "firstName": {"type": "string", "required": true},
+        "lastName": {"type": "string", "required": true},
+        "email": {"type": "string", "required": true},
+        "password": {"type": "string", "required": true}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "SubUser object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Sub Users",
+      "method": "PUT",
+      "path": "/sub-users/{userId}",
+      "description": "Update a sub-user",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "userId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "firstName": {"type": "string", "required": false},
+        "lastName": {"type": "string", "required": false},
+        "email": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "SubUser object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Sub Users",
+      "method": "DELETE",
+      "path": "/sub-users/{userId}",
+      "description": "Delete a sub-user",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "userId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "{}"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Tags",
+      "method": "GET",
+      "path": "/tags/{tagId}",
+      "description": "Get a single tag by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "tagId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "name": "string",
+          "description": "string",
+          "workflows": "array",
+          "groupId": "string",
+          "actions": "array",
+          "tagActionIds": "array",
+          "tagIdsToRemove": "array",
+          "tagIdsToAdd": "array",
+          "remindActionSetup": "boolean",
+          "remindWorkflowSetup": "boolean",
+          "warningMissingWorkflow": "boolean",
+          "isHot": "boolean",
+          "hasContact": "boolean",
+          "contactCount": "number",
+          "tag_group": "object",
+          "group_name": "string",
+          "pipelineStages": "array",
+          "remindPipelineStageSetup": "boolean",
+          "label": "string",
+          "labelId": "string",
+          "labelColor": "string",
+          "customFields": "array"
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Tags",
+      "method": "GET",
+      "path": "/tags",
+      "description": "Get all tags",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Tag[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tags",
+      "method": "POST",
+      "path": "/tags",
+      "description": "Create a new tag",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": true},
+        "description": {"type": "string", "required": false, "default": ""},
+        "groupId": {"type": "string", "required": true},
+        "isHot": {"type": "boolean", "required": false, "default": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "Tag object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tags",
+      "method": "PUT",
+      "path": "/tags/{tagId}",
+      "description": "Update a tag",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "tagId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "description": {"type": "string", "required": false},
+        "groupId": {"type": "string", "required": false},
+        "isHot": {"type": "boolean", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "Tag object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tags",
+      "method": "DELETE",
+      "path": "/tags/{tagId}",
+      "description": "Delete a tag",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "tagId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted tag object"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Tag Groups",
+      "method": "GET",
+      "path": "/tag-groups/{groupId}",
+      "description": "Get a single tag group by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "name": "string"
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Tag Groups",
+      "method": "GET",
+      "path": "/tag-groups",
+      "description": "Get all tag groups",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "TagGroup[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Groups",
+      "method": "POST",
+      "path": "/tag-groups",
+      "description": "Create a new tag group",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": true}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "TagGroup object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Groups",
+      "method": "PUT",
+      "path": "/tag-groups/{groupId}",
+      "description": "Update a tag group",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "TagGroup object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Groups",
+      "method": "DELETE",
+      "path": "/tag-groups/{groupId}",
+      "description": "Delete a tag group",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted TagGroup object"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Tag Labels",
+      "method": "GET",
+      "path": "/tags/labels/{labelId}",
+      "description": "Get a single tag label by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "labelId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "userId": "string",
+          "name": "string",
+          "color": "string (hex)",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date"
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Tag Labels",
+      "method": "GET",
+      "path": "/tags/labels",
+      "description": "Get all tag labels",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "TagLabel[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Labels",
+      "method": "POST",
+      "path": "/tags/labels",
+      "description": "Create a new tag label",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": true},
+        "color": {"type": "string", "required": true, "format": "#RRGGBB hex"}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "TagLabel object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Labels",
+      "method": "PUT",
+      "path": "/tags/labels/{labelId}",
+      "description": "Update a tag label",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "labelId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "color": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "TagLabel object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Tag Labels",
+      "method": "DELETE",
+      "path": "/tags/labels/{labelId}",
+      "description": "Delete a tag label",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "labelId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted TagLabel object"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Custom Fields",
+      "method": "GET",
+      "path": "/custom-fields/{customFieldId}",
+      "description": "Get a single custom field by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "customFieldId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "userId": "string",
+          "name": "string",
+          "customFieldGroupId": "string",
+          "slug": "string",
+          "defaultValue": "string",
+          "fieldType": "string (text, url, etc.)",
+          "type": "string (contact, email)",
+          "status": "boolean",
+          "isHidden": "boolean",
+          "deleted": "boolean",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date"
+        }
+      },
+      "status_codes": [200, 400]
+    },
+    {
+      "category": "Custom Fields",
+      "method": "GET",
+      "path": "/custom-fields",
+      "description": "Get all custom fields",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "CustomField[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Fields",
+      "method": "POST",
+      "path": "/custom-fields",
+      "description": "Create a new custom field",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": true},
+        "slug": {"type": "string", "required": true},
+        "fieldType": {"type": "string", "required": true, "values": ["text", "url", "etc."]},
+        "defaultValue": {"type": "string", "required": false},
+        "customFieldGroupId": {"type": "string", "required": false},
+        "type": {"type": "string", "required": true, "values": ["contact", "email"]}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "CustomField object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Fields",
+      "method": "PUT",
+      "path": "/custom-fields/{customFieldId}",
+      "description": "Update a custom field",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "customFieldId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "slug": {"type": "string", "required": false},
+        "fieldType": {"type": "string", "required": false},
+        "defaultValue": {"type": "string", "required": false},
+        "customFieldGroupId": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "CustomField object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Fields",
+      "method": "DELETE",
+      "path": "/custom-fields/{customFieldId}",
+      "description": "Delete a custom field",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "customFieldId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted CustomField object"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Custom Field Groups",
+      "method": "GET",
+      "path": "/custom-field-groups/{groupId}",
+      "description": "Get a single custom field group by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "_id": "string",
+          "userId": "string",
+          "name": "string",
+          "type": "string (contact)",
+          "status": "boolean",
+          "deleted": "boolean",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date"
+        }
+      },
+      "status_codes": [200, 400]
+    },
+    {
+      "category": "Custom Field Groups",
+      "method": "GET",
+      "path": "/custom-field-groups",
+      "description": "Get all custom field groups",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "CustomFieldGroup[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Field Groups",
+      "method": "POST",
+      "path": "/custom-field-groups",
+      "description": "Create a new custom field group",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": true},
+        "type": {"type": "string", "required": true, "values": ["contact"]}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "CustomFieldGroup object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Field Groups",
+      "method": "PUT",
+      "path": "/custom-field-groups/{groupId}",
+      "description": "Update a custom field group",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": {
+        "name": {"type": "string", "required": false},
+        "type": {"type": "string", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "CustomFieldGroup object"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Custom Field Groups",
+      "method": "DELETE",
+      "path": "/custom-field-groups/{groupId}",
+      "description": "Delete a custom field group",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "groupId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted CustomFieldGroup object (includes deletedAt timestamp)"
+      },
+      "status_codes": [200]
+    },
+
+    {
+      "category": "Domains",
+      "method": "GET",
+      "path": "/domains/{domainId}",
+      "description": "Get a single domain by ID",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "domainId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": {
+          "hasError": "boolean",
+          "_id": "string",
+          "userId": "string",
+          "domain": "string",
+          "integrationId": "string",
+          "accountId": "string",
+          "for": "string (SMTP)",
+          "isWebhookSetupCompleted": "boolean",
+          "isPostmasterToolVerified": "boolean",
+          "deleted": "boolean",
+          "createdAt": "ISO date",
+          "updatedAt": "ISO date",
+          "urlsUpdated": "boolean",
+          "isMigrationCompleted": "boolean"
+        }
+      },
+      "status_codes": [200, 404]
+    },
+    {
+      "category": "Domains",
+      "method": "GET",
+      "path": "/domains",
+      "description": "Get all domains",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Domain[]"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Domains",
+      "method": "POST",
+      "path": "/domains/smtp-domain-list",
+      "description": "Get integration domains (SMTP domain list)",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "integrationId": {"type": "string", "required": true},
+        "accountId": {"type": "string", "required": true},
+        "domain": {"type": "string|null", "required": false}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "string[] (domain names)"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Domains",
+      "method": "POST",
+      "path": "/domains",
+      "description": "Create/add a domain",
+      "headers": {"X-API-KEY": "{{apiToken}}", "Content-Type": "application/json"},
+      "query_parameters": [],
+      "request_body": {
+        "integrationId": {"type": "string", "required": true},
+        "accountId": {"type": "string", "required": true},
+        "domain": {"type": "string", "required": true}
+      },
+      "response_schema": {
+        "type": "response",
+        "data": "Domain object with accountConnected boolean"
+      },
+      "status_codes": [200]
+    },
+    {
+      "category": "Domains",
+      "method": "DELETE",
+      "path": "/domains/{domainId}",
+      "description": "Delete a domain",
+      "headers": {"X-API-KEY": "{{apiToken}}"},
+      "path_parameters": [{"name": "domainId", "type": "string", "required": true}],
+      "query_parameters": [],
+      "request_body": null,
+      "response_schema": {
+        "type": "response",
+        "data": "Deleted Domain object (includes deletedAt timestamp)"
+      },
+      "status_codes": [200]
+    }
+  ]
+}

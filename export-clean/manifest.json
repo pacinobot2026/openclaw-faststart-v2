@@ -1,0 +1,185 @@
+{
+  "name": "openclaw-skills-package",
+  "version": "2.0.0",
+  "description": "Production-ready OpenClaw skills with 7 working commands",
+  "updated": "2026-02-19",
+  "author": "OpenClaw AI Assistant",
+  
+  "skills": [
+    {
+      "name": "globalcontrol",
+      "description": "Global Control CRM API for contacts, tags, broadcasts, custom fields, and domains",
+      "version": "1.0.0",
+      "commands": ["/broadcast", "/tag", "/contact"],
+      "endpoints": 39,
+      "files": [
+        "SKILL.md",
+        "api_map.json",
+        "test_harness.ps1",
+        "references/wrapper-plan.md"
+      ],
+      "credentials_required": true,
+      "credential_file": "credentials/globalcontrol-api.txt",
+      "setup_method": "manual"
+    },
+    {
+      "name": "reengagement",
+      "description": "Email re-engagement campaigns with CSV import and progressive sending",
+      "version": "1.0.0",
+      "commands": ["/reactivation"],
+      "files": [
+        "SKILL.md",
+        "PACING_GUIDE.md",
+        "helpers.ps1"
+      ],
+      "credentials_required": true,
+      "credential_file": "credentials/globalcontrol-api.txt",
+      "setup_method": "uses_globalcontrol",
+      "features": [
+        "CSV/XLS import",
+        "Progressive daily sending",
+        "Pace control (Mild/Normal/Aggressive)",
+        "State persistence",
+        "Pause/Resume/Cancel"
+      ]
+    },
+    {
+      "name": "poplinks-manager",
+      "description": "PopLinks/MintBird API for URL shortener, lead pages, and bridge pages",
+      "version": "1.0.0",
+      "commands": ["/poplink", "/leadstep", "/bridgepage"],
+      "files": [
+        "SKILL.md",
+        "README.md",
+        "SETUP.md",
+        "QUICK_REFERENCE.md",
+        "EXAMPLES.md",
+        "PACKAGE_CONTENTS.md",
+        "setup.sh",
+        "setup.ps1",
+        "validate-credentials.js",
+        "lib-credentials.js",
+        "example-commands.js",
+        "credentials.template.txt",
+        "skill.json",
+        ".gitignore"
+      ],
+      "credentials_required": true,
+      "credential_file": "credentials/poplinks-api.txt",
+      "setup_method": "interactive_wizard",
+      "setup_wizards": ["setup.sh", "setup.ps1"],
+      "features": [
+        "Automatic credential checking",
+        "Interactive setup wizards",
+        "Validation scripts",
+        "Working examples",
+        "Complete API documentation"
+      ]
+    }
+  ],
+  
+  "commands": {
+    "total": 7,
+    "available": [
+      {
+        "shortcode": "/broadcast",
+        "category": "Email",
+        "purpose": "Create/send broadcast email (with re-engagement fork)",
+        "skill": "globalcontrol"
+      },
+      {
+        "shortcode": "/reactivation",
+        "category": "Email",
+        "purpose": "CSV upload → progressive daily campaign",
+        "skill": "reengagement"
+      },
+      {
+        "shortcode": "/poplink",
+        "category": "Links",
+        "purpose": "Create shortened link",
+        "skill": "poplinks-manager"
+      },
+      {
+        "shortcode": "/leadstep",
+        "category": "Pages",
+        "purpose": "Create lead capture page",
+        "skill": "poplinks-manager"
+      },
+      {
+        "shortcode": "/bridgepage",
+        "category": "Pages",
+        "purpose": "Create/clone bridge page",
+        "skill": "poplinks-manager"
+      },
+      {
+        "shortcode": "/tag",
+        "category": "Contacts",
+        "purpose": "Fire tag on contact",
+        "skill": "globalcontrol"
+      },
+      {
+        "shortcode": "/contact",
+        "category": "Contacts",
+        "purpose": "Pull contact history",
+        "skill": "globalcontrol"
+      }
+    ],
+    "unavailable": [
+      {
+        "shortcode": "/replay",
+        "reason": "Course Sprout skill not implemented"
+      },
+      {
+        "shortcode": "/article",
+        "reason": "Letterman skill not implemented"
+      },
+      {
+        "shortcode": "/systemhealth",
+        "reason": "Health check runs via cron, no interactive skill"
+      },
+      {
+        "shortcode": "/teamcall",
+        "reason": "Zoom processing skill not implemented"
+      }
+    ]
+  },
+  
+  "files": {
+    "total": 23,
+    "documentation": [
+      "README.md",
+      "SHORTCODES.md",
+      "manifest.json"
+    ],
+    "skills": 3
+  },
+  
+  "security": {
+    "sanitized": true,
+    "credentials_included": false,
+    "templates_provided": true,
+    "gitignore_included": true
+  },
+  
+  "requirements": {
+    "openclaw": "latest",
+    "nodejs": "optional (for poplinks-manager examples)",
+    "api_access": [
+      "Global Control CRM",
+      "PopLinks/MintBird"
+    ],
+    "optional": [
+      "EmailListVerify API (for reengagement)"
+    ]
+  },
+  
+  "installation": {
+    "steps": [
+      "Extract skills to workspace",
+      "Run setup wizards or create credential files",
+      "Copy SHORTCODES.md to workspace root",
+      "Use commands in chat"
+    ],
+    "estimated_time": "5-10 minutes"
+  }
+}

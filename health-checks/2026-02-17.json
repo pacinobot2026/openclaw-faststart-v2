@@ -1,0 +1,40 @@
+{
+  "timestamp": "2026-02-17T10:00:03-06:00",
+  "apis": {
+    "GlobalControl": {
+      "status": "FAILED",
+      "error": "401 Unauthorized",
+      "note": "Known issue - API key needs refresh"
+    },
+    "PopLinks": {
+      "status": "ONLINE"
+    },
+    "CourseSprout": {
+      "status": "ONLINE"
+    },
+    "Letterman": {
+      "status": "ONLINE"
+    },
+    "SaaSOnboard": {
+      "status": "ONLINE"
+    }
+  },
+  "urls": {
+    "https://chadnicely.com/members": "ONLINE",
+    "https://entouragemastermind.org": "ONLINE",
+    "https://q.selfmasteryco.net/japplication": "ONLINE",
+    "https://westvalleyshoutouts.com": "ONLINE",
+    "https://chadnicely.courseportal.io/login": "ONLINE",
+    "https://selfmasteryco.mintbird.com/": "ONLINE",
+    "https://selfmasteryco.globalcontrol.io": "ONLINE",
+    "https://admin.globalcontrol.io": "ONLINE",
+    "https://app.globalcontrol.io/appointment-booking/entrourage-mastermind": "ONLINE"
+  },
+  "summary": {
+    "total_apis": 5,
+    "apis_online": 4,
+    "total_urls": 9,
+    "urls_online": 9,
+    "issues": 1
+  }
+}

@@ -1,0 +1,1024 @@
+{
+  "api_name": "Freshdesk API",
+  "api_version": "v2",
+  "docs_root": "https://developers.freshdesk.com/api/",
+  "base_url_template": "https://{FRESHDESK_DOMAIN}/api/v2",
+  "auth": {
+    "type": "basic",
+    "formats": [
+      "API key as username + 'X' as dummy password",
+      "Base64 encode 'API_KEY:X' for Authorization header"
+    ],
+    "header_format": "Authorization: Basic {base64(API_KEY:X)}",
+    "secret_handling": "never log raw credentials"
+  },
+  "rate_limits": {
+    "trial": 50,
+    "growth": 200,
+    "pro": 400,
+    "enterprise": 700,
+    "unit": "requests per minute",
+    "headers": {
+      "total": "X-RateLimit-Total",
+      "remaining": "X-RateLimit-Remaining",
+      "used": "X-RateLimit-Used-CurrentRequest",
+      "retry_after": "Retry-After"
+    }
+  },
+  "pagination": {
+    "type": "page-based",
+    "params": {
+      "page": "Page number (starts at 1)",
+      "per_page": "Results per page (max 100, default 30)"
+    },
+    "link_header": true
+  },
+  "content_type": "application/json",
+  "endpoints": [
+    {
+      "group": "Tickets",
+      "name": "Create Ticket",
+      "method": "POST",
+      "path": "/tickets",
+      "purpose": "Create a new support ticket",
+      "required_fields": ["email OR requester_id OR phone OR twitter_id"],
+      "optional_fields": ["subject", "description", "status", "priority", "source", "type", "responder_id", "group_id", "product_id", "company_id", "tags", "cc_emails", "due_by", "fr_due_by", "custom_fields", "attachments", "parent_id", "related_ticket_ids"],
+      "pagination": null
+    },
+    {
+      "group": "Tickets",
+      "name": "View Ticket",
+      "method": "GET",
+      "path": "/tickets/{id}",
+      "purpose": "Retrieve details of a specific ticket",
+      "path_params": ["id"],
+      "query_params": [{"name": "include", "values": ["conversations", "requester", "company", "stats", "sla_policy"]}]
+    },
+    {
+      "group": "Tickets",
+      "name": "List All Tickets",
+      "method": "GET",
+      "path": "/tickets",
+      "purpose": "List tickets with optional filters",
+      "query_params": [
+        {"name": "filter", "values": ["new_and_my_open", "watching", "spam", "deleted"]},
+        {"name": "requester_id", "type": "integer"},
+        {"name": "email", "type": "string"},
+        {"name": "company_id", "type": "integer"},
+        {"name": "updated_since", "type": "datetime"},
+        {"name": "order_by", "values": ["created_at", "due_by", "updated_at", "status"]},
+        {"name": "order_type", "values": ["asc", "desc"]},
+        {"name": "include", "values": ["requester", "stats", "description"]}
+      ],
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Tickets",
+      "name": "Filter Tickets",
+      "method": "GET",
+      "path": "/search/tickets",
+      "purpose": "Search tickets using query syntax",
+      "query_params": [{"name": "query", "required": true, "example": "\"status:2 AND priority:4\""}],
+      "pagination": "page (max 10 pages, 30 per page)"
+    },
+    {
+      "group": "Tickets",
+      "name": "Update Ticket",
+      "method": "PUT",
+      "path": "/tickets/{id}",
+      "purpose": "Update an existing ticket",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Bulk Update Tickets",
+      "method": "PUT",
+      "path": "/tickets/bulk_update",
+      "purpose": "Update multiple tickets at once",
+      "required_fields": ["ids", "properties"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Delete Ticket",
+      "method": "DELETE",
+      "path": "/tickets/{id}",
+      "purpose": "Move ticket to trash",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Bulk Delete Tickets",
+      "method": "DELETE",
+      "path": "/tickets/bulk_delete",
+      "purpose": "Delete multiple tickets",
+      "required_fields": ["ids"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Restore Ticket",
+      "method": "PUT",
+      "path": "/tickets/{id}/restore",
+      "purpose": "Restore a deleted ticket",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Forward Ticket",
+      "method": "POST",
+      "path": "/tickets/{id}/forward",
+      "purpose": "Forward ticket to external email",
+      "path_params": ["id"],
+      "required_fields": ["body", "to_emails"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Merge Tickets",
+      "method": "PUT",
+      "path": "/tickets/{id}/merge",
+      "purpose": "Merge multiple tickets into one",
+      "path_params": ["id"],
+      "required_fields": ["ticket_ids"]
+    },
+    {
+      "group": "Tickets",
+      "name": "List Watchers",
+      "method": "GET",
+      "path": "/tickets/{id}/watchers",
+      "purpose": "Get all watchers on a ticket",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Add Watcher",
+      "method": "POST",
+      "path": "/tickets/{id}/watchers",
+      "purpose": "Add a watcher to ticket",
+      "path_params": ["id"],
+      "required_fields": ["user_id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Remove Watcher",
+      "method": "DELETE",
+      "path": "/tickets/{id}/watchers/{user_id}",
+      "purpose": "Remove a watcher from ticket",
+      "path_params": ["id", "user_id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "Create Outbound Email",
+      "method": "POST",
+      "path": "/tickets/outbound_email",
+      "purpose": "Create an outbound email ticket"
+    },
+    {
+      "group": "Tickets",
+      "name": "Get Ticket Summary",
+      "method": "GET",
+      "path": "/tickets/{id}/summary",
+      "purpose": "Get AI-generated ticket summary",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Tickets",
+      "name": "List Archived Tickets",
+      "method": "GET",
+      "path": "/archive/tickets",
+      "purpose": "List archived tickets"
+    },
+    {
+      "group": "Tickets",
+      "name": "View Archived Ticket",
+      "method": "GET",
+      "path": "/archive/tickets/{id}",
+      "purpose": "View an archived ticket",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Conversations",
+      "name": "List Conversations",
+      "method": "GET",
+      "path": "/tickets/{id}/conversations",
+      "purpose": "List all conversations for a ticket",
+      "path_params": ["id"],
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Conversations",
+      "name": "Reply to Ticket",
+      "method": "POST",
+      "path": "/tickets/{id}/reply",
+      "purpose": "Send a reply to a ticket",
+      "path_params": ["id"],
+      "required_fields": ["body"],
+      "optional_fields": ["from_email", "user_id", "cc_emails", "bcc_emails", "attachments"]
+    },
+    {
+      "group": "Conversations",
+      "name": "Add Note",
+      "method": "POST",
+      "path": "/tickets/{id}/notes",
+      "purpose": "Add a note to a ticket",
+      "path_params": ["id"],
+      "required_fields": ["body"],
+      "optional_fields": ["private", "incoming", "user_id", "notify_emails"]
+    },
+    {
+      "group": "Conversations",
+      "name": "Update Conversation",
+      "method": "PUT",
+      "path": "/conversations/{id}",
+      "purpose": "Update a conversation",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Conversations",
+      "name": "Delete Conversation",
+      "method": "DELETE",
+      "path": "/conversations/{id}",
+      "purpose": "Delete a conversation",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Create Contact",
+      "method": "POST",
+      "path": "/contacts",
+      "purpose": "Create a new contact",
+      "required_fields": ["email OR phone OR mobile OR twitter_id"],
+      "optional_fields": ["name", "phone", "mobile", "twitter_id", "company_id", "view_all_tickets", "other_emails", "other_companies", "address", "job_title", "time_zone", "language", "tags", "custom_fields"]
+    },
+    {
+      "group": "Contacts",
+      "name": "View Contact",
+      "method": "GET",
+      "path": "/contacts/{id}",
+      "purpose": "Get contact details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "List Contacts",
+      "method": "GET",
+      "path": "/contacts",
+      "purpose": "List all contacts",
+      "query_params": [
+        {"name": "email", "type": "string"},
+        {"name": "mobile", "type": "string"},
+        {"name": "phone", "type": "string"},
+        {"name": "company_id", "type": "integer"},
+        {"name": "state", "values": ["verified", "unverified", "blocked", "deleted"]},
+        {"name": "_updated_since", "type": "datetime"}
+      ],
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Contacts",
+      "name": "Filter Contacts",
+      "method": "GET",
+      "path": "/search/contacts",
+      "purpose": "Search contacts using query syntax",
+      "query_params": [{"name": "query", "required": true}]
+    },
+    {
+      "group": "Contacts",
+      "name": "Update Contact",
+      "method": "PUT",
+      "path": "/contacts/{id}",
+      "purpose": "Update a contact",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Delete Contact",
+      "method": "DELETE",
+      "path": "/contacts/{id}",
+      "purpose": "Soft delete a contact",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Hard Delete Contact",
+      "method": "DELETE",
+      "path": "/contacts/{id}/hard_delete",
+      "purpose": "Permanently delete a contact",
+      "path_params": ["id"],
+      "query_params": [{"name": "force", "value": "true"}]
+    },
+    {
+      "group": "Contacts",
+      "name": "Restore Contact",
+      "method": "PUT",
+      "path": "/contacts/{id}/restore",
+      "purpose": "Restore a deleted contact",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Merge Contacts",
+      "method": "PUT",
+      "path": "/contacts/{id}/merge",
+      "purpose": "Merge multiple contacts",
+      "path_params": ["id"],
+      "required_fields": ["secondary_contact_ids"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Make Agent",
+      "method": "PUT",
+      "path": "/contacts/{id}/make_agent",
+      "purpose": "Convert contact to agent",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contacts",
+      "name": "Send Invite",
+      "method": "PUT",
+      "path": "/contacts/{id}/send_invite",
+      "purpose": "Send portal invitation to contact",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Companies",
+      "name": "Create Company",
+      "method": "POST",
+      "path": "/companies",
+      "purpose": "Create a new company",
+      "required_fields": ["name"],
+      "optional_fields": ["domains", "description", "note", "health_score", "account_tier", "renewal_date", "industry", "custom_fields"]
+    },
+    {
+      "group": "Companies",
+      "name": "View Company",
+      "method": "GET",
+      "path": "/companies/{id}",
+      "purpose": "Get company details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Companies",
+      "name": "List Companies",
+      "method": "GET",
+      "path": "/companies",
+      "purpose": "List all companies",
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Companies",
+      "name": "Filter Companies",
+      "method": "GET",
+      "path": "/search/companies",
+      "purpose": "Search companies using query syntax",
+      "query_params": [{"name": "query", "required": true}]
+    },
+    {
+      "group": "Companies",
+      "name": "Update Company",
+      "method": "PUT",
+      "path": "/companies/{id}",
+      "purpose": "Update a company",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Companies",
+      "name": "Delete Company",
+      "method": "DELETE",
+      "path": "/companies/{id}",
+      "purpose": "Delete a company",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Agents",
+      "name": "Create Agent",
+      "method": "POST",
+      "path": "/agents",
+      "purpose": "Create a new agent",
+      "required_fields": ["email"],
+      "optional_fields": ["ticket_scope", "occasional", "signature", "skill_ids", "group_ids", "role_ids", "name", "phone", "mobile", "job_title", "language", "time_zone"]
+    },
+    {
+      "group": "Agents",
+      "name": "View Agent",
+      "method": "GET",
+      "path": "/agents/{id}",
+      "purpose": "Get agent details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Agents",
+      "name": "View Current Agent",
+      "method": "GET",
+      "path": "/agents/me",
+      "purpose": "Get current authenticated agent"
+    },
+    {
+      "group": "Agents",
+      "name": "List Agents",
+      "method": "GET",
+      "path": "/agents",
+      "purpose": "List all agents",
+      "query_params": [
+        {"name": "email", "type": "string"},
+        {"name": "mobile", "type": "string"},
+        {"name": "phone", "type": "string"},
+        {"name": "state", "values": ["fulltime", "occasional"]}
+      ],
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Agents",
+      "name": "Update Agent",
+      "method": "PUT",
+      "path": "/agents/{id}",
+      "purpose": "Update an agent",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Agents",
+      "name": "Delete Agent",
+      "method": "DELETE",
+      "path": "/agents/{id}",
+      "purpose": "Delete an agent",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Groups",
+      "name": "Create Group",
+      "method": "POST",
+      "path": "/groups",
+      "purpose": "Create a new group",
+      "required_fields": ["name"]
+    },
+    {
+      "group": "Groups",
+      "name": "View Group",
+      "method": "GET",
+      "path": "/groups/{id}",
+      "purpose": "Get group details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Groups",
+      "name": "List Groups",
+      "method": "GET",
+      "path": "/groups",
+      "purpose": "List all groups",
+      "pagination": "page, per_page"
+    },
+    {
+      "group": "Groups",
+      "name": "Update Group",
+      "method": "PUT",
+      "path": "/groups/{id}",
+      "purpose": "Update a group",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Groups",
+      "name": "Delete Group",
+      "method": "DELETE",
+      "path": "/groups/{id}",
+      "purpose": "Delete a group",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Roles",
+      "name": "List Roles",
+      "method": "GET",
+      "path": "/roles",
+      "purpose": "List all roles"
+    },
+    {
+      "group": "Roles",
+      "name": "View Role",
+      "method": "GET",
+      "path": "/roles/{id}",
+      "purpose": "Get role details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Products",
+      "name": "Create Product",
+      "method": "POST",
+      "path": "/products",
+      "purpose": "Create a new product",
+      "required_fields": ["name"]
+    },
+    {
+      "group": "Products",
+      "name": "View Product",
+      "method": "GET",
+      "path": "/products/{id}",
+      "purpose": "Get product details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Products",
+      "name": "List Products",
+      "method": "GET",
+      "path": "/products",
+      "purpose": "List all products"
+    },
+    {
+      "group": "Products",
+      "name": "Update Product",
+      "method": "PUT",
+      "path": "/products/{id}",
+      "purpose": "Update a product",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Products",
+      "name": "Delete Product",
+      "method": "DELETE",
+      "path": "/products/{id}",
+      "purpose": "Delete a product",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Canned Responses",
+      "name": "Create Canned Response",
+      "method": "POST",
+      "path": "/canned_responses",
+      "purpose": "Create a canned response",
+      "required_fields": ["title", "content"]
+    },
+    {
+      "group": "Canned Responses",
+      "name": "View Canned Response",
+      "method": "GET",
+      "path": "/canned_responses/{id}",
+      "purpose": "Get canned response",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Canned Responses",
+      "name": "List Canned Responses",
+      "method": "GET",
+      "path": "/canned_responses",
+      "purpose": "List all canned responses"
+    },
+    {
+      "group": "Canned Responses",
+      "name": "Update Canned Response",
+      "method": "PUT",
+      "path": "/canned_responses/{id}",
+      "purpose": "Update a canned response",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Canned Responses",
+      "name": "Delete Canned Response",
+      "method": "DELETE",
+      "path": "/canned_responses/{id}",
+      "purpose": "Delete a canned response",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "Create Time Entry",
+      "method": "POST",
+      "path": "/tickets/{ticket_id}/time_entries",
+      "purpose": "Log time on a ticket",
+      "path_params": ["ticket_id"],
+      "required_fields": ["time_spent"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "List Ticket Time Entries",
+      "method": "GET",
+      "path": "/tickets/{ticket_id}/time_entries",
+      "purpose": "Get time entries for a ticket",
+      "path_params": ["ticket_id"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "View Time Entry",
+      "method": "GET",
+      "path": "/time_entries/{id}",
+      "purpose": "Get a time entry",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "Update Time Entry",
+      "method": "PUT",
+      "path": "/time_entries/{id}",
+      "purpose": "Update a time entry",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "Delete Time Entry",
+      "method": "DELETE",
+      "path": "/time_entries/{id}",
+      "purpose": "Delete a time entry",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Time Entries",
+      "name": "List All Time Entries",
+      "method": "GET",
+      "path": "/time_entries",
+      "purpose": "List all time entries with filters"
+    },
+    {
+      "group": "Solutions",
+      "name": "List Solution Categories",
+      "method": "GET",
+      "path": "/solutions/categories",
+      "purpose": "List all KB categories"
+    },
+    {
+      "group": "Solutions",
+      "name": "Create Solution Category",
+      "method": "POST",
+      "path": "/solutions/categories",
+      "purpose": "Create a KB category",
+      "required_fields": ["name"]
+    },
+    {
+      "group": "Solutions",
+      "name": "View Solution Category",
+      "method": "GET",
+      "path": "/solutions/categories/{id}",
+      "purpose": "Get category details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Update Solution Category",
+      "method": "PUT",
+      "path": "/solutions/categories/{id}",
+      "purpose": "Update a category",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Delete Solution Category",
+      "method": "DELETE",
+      "path": "/solutions/categories/{id}",
+      "purpose": "Delete a category",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "List Solution Folders",
+      "method": "GET",
+      "path": "/solutions/categories/{category_id}/folders",
+      "purpose": "List folders in a category",
+      "path_params": ["category_id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Create Solution Folder",
+      "method": "POST",
+      "path": "/solutions/categories/{category_id}/folders",
+      "purpose": "Create a folder",
+      "path_params": ["category_id"],
+      "required_fields": ["name", "visibility"]
+    },
+    {
+      "group": "Solutions",
+      "name": "View Solution Folder",
+      "method": "GET",
+      "path": "/solutions/folders/{id}",
+      "purpose": "Get folder details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Update Solution Folder",
+      "method": "PUT",
+      "path": "/solutions/folders/{id}",
+      "purpose": "Update a folder",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Delete Solution Folder",
+      "method": "DELETE",
+      "path": "/solutions/folders/{id}",
+      "purpose": "Delete a folder",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "List Solution Articles",
+      "method": "GET",
+      "path": "/solutions/folders/{folder_id}/articles",
+      "purpose": "List articles in a folder",
+      "path_params": ["folder_id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Create Solution Article",
+      "method": "POST",
+      "path": "/solutions/folders/{folder_id}/articles",
+      "purpose": "Create an article",
+      "path_params": ["folder_id"],
+      "required_fields": ["title", "description"]
+    },
+    {
+      "group": "Solutions",
+      "name": "View Solution Article",
+      "method": "GET",
+      "path": "/solutions/articles/{id}",
+      "purpose": "Get article details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Update Solution Article",
+      "method": "PUT",
+      "path": "/solutions/articles/{id}",
+      "purpose": "Update an article",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Delete Solution Article",
+      "method": "DELETE",
+      "path": "/solutions/articles/{id}",
+      "purpose": "Delete an article",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Solutions",
+      "name": "Search Solutions",
+      "method": "GET",
+      "path": "/search/solutions",
+      "purpose": "Search knowledge base",
+      "query_params": [{"name": "term", "required": true}]
+    },
+    {
+      "group": "Surveys",
+      "name": "List Surveys",
+      "method": "GET",
+      "path": "/surveys",
+      "purpose": "List all surveys"
+    },
+    {
+      "group": "Surveys",
+      "name": "View Survey",
+      "method": "GET",
+      "path": "/surveys/{id}",
+      "purpose": "Get survey details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Satisfaction Ratings",
+      "name": "List Ticket Ratings",
+      "method": "GET",
+      "path": "/tickets/{ticket_id}/satisfaction_ratings",
+      "purpose": "Get satisfaction ratings for a ticket",
+      "path_params": ["ticket_id"]
+    },
+    {
+      "group": "Satisfaction Ratings",
+      "name": "List Survey Ratings",
+      "method": "GET",
+      "path": "/surveys/{survey_id}/satisfaction_ratings",
+      "purpose": "Get ratings for a survey",
+      "path_params": ["survey_id"]
+    },
+    {
+      "group": "Ticket Fields",
+      "name": "List Ticket Fields",
+      "method": "GET",
+      "path": "/ticket_fields",
+      "purpose": "List all ticket fields"
+    },
+    {
+      "group": "Ticket Fields",
+      "name": "View Ticket Field",
+      "method": "GET",
+      "path": "/ticket_fields/{id}",
+      "purpose": "Get ticket field details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Contact Fields",
+      "name": "List Contact Fields",
+      "method": "GET",
+      "path": "/contact_fields",
+      "purpose": "List all contact fields"
+    },
+    {
+      "group": "Company Fields",
+      "name": "List Company Fields",
+      "method": "GET",
+      "path": "/company_fields",
+      "purpose": "List all company fields"
+    },
+    {
+      "group": "Email Configs",
+      "name": "List Email Configs",
+      "method": "GET",
+      "path": "/email_configs",
+      "purpose": "List all email configurations"
+    },
+    {
+      "group": "Email Configs",
+      "name": "View Email Config",
+      "method": "GET",
+      "path": "/email_configs/{id}",
+      "purpose": "Get email config details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Email Mailboxes",
+      "name": "List Email Mailboxes",
+      "method": "GET",
+      "path": "/email_mailboxes",
+      "purpose": "List all email mailboxes"
+    },
+    {
+      "group": "Email Mailboxes",
+      "name": "Create Email Mailbox",
+      "method": "POST",
+      "path": "/email_mailboxes",
+      "purpose": "Create an email mailbox"
+    },
+    {
+      "group": "Email Mailboxes",
+      "name": "View Email Mailbox",
+      "method": "GET",
+      "path": "/email_mailboxes/{id}",
+      "purpose": "Get mailbox details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Email Mailboxes",
+      "name": "Update Email Mailbox",
+      "method": "PUT",
+      "path": "/email_mailboxes/{id}",
+      "purpose": "Update a mailbox",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Email Mailboxes",
+      "name": "Delete Email Mailbox",
+      "method": "DELETE",
+      "path": "/email_mailboxes/{id}",
+      "purpose": "Delete a mailbox",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Business Hours",
+      "name": "List Business Hours",
+      "method": "GET",
+      "path": "/business_hours",
+      "purpose": "List all business hours configs"
+    },
+    {
+      "group": "Business Hours",
+      "name": "View Business Hours",
+      "method": "GET",
+      "path": "/business_hours/{id}",
+      "purpose": "Get business hours details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "SLA Policies",
+      "name": "List SLA Policies",
+      "method": "GET",
+      "path": "/sla_policies",
+      "purpose": "List all SLA policies"
+    },
+    {
+      "group": "SLA Policies",
+      "name": "Create SLA Policy",
+      "method": "POST",
+      "path": "/sla_policies",
+      "purpose": "Create an SLA policy"
+    },
+    {
+      "group": "SLA Policies",
+      "name": "View SLA Policy",
+      "method": "GET",
+      "path": "/sla_policies/{id}",
+      "purpose": "Get SLA policy details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "SLA Policies",
+      "name": "Update SLA Policy",
+      "method": "PUT",
+      "path": "/sla_policies/{id}",
+      "purpose": "Update an SLA policy",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Scenario Automations",
+      "name": "List Scenario Automations",
+      "method": "GET",
+      "path": "/scenario_automations",
+      "purpose": "List all scenario automations"
+    },
+    {
+      "group": "Scenario Automations",
+      "name": "View Scenario Automation",
+      "method": "GET",
+      "path": "/scenario_automations/{id}",
+      "purpose": "Get automation details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Automations",
+      "name": "List Ticket Creation Rules",
+      "method": "GET",
+      "path": "/automations/ticket_creation",
+      "purpose": "List ticket creation automations"
+    },
+    {
+      "group": "Automations",
+      "name": "List Time Triggers",
+      "method": "GET",
+      "path": "/automations/time_triggers",
+      "purpose": "List time-based automations"
+    },
+    {
+      "group": "Automations",
+      "name": "List Observer Rules",
+      "method": "GET",
+      "path": "/automations/observer_rules",
+      "purpose": "List observer automations"
+    },
+    {
+      "group": "Account",
+      "name": "View Account",
+      "method": "GET",
+      "path": "/account",
+      "purpose": "Get account details"
+    },
+    {
+      "group": "Settings",
+      "name": "View Helpdesk Settings",
+      "method": "GET",
+      "path": "/settings/helpdesk",
+      "purpose": "Get helpdesk settings"
+    },
+    {
+      "group": "Skills",
+      "name": "List Skills",
+      "method": "GET",
+      "path": "/skills",
+      "purpose": "List all skills"
+    },
+    {
+      "group": "Skills",
+      "name": "View Skill",
+      "method": "GET",
+      "path": "/skills/{id}",
+      "purpose": "Get skill details",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Availability",
+      "name": "Get Agent Availability",
+      "method": "GET",
+      "path": "/agents/{id}/availability",
+      "purpose": "Get agent availability status",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Availability",
+      "name": "Update Agent Availability",
+      "method": "PUT",
+      "path": "/agents/{id}/availability",
+      "purpose": "Update agent availability",
+      "path_params": ["id"]
+    },
+    {
+      "group": "Jobs",
+      "name": "View Job Status",
+      "method": "GET",
+      "path": "/jobs/{id}",
+      "purpose": "Check status of background job",
+      "path_params": ["id"]
+    }
+  ],
+  "error_codes": {
+    "400": "Bad Request / Validation Error",
+    "401": "Authentication Failure",
+    "403": "Access Denied",
+    "404": "Not Found",
+    "405": "Method Not Allowed",
+    "406": "Unsupported Accept Header",
+    "409": "Conflict / Duplicate",
+    "415": "Unsupported Content-Type",
+    "429": "Rate Limit Exceeded",
+    "500": "Server Error"
+  },
+  "error_response_format": {
+    "description": "Error description",
+    "errors": [
+      {
+        "field": "Field name (for 400 errors)",
+        "message": "Detailed error message",
+        "code": "Machine-parseable error code"
+      }
+    ]
+  }
+}

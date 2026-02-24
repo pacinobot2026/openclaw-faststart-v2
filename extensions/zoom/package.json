@@ -1,0 +1,30 @@
+{
+  "name": "@openclaw/zoom",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "OpenClaw Zoom Team Chat channel plugin",
+  "openclaw": {
+    "extensions": [
+      "./index.ts"
+    ],
+    "channel": {
+      "id": "zoom",
+      "label": "Zoom Team Chat",
+      "selectionLabel": "Zoom Team Chat",
+      "detailLabel": "Zoom Team Chat",
+      "docsPath": "/channels/zoom",
+      "docsLabel": "zoom",
+      "blurb": "Zoom Team Chat integration via Zoom Chat API and webhooks.",
+      "aliases": [
+        "ztc"
+      ],
+      "systemImage": "bubble.left.and.bubble.right",
+      "order": 80
+    },
+    "install": {
+      "npmSpec": "@openclaw/zoom",
+      "localPath": "extensions/zoom",
+      "defaultChoice": "local"
+    }
+  }
+}

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Copy Analyzer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎯 Ad Copy Analyzer</h1>
+            <p class="tagline">Get instant feedback on your ad copy effectiveness</p>
+        </header>
+
+        <main>
+            <div class="input-section">
+                <div class="input-group">
+                    <label for="headline">Headline</label>
+                    <input type="text" id="headline" placeholder="Enter your ad headline...">
+                </div>
+                
+                <div class="input-group">
+                    <label for="body">Ad Body</label>
+                    <textarea id="body" rows="6" placeholder="Enter your ad body copy..."></textarea>
+                </div>
+
+                <button id="analyze-btn" class="btn-primary">Analyze My Ad</button>
+            </div>
+
+            <div id="results" class="results-section hidden">
+                <h2>Analysis Results</h2>
+                
+                <div class="overall-score">
+                    <div class="score-circle">
+                        <span id="overall-score">0</span>
+                    </div>
+                    <p>Overall Score</p>
+                </div>
+
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <h3>📢 Headline Power</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="headline-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="headline-feedback"></p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>💡 Clarity</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="clarity-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="clarity-feedback"></p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>❤️ Emotional Appeal</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="emotion-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="emotion-feedback"></p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>⚡ Urgency</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="urgency-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="urgency-feedback"></p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>🎯 Call to Action</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="cta-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="cta-feedback"></p>
+                    </div>
+
+                    <div class="metric-card">
+                        <h3>✨ Power Words</h3>
+                        <div class="score-bar">
+                            <div class="score-fill" id="power-score"></div>
+                        </div>
+                        <p class="metric-feedback" id="power-feedback"></p>
+                    </div>
+                </div>
+
+                <div class="suggestions-section">
+                    <h3>💪 Suggestions for Improvement</h3>
+                    <ul id="suggestions-list"></ul>
+                </div>
+            </div>
+        </main>
+
+        <footer>
+            <p>Built with 🎬 by Pacino</p>
+        </footer>
+    </div>
+
+    <script src="analyzer.js"></script>
+</body>
+</html>

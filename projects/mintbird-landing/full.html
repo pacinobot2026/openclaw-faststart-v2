@@ -1,0 +1,1670 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintbird Platinum Edition - Build Funnels in Minutes</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        :root {
+            --primary: #7c3aed;
+            --primary-light: #a78bfa;
+            --accent: #10b981;
+            --accent-light: #34d399;
+            --warning: #f59e0b;
+            --danger: #ef4444;
+            --dark: #0f172a;
+            --darker: #020617;
+            --gray: #64748b;
+            --light-gray: #94a3b8;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+            --gradient-green: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+        .container-sm { max-width: 900px; margin: 0 auto; padding: 0 24px; }
+        .container-lg { max-width: 1400px; margin: 0 auto; padding: 0 24px; }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 16px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: var(--light-gray);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s;
+        }
+
+        .nav-links a:hover { color: white; }
+
+        .header-cta {
+            padding: 12px 24px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        @media (max-width: 768px) {
+            .nav-links { display: none; }
+        }
+
+        /* Section Styles */
+        section { padding: 100px 0; }
+        .section-dark { background: var(--dark); }
+        .section-gradient { background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 100%); }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header h2 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .section-header p {
+            font-size: 1.15rem;
+            color: var(--light-gray);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: var(--primary-light);
+            margin-bottom: 24px;
+        }
+
+        /* Hero */
+        .hero {
+            padding: 160px 0 100px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 200%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(124, 58, 237, 0.2) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content { position: relative; z-index: 1; }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 1.3rem;
+            color: var(--light-gray);
+            max-width: 800px;
+            margin: 0 auto 16px;
+        }
+
+        .hero-highlight {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 40px;
+        }
+
+        .btn-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 48px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            background: var(--gradient);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
+        }
+
+        .btn-primary svg { width: 20px; height: 20px; }
+
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 48px;
+            font-size: 1.15rem;
+            font-weight: 700;
+            color: white;
+            background: transparent;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 12px;
+            text-decoration: none;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+
+        .btn-secondary:hover {
+            border-color: var(--primary);
+            background: rgba(124, 58, 237, 0.1);
+        }
+
+        .price-hero {
+            margin-top: 24px;
+            font-size: 1.1rem;
+        }
+
+        .price-hero .old {
+            text-decoration: line-through;
+            color: var(--danger);
+            margin-right: 8px;
+        }
+
+        .price-hero .new {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        /* Video Section */
+        .video-section { padding: 60px 0 100px; }
+
+        .video-wrapper {
+            max-width: 1000px;
+            margin: 0 auto;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            aspect-ratio: 16/9;
+            background: var(--dark);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .video-placeholder:hover { transform: scale(1.02); }
+        .video-placeholder .play-icon { font-size: 5rem; margin-bottom: 20px; }
+        .video-placeholder p { color: var(--primary-light); font-size: 1.1rem; }
+
+        /* Product Box */
+        .product-box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            margin-top: 60px;
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+        }
+
+        .product-box img {
+            width: 300px;
+            border-radius: 12px;
+        }
+
+        .product-box-content h3 {
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+
+        .product-box-content .price {
+            color: var(--gray);
+            margin-bottom: 20px;
+        }
+
+        @media (max-width: 768px) {
+            .product-box { flex-direction: column; text-align: center; }
+        }
+
+        /* Icon Grid */
+        .icon-row {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-bottom: 60px;
+        }
+
+        .icon-item {
+            text-align: center;
+            width: 100px;
+        }
+
+        .icon-item .icon {
+            width: 70px;
+            height: 70px;
+            margin: 0 auto 12px;
+            background: var(--gradient);
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
+
+        .icon-item span { font-size: 0.85rem; color: var(--light-gray); }
+
+        /* Feature Grid */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .features-grid { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .features-grid { grid-template-columns: 1fr; }
+        }
+
+        .feature-card {
+            padding: 32px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: all 0.3s;
+        }
+
+        .feature-card:hover {
+            border-color: rgba(124, 58, 237, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .feature-card .icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient);
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+        }
+
+        .feature-card p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Steps */
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        @media (max-width: 900px) {
+            .steps-grid { grid-template-columns: 1fr; }
+        }
+
+        .step-card {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 20px;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 24px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            font-weight: 800;
+        }
+
+        .step-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+
+        .step-card p {
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        .step-card ul {
+            text-align: left;
+            list-style: none;
+        }
+
+        .step-card li {
+            padding: 8px 0;
+            padding-left: 24px;
+            position: relative;
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        .step-card li::before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+        }
+
+        /* Split Section */
+        .split-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+        }
+
+        @media (max-width: 900px) {
+            .split-section { grid-template-columns: 1fr; }
+        }
+
+        .split-content h2 {
+            font-size: 2.2rem;
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .split-content h3 {
+            font-size: 1.5rem;
+            color: var(--primary-light);
+            margin-bottom: 20px;
+        }
+
+        .split-content p {
+            color: var(--light-gray);
+            margin-bottom: 20px;
+        }
+
+        .split-content ul {
+            list-style: none;
+        }
+
+        .split-content li {
+            padding: 12px 0;
+            padding-left: 28px;
+            position: relative;
+            color: var(--light-gray);
+        }
+
+        .split-content li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+
+        .split-image {
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.2) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 20px;
+            aspect-ratio: 4/3;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+
+        /* Module Cards */
+        .module-section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .module-header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .module-header h2 {
+            font-size: 2rem;
+            margin-bottom: 12px;
+        }
+
+        .module-header p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+        }
+
+        .module-features {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .module-features { grid-template-columns: repeat(2, 1fr); }
+        }
+
+        @media (max-width: 600px) {
+            .module-features { grid-template-columns: 1fr; }
+        }
+
+        .module-feature {
+            padding: 28px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 14px;
+        }
+
+        .module-feature .icon {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .module-feature h4 {
+            font-size: 1.05rem;
+            margin-bottom: 8px;
+        }
+
+        .module-feature p {
+            color: var(--light-gray);
+            font-size: 0.9rem;
+        }
+
+        /* Value Stack */
+        .value-stack {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .value-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .value-item .check {
+            width: 28px;
+            height: 28px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 16px;
+            flex-shrink: 0;
+        }
+
+        .value-item .info { flex: 1; }
+        .value-item h4 { font-size: 1.05rem; margin-bottom: 4px; }
+        .value-item p { color: var(--light-gray); font-size: 0.9rem; }
+        .value-item .price { color: var(--accent); font-weight: 600; white-space: nowrap; }
+
+        .value-total {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 30px 0;
+            margin-top: 20px;
+            border-top: 2px solid rgba(124, 58, 237, 0.3);
+        }
+
+        .value-total span:first-child {
+            font-size: 1.3rem;
+            font-weight: 700;
+        }
+
+        .value-total span:last-child {
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--accent);
+        }
+
+        /* Pricing Box */
+        .pricing-box {
+            max-width: 600px;
+            margin: 60px auto;
+            padding: 50px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.15) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border: 2px solid rgba(124, 58, 237, 0.3);
+            border-radius: 24px;
+            text-align: center;
+        }
+
+        .pricing-box h3 {
+            font-size: 1.8rem;
+            margin-bottom: 24px;
+        }
+
+        .pricing-box .original {
+            font-size: 1.5rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .pricing-box .current {
+            font-size: 4.5rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            line-height: 1;
+        }
+
+        .pricing-box .savings {
+            display: inline-block;
+            margin: 20px 0;
+            padding: 10px 24px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 50px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* Testimonials */
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+        }
+
+        @media (max-width: 900px) {
+            .testimonials-grid { grid-template-columns: 1fr; }
+        }
+
+        .testimonial {
+            padding: 32px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
+
+        .testimonial p {
+            color: var(--light-gray);
+            font-style: italic;
+            margin-bottom: 24px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-author .avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .testimonial-author .name { font-weight: 600; }
+
+        /* Guarantee */
+        .guarantee-box {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 24px;
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .guarantee-box .icon {
+            font-size: 6rem;
+            flex-shrink: 0;
+        }
+
+        .guarantee-box h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-box p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .guarantee-box {
+                flex-direction: column;
+                text-align: center;
+                padding: 40px;
+            }
+        }
+
+        /* FAQ */
+        .faq-list { max-width: 800px; margin: 0 auto; }
+
+        .faq-item { border-bottom: 1px solid rgba(255,255,255,0.05); }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: color 0.2s;
+        }
+
+        .faq-question:hover { color: var(--primary-light); }
+        .faq-question span { transition: transform 0.3s; }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 24px;
+            color: var(--light-gray);
+        }
+
+        .faq-item.active .faq-answer { max-height: 300px; }
+        .faq-item.active .faq-question span { transform: rotate(45deg); }
+
+        /* Footer */
+        footer {
+            padding: 60px 0 40px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            text-align: center;
+        }
+
+        footer .logo {
+            font-size: 2rem;
+            margin-bottom: 20px;
+        }
+
+        footer p { color: var(--gray); margin-bottom: 16px; }
+
+        footer a {
+            color: var(--light-gray);
+            text-decoration: none;
+            margin: 0 12px;
+            transition: color 0.2s;
+        }
+
+        footer a:hover { color: white; }
+
+        /* Utility */
+        .text-center { text-align: center; }
+        .mt-40 { margin-top: 40px; }
+        .mt-60 { margin-top: 60px; }
+        .mb-40 { margin-bottom: 40px; }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">🐦 Mintbird</div>
+            <ul class="nav-links">
+                <li><a href="#features">Features</a></li>
+                <li><a href="#how-it-works">How It Works</a></li>
+                <li><a href="#modules">Modules</a></li>
+                <li><a href="#pricing">Pricing</a></li>
+            </ul>
+            <a href="#pricing" class="header-cta">Get Platinum →</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container hero-content">
+            <div class="badge">⏰ Limited Time Offer by Chad Nicely</div>
+            <h1>The <span>Mintbird Platinum</span> Bundle</h1>
+            <p class="hero-subtitle">You Get The Very <strong>Best Version</strong> Of The Mintbird Platform With <strong>All The Updates</strong> + All The Future Features Rolling Out + The 3-Day Platinum Workshop</p>
+            <p class="hero-highlight">🎁 You Save $1,000 Today With The Bundle Discount!</p>
+            <a href="#pricing" class="btn-primary">
+                Get Mintbird Platinum Now
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <p class="price-hero">
+                <span class="old">$1,997</span>
+                <span class="new">Just $997</span>
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Video -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <div class="video-placeholder">
+                    <div class="play-icon">▶️</div>
+                    <p>Watch the Full Presentation (1:13:16)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- With Platinum You Get -->
+    <section class="section-dark" id="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>With Platinum You Get <span>Everything</span></h2>
+                <p>Unlimited access to every feature. No restrictions. No monthly fees.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Unlimited Sales Pages</h3>
+                    <p>Create as many high-converting sales pages as you want. Each page is fully customizable, AI-assisted, and designed to plug directly into your funnels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📈</div>
+                    <h3>Unlimited Upsells/Downsells</h3>
+                    <p>Add unlimited upsells and downsells to boost profits automatically. Clone your existing pages or start fresh with templates that increase average order value.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔀</div>
+                    <h3>Unlimited Funnels</h3>
+                    <p>Build unlimited funnels for all your offers in one place. Launch new products, test ideas, and manage every step from a single, unified dashboard.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <h3>Unlimited Bump Offers</h3>
+                    <p>Add one-click bump offers to any checkout in seconds. Offer complementary products or upgrades designed to lift your revenue without extra effort.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎟️</div>
+                    <h3>Unlimited Coupons</h3>
+                    <p>Create unlimited coupon codes to run flash sales and promos. Reward loyal buyers, increase urgency, and motivate visitors to take action.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⏱️</div>
+                    <h3>Unlimited Timers</h3>
+                    <p>Add real-time countdown timers to any page or funnel. Use urgency and scarcity to boost conversions and drive buyers to complete their purchase.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h3>Unlimited Order Forms</h3>
+                    <p>Create unlimited order forms that connect seamlessly to your funnels. Customize each one with your branding, pricing, and payment options.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Entire Template Library</h3>
+                    <p>Get full access to a complete library of sales pages, upsells, downsells, and funnels. Every template is professionally designed and mobile-ready.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">👥</div>
+                    <h3>Unlimited Contacts</h3>
+                    <p>Collect and manage unlimited leads and customers inside one system. Automatically tag, segment, and follow up to turn contacts into loyal buyers.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Demo Video -->
+    <section class="section-gradient">
+        <div class="container">
+            <div class="section-header">
+                <h2>Demo of Mintbird</h2>
+                <p>You've Never Experienced <strong>Speed And Beauty</strong> Like This!</p>
+            </div>
+            <div class="video-wrapper" style="max-width:800px;margin:0 auto;">
+                <div class="video-placeholder">
+                    <div class="play-icon">▶️</div>
+                    <p>Watch the Demo (18:55)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mintbird Basic Summary -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Here's A Summary Of The <span>Mintbird Basic</span> Program</h2>
+                <p>The Basic Version gives you a complete page and funnel building experience at a rock-bottom price — the perfect starting point for anyone ready to launch without limits.</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📦</div>
+                    <h3>Unlimited Digital Products</h3>
+                    <p>Create as many digital products as you want, each set up for instant, hands-free delivery.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Unlimited Sales Pages</h3>
+                    <p>Create unlimited sales pages, each automatically linked to a product and usable outside your funnels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">✅</div>
+                    <h3>Unlimited Confirmation Pages</h3>
+                    <p>Build unlimited confirmation pages with the flexibility to use them outside your funnels.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⬆️</div>
+                    <h3>Unlimited Upsells & Downsells</h3>
+                    <p>Create unlimited upsells and downsells, each with its own URL that can be used anywhere.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📑</div>
+                    <h3>Unlimited Misc Pages</h3>
+                    <p>Create as many misc pages as you need for anything that doesn't fit the funnel structure.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h3>Unlimited Order Forms</h3>
+                    <p>Build unlimited order forms that work seamlessly inside funnels or as standalone pages.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🧩</div>
+                    <h3>Drag-n-Drop Funnels</h3>
+                    <p>Build funnels in under 2 minutes with our easy drag-n-drop editor. Create as many as you want.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🔬</div>
+                    <h3>Built-In Split Testing</h3>
+                    <p>Easily split test your offers, with Mintbird saving your test history so you always know what worked best.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💵</div>
+                    <h3>Bump Offer Library</h3>
+                    <p>Create unlimited bump offers with simple point-and-click setup, then drop them into any page or funnel.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>100 Stunning Templates</h3>
+                    <p>Designed by Justin Opay of Pixel Media — 100 professionally built sales page templates that look amazing.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Global Statistics</h3>
+                    <p>Easily track all leads, sales, and order data with a built-in tagging system for perfect deliverability.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎟️</div>
+                    <h3>Coupon Code Library</h3>
+                    <p>Create unlimited coupon codes, set them for auto or manual delivery, and use them anywhere.</p>
+                </div>
+            </div>
+
+            <div class="features-grid mt-40">
+                <div class="feature-card">
+                    <div class="icon">🔢</div>
+                    <h3>1-Step & 2-Step Order Forms</h3>
+                    <p>Instantly add lead-capturing order forms to your pages with simple customization.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🚀</div>
+                    <h3>Conversion Boosters</h3>
+                    <p>Add special discounts, dime sales, and time sales to maximize order form conversions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💳</div>
+                    <h3>Payment Plans</h3>
+                    <p>Easily set up payment plans and subscriptions, then reuse them across your products.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🌍</div>
+                    <h3>Multiple Currencies</h3>
+                    <p>Quickly add and support currencies outside the USA for your products.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📍</div>
+                    <h3>Tracking Scripts</h3>
+                    <p>Easily add tracking scripts to all your pages and funnels, with each script counted individually.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📲</div>
+                    <h3>Conversion API</h3>
+                    <p>Built-in Facebook CAPI automatically sends your sales data back to Facebook seamlessly.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Mintbird Works</h2>
+                <p>It's The <strong>Lego Builder</strong> Of All Systems! You've never seen a page builder that goes together like this.</p>
+            </div>
+
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h3>Create The Sales Page</h3>
+                    <p>Build a stunning sales page in minutes — no tech skills required.</p>
+                    <ul>
+                        <li>Choose from high-converting templates or start from scratch</li>
+                        <li>AI instantly builds out your page design and content</li>
+                        <li>Your new page connects to your funnel automatically</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h3>Create The Upsell/Downsell</h3>
+                    <p>Build upsells and downsells just like your main sales page.</p>
+                    <ul>
+                        <li>Clone your existing sales page to use as an upsell</li>
+                        <li>Choose from proven, high-converting templates</li>
+                        <li>Pull them into your funnel in seconds</li>
+                    </ul>
+                </div>
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h3>Build Your Funnel</h3>
+                    <p>Your funnel is fully versatile — just drag and drop.</p>
+                    <ul>
+                        <li>Simple, intuitive drag-and-drop funnel builder</li>
+                        <li>You can't break the funnel — it's bulletproof</li>
+                        <li>Funnel is structured step-by-step, never out of order</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 2 Minute Funnels -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="split-section">
+                <div class="split-content">
+                    <h2>Build a Funnel In Under 2 Minutes!</h2>
+                    <h3>Drag N' Drop Funnels</h3>
+                    <p><strong>Anybody can build a funnel without anything breaking — BULLETPROOF!</strong></p>
+                    <p>Building a funnel has never been this simple — everything connects instantly. You'll see your pages come to life the moment you drop them in.</p>
+                    <ul>
+                        <li>Choose the step you want to set up</li>
+                        <li>Open the menu to pick from your page library</li>
+                        <li>Instantly preview the page you're adding</li>
+                        <li>The software keeps everything in perfect order</li>
+                    </ul>
+                </div>
+                <div class="split-image">🔀</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats & Split Testing -->
+    <section>
+        <div class="container">
+            <div class="split-section">
+                <div class="split-image">📊</div>
+                <div class="split-content">
+                    <h2>Easy To Read Stats</h2>
+                    <h3>Know What's Working</h3>
+                    <p>Instantly see what's driving your sales, opt-ins, and conversions — all in one simple dashboard.</p>
+                    <ul>
+                        <li>Track earnings per click and average cart value with pinpoint accuracy</li>
+                        <li>See which upsells and pages convert the highest</li>
+                        <li>Compare funnel steps side-by-side to identify bottlenecks</li>
+                        <li>Make data-driven decisions without needing third-party tools</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="split-section mt-60" style="direction:rtl;">
+                <div class="split-content" style="direction:ltr;">
+                    <h2>Never Been Easier To Find The Winner!</h2>
+                    <h3>Easy Split Testing</h3>
+                    <p>Test, track, and improve every step of your funnel in seconds. Find your top-performing pages fast — no more guessing.</p>
+                    <ul>
+                        <li>Flip a switch to split test any step inside your funnel instantly</li>
+                        <li>Instantly see winners vs. losers — green for winners, red for underperformers</li>
+                        <li>Access all past split test data so you always know what worked best</li>
+                        <li>Add notes to each variation and record your results</li>
+                    </ul>
+                </div>
+                <div class="split-image" style="direction:ltr;">🔬</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upgrade to Platinum -->
+    <section class="section-dark" id="modules">
+        <div class="container">
+            <div class="section-header">
+                <h2>Upgrade To <span>Platinum!</span></h2>
+                <p>You Get Everything Above And Everything Listed Below!</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mintbird Pro Module -->
+    <div class="module-section section-dark">
+        <div class="container">
+            <div class="module-header">
+                <h2>🚀 Mintbird Pro</h2>
+                <p>Built for sellers who want to go beyond digital products. Power physical product sales too.</p>
+            </div>
+            <div class="module-features">
+                <div class="module-feature">
+                    <div class="icon">📦</div>
+                    <h4>Unlimited Physical Products</h4>
+                    <p>Sell hats, mugs, t-shirts, and more with no limits.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">⏱️</div>
+                    <h4>Timer Offers</h4>
+                    <p>Create powerful deadline-driven offers to boost urgency and conversions.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">📧</div>
+                    <h4>Snippet Delivery</h4>
+                    <p>Send a single email that delivers all products purchased in your funnel.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🎯</div>
+                    <h4>Front-End Offers</h4>
+                    <p>Add extra front-end offers to your high-performing funnels.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🎨</div>
+                    <h4>100 Total Templates</h4>
+                    <p>Unlock 100 professionally designed templates by the Pixabuild team.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🚚</div>
+                    <h4>ShipStation Integration</h4>
+                    <p>Seamlessly process and manage physical product orders.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Multi-Client Module -->
+    <div class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <h2>👥 Mintbird Multi-Client</h2>
+                <p>Add unlimited clients, give them Pro access, manage with one click, charge what you want — keep 100% of profits.</p>
+            </div>
+            <div class="module-features">
+                <div class="module-feature">
+                    <div class="icon">∞</div>
+                    <h4>Add Unlimited Clients</h4>
+                    <p>No cap on growth. Bring on as many clients as you want.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">⭐</div>
+                    <h4>Clients Get Pro Access</h4>
+                    <p>Every client gets the full Pro version of Mintbird automatically.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🔑</div>
+                    <h4>One-Click Login</h4>
+                    <p>Instantly log into any client's account with a single click.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">📋</div>
+                    <h4>Built-In CRM</h4>
+                    <p>Each client gets their own GC CRM automatically connected.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">💵</div>
+                    <h4>Set Your Own Prices</h4>
+                    <p>Complete control of pricing. 100% revenue stays with you.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">📦</div>
+                    <h4>Package Into Services</h4>
+                    <p>Bundle Mintbird into your own service offers for higher profits.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Ad Suite Module -->
+    <div class="module-section section-dark">
+        <div class="container">
+            <div class="module-header">
+                <h2>📊 Mintbird Ad Suite</h2>
+                <p>Connect to Meta, pull real ad stats, compare with conversions, and forecast future results.</p>
+            </div>
+            <div class="module-features">
+                <div class="module-feature">
+                    <div class="icon">📈</div>
+                    <h4>Unlimited Campaigns</h4>
+                    <p>Create as many ad campaigns as you want without limits.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">📲</div>
+                    <h4>Real Stats from Meta & Google</h4>
+                    <p>Connect directly to get the most accurate performance data.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🔀</div>
+                    <h4>Track Your Entire Funnel</h4>
+                    <p>Compare ad data with funnel stats to see the full picture.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">⚡</div>
+                    <h4>Key Stats Instantly</h4>
+                    <p>Know your profit per customer, ROAS, and overall profit instantly.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🗺️</div>
+                    <h4>Forecast & Funnel Maps</h4>
+                    <p>Map out dream scenarios using existing funnels and save as plans.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🔔</div>
+                    <h4>Smart Alerts</h4>
+                    <p>Get alerts for critical metrics so you can act fast.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Partner Program Module -->
+    <div class="module-section">
+        <div class="container">
+            <div class="module-header">
+                <h2>🤝 Mintbird Partner Program</h2>
+                <p>Turn your customers into affiliates. Built-in affiliate management made easy.</p>
+            </div>
+            <div class="module-features">
+                <div class="module-feature">
+                    <div class="icon">∞</div>
+                    <h4>Unlimited Accounts</h4>
+                    <p>Add as many partner programs as you choose to your account.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🎨</div>
+                    <h4>Attractive Dashboard</h4>
+                    <p>Beautiful partner dashboard with one-click copy for affiliate links.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🔗</div>
+                    <h4>Add Unlimited Offers</h4>
+                    <p>Easily pull in your links for people to promote.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">🍪</div>
+                    <h4>True Cookie Program</h4>
+                    <p>Affiliates get paid when their referred leads purchase.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">💰</div>
+                    <h4>Commissions at All Levels</h4>
+                    <p>Set commissions for one-time, recurring, and special promotions.</p>
+                </div>
+                <div class="module-feature">
+                    <div class="icon">💳</div>
+                    <h4>Simple Payments</h4>
+                    <p>Easy calculation and payout through our batch system.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- 7-Day Workshop Bonus -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">🎁 Special Platinum Bonus</div>
+                <h2>7-Day Mintbird Build Your Offer Workshop</h2>
+                <p>As an added bonus, you're also getting access to our "7-Day Mintbird Workshop" — where we'll build out your entire offer and funnel LIVE during the call!</p>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">⚙️</div>
+                    <h3>Get Set Up & Connect Payments</h3>
+                    <p>Make sure the niche has real demand, proven market, and strong profit potential.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>Create Your Branding</h3>
+                    <p>Create a unique and memorable brand identity that stands out in the market.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">💰</div>
+                    <h3>Monetization Plan</h3>
+                    <p>Develop a strategic plan that outlines exactly how you'll generate revenue and scale.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🧠</div>
+                    <h3>Create Your Expert</h3>
+                    <p>Design, train, and optimize your expert AI assistant for intelligent interactions.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🤖</div>
+                    <h3>Build Your Chatbot</h3>
+                    <p>Build, customize, and launch your chatbot from the ground up.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📧</div>
+                    <h3>Setup Welcome Gate</h3>
+                    <p>Capture contact info and automatically send it to your autoresponder.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📱</div>
+                    <h3>Setup Your Socials</h3>
+                    <p>Set up all three Meta properties and get your Facebook account verified.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🏷️</div>
+                    <h3>Setup Bulk Tagging</h3>
+                    <p>Ensure bots are properly tagged for automated bulk training.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📝</div>
+                    <h3>Start Posting</h3>
+                    <p>Set up Instagram to receive daily hook posts designed to generate engagement.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Global Integrations Bonus -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <div class="badge">💎 $1,000 Bonus</div>
+                <h2>Global Integrations</h2>
+                <p>Brand new technology that handles all integrations from a single source. Log in once and handle tags, integrations, and followup from a single panel — no techy setup, newbie friendly!</p>
+            </div>
+            <div class="split-image" style="max-width:600px;margin:0 auto;height:300px;">🔗</div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="icon">🛡️</div>
+                <div>
+                    <h2>30-Day No Questions Asked Money Back Guarantee</h2>
+                    <p>Let's be real — when you finally see how fast Mintbird builds a funnel, you're not going to want to use anything else. In minutes, you'll be creating gorgeous sales pages, connecting payments, and stacking upsells like a pro. Still, your purchase is backed by our 30-Day No-Questions-Asked Guarantee. If you're not completely obsessed within 30 days, we'll refund every penny.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Full Pricing Section -->
+    <section id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Here's Everything You're Getting with <span>Mintbird Platinum</span></h2>
+            </div>
+
+            <div class="value-stack">
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Unlimited Funnels & Pages</h4>
+                        <p>Create as many sales pages, upsells, downsells, and order forms as you want.</p>
+                    </div>
+                    <span class="price">$997 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Unlimited Offers & Coupons</h4>
+                        <p>Build and customize unlimited offers, bump sales, and coupon codes.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Unlimited Timers & Conversion Tools</h4>
+                        <p>Add scarcity and urgency to every page with countdown timers.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Done-For-You Templates</h4>
+                        <p>Beautifully crafted templates for funnels, pages, and checkouts.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Real-Time Analytics Dashboard</h4>
+                        <p>Instantly track clicks, sales, and conversions with one clean dashboard.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Exclusive Platinum Access</h4>
+                        <p>Top-tier support, early feature access, and Platinum-only upgrades.</p>
+                    </div>
+                    <span class="price">$997 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Multi-Client Manager</h4>
+                        <p>Manage unlimited clients or brands from one login.</p>
+                    </div>
+                    <span class="price">$997 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Mintbird Ad Suite</h4>
+                        <p>Install and manage pixels across funnels and track key events.</p>
+                    </div>
+                    <span class="price">$997 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Mintbird Partner Program</h4>
+                        <p>Turn your pages and offers into affiliate-ready campaigns.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>Global Integrations Hub</h4>
+                        <p>Connect with your favorite CRMs, email tools, and third-party apps.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-item">
+                    <div class="check">✓</div>
+                    <div class="info">
+                        <h4>7-Day Mintbird Workshop</h4>
+                        <p>Chad personally helps you go from offer to completed funnel in 7 days.</p>
+                    </div>
+                    <span class="price">$497 Value</span>
+                </div>
+                <div class="value-total">
+                    <span>Total Value:</span>
+                    <span>$6,970.00</span>
+                </div>
+            </div>
+
+            <div class="pricing-box">
+                <h3>Mintbird Platinum Edition</h3>
+                <div class="original">$1,997</div>
+                <div class="current">$997</div>
+                <div class="savings">You Save $1,000 Today — 50% OFF!</div>
+                <a href="https://www.jvzoo.com/b/113823/424211/1" class="btn-primary mt-40">
+                    Get Mintbird Platinum Now
+                    <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+                </a>
+                <p style="margin-top:20px;color:var(--gray);">One-time payment • Lifetime access • 30-day guarantee</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section-dark">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">What is Mintbird?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Mintbird is an all-in-one funnel and sales page builder designed to be the fastest and easiest on the market. Create unlimited pages, funnels, upsells, and more — all with drag-and-drop simplicity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Do I need any tech or design skills?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Absolutely not. If you can drag and drop, you can build with Mintbird. Our templates and AI assistance make it possible for complete beginners to create professional funnels.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Does Mintbird connect with my payment gateways?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes! Mintbird integrates with Stripe, PayPal, and other major payment processors. Setup takes just a few clicks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Are templates included?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes — you get access to 100+ professionally designed templates for sales pages, upsells, downsells, and complete funnels. All designed by the Pixabuild team.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">How fast can I build my first funnel?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Under 2 minutes. Watch the demo to see it in action. Our drag-and-drop system makes it incredibly fast to go from idea to live funnel.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Can I integrate Mintbird with my existing tools?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes! The Global Integrations Hub connects Mintbird with 100+ CRMs, email tools, and third-party apps with just a few clicks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">What kind of support do I get?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Platinum members get top-tier support, early feature access, and exclusive Platinum-only upgrades. Plus you get the 7-Day Workshop where Chad personally guides you.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">Is there a guarantee?<span>+</span></button>
+                    <div class="faq-answer">
+                        <p>Yes! You get a full 30-day money-back guarantee. Try Mintbird risk-free and if it's not for you, we'll refund every penny — no questions asked.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Read What Real Users Are Saying About Mintbird</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"I've been using Mintbird for about 6 months now. After using Mintbird, all I can say is WOW! Mintbird is more intuitive than any website builder that I ever used. As great as Mintbird is today, you will be blown away by what's coming in the future. This one is a no brainer!"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">PG</div>
+                        <div class="name">Paul Graden</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"What makes Mintbird so special? Ease of use — very little learning curve. It has OfferMint that allows you to go from idea to market in less than an hour. And it's modular — you can mix and match each piece. No other funnel builder allows you to do that!"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">CW</div>
+                        <div class="name">Curtiss Witt</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I was an original beta tester for Mintbird. I've used a lot of different funnel and page builders, and Mintbird is by far the EASIEST and FASTEST I've ever used."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">CK</div>
+                        <div class="name">Courtney Kostelecky</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Used all of the well known funnel builders and they were both complex and drained the bank, especially for newbies. I turn to Mintbird when preparing for a launch or helping a client. So fast and easy!"</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">RB</div>
+                        <div class="name">Robert Balala</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I've been running ads for 6-8 figure clients over 12 years and Mintbird has quickly become one of my favorite tools. It's super intuitive, incredibly fast to set up. Absolute game changer for agencies."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">RV</div>
+                        <div class="name">Rash Vin</div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Mintbird is truly a game-changer. It is a behemoth in every sense. There's simply nothing else like it. With Mintbird, creating stunning, effective pages for any business need is effortless."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">CS</div>
+                        <div class="name">Carol Santella</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-dark" style="padding:120px 0;">
+        <div class="container text-center">
+            <h2 style="font-size:clamp(2rem,5vw,3.5rem);font-weight:900;margin-bottom:20px;">The Choice Is Yours.</h2>
+            <p style="font-size:1.2rem;color:var(--light-gray);max-width:700px;margin:0 auto 40px;">Lock in Mintbird Platinum today and get the software, the workshop, all future updates, and OfferMint 2.0 — all for one price.</p>
+            <a href="https://www.jvzoo.com/b/113823/424211/1" class="btn-primary">
+                Get Mintbird Platinum — $997
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <p style="margin-top:20px;color:var(--gray);">I've applied a $1,000 coupon for you 🎁</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="logo">🐦 Mintbird</div>
+            <p>© 2026 Mintbird. All rights reserved.</p>
+            <div>
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+                <a href="#">Support</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!isActive) item.classList.add('active');
+            });
+        });
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            });
+        });
+    </script>
+</body>
+</html>

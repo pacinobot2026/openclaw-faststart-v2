@@ -1,0 +1,70 @@
+private function buildPrompt(array $input): string
+{
+    $fontList = implode(', ', $this->getAvailableFonts());
+    
+    return <<<PROMPT
+You are a premium landing page designer. Generate 12 design variations that are visually interesting AND conversion-focused. Think: high-end DTC brands, modern SaaS, premium newsletters.
+
+BALANCE: Creative personality + Professional execution
+
+STYLE DIRECTIONS (mix these):
+1. EDITORIAL - Magazine-style, bold typography, sophisticated color pairings
+2. DTC BRAND - Direct-to-consumer vibes (Glossier, Away, Casper aesthetic)
+3. MODERN SAAS - Clean but with character (Notion, Linear, Figma style)
+4. PREMIUM BOLD - Strong colors that pop without being neon (burnt orange, deep teal, mustard)
+5. WARM INVITING - Earth tones, approachable, human feel
+6. MINIMAL EDGE - Lots of whitespace with one bold accent
+7. CREATIVE PRO - Artistic but restrained (design agency aesthetic)
+8. RETRO MODERN - 70s inspired colors (mustard, avocado, rust) done tastefully
+9. MOODY ELEGANT - Dark, rich, sophisticated (think: whiskey brand, luxury hotel)
+10. FRESH BOLD - Vibrant but mature (coral, mint, navy - not hot pink)
+11. CRAFT ORIENTED - Artisan feel, textured colors, handmade aesthetic
+12. TECH FORWARD - Modern gradients, deep colors, futuristic but grounded
+
+COLOR RULES:
+✅ DO USE: Burnt orange, deep teal, mustard yellow, sage green, dusty rose, navy, charcoal, cream, terracotta, olive, rust, coral (muted), slate blue, warm beige
+❌ DON'T USE: Neon green, hot pink, electric blue, rainbow gradients, pure black on neon, glow effects
+
+NAMING:
+Give each design a distinctive name that suggests the vibe without being cheesy.
+
+GOOD NAMES:
+- "Editorial Cream" (warm paper tones, bold type)
+- "Burnt Orange Bold" (strong but sophisticated)
+- "Deep Teal Pro" (rich, modern, confident)
+- "Mustard Retro" (70s inspired, tasteful)
+- "Dusty Rose Soft" (muted, elegant, feminine)
+- "Sage & Cream" (natural, calm, organic)
+- "Navy Night" (deep, trustworthy, premium)
+- "Terracotta Warm" (earthy, inviting, grounded)
+- "Charcoal Edge" (dark, modern, sleek)
+- "Coral Pop" (vibrant but mature)
+- "Olive Ground" (natural, steady, authentic)
+- "Rust & Navy" (bold pairing, confident)
+
+BAD NAMES (avoid):
+- "Electric Vibes" ❌
+- "Neon Dreams" ❌
+- "Rainbow Burst" ❌
+- "Cyber Punk" ❌
+- "Galaxy Glow" ❌
+
+DESIGN RULES:
+- Headlines: NO background bars/shapes. Use font weight, size, and color for emphasis.
+- Buttons: Clean, simple. Gradient OK if subtle (2 colors max, 15-30° angle). NO glow effects.
+- Backgrounds: Solid OR subtle gradient. Mesh gradients OK if soft and sophisticated.
+- Contrast: Must be readable. Dark text on light, light text on dark.
+- Personality: Each design should feel DISTINCT from the others. Different color philosophies.
+
+TECHNICAL:
+- Colors: 7-char hex (#RRGGBB)
+- Fonts: {$fontList}
+- Headline: 36-44px
+- Subheadline: 15-18px
+- Button: 16-20px
+
+OUTPUT: JSON with "variations" array. 12 objects with complete style properties.
+
+Make them interesting enough to stand out, professional enough to convert.
+PROMPT;
+}

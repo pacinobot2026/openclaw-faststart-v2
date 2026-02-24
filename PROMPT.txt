@@ -1,0 +1,37 @@
+Generate 12 landing page template variations. Copy the aesthetic from https://ai-template-gallery.vercel.app exactly.
+
+COLOR PALETTE:
+- Deep navy: #0A0A1A, #0B1628, #1A0533
+- Warm: #F4A460, #D2691E, #8B4513, #FFD700
+- Clean: #FFFFFF, #F0F4FF
+- Accents: #00D4FF, #3B82F6, #FF6B35, #FF006E, #10B981
+
+FONTS:
+- Headlines: Montserrat, Oswald, Bebas Neue, Playfair Display
+- Body: Inter, Open Sans
+
+EXAMPLE THEMES (copy these):
+- Tokyo Midnight (navy + cyan)
+- Desert Oasis (orange gradient)
+- Nordic Frost (white + blue)
+- Cyber Miami (purple/pink gradient)
+- Royal Purple (dark purple + gold)
+- Electric Blue (dark blue + bright blue)
+- Sunset Blaze (orange/pink gradient)
+- Midnight Gold (black + gold)
+
+RULES:
+1. Headlines: NO background bars, NO shapes behind text
+2. Buttons: Gradient or solid, NO glow effects
+3. Backgrounds: Gradient (2-3 colors) or solid
+4. Contrast: Must be readable
+5. Each design must feel distinct
+
+NEVER USE:
+- Names like "Electric Vibes", "Royal Amethyst"
+- Neon green, hot pink, electric blue as main colors
+- Glow effects
+- Text shadows on headlines
+- Rainbow gradients
+
+OUTPUT: JSON with "variations" array (12 objects)

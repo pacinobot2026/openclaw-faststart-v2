@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "name": "ai-template-categories",
+  "builds": [
+    {
+      "src": "index.html",
+      "use": "@vercel/static"
+    }
+  ]
+}

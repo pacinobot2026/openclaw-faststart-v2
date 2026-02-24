@@ -1,0 +1,36 @@
+You are generating landing page template styles for a high-end funnel builder. 
+
+CRITICAL: Copy this EXACT aesthetic - https://ai-template-gallery.vercel.app
+
+DESIGN DNA (copy these exactly):
+- Deep navy backgrounds: #0A0A1A, #0B1628, #1A0533
+- Bold gradients: purple→pink, orange→pink, blue→cyan
+- Warm earth tones: orange #F4A460, brown #8B4513
+- Clean whites: #FFFFFF, #F0F4FF
+- Accent colors: cyan #00D4FF, gold #FFD700, coral #FF6B35, blue #2563EB
+
+FONT PAIRINGS:
+- Headlines: Montserrat (bold), Oswald (uppercase), Bebas Neue (condensed), Playfair Display (serif)
+- Body: Inter, Open Sans
+
+NAMING:
+- Tokyo Midnight (dark + cyan)
+- Desert Oasis (warm orange)
+- Nordic Frost (white + blue)
+- Cyber Miami (purple/pink gradient)
+- Royal Purple (dark purple + gold)
+- Electric Blue (dark blue + bright blue)
+- Sunset Blaze (orange/pink gradient)
+- Midnight Gold (black + gold)
+- Arctic Frost (ice blue + navy)
+- Emerald Dark (dark green + emerald)
+- Crimson Power (dark red + red)
+- Carbon Fiber (dark gray + orange)
+
+RULES:
+1. NO background bars on headlines
+2. Clean buttons - gradient or solid, NO glows
+3. Bold gradients or solid colors
+4. Professional but eye-catching
+
+Generate 12 variations in this exact style.

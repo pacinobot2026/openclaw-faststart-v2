@@ -1,0 +1,1597 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Template Gallery - 12 Unique Designs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;700;900&family=Bebas+Neue&family=Oswald:wght@400;700&family=Poppins:wght@300;400;700;800&family=Raleway:wght@400;700;900&family=Roboto+Condensed:wght@400;700&family=Alfa+Slab+One&family=Righteous&family=Teko:wght@400;600&family=Crimson+Text:wght@400;700&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0f0f1a; 
+            font-family: 'Open Sans', sans-serif; 
+            padding: 40px 20px;
+            color: white;
+        }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .browser-window {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+        }
+        .browser-chrome {
+            background: #252538;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .url-bar {
+            flex: 1;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+        }
+        .design-label {
+            background: #252538;
+            padding: 12px 16px;
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .template {
+            padding: 60px 40px;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .vibe-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            opacity: 0.6;
+        }
+        .headline {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .headline span { color: var(--accent); }
+        .subheadline {
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        .form-container {
+            max-width: 380px;
+            margin: 0 auto;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            outline: none;
+            transition: all 0.3s;
+        }
+        input[type="email"]::placeholder { opacity: 0.5; }
+        button {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover { transform: translateY(-2px); }
+        .privacy {
+            font-size: 11px;
+            margin-top: 18px;
+            opacity: 0.5;
+        }
+
+        /* DESIGN 1: Tokyo Midnight */
+        .tokyo {
+            background: linear-gradient(180deg, #0A0A1A 0%, #1A1A3A 100%);
+            --accent: #00D4FF;
+        }
+        .tokyo .headline { font-family: 'Montserrat', sans-serif; color: #FFFFFF; }
+        .tokyo .subheadline { color: #A0A8C8; }
+        .tokyo button {
+            background: linear-gradient(180deg, #00D4FF 0%, #0099CC 100%);
+            color: white;
+        }
+        .tokyo input[type="email"]:focus { border-color: #00D4FF; }
+
+        /* DESIGN 2: Desert Oasis */
+        .desert {
+            background: linear-gradient(135deg, #F4A460 0%, #D2691E 50%, #8B4513 100%);
+            --accent: #FFD700;
+        }
+        .desert .headline { font-family: 'Playfair Display', serif; color: #FFF8DC; }
+        .desert .subheadline { color: #FFE4C4; }
+        .desert button {
+            background: #228B22;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .desert input[type="email"] { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); }
+
+        /* DESIGN 3: Nordic Frost */
+        .nordic {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 100%);
+            --accent: #3B82F6;
+        }
+        .nordic .headline { font-family: 'Inter', sans-serif; color: #0F172A; }
+        .nordic .subheadline { color: #475569; }
+        .nordic button {
+            background: #3B82F6;
+            color: white;
+        }
+        .nordic input[type="email"] { 
+            background: white; 
+            border-color: #E2E8F0; 
+            color: #0F172A;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nordic input[type="email"]::placeholder { color: #94A3B8; }
+        .nordic .privacy { color: #64748B; }
+
+        /* DESIGN 4: Cyber Miami */
+        .miami {
+            background: linear-gradient(135deg, #FF006E 0%, #8338EC 50%, #3A86FF 100%);
+            --accent: #FFBE0B;
+        }
+        .miami .headline { 
+            font-family: 'Bebas Neue', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        .miami .subheadline { color: #E0E7FF; }
+        .miami button {
+            background: linear-gradient(90deg, #FF006E 0%, #FFBE0B 100%);
+            color: white;
+        }
+
+        /* DESIGN 5: Royal Purple */
+        .royal {
+            background: linear-gradient(180deg, #1A0533 0%, #2D1B69 100%);
+            --accent: #FFD700;
+        }
+        .royal .headline { font-family: 'Playfair Display', serif; color: #F5F5F5; }
+        .royal .subheadline { color: #C0B0D0; }
+        .royal button {
+            background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
+            color: #1A0533;
+            font-weight: 800;
+        }
+
+        /* DESIGN 6: Electric Blue */
+        .electric {
+            background: linear-gradient(180deg, #0B1628 0%, #162D50 100%);
+            --accent: #60A5FA;
+        }
+        .electric .headline { font-family: 'Oswald', sans-serif; color: #FFFFFF; text-transform: uppercase; }
+        .electric .subheadline { color: #93C5FD; }
+        .electric button {
+            background: #2563EB;
+            color: white;
+        }
+
+        /* DESIGN 7: Sunset Blaze */
+        .sunset {
+            background: linear-gradient(135deg, #FF6B35 0%, #F72585 100%);
+            --accent: #FFE4E1;
+        }
+        .sunset .headline { font-family: 'Poppins', sans-serif; color: #FFFFFF; }
+        .sunset .subheadline { color: #FFE4E1; }
+        .sunset button {
+            background: #1A1A2E;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* DESIGN 8: Midnight Gold */
+        .midnight {
+            background: linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%);
+            --accent: #D4AF37;
+        }
+        .midnight .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #D4AF37; 
+        }
+        .midnight .subheadline { color: #A09060; }
+        .midnight button {
+            background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+            color: #0A0A0A;
+            font-weight: 800;
+        }
+
+        /* DESIGN 9: Arctic Frost */
+        .arctic {
+            background: linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 100%);
+            --accent: #0284C7;
+        }
+        .arctic .headline { font-family: 'Inter', sans-serif; color: #0C4A6E; }
+        .arctic .subheadline { color: #0369A1; }
+        .arctic button {
+            background: #0EA5E9;
+            color: white;
+        }
+        .arctic input[type="email"] { background: white; border-color: #BAE6FD; color: #0C4A6E; }
+
+        /* DESIGN 10: Emerald Dark */
+        .emerald {
+            background: linear-gradient(180deg, #0A1A0F 0%, #0F2A18 100%);
+            --accent: #34D399;
+        }
+        .emerald .headline { font-family: 'Oswald', sans-serif; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+        .emerald .subheadline { color: #6EE7B7; }
+        .emerald button {
+            background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+            color: white;
+        }
+
+        /* DESIGN 11: Crimson Power */
+        .crimson {
+            background: linear-gradient(180deg, #1A0A0A 0%, #2D0A0A 100%);
+            --accent: #FCA5A5;
+        }
+        .crimson .headline { 
+            font-family: 'Bebas Neue', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 46px;
+        }
+        .crimson .subheadline { color: #FCA5A5; }
+        .crimson button {
+            background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%);
+            color: white;
+        }
+
+        /* DESIGN 12: Carbon Fiber */
+        .carbon {
+            background: linear-gradient(180deg, #111111 0%, #1A1A1A 100%);
+            --accent: #FF6600;
+        }
+        .carbon .headline { 
+            font-family: 'Oswald', sans-serif; 
+            color: #FFFFFF; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .carbon .subheadline { color: #AAAAAA; }
+        .carbon button {
+            background: linear-gradient(90deg, #FF6600 0%, #FF4500 100%);
+            color: white;
+            font-weight: 800;
+        }
+
+        /* DESIGN 13: Traditional Marketing */
+        .traditional {
+            background: #FFFFFF;
+            --accent: #CC0000;
+        }
+        .traditional .headline { 
+            font-family: 'Georgia', serif; 
+            color: #CC0000; 
+            font-size: 38px;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+        .traditional .subheadline { 
+            color: #333333; 
+            background: #FFFF99;
+            padding: 10px;
+            display: inline-block;
+            font-weight: 600;
+        }
+        .traditional button {
+            background: #FF6600;
+            color: white;
+            border: 3px solid #CC0000;
+            font-family: 'Impact', sans-serif;
+            font-size: 20px;
+        }
+        .traditional input[type="email"] { 
+            background: #FFFACD; 
+            border: 2px solid #CC0000; 
+            color: #333;
+        }
+        .traditional .privacy { color: #666; }
+        .traditional .vibe-tag { color: #CC0000; font-weight: bold; }
+
+        /* DESIGN 14: Social Media Feel */
+        .social {
+            background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
+            --accent: #FFFFFF;
+        }
+        .social .headline { 
+            font-family: 'Poppins', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 38px;
+            font-weight: 700;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+        .social .subheadline { 
+            color: #FFFFFF; 
+            background: rgba(255,255,255,0.2);
+            padding: 10px 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .social button {
+            background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D);
+            color: white;
+            border-radius: 30px;
+            font-family: 'Poppins', sans-serif;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        }
+        .social input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: none; 
+            color: #333;
+            border-radius: 15px;
+        }
+        .social .privacy { color: rgba(255,255,255,0.8); }
+
+        /* DESIGN 15: Ultra Gradient */
+        .ultragr {
+            background: linear-gradient(45deg, #FF0080, #7928CA, #FF4D4D, #F9CB28, #00C9FF, #00FF94);
+            background-size: 400% 400%;
+            animation: gradientShift 8s ease infinite;
+            --accent: #FFFFFF;
+        }
+        @keyframes gradientShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .ultragr .headline { 
+            font-family: 'Montserrat', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 42px;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.4);
+        }
+        .ultragr .subheadline { 
+            color: #FFFFFF; 
+            text-shadow: 0 2px 10px rgba(0,0,0,0.3);
+            font-weight: 600;
+        }
+        .ultragr button {
+            background: #FFFFFF;
+            color: #7928CA;
+            font-weight: 800;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+        }
+        .ultragr input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: 3px solid white; 
+            color: #333;
+        }
+
+        /* DESIGN 16: Neon Cyberpunk */
+        .cyber {
+            background: linear-gradient(135deg, #0D0221 0%, #1A0A2E 50%, #2D1B4E 100%);
+            --accent: #00F0FF;
+        }
+        .cyber .headline { 
+            font-family: 'Teko', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 52px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            text-shadow: 0 0 20px #00F0FF, 0 0 40px #00F0FF, 0 0 60px #FF00FF;
+        }
+        .cyber .subheadline { 
+            color: #C0A0FF; 
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 14px;
+            letter-spacing: 1px;
+        }
+        .cyber button {
+            background: linear-gradient(90deg, #FF00FF 0%, #00F0FF 100%);
+            color: #000;
+            font-family: 'Teko', sans-serif;
+            font-size: 20px;
+            letter-spacing: 2px;
+        }
+        .cyber input[type="email"] { 
+            background: rgba(0,240,255,0.1); 
+            border: 1px solid #00F0FF; 
+            color: #00F0FF;
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .cyber input[type="email"]::placeholder { color: #00F0FF; opacity: 0.5; }
+
+        /* DESIGN 17: Glassmorphism */
+        .glass {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent: #FFFFFF;
+        }
+        .glass .headline { 
+            font-family: 'Poppins', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 40px;
+            font-weight: 600;
+            text-shadow: 0 2px 20px rgba(0,0,0,0.2);
+        }
+        .glass .subheadline { 
+            color: rgba(255,255,255,0.9); 
+            background: rgba(255,255,255,0.1);
+            padding: 15px 25px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
+        .glass button {
+            background: rgba(255,255,255,0.25);
+            color: white;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            border-radius: 15px;
+        }
+        .glass input[type="email"] { 
+            background: rgba(255,255,255,0.2); 
+            border: 1px solid rgba(255,255,255,0.3); 
+            color: white;
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+        }
+
+        /* DESIGN 18: Cosmic Galaxy */
+        .cosmic {
+            background: radial-gradient(ellipse at top, #1B2735 0%, #090A0F 100%);
+            --accent: #FFD700;
+        }
+        .cosmic .headline { 
+            font-family: 'Righteous', cursive; 
+            color: #FFFFFF; 
+            font-size: 44px;
+            text-shadow: 0 0 20px rgba(255,215,0,0.5), 0 0 40px rgba(138,43,226,0.3);
+        }
+        .cosmic .subheadline { 
+            color: #C0C0FF; 
+            font-family: 'Space Grotesk', sans-serif;
+        }
+        .cosmic button {
+            background: linear-gradient(135deg, #FFD700 0%, #FF6B6B 50%, #8A2BE2 100%);
+            color: #000;
+            font-weight: 800;
+            border-radius: 50px;
+            box-shadow: 0 0 40px rgba(255,215,0,0.4);
+        }
+
+        /* DESIGN 19: Soft Mesh */
+        .circuit {
+            background: 
+                radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 0%, hsla(189,100%,56%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 50%, hsla(340,100%,76%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 50%, hsla(266,100%,76%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0px, transparent 50%),
+                radial-gradient(at 80% 100%, hsla(242,100%,70%,1) 0px, transparent 50%),
+                radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0px, transparent 50%),
+                #f8f9fa;
+            --accent: #6B46C1;
+        }
+        .circuit .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #1a1a2e; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .circuit .subheadline { 
+            color: #4a5568; 
+            font-weight: 500;
+        }
+        .circuit button {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .circuit input[type="email"] { 
+            background: rgba(255,255,255,0.8); 
+            border: 2px solid rgba(102,126,234,0.3); 
+            color: #1a1a2e;
+            border-radius: 12px;
+        }
+
+        /* DESIGN 20: Sunset Boulevard */
+        .matrix {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 25%, #f093fb 50%, #f5576c 75%, #ffd93d 100%);
+            --accent: #FFFFFF;
+        }
+        .matrix .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #FFFFFF; 
+            font-size: 42px;
+            font-weight: 700;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.2);
+        }
+        .matrix .subheadline { 
+            color: rgba(255,255,255,0.95); 
+            font-size: 18px;
+        }
+        .matrix button {
+            background: rgba(255,255,255,0.95);
+            color: #764ba2;
+            font-weight: 700;
+            border-radius: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        .matrix input[type="email"] { 
+            background: rgba(255,255,255,0.9); 
+            border: none; 
+            color: #333;
+            border-radius: 30px;
+        }
+
+        /* DESIGN 21: Aurora Borealis */
+        .aurora {
+            background: linear-gradient(135deg, #0B1026 0%, #2B32B2 50%, #1488CC 100%);
+            --accent: #39FF14;
+        }
+        .aurora .headline { 
+            font-family: 'Raleway', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 40px;
+            font-weight: 300;
+            text-shadow: 0 0 30px rgba(57,255,20,0.5);
+        }
+        .aurora .subheadline { 
+            color: #A0FFA0; 
+        }
+        .aurora button {
+            background: linear-gradient(90deg, #39FF14 0%, #00FF88 100%);
+            color: #000;
+            font-weight: 700;
+            border-radius: 30px;
+            box-shadow: 0 0 30px rgba(57,255,20,0.5);
+        }
+
+        /* DESIGN 22: Holographic */
+        .holographic {
+            background: linear-gradient(135deg, #FF006E 0%, #8338EC 25%, #3A86FF 50%, #06FFB4 75%, #FFBE0B 100%);
+            background-size: 300% 300%;
+            animation: holoShift 6s ease infinite;
+            --accent: #FFFFFF;
+        }
+        @keyframes holoShift {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .holographic .headline { 
+            font-family: 'Poppins', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 40px;
+            font-weight: 700;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.3);
+        }
+        .holographic .subheadline { 
+            color: #FFFFFF; 
+            font-weight: 600;
+        }
+        .holographic button {
+            background: rgba(255,255,255,0.9);
+            color: #8338EC;
+            font-weight: 800;
+        }
+
+        /* DESIGN 23: Retro Wave */
+        .retrowave {
+            background: linear-gradient(180deg, #2B1055 0%, #7597de 50%, #ff0055 100%);
+            --accent: #FFD700;
+        }
+        .retrowave .headline { 
+            font-family: 'Righteous', cursive; 
+            color: #FFFFFF; 
+            font-size: 42px;
+            text-shadow: 3px 3px 0px #FF0055, 6px 6px 0px #2B1055;
+        }
+        .retrowave .subheadline { 
+            color: #FFE4E1; 
+        }
+        .retrowave button {
+            background: linear-gradient(90deg, #FFD700 0%, #FFA500 100%);
+            color: #000;
+            font-weight: 800;
+            box-shadow: 0 0 30px rgba(255,215,0,0.6);
+        }
+
+        /* DESIGN 24: Black Hole - Refined */
+        .blackhole {
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            --accent: #e94560;
+        }
+        .blackhole .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 40px;
+            font-weight: 700;
+        }
+        .blackhole .subheadline { 
+            color: #a0a0b8; 
+        }
+        .blackhole button {
+            background: linear-gradient(135deg, #e94560 0%, #ff6b6b 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+
+        /* DESIGN 25: Ocean Breeze */
+        .oceanbreeze {
+            background: linear-gradient(180deg, #e0f7fa 0%, #b2ebf2 50%, #80deea 100%);
+            --accent: #006064;
+        }
+        .oceanbreeze .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #006064; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .oceanbreeze .subheadline { 
+            color: #00838f; 
+        }
+        .oceanbreeze button {
+            background: linear-gradient(135deg, #00acc1 0%, #006064 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .oceanbreeze input[type="email"] { 
+            background: rgba(255,255,255,0.9); 
+            border: 2px solid rgba(0,172,193,0.3); 
+            color: #006064;
+        }
+
+        /* DESIGN 26: Golden Hour */
+        .goldenhour {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);
+            --accent: #e65100;
+        }
+        .goldenhour .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #bf360c; 
+            font-size: 40px;
+        }
+        .goldenhour .subheadline { 
+            color: #d84315; 
+        }
+        .goldenhour button {
+            background: linear-gradient(135deg, #ff8f00 0%, #ef6c00 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .goldenhour input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: 2px solid rgba(255,143,0,0.3); 
+            color: #e65100;
+        }
+
+        /* DESIGN 27: Berry Smoothie */
+        .berrysmoothie {
+            background: linear-gradient(135deg, #f3e5f5 0%, #e1bee7 50%, #ce93d8 100%);
+            --accent: #6a1b9a;
+        }
+        .berrysmoothie .headline { 
+            font-family: 'Poppins', sans-serif; 
+            color: #4a148c; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .berrysmoothie .subheadline { 
+            color: #6a1b9a; 
+        }
+        .berrysmoothie button {
+            background: linear-gradient(135deg, #8e24aa 0%, #6a1b9a 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .berrysmoothie input[type="email"] { 
+            background: rgba(255,255,255,0.9); 
+            border: 2px solid rgba(142,36,170,0.3); 
+            color: #4a148c;
+        }
+
+        /* DESIGN 28: Cotton Candy */
+        .cottoncandy {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+            --accent: #c2185b;
+        }
+        .cottoncandy .headline { 
+            font-family: 'Poppins', sans-serif; 
+            color: #880e4f; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .cottoncandy .subheadline { 
+            color: #ad1457; 
+        }
+        .cottoncandy button {
+            background: linear-gradient(135deg, #ec407a 0%, #c2185b 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 30px;
+        }
+        .cottoncandy input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: 2px solid rgba(236,64,122,0.3); 
+            color: #880e4f;
+            border-radius: 30px;
+        }
+
+        /* DESIGN 29: Espresso */
+        .espresso {
+            background: linear-gradient(135deg, #3e2723 0%, #4e342e 50%, #5d4037 100%);
+            --accent: #d7ccc8;
+        }
+        .espresso .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #efebe9; 
+            font-size: 40px;
+        }
+        .espresso .subheadline { 
+            color: #d7ccc8; 
+        }
+        .espresso button {
+            background: linear-gradient(135deg, #8d6e63 0%, #6d4c41 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        .espresso input[type="email"] { 
+            background: rgba(255,255,255,0.1); 
+            border: 2px solid rgba(141,110,99,0.5); 
+            color: #efebe9;
+        }
+
+        /* DESIGN 30: Lavender Fields */
+        .lavenderfields {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 50%, #b39ddb 100%);
+            --accent: #4527a0;
+        }
+        .lavenderfields .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #311b92; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .lavenderfields .subheadline { 
+            color: #512da8; 
+        }
+        .lavenderfields button {
+            background: linear-gradient(135deg, #7e57c2 0%, #512da8 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .lavenderfields input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: 2px solid rgba(126,87,194,0.3); 
+            color: #311b92;
+        }
+
+        /* DESIGN 31: Forest Mist */
+        .forestmist {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            --accent: #1b5e20;
+        }
+        .forestmist .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #2e7d32; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .forestmist .subheadline { 
+            color: #388e3c; 
+        }
+        .forestmist button {
+            background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 12px;
+        }
+        .forestmist input[type="email"] { 
+            background: rgba(255,255,255,0.95); 
+            border: 2px solid rgba(67,160,71,0.3); 
+            color: #1b5e20;
+        }
+
+        /* DESIGN 32: Champagne */
+        .champagne {
+            background: linear-gradient(135deg, #fafafa 0%, #f5f5f5 50%, #eeeeee 100%);
+            --accent: #fbc02d;
+        }
+        .champagne .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #424242; 
+            font-size: 40px;
+        }
+        .champagne .subheadline { 
+            color: #616161; 
+        }
+        .champagne button {
+            background: linear-gradient(135deg, #ffd54f 0%, #fbc02d 100%);
+            color: #333;
+            font-weight: 700;
+            border-radius: 30px;
+        }
+        .champagne input[type="email"] { 
+            background: white; 
+            border: 2px solid rgba(251,192,45,0.4); 
+            color: #424242;
+            border-radius: 30px;
+        }
+
+        /* DESIGN 33: Midnight Oil */
+        .midnightoil {
+            background: linear-gradient(135deg, #263238 0%, #37474f 50%, #455a64 100%);
+            --accent: #80cbc4;
+        }
+        .midnightoil .headline { 
+            font-family: 'Inter', sans-serif; 
+            color: #eceff1; 
+            font-size: 38px;
+            font-weight: 700;
+        }
+        .midnightoil .subheadline { 
+            color: #b0bec5; 
+        }
+        .midnightoil button {
+            background: linear-gradient(135deg, #4db6ac 0%, #00897b 100%);
+            color: white;
+            font-weight: 600;
+            border-radius: 8px;
+        }
+        .midnightoil input[type="email"] { 
+            background: rgba(255,255,255,0.1); 
+            border: 2px solid rgba(77,182,172,0.4); 
+            color: #eceff1;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 AI Template Gallery</h1>
+    <p class="subtitle">33 unique designs • Soft gradients & sophisticated colors • No neon</p>
+
+    <div class="gallery">
+        <!-- Tokyo Midnight -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template tokyo">
+                <div class="vibe-tag">Dark Mode SaaS</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Tokyo Midnight</span> <span style="opacity: 0.5;">#00D4FF</span></div>
+        </div>
+
+        <!-- Desert Oasis -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template desert">
+                <div class="vibe-tag">Warm & Organic</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Desert Oasis</span> <span style="opacity: 0.5;">#F4A460</span></div>
+        </div>
+
+        <!-- Nordic Frost -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template nordic">
+                <div class="vibe-tag">Clean & Minimal</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Nordic Frost</span> <span style="opacity: 0.5;">#3B82F6</span></div>
+        </div>
+
+        <!-- Cyber Miami -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template miami">
+                <div class="vibe-tag">Neon & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Cyber Miami</span> <span style="opacity: 0.5;">#FF006E</span></div>
+        </div>
+
+        <!-- Royal Purple -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template royal">
+                <div class="vibe-tag">Luxury & Premium</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Royal Purple</span> <span style="opacity: 0.5;">#FFD700</span></div>
+        </div>
+
+        <!-- Electric Blue -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template electric">
+                <div class="vibe-tag">Energetic & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Electric Blue</span> <span style="opacity: 0.5;">#2563EB</span></div>
+        </div>
+
+        <!-- Sunset Blaze -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template sunset">
+                <div class="vibe-tag">Vibrant & Warm</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Sunset Blaze</span> <span style="opacity: 0.5;">#FF6B35</span></div>
+        </div>
+
+        <!-- Midnight Gold -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template midnight">
+                <div class="vibe-tag">Premium & Exclusive</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Midnight Gold</span> <span style="opacity: 0.5;">#D4AF37</span></div>
+        </div>
+
+        <!-- Arctic Frost -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template arctic">
+                <div class="vibe-tag">Cool & Professional</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Arctic Frost</span> <span style="opacity: 0.5;">#0EA5E9</span></div>
+        </div>
+
+        <!-- Emerald Dark -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template emerald">
+                <div class="vibe-tag">Natural & Fresh</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Emerald Dark</span> <span style="opacity: 0.5;">#10B981</span></div>
+        </div>
+
+        <!-- Crimson Power -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template crimson">
+                <div class="vibe-tag">Urgent & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Crimson Power</span> <span style="opacity: 0.5;">#EF4444</span></div>
+        </div>
+
+        <!-- Carbon Fiber -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template carbon">
+                <div class="vibe-tag">Industrial & Modern</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Carbon Fiber</span> <span style="opacity: 0.5;">#FF6600</span></div>
+        </div>
+
+        <!-- Traditional Marketing -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template traditional">
+                <div class="vibe-tag">★★★ Traditional Direct Response ★★★</div>
+                <h2 class="headline">"Generate <span>Unlimited</span><br>Templates in Seconds"</h2>
+                <p class="subheadline">⚠️ WARNING: Create high-converting landing pages with AI-powered design variations</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email here...">
+                    <button>YES! Give Me Instant Access »</button>
+                </div>
+                <p class="privacy">🔒 Your information is 100% secure and will never be shared</p>
+            </div>
+            <div class="design-label"><span>Traditional Marketing</span> <span style="opacity: 0.5;">#CC0000</span></div>
+        </div>
+
+        <!-- Social Media Feel -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">instagram.com</div>
+            </div>
+            <div class="template social">
+                <div class="vibe-tag">📱 Social Media Aesthetic</div>
+                <h2 class="headline">Generate <span>Unlimited</span> Templates ✨</h2>
+                <p class="subheadline">Create viral-worthy landing pages that match your brand aesthetic 💯</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Drop your email 👇">
+                    <button>Get Access Now 🔥</button>
+                </div>
+                <p class="privacy">🔒 No spam, just good vibes</p>
+            </div>
+            <div class="design-label"><span>Social Media Feel</span> <span style="opacity: 0.5;">Instagram Colors</span></div>
+        </div>
+
+        <!-- Ultra Gradient -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template ultragr">
+                <div class="vibe-tag">🌈 Maximum Gradient Energy</div>
+                <h2 class="headline">Generate <span>Unlimited</span> Templates</h2>
+                <p class="subheadline">Bold, vibrant, unforgettable designs that stand out from the crowd</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Ultra Gradient</span> <span style="opacity: 0.5;">Animated Rainbow</span></div>
+        </div>
+
+        <!-- Neon Cyberpunk -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template cyber">
+                <div class="vibe-tag">⚡ Cyberpunk 2077</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">High-converting designs powered by next-gen AI technology</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your email">
+                    <button>Initialize Access</button>
+                </div>
+                <p class="privacy">Encrypted & Secure. Zero spam protocol.</p>
+            </div>
+            <div class="design-label"><span>Neon Cyberpunk</span> <span style="opacity: 0.5;">Synthwave</span></div>
+        </div>
+
+        <!-- Glassmorphism -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template glass">
+                <div class="vibe-tag">🔮 Glassmorphism</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Ethereal designs with depth and modern sophistication</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Access</button>
+                </div>
+                <p class="privacy">Your data is safe with us. Always.</p>
+            </div>
+            <div class="design-label"><span>Glassmorphism</span> <span style="opacity: 0.5;">Frosted</span></div>
+        </div>
+
+        <!-- Cosmic Galaxy -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template cosmic">
+                <div class="vibe-tag">🌌 Cosmic Galaxy</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Out-of-this-world designs for stellar conversions</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Launch Now</button>
+                </div>
+                <p class="privacy">No spam. We promise on the stars.</p>
+            </div>
+            <div class="design-label"><span>Cosmic Galaxy</span> <span style="opacity: 0.5;">Nebula</span></div>
+        </div>
+
+        <!-- Circuit Board -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template circuit">
+                <div class="vibe-tag">🔌 Circuit Board</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Hardwired for high performance and maximum conversion</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Connect Now</button>
+                </div>
+                <p class="privacy">Secure connection established.</p>
+            </div>
+            <div class="design-label"><span>Soft Mesh</span> <span style="opacity: 0.5;">Mesh Gradient</span></div>
+        </div>
+
+        <!-- Matrix Code -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template matrix">
+                <div class="vibe-tag">💊 Matrix</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Wake up to the reality of effortless design automation</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Take the Red Pill</button>
+                </div>
+                <p class="privacy">Free your mind. No spam ever.</p>
+            </div>
+            <div class="design-label"><span>Sunset Boulevard</span> <span style="opacity: 0.5;">Purple Sunset</span></div>
+        </div>
+
+        <!-- Aurora Borealis -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template aurora">
+                <div class="vibe-tag">🌠 Aurora Borealis</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Dancing lights of creativity meeting conversion science</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Experience Now</button>
+                </div>
+                <p class="privacy">Respect for your inbox. Always.</p>
+            </div>
+            <div class="design-label"><span>Aurora Borealis</span> <span style="opacity: 0.5;">Northern Lights</span></div>
+        </div>
+
+        <!-- Holographic -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template holographic">
+                <div class="vibe-tag">✨ Holographic</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Iridescent designs that shift and shimmer with light</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Unlock Access</button>
+                </div>
+                <p class="privacy">Privacy is our priority. Zero spam.</p>
+            </div>
+            <div class="design-label"><span>Holographic</span> <span style="opacity: 0.5;">Iridescent</span></div>
+        </div>
+
+        <!-- Retro Wave -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template retrowave">
+                <div class="vibe-tag">🌆 Retro Wave</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">80s nostalgia meets modern conversion optimization</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Ride the Wave</button>
+                </div>
+                <p class="privacy">No spam. Totally rad promise.</p>
+            </div>
+            <div class="design-label"><span>Retro Wave</span> <span style="opacity: 0.5;">80s Sunset</span></div>
+        </div>
+
+        <!-- Black Hole -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template blackhole">
+                <div class="vibe-tag">🕳️ Deep Space</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Professional designs that command attention</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Started</button>
+                </div>
+                <p class="privacy">Your privacy is our priority</p>
+            </div>
+            <div class="design-label"><span>Deep Space</span> <span style="opacity: 0.5;">Midnight Purple</span></div>
+        </div>
+
+        <!-- Ocean Breeze -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template oceanbreeze">
+                <div class="vibe-tag">🌊 Ocean Breeze</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Calm, trustworthy designs that convert</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Access</button>
+                </div>
+                <p class="privacy">We respect your inbox. No spam.</p>
+            </div>
+            <div class="design-label"><span>Ocean Breeze</span> <span style="opacity: 0.5;">Soft Blue</span></div>
+        </div>
+
+        <!-- Golden Hour -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template goldenhour">
+                <div class="vibe-tag">🌅 Golden Hour</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Warm, inviting designs that feel like home</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Start Creating</button>
+                </div>
+                <p class="privacy">Your information is safe with us</p>
+            </div>
+            <div class="design-label"><span>Golden Hour</span> <span style="opacity: 0.5;">Warm Tones</span></div>
+        </div>
+
+        <!-- Berry Smoothie -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template berrysmoothie">
+                <div class="vibe-tag">🫐 Berry Smoothie</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Fresh, modern designs with a sweet touch</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Started</button>
+                </div>
+                <p class="privacy">No spam, just great design</p>
+            </div>
+            <div class="design-label"><span>Berry Smoothie</span> <span style="opacity: 0.5;">Berry Tones</span></div>
+        </div>
+
+        <!-- Cotton Candy -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template cottoncandy">
+                <div class="vibe-tag">🍭 Cotton Candy</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Playful, approachable designs that delight</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Create Now</button>
+                </div>
+                <p class="privacy">We keep your data private</p>
+            </div>
+            <div class="design-label"><span>Cotton Candy</span> <span style="opacity: 0.5;">Pastel Pink</span></div>
+        </div>
+
+        <!-- Espresso -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template espresso">
+                <div class="vibe-tag">☕ Espresso</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Rich, sophisticated designs for professionals</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Access</button>
+                </div>
+                <p class="privacy">Your privacy matters to us</p>
+            </div>
+            <div class="design-label"><span>Espresso</span> <span style="opacity: 0.5;">Coffee Tones</span></div>
+        </div>
+
+        <!-- Lavender Fields -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template lavenderfields">
+                <div class="vibe-tag">💜 Lavender Fields</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Calming, elegant designs that inspire trust</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Start Free</button>
+                </div>
+                <p class="privacy">No spam, ever</p>
+            </div>
+            <div class="design-label"><span>Lavender Fields</span> <span style="opacity: 0.5;">Soft Purple</span></div>
+        </div>
+
+        <!-- Forest Mist -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template forestmist">
+                <div class="vibe-tag">🌲 Forest Mist</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Natural, grounded designs that feel authentic</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Started</button>
+                </div>
+                <p class="privacy">We protect your data</p>
+            </div>
+            <div class="design-label"><span>Forest Mist</span> <span style="opacity: 0.5;">Sage Green</span></div>
+        </div>
+
+        <!-- Champagne -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template champagne">
+                <div class="vibe-tag">🥂 Champagne</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Celebratory, premium designs for special moments</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Pop the Cork</button>
+                </div>
+                <p class="privacy">Your information is secure</p>
+            </div>
+            <div class="design-label"><span>Champagne</span> <span style="opacity: 0.5;">Gold & Cream</span></div>
+        </div>
+
+        <!-- Midnight Oil -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template midnightoil">
+                <div class="vibe-tag">🌙 Midnight Oil</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                <p class="subheadline">Deep, focused designs for serious creators</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Start Creating</button>
+                </div>
+                <p class="privacy">We respect your privacy</p>
+            </div>
+            <div class="design-label"><span>Midnight Oil</span> <span style="opacity: 0.5;">Deep Blue</span></div>
+        </div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,502 @@
+WEBVTT
+
+1
+00:00:29.330 --> 00:00:30.800
+M. A. Kafi: Hmm, good evening.
+
+2
+00:00:41.740 --> 00:00:44.980
+Chad Nicely: You have the API docs good now. Ahmad?
+
+3
+00:00:50.230 --> 00:00:50.940
+Chad Nicely: Ahmad?
+
+4
+00:00:50.940 --> 00:00:53.199
+Ammad Sarfraz: Yeah, sorry, I was mute.
+
+5
+00:00:54.750 --> 00:00:56.980
+Chad Nicely: Yeah, do you have the API docs good now?
+
+6
+00:00:57.810 --> 00:00:58.570
+Ammad Sarfraz: Yes?
+
+7
+00:00:59.060 --> 00:01:07.210
+Chad Nicely: Alright, so tomorrow we'll add the newsletter stats, and then we gotta start working on the workflow so that this thing can build a workflow, right?
+
+8
+00:01:07.800 --> 00:01:09.169
+Ammad Sarfraz: Yeah, right, okay.
+
+9
+00:01:09.460 --> 00:01:10.779
+Chad Nicely: That you're clear on that?
+
+10
+00:01:11.350 --> 00:01:12.100
+Ammad Sarfraz: Yes.
+
+11
+00:01:12.960 --> 00:01:25.939
+Chad Nicely: Alright, I know we've been busy training this stupid bot on all this stuff, on re-engagement and everything, but I know he's gonna ask me tonight, how far did we get on the container thing before I interrupted you guys?
+
+12
+00:01:26.520 --> 00:01:27.470
+Gaurav Subedi: Yes.
+
+13
+00:01:27.820 --> 00:01:33.990
+Gaurav Subedi: So, I was working on the background, like, I got somewhere far. We actually deployed one open clock.
+
+14
+00:01:35.110 --> 00:01:41.809
+Gaurav Subedi: And we have the pairing issue right now, we can solve that, but right now I have one open caller running on Cloudflare.
+
+15
+00:01:42.870 --> 00:01:46.180
+Chad Nicely: Can you give Karthuk an update so he understands where we're at with it?
+
+16
+00:01:46.400 --> 00:01:47.869
+Gaurav Subedi: Yeah, I'll leave the message.
+
+17
+00:01:48.110 --> 00:01:50.889
+Chad Nicely: Yeah, cause he's gonna ask me, and I'm gonna be like, fuck, I don't know.
+
+18
+00:01:51.930 --> 00:01:52.310
+Chad Nicely: Yeah.
+
+19
+00:01:52.690 --> 00:01:55.949
+Chad Nicely: So we're about done with that, now we gotta hook it up to the site and all that?
+
+20
+00:01:55.950 --> 00:02:03.769
+Gaurav Subedi: No, we still got a lot of work to do. We haven't gotten to complete this yet, so I still need one or two days.
+
+21
+00:02:05.600 --> 00:02:07.830
+Chad Nicely: So I better hold off on this webinar, then.
+
+22
+00:02:08.889 --> 00:02:10.259
+Gaurav Subedi: Halloween's the webinar?
+
+23
+00:02:10.620 --> 00:02:11.710
+Chad Nicely: Thursday.
+
+24
+00:02:12.420 --> 00:02:15.130
+Gaurav Subedi: What's today? Today's…
+
+25
+00:02:15.170 --> 00:02:16.319
+Chad Nicely: Tuesday. It's Tuesday.
+
+26
+00:02:16.320 --> 00:02:19.970
+Gaurav Subedi: Tuesday, right? So, yeah, I'll try to get as much done tomorrow.
+
+27
+00:02:20.280 --> 00:02:26.380
+Chad Nicely: I mean, it's not your fault, I keep interrupting you, so… Okay.
+
+28
+00:02:26.830 --> 00:02:39.049
+Chad Nicely: Adarsha, you gotta get with Vivek, I need you to take control of that. I don't know what's going on there. Yeah. We gotta get nice, beautiful templates, obviously we need people to be able to edit them, so can you work with him on that?
+
+29
+00:02:39.050 --> 00:02:42.760
+Adarsha Shrestha: Yeah, I'll come tomorrow, early, and I'll work with him.
+
+30
+00:02:43.110 --> 00:02:52.219
+Chad Nicely: Yeah, I can't… I cannot seem to be able to devote time to it. I just know that we need to have beautiful templates, and everything needs to function, right?
+
+31
+00:02:52.220 --> 00:02:53.150
+Adarsha Shrestha: Yeah.
+
+32
+00:02:53.390 --> 00:02:58.689
+Chad Nicely: So if you could help me with that, that would be good, because we're selling Quizforma in this launch, right?
+
+33
+00:02:58.690 --> 00:02:59.560
+Adarsha Shrestha: Yes.
+
+34
+00:02:59.560 --> 00:03:01.650
+Chad Nicely: Ishwar, how'd you do?
+
+35
+00:03:11.900 --> 00:03:13.410
+Chad Nicely: Ashwar…
+
+36
+00:03:17.820 --> 00:03:19.719
+Ishwor Shrestha: Hello, sir, can you hear me?
+
+37
+00:03:20.720 --> 00:03:22.160
+Chad Nicely: How did you do?
+
+38
+00:03:23.290 --> 00:03:28.740
+Ishwor Shrestha: I and Kathy are working to integrate Flexifunnel with GC.
+
+39
+00:03:29.100 --> 00:03:33.489
+Ishwor Shrestha: I have connected, login API, now we need to…
+
+40
+00:03:33.740 --> 00:03:40.460
+Ishwor Shrestha: I use another API for verification, and he's creating that. I think we will complete it by tomorrow.
+
+41
+00:03:40.830 --> 00:03:44.370
+Chad Nicely: Okay, once you have that, does that mean you have it for all apps?
+
+42
+00:03:45.550 --> 00:03:48.100
+Ishwor Shrestha: For… for all apps means?
+
+43
+00:03:48.690 --> 00:03:59.940
+Chad Nicely: It means any few… we're gonna build a bunch of apps and tie them to GC. That's what… that's why… I cannot express this enough, guys. This is the… this is what we have to be doing now.
+
+44
+00:04:00.220 --> 00:04:09.459
+Chad Nicely: We have to be using AI at rapid speed, not just OpenClaw, but GC needs to have a ton of apps, just like FlexiFunnels does.
+
+45
+00:04:10.500 --> 00:04:22.430
+Chad Nicely: You know, I talked a lot with Ishwar about, or with Adarsha about redoing the layouts for Quizforma, for Letterman, for Mintbird, for Poplinks, everything's gotta look beautiful now.
+
+46
+00:04:23.140 --> 00:04:25.930
+Chad Nicely: You know, this is what companies are doing.
+
+47
+00:04:26.400 --> 00:04:35.409
+Chad Nicely: Right? So, we're gonna be able to… I would have given you a login today, Adarsha, or Ishwar, of a software I want you to rebuild.
+
+48
+00:04:36.240 --> 00:04:45.730
+Chad Nicely: Remember that? Remember that, thing that he built, G, that had all the prompts that were… all the little agents that were building copy… remember that one?
+
+49
+00:04:48.110 --> 00:04:48.930
+Ishwor Shrestha: Missile.
+
+50
+00:04:49.610 --> 00:04:50.640
+Chad Nicely: Do you remember that, G?
+
+51
+00:04:50.750 --> 00:04:52.380
+Gaurav Subedi: The copy, you mean?
+
+52
+00:04:52.780 --> 00:05:01.159
+Chad Nicely: Yeah, it was called AI Agents or something, and he had one that did sales copy, he did one that did video, he did one that did sales pages. Remember, he had all these little things that were…
+
+53
+00:05:01.290 --> 00:05:02.790
+Gaurav Subedi: Within the flexi funnel, right?
+
+54
+00:05:02.930 --> 00:05:07.259
+Chad Nicely: It wasn't Flexifunnels, it was the other guy's stuff that we were looking at, remember?
+
+55
+00:05:07.840 --> 00:05:10.139
+Chad Nicely: the scale.gg, remember that?
+
+56
+00:05:10.140 --> 00:05:11.560
+Gaurav Subedi: Oh yeah, that guy, okay, yeah.
+
+57
+00:05:11.560 --> 00:05:17.089
+Chad Nicely: Yeah, so if I… I got the login to that software, if I give that to him, do you think he can rebuild that?
+
+58
+00:05:17.090 --> 00:05:26.600
+Gaurav Subedi: Yeah, it would be pretty easy, because we're not doing… once he has the API for GC, that's one thing, one-time thing, right? So once they have that tomorrow, it'll be super easy.
+
+59
+00:05:26.600 --> 00:05:30.249
+Chad Nicely: That's what I was asking. So the future apps that we build are gonna automatically connect to.
+
+60
+00:05:30.250 --> 00:05:32.500
+Gaurav Subedi: Yeah, because we'll have the API.
+
+61
+00:05:32.800 --> 00:05:35.939
+Chad Nicely: Alright, so we're gonna get that done tomorrow, coffee, that's really important.
+
+62
+00:05:36.480 --> 00:05:37.970
+M. A. Kafi: Yeah, I can show.
+
+63
+00:05:38.610 --> 00:05:40.630
+M. A. Kafi: use something.
+
+64
+00:05:41.080 --> 00:05:42.289
+Chad Nicely: Oh, you wanna show me now?
+
+65
+00:05:42.290 --> 00:05:43.710
+M. A. Kafi: Yeah, I can show.
+
+66
+00:05:43.870 --> 00:05:51.620
+Chad Nicely: Show me now, but be fast, because I am tired, and we have worked late for the past couple days. I might get out early, if that's okay with you guys.
+
+67
+00:05:51.820 --> 00:05:57.879
+M. A. Kafi: So I guess this is the first layout I have done with the clot code, and it's not ugly, right?
+
+68
+00:05:58.690 --> 00:06:01.870
+Chad Nicely: It's not ugly. It is not ugly.
+
+69
+00:06:01.870 --> 00:06:02.919
+Gaurav Subedi: Yeah. No?
+
+70
+00:06:03.270 --> 00:06:04.869
+Chad Nicely: No, it looks good.
+
+71
+00:06:04.870 --> 00:06:08.369
+M. A. Kafi: This would be the list of the app we will have.
+
+72
+00:06:08.740 --> 00:06:11.140
+M. A. Kafi: We can change the layout if we need.
+
+73
+00:06:11.390 --> 00:06:19.959
+M. A. Kafi: And we are going to get an option like this, access. When we click this option, it's going to create a URL like this.
+
+74
+00:06:20.550 --> 00:06:22.919
+M. A. Kafi: And we have the token supplied here.
+
+75
+00:06:23.040 --> 00:06:34.850
+M. A. Kafi: And what would be happened, issuer is, working on his part, he will grab this token, and he will, verify with GC if, it's a valid token, and it will return the user if it's valid.
+
+76
+00:06:35.750 --> 00:06:37.449
+M. A. Kafi: And he was… since the login.
+
+77
+00:06:37.900 --> 00:06:39.590
+Chad Nicely: Can you go back to that screen?
+
+78
+00:06:40.130 --> 00:06:42.000
+Chad Nicely: How is it gonna work?
+
+79
+00:06:42.380 --> 00:06:56.590
+Chad Nicely: with, so we're gonna have little apps, like the lead one, but then you also have, like, Mintbird and Core Sprout. How is it going to log into that platform for them, or will it?
+
+80
+00:06:57.850 --> 00:07:03.139
+M. A. Kafi: I guess you can remember we did this, earlier, maybe 3 years ago.
+
+81
+00:07:03.210 --> 00:07:04.359
+Chad Nicely: Yeah, I remember.
+
+82
+00:07:04.590 --> 00:07:19.030
+M. A. Kafi: We have a software suite, and we set a URL where, if the user clicks that button, they redirect to that software, and with the access token, they validate that, if the… that is a valid user or not.
+
+83
+00:07:19.740 --> 00:07:20.799
+M. A. Kafi: That is…
+
+84
+00:07:21.170 --> 00:07:23.830
+Chad Nicely: They'll be able to access all their software from GC.
+
+85
+00:07:24.030 --> 00:07:25.510
+M. A. Kafi: Right, right.
+
+86
+00:07:25.510 --> 00:07:36.509
+Chad Nicely: That's pretty incredible, if we can actually do that. I'll be surprised if we were able to do that. So that means we can have a little side menu over there, too, where they can always just pop into their software, too. They don't even have to go to this area.
+
+87
+00:07:37.580 --> 00:07:38.530
+M. A. Kafi: Right.
+
+88
+00:07:40.150 --> 00:07:43.609
+Chad Nicely: Yeah, that's exciting. So this is… this is going good, then?
+
+89
+00:07:44.090 --> 00:07:45.030
+M. A. Kafi: Yes.
+
+90
+00:07:45.640 --> 00:07:49.759
+Chad Nicely: Okay Alright, that's… that's… that's good news.
+
+91
+00:07:49.760 --> 00:07:56.130
+M. A. Kafi: It's almost done, and I guess we need to make something, some changes here, because there are a lot of projects, right?
+
+92
+00:07:56.350 --> 00:08:01.080
+M. A. Kafi: And we are not trying to show all of the projects in this list.
+
+93
+00:08:01.310 --> 00:08:04.520
+M. A. Kafi: So I guess we can just, have some property, like.
+
+94
+00:08:04.700 --> 00:08:15.679
+M. A. Kafi: we have, this option is the… it means it's something development, right? So we can have something, if we need to show them here, we can just turn on a switch.
+
+95
+00:08:17.340 --> 00:08:21.479
+Chad Nicely: Yeah, okay. Well, that's GC Admin, though, right?
+
+96
+00:08:21.480 --> 00:08:22.170
+M. A. Kafi: Yes.
+
+97
+00:08:22.840 --> 00:08:35.889
+Chad Nicely: So, remember, once you get done with this thing with Ishwar and whatever you're doing, I want you and Pranay to sit down and rebuild GC Admin, so that we're set up to add integrations more easy.
+
+98
+00:08:37.749 --> 00:08:46.399
+M. A. Kafi: Right? Nowadays, how AI is working, we need… we would be able to, like, just grab the integration name.
+
+99
+00:08:46.669 --> 00:08:55.399
+M. A. Kafi: And if it's popular in the web, that means it can pull the documentation, and it can create the route, trigger, everything itself.
+
+100
+00:08:56.350 --> 00:08:58.930
+Chad Nicely: I know. But that doesn't help our people.
+
+101
+00:09:00.380 --> 00:09:01.789
+Chad Nicely: Our people are not…
+
+102
+00:09:03.060 --> 00:09:06.629
+M. A. Kafi: No, I'm talking about the GC, like, we can have that feature here.
+
+103
+00:09:08.210 --> 00:09:12.969
+Chad Nicely: Okay, but you still got to do better on the back-end part, right?
+
+104
+00:09:13.130 --> 00:09:14.110
+M. A. Kafi: Yes.
+
+105
+00:09:14.950 --> 00:09:20.130
+Chad Nicely: Like, there's things missing and everything, but it seems to me… like…
+
+106
+00:09:20.580 --> 00:09:31.700
+Chad Nicely: I don't even think you have to give it a list. I think you just tell that thing, go get every single integration you can find, and configure it yourself, and it should be able to tag in… it should be able to tie into our tag system.
+
+107
+00:09:32.550 --> 00:09:33.629
+M. A. Kafi: Yeah, right.
+
+108
+00:09:33.860 --> 00:09:42.070
+Chad Nicely: That's where I would like to get to. It could categorize it, it could put the image in, it could do all the configuration, and then your tag would just automatically start working.
+
+109
+00:09:42.620 --> 00:09:43.680
+M. A. Kafi: Yeah, right.
+
+110
+00:09:43.850 --> 00:09:52.080
+M. A. Kafi: I think we need to build the APIs in two ways. One is for the users, and we need to keep in mind, like.
+
+111
+00:09:52.220 --> 00:10:01.380
+M. A. Kafi: We need to provide the APIs to the AI, so that it can handle the APIs itself, and it can do whatever it needs to do, right?
+
+112
+00:10:01.550 --> 00:10:11.559
+Chad Nicely: You give that some thought, because I'm going to ask you to start building that here fairly soon, because that's the one thing that we need to repair is our integration center. It's not very good.
+
+113
+00:10:12.780 --> 00:10:20.850
+Chad Nicely: We're just getting by with the bare minimal integrations like Core Sprout and stuff, but people are frustrated because stuff's broken, right?
+
+114
+00:10:21.750 --> 00:10:22.639
+M. A. Kafi: Yep.
+
+115
+00:10:22.890 --> 00:10:25.169
+Chad Nicely: So give that some thought. Does that make sense, Pranay?
+
+116
+00:10:26.540 --> 00:10:27.180
+Pranay Rajopadhyaya: Yes.
+
+117
+00:10:27.810 --> 00:10:28.440
+Chad Nicely: Yay.
+
+118
+00:10:28.730 --> 00:10:34.709
+Chad Nicely: Alright, that looks good, coffee. So, anything else, guys, at all?
+
+119
+00:10:36.510 --> 00:10:38.080
+M. A. Kafi: Not right now.
+
+120
+00:10:38.500 --> 00:10:39.769
+Chad Nicely: Anything else, G?
+
+121
+00:10:39.770 --> 00:10:40.480
+Gaurav Subedi: No.
+
+122
+00:10:41.200 --> 00:10:47.949
+Chad Nicely: Alright, I'll get them to work on that endpoint tonight, and yeah, good job. Alright guys, I'll see you tomorrow.
+
+123
+00:10:48.350 --> 00:10:48.730
+Gaurav Subedi: Okay.
+
+124
+00:10:48.730 --> 00:10:49.840
+Pranay Rajopadhyaya: Okay, bye bye.
+
+125
+00:10:49.840 --> 00:10:50.490
+Chad Nicely: Bye-bye.
+

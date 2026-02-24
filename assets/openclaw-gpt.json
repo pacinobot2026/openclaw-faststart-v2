@@ -1,0 +1,119 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.1.29",
+    "lastTouchedAt": "2026-01-31T04:31:34.806Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-01-30T17:51:04.794Z",
+    "lastRunVersion": "2026.1.29",
+    "lastRunCommand": "onboard",
+    "lastRunMode": "local"
+  },
+  "browser": {
+    "defaultProfile": "openclaw"
+  },
+  "auth": {
+    "profiles": {
+      "anthropic:default": {
+        "provider": "anthropic",
+        "mode": "api_key"
+      },
+      "openai:default": {
+        "provider": "openai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "openai/gpt-4o"
+      },
+      "models": {
+        "anthropic/claude-sonnet-4-5": {
+          "alias": "sonnet"
+        },
+        "openai/gpt-4o": {
+          "alias": "gpt4o"
+        }
+      },
+      "workspace": "C:\\Users\\Administrator\\.openclaw\\workspace",
+      "compaction": {
+        "mode": "safeguard"
+      },
+      "maxConcurrent": 4,
+      "subagents": {
+        "maxConcurrent": 8
+      }
+    }
+  },
+  "messages": {
+    "ackReactionScope": "group-mentions"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto"
+  },
+  "hooks": {
+    "internal": {
+      "enabled": true,
+      "entries": {
+        "boot-md": {
+          "enabled": true
+        },
+        "command-logger": {
+          "enabled": true
+        },
+        "session-memory": {
+          "enabled": true
+        }
+      }
+    }
+  },
+  "channels": {
+    "telegram": {
+      "name": "moltbot",
+      "enabled": true,
+      "dmPolicy": "pairing",
+      "botToken": "8202817378:AAFGzbzhwMb8VdskVzuzBi6hES2FGbBxS54",
+      "groupPolicy": "allowlist",
+      "streamMode": "partial"
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "2333619584caa298dbf29050c5720c9de3e677b129f13a7c"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    }
+  },
+  "skills": {
+    "install": {
+      "nodeManager": "npm"
+    },
+    "entries": {
+      "nano-banana-pro": {
+        "apiKey": "AIzaSyA6FIrgt3Ahq_2QN3VdUolzDw_gKQ5NVwM"
+      },
+      "openai-image-gen": {
+        "apiKey": "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"
+      },
+      "openai-whisper-api": {
+        "apiKey": "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"
+      }
+    }
+  },
+  "plugins": {
+    "entries": {
+      "telegram": {
+        "enabled": true
+      }
+    }
+  }
+}

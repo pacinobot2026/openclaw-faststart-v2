@@ -1,0 +1,77 @@
+{
+  "timestamp": "2026-02-20T16:00:00-06:00",
+  "type": "daily_titanium_health_check",
+  "apis": {
+    "global_control": {
+      "status": "⚠️ WARNING",
+      "endpoint": "https://api.globalcontrol.io/api/ai/me",
+      "note": "401 Unauthorized - API key may need refresh or endpoint changed"
+    },
+    "mintbird_poplinks": {
+      "status": "✅ ONLINE",
+      "endpoint": "https://api.poplinks.io/api/ai/bridge-pages"
+    },
+    "course_sprout": {
+      "status": "⚠️ WARNING",
+      "endpoint": "https://api.coursesprout.com/api/ai/courses",
+      "note": "404 Not Found - endpoint may have changed"
+    },
+    "letterman": {
+      "status": "✅ ONLINE",
+      "endpoint": "https://api.letterman.ai/api/ai/newsletters-storage"
+    },
+    "saasonboard": {
+      "status": "❌ OFFLINE",
+      "endpoint": "https://api.saasonboard.com/api/ai/companies",
+      "note": "DNS resolution failed - domain may be incorrect"
+    }
+  },
+  "urls": {
+    "chadnicely_members": {
+      "url": "https://chadnicely.com/members",
+      "status": "✅ ONLINE"
+    },
+    "entourage_mastermind": {
+      "url": "https://entouragemastermind.org",
+      "status": "✅ ONLINE"
+    },
+    "quizforma_application": {
+      "url": "https://q.selfmasteryco.net/japplication",
+      "status": "✅ ONLINE"
+    },
+    "west_valley_shoutouts": {
+      "url": "https://westvalleyshoutouts.com",
+      "status": "✅ ONLINE"
+    },
+    "course_portal_login": {
+      "url": "https://chadnicely.courseportal.io/login",
+      "status": "✅ ONLINE"
+    },
+    "selfmastery_mintbird": {
+      "url": "https://selfmasteryco.mintbird.com/",
+      "status": "✅ ONLINE"
+    },
+    "selfmastery_gc": {
+      "url": "https://selfmasteryco.globalcontrol.io",
+      "status": "✅ ONLINE"
+    },
+    "admin_gc": {
+      "url": "https://admin.globalcontrol.io",
+      "status": "✅ ONLINE"
+    },
+    "entourage_booking": {
+      "url": "https://app.globalcontrol.io/appointment-booking/entrourage-mastermind",
+      "status": "✅ ONLINE"
+    }
+  },
+  "summary": {
+    "apis_total": 5,
+    "apis_online": 2,
+    "apis_warning": 2,
+    "apis_offline": 1,
+    "urls_total": 9,
+    "urls_online": 9,
+    "urls_offline": 0,
+    "overall_issues": 3
+  }
+}

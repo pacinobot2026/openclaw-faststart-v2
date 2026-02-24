@@ -1,0 +1,83 @@
+{
+  "$schema": "https://docs.openclaw.ai/schemas/config.json",
+  "description": "Example Zoom Team Chat channel configuration",
+  "channels": {
+    "zoom": {
+      "_comment_enabled": "Enable/disable the Zoom channel",
+      "enabled": true,
+
+      "_comment_auth": "=== AUTHENTICATION (Required) ===",
+      "clientId": "YOUR_ZOOM_CLIENT_ID",
+      "clientSecret": "YOUR_ZOOM_CLIENT_SECRET",
+      "accountId": "YOUR_ZOOM_ACCOUNT_ID",
+      "botJid": "v1abc123@xmpp.zoom.us",
+
+      "_comment_webhook": "=== WEBHOOK CONFIGURATION (Required) ===",
+      "verificationToken": "YOUR_VERIFICATION_TOKEN",
+      "webhookSecretToken": "YOUR_SECRET_TOKEN",
+      "webhookPath": "/zoom-webhook",
+
+      "_comment_display": "=== DISPLAY ===",
+      "name": "My Zoom Workspace",
+
+      "_comment_dm_security": "=== DIRECT MESSAGE SECURITY ===",
+      "_comment_dmPolicy_options": "open | pairing | allowlist",
+      "dmPolicy": "pairing",
+      "allowFrom": [
+        "user1@xmpp.zoom.us",
+        "user2@xmpp.zoom.us"
+      ],
+
+      "_comment_group_security": "=== CHANNEL/GROUP SECURITY ===",
+      "_comment_groupPolicy_options": "open | allowlist | deny",
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "channel_id_1",
+        "channel_id_2"
+      ],
+      "requireMention": true,
+
+      "_comment_multi_account": "=== MULTI-ACCOUNT SUPPORT (Optional) ===",
+      "accounts": {
+        "work": {
+          "enabled": true,
+          "clientId": "WORK_CLIENT_ID",
+          "clientSecret": "WORK_CLIENT_SECRET",
+          "accountId": "WORK_ACCOUNT_ID",
+          "botJid": "work_bot@xmpp.zoom.us",
+          "verificationToken": "WORK_VERIFICATION_TOKEN",
+          "webhookSecretToken": "WORK_SECRET_TOKEN",
+          "webhookPath": "/zoom-webhook-work",
+          "name": "Work Zoom",
+          "dmPolicy": "allowlist",
+          "allowFrom": ["coworker@xmpp.zoom.us"],
+          "groupPolicy": "allowlist",
+          "groupAllowFrom": ["work_channel_id"],
+          "requireMention": true
+        },
+        "community": {
+          "enabled": true,
+          "clientId": "COMMUNITY_CLIENT_ID",
+          "clientSecret": "COMMUNITY_CLIENT_SECRET",
+          "accountId": "COMMUNITY_ACCOUNT_ID",
+          "botJid": "community_bot@xmpp.zoom.us",
+          "verificationToken": "COMMUNITY_VERIFICATION_TOKEN",
+          "webhookSecretToken": "COMMUNITY_SECRET_TOKEN",
+          "webhookPath": "/zoom-webhook-community",
+          "name": "Community Zoom",
+          "dmPolicy": "pairing",
+          "groupPolicy": "open",
+          "requireMention": false
+        }
+      }
+    }
+  },
+
+  "_comment_global": "=== GLOBAL DEFAULTS (Applied to all channels) ===",
+  "channels": {
+    "defaults": {
+      "groupPolicy": "allowlist",
+      "dmPolicy": "pairing"
+    }
+  }
+}

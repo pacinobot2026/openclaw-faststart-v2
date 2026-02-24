@@ -1,0 +1,73 @@
+{
+  "date": "2026-02-15",
+  "time": "10:00:03 CST",
+  "apis": {
+    "globalControl": {
+      "status": "OFFLINE",
+      "code": 401,
+      "note": "API key expired (known issue since 2026-02-14)"
+    },
+    "mintbirdPoplinks": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "courseSprout": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "letterman": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "saasonboard": {
+      "status": "ONLINE",
+      "code": 200
+    }
+  },
+  "urls": {
+    "chadnicely.com/members": {
+      "status": "ONLINE",
+      "code": 302,
+      "note": "Redirect expected (PopLink)"
+    },
+    "entouragemastermind.org": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "q.selfmasteryco.net/japplication": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "westvalleyshoutouts.com": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "chadnicely.courseportal.io/login": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "selfmasteryco.mintbird.com": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "selfmasteryco.globalcontrol.io": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "admin.globalcontrol.io": {
+      "status": "ONLINE",
+      "code": 200
+    },
+    "app.globalcontrol.io/appointment-booking/entrourage-mastermind": {
+      "status": "ONLINE",
+      "code": 200
+    }
+  },
+  "summary": {
+    "apisOnline": 4,
+    "apisOffline": 1,
+    "urlsOnline": 9,
+    "urlsOffline": 0,
+    "issues": 1
+  }
+}

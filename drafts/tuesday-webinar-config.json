@@ -1,0 +1,31 @@
+{
+  "_meta": {
+    "description": "Pre-built webinar config for Chad - ready to create once Zoom scopes are enabled",
+    "created": "2026-02-16",
+    "status": "PENDING - waiting for webinar:write scopes"
+  },
+  "topic": "How to Finally Run Your Entire Business With AI",
+  "type": 5,
+  "start_time": "2026-02-18T10:00:00",
+  "duration": 90,
+  "timezone": "America/Los_Angeles",
+  "agenda": "Discover how AI agents can automate your business operations, from customer support to content creation. Learn practical implementation strategies you can use immediately.",
+  "settings": {
+    "approval_type": 0,
+    "registration_type": 1,
+    "auto_recording": "cloud",
+    "host_video": true,
+    "panelists_video": true,
+    "practice_session": true,
+    "hd_video": true,
+    "question_answer": true,
+    "allow_multiple_devices": false,
+    "contact_email": "chad@chadnicely.com",
+    "contact_name": "Chad Nicely",
+    "registrants_email_notification": true,
+    "meeting_authentication": false,
+    "show_share_button": true,
+    "on_demand": false,
+    "global_dial_in_countries": ["US"]
+  }
+}

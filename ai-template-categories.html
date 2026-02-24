@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Template Categories - One Sample Each</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Inter:wght@400;700&family=Playfair+Display:wght@700&family=Poppins:wght@400;700&family=Oswald:wght@700&family=Bebas+Neue&family=Space+Grotesk:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0f0f1a; 
+            font-family: 'Inter', sans-serif; 
+            padding: 40px 20px;
+            color: white;
+        }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        .category {
+            max-width: 1400px;
+            margin: 0 auto 60px;
+        }
+        .category-title {
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+            padding-left: 10px;
+            border-left: 4px solid #667eea;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+        }
+        .browser-window {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+        }
+        .browser-chrome {
+            background: #252538;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .url-bar {
+            flex: 1;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+        }
+        .design-label {
+            background: #252538;
+            padding: 12px 16px;
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 600;
+        }
+        .template {
+            padding: 60px 40px;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .vibe-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            opacity: 0.6;
+        }
+        .headline {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .headline span { color: var(--accent); }
+        .subheadline {
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        .form-container {
+            max-width: 380px;
+            margin: 0 auto;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            outline: none;
+        }
+        button {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .privacy {
+            font-size: 11px;
+            margin-top: 18px;
+            opacity: 0.5;
+        }
+
+        /* 1. CLEAN/MINIMAL - Nordic Frost */
+        .clean {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 100%);
+            --accent: #3B82F6;
+        }
+        .clean .headline { font-family: 'Inter', sans-serif; color: #0F172A; font-size: 38px; }
+        .clean .subheadline { color: #475569; }
+        .clean button { background: #3B82F6; color: white; }
+        .clean input[type="email"] { background: white; border-color: #E2E8F0; color: #0F172A; }
+
+        /* 2. LUXURY/PREMIUM - Midnight Gold */
+        .luxury {
+            background: linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%);
+            --accent: #D4AF37;
+        }
+        .luxury .headline { font-family: 'Playfair Display', serif; color: #D4AF37; font-size: 40px; }
+        .luxury .subheadline { color: #A09060; }
+        .luxury button { background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%); color: #0A0A0A; font-weight: 800; }
+
+        /* 3. WARM/ORGANIC - Desert Oasis */
+        .warm {
+            background: linear-gradient(135deg, #F4A460 0%, #D2691E 50%, #8B4513 100%);
+            --accent: #FFD700;
+        }
+        .warm .headline { font-family: 'Playfair Display', serif; color: #FFF8DC; font-size: 38px; }
+        .warm .subheadline { color: #FFE4C4; }
+        .warm button { background: #228B22; color: white; }
+
+        /* 4. BOLD/VIBRANT - Sunset Blaze */
+        .bold {
+            background: linear-gradient(135deg, #FF6B35 0%, #F72585 100%);
+            --accent: #FFE4E1;
+        }
+        .bold .headline { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 40px; }
+        .bold .subheadline { color: #FFE4E1; }
+        .bold button { background: #1A1A2E; color: white; }
+
+        /* 5. PLAYFUL/FUN - Cotton Candy */
+        .playful {
+            background: linear-gradient(135deg, #fce4ec 0%, #f8bbd9 50%, #f48fb1 100%);
+            --accent: #c2185b;
+        }
+        .playful .headline { font-family: 'Poppins', sans-serif; color: #880e4f; font-size: 38px; }
+        .playful .subheadline { color: #ad1457; }
+        .playful button { background: linear-gradient(135deg, #ec407a 0%, #c2185b 100%); color: white; border-radius: 30px; }
+        .playful input[type="email"] { background: rgba(255,255,255,0.95); border-color: rgba(236,64,122,0.3); color: #880e4f; border-radius: 30px; }
+
+        /* 6. DARK MODE - Tokyo Midnight */
+        .dark {
+            background: linear-gradient(180deg, #0A0A1A 0%, #1A1A3A 100%);
+            --accent: #00D4FF;
+        }
+        .dark .headline { font-family: 'Montserrat', sans-serif; color: #FFFFFF; font-size: 40px; }
+        .dark .subheadline { color: #A0A8C8; }
+        .dark button { background: linear-gradient(180deg, #00D4FF 0%, #0099CC 100%); color: white; }
+
+        /* 7. RETRO - Cyber Miami */
+        .retro {
+            background: linear-gradient(135deg, #FF006E 0%, #8338EC 50%, #3A86FF 100%);
+            --accent: #FFBE0B;
+        }
+        .retro .headline { font-family: 'Bebas Neue', sans-serif; color: #FFFFFF; font-size: 48px; letter-spacing: 2px; }
+        .retro .subheadline { color: #E0E7FF; }
+        .retro button { background: linear-gradient(90deg, #FF006E 0%, #FFBE0B 100%); color: white; }
+
+        /* 8. TRADITIONAL MARKETING */
+        .traditional {
+            background: #FFFFFF;
+            --accent: #CC0000;
+        }
+        .traditional .headline { font-family: 'Georgia', serif; color: #CC0000; font-size: 38px; }
+        .traditional .subheadline { color: #333; background: #FFFF99; padding: 10px; display: inline-block; font-weight: 600; }
+        .traditional button { background: #FF6600; color: white; border: 3px solid #CC0000; font-family: 'Impact', sans-serif; font-size: 20px; }
+        .traditional input[type="email"] { background: #FFFACD; border: 2px solid #CC0000; color: #333; }
+        .traditional .privacy { color: #666; }
+
+        /* 9. SOCIAL MEDIA */
+        .social {
+            background: linear-gradient(135deg, #833AB4 0%, #FD1D1D 50%, #F77737 100%);
+            --accent: #FFFFFF;
+        }
+        .social .headline { font-family: 'Poppins', sans-serif; color: #FFFFFF; font-size: 38px; font-weight: 700; }
+        .social .subheadline { color: #FFFFFF; background: rgba(255,255,255,0.2); padding: 10px 20px; border-radius: 15px; }
+        .social button { background: linear-gradient(45deg, #405DE6, #5851DB, #833AB4, #C13584, #E1306C, #FD1D1D); color: white; border-radius: 30px; }
+        .social input[type="email"] { background: rgba(255,255,255,0.95); border: none; border-radius: 15px; color: #333; }
+
+        /* 10. SAAS/TECH */
+        .saas {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent: #FFFFFF;
+        }
+        .saas .headline { font-family: 'Inter', sans-serif; color: #FFFFFF; font-size: 40px; font-weight: 700; }
+        .saas .subheadline { color: rgba(255,255,255,0.9); }
+        .saas button { background: white; color: #764ba2; font-weight: 700; }
+        .saas input[type="email"] { background: rgba(255,255,255,0.95); border: none; color: #333; }
+
+        /* 11. HEALTH/WELLNESS - Forest Mist */
+        .health {
+            background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 50%, #a5d6a7 100%);
+            --accent: #1b5e20;
+        }
+        .health .headline { font-family: 'Inter', sans-serif; color: #2e7d32; font-size: 38px; font-weight: 700; }
+        .health .subheadline { color: #388e3c; }
+        .health button { background: linear-gradient(135deg, #43a047 0%, #2e7d32 100%); color: white; }
+        .health input[type="email"] { background: rgba(255,255,255,0.95); border-color: rgba(67,160,71,0.3); color: #1b5e20; }
+
+        /* 12. FINANCE/PROFESSIONAL */
+        .finance {
+            background: linear-gradient(135deg, #263238 0%, #37474f 50%, #455a64 100%);
+            --accent: #80cbc4;
+        }
+        .finance .headline { font-family: 'Inter', sans-serif; color: #eceff1; font-size: 38px; font-weight: 700; }
+        .finance .subheadline { color: #b0bec5; }
+        .finance button { background: linear-gradient(135deg, #4db6ac 0%, #00897b 100%); color: white; }
+        .finance input[type="email"] { background: rgba(255,255,255,0.1); border-color: rgba(77,182,172,0.4); color: #eceff1; }
+
+        /* 13. COACHING/PERSONAL */
+        .coaching {
+            background: linear-gradient(135deg, #fff3e0 0%, #ffe0b2 50%, #ffcc80 100%);
+            --accent: #e65100;
+        }
+        .coaching .headline { font-family: 'Playfair Display', serif; color: #bf360c; font-size: 40px; }
+        .coaching .subheadline { color: #d84315; }
+        .coaching button { background: linear-gradient(135deg, #ff8f00 0%, #ef6c00 100%); color: white; }
+        .coaching input[type="email"] { background: rgba(255,255,255,0.95); border-color: rgba(255,143,0,0.3); color: #e65100; }
+
+        /* 14. E-COMMERCE */
+        .ecommerce {
+            background: linear-gradient(180deg, #f8f9fa 0%, #e9ecef 100%);
+            --accent: #dc3545;
+        }
+        .ecommerce .headline { font-family: 'Oswald', sans-serif; color: #212529; font-size: 42px; text-transform: uppercase; }
+        .ecommerce .subheadline { color: #495057; }
+        .ecommerce button { background: #dc3545; color: white; font-size: 19px; }
+        .ecommerce input[type="email"] { background: white; border-color: #dee2e6; color: #212529; }
+
+        /* 15. LEAD MAGNET */
+        .leadmagnet {
+            background: linear-gradient(135deg, #ede7f6 0%, #d1c4e9 50%, #b39ddb 100%);
+            --accent: #4527a0;
+        }
+        .leadmagnet .headline { font-family: 'Inter', sans-serif; color: #311b92; font-size: 38px; font-weight: 700; }
+        .leadmagnet .subheadline { color: #512da8; }
+        .leadmagnet button { background: linear-gradient(135deg, #7e57c2 0%, #512da8 100%); color: white; }
+        .leadmagnet input[type="email"] { background: rgba(255,255,255,0.95); border-color: rgba(126,87,194,0.3); color: #311b92; }
+    </style>
+</head>
+<body>
+    <h1>🎨 AI Template Categories</h1>
+    <p class="subtitle">One sample from each design category</p>
+
+    <!-- AESTHETIC CATEGORIES -->
+    <div class="category">
+        <h2 class="category-title">By Vibe / Aesthetic</h2>
+        <div class="gallery">
+            <!-- Clean/Minimal -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">example.com</div>
+                </div>
+                <div class="template clean">
+                    <div class="vibe-tag">Clean / Minimal</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Simple, professional designs that convert</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started</button>
+                    </div>
+                    <p class="privacy">No spam, ever.</p>
+                </div>
+                <div class="design-label">Clean / Minimal - Nordic Frost</div>
+            </div>
+
+            <!-- Luxury/Premium -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">luxurybrand.com</div>
+                </div>
+                <div class="template luxury">
+                    <div class="vibe-tag">Luxury / Premium</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Exclusive designs for discerning clients</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Access</button>
+                    </div>
+                    <p class="privacy">Your privacy is our priority</p>
+                </div>
+                <div class="design-label">Luxury / Premium - Midnight Gold</div>
+            </div>
+
+            <!-- Warm/Organic -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">organicbrand.com</div>
+                </div>
+                <div class="template warm">
+                    <div class="vibe-tag">Warm / Organic</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Friendly, approachable designs that connect</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started</button>
+                    </div>
+                    <p class="privacy">We respect your inbox</p>
+                </div>
+                <div class="design-label">Warm / Organic - Desert Oasis</div>
+            </div>
+
+            <!-- Bold/Vibrant -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">boldbrand.com</div>
+                </div>
+                <div class="template bold">
+                    <div class="vibe-tag">Bold / Vibrant</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Stand out from the crowd with vibrant designs</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started</button>
+                    </div>
+                    <p class="privacy">No spam, just bold ideas</p>
+                </div>
+                <div class="design-label">Bold / Vibrant - Sunset Blaze</div>
+            </div>
+
+            <!-- Playful/Fun -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">funbrand.com</div>
+                </div>
+                <div class="template playful">
+                    <div class="vibe-tag">Playful / Fun</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Delightful designs that bring joy</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Create Now</button>
+                    </div>
+                    <p class="privacy">We keep it fun and spam-free</p>
+                </div>
+                <div class="design-label">Playful / Fun - Cotton Candy</div>
+            </div>
+
+            <!-- Dark Mode -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">darkmode.app</div>
+                </div>
+                <div class="template dark">
+                    <div class="vibe-tag">Dark Mode</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Modern dark themes for night owls</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Access</button>
+                    </div>
+                    <p class="privacy">Dark mode respects your eyes</p>
+                </div>
+                <div class="design-label">Dark Mode - Tokyo Midnight</div>
+            </div>
+
+            <!-- Retro -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">retrowave.io</div>
+                </div>
+                <div class="template retro">
+                    <div class="vibe-tag">Retro / 80s</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Nostalgic vibes with modern conversion power</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started</button>
+                    </div>
+                    <p class="privacy">Totally rad privacy protection</p>
+                </div>
+                <div class="design-label">Retro / 80s - Cyber Miami</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- MARKETING CATEGORIES -->
+    <div class="category">
+        <h2 class="category-title">By Marketing Style</h2>
+        <div class="gallery">
+            <!-- Traditional -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">directresponse.com</div>
+                </div>
+                <div class="template traditional">
+                    <div class="vibe-tag">Traditional Marketing</div>
+                    <h2 class="headline">"Generate <span>Unlimited</span><br>Templates in Seconds"</h2>
+                    <p class="subheadline">⚠️ WARNING: Create high-converting landing pages</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your best email">
+                        <button>YES! Give Me Access »</button>
+                    </div>
+                    <p class="privacy">🔒 100% secure, never shared</p>
+                </div>
+                <div class="design-label">Traditional Marketing - Direct Response</div>
+            </div>
+
+            <!-- Social Media -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">instagram.com</div>
+                </div>
+                <div class="template social">
+                    <div class="vibe-tag">Social Media</div>
+                    <h2 class="headline">Generate <span>Unlimited</span> Templates ✨</h2>
+                    <p class="subheadline">Create viral-worthy landing pages 💯</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Drop your email 👇">
+                        <button>Get Access Now 🔥</button>
+                    </div>
+                    <p class="privacy">🔒 No spam, just good vibes</p>
+                </div>
+                <div class="design-label">Social Media - Instagram Style</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- INDUSTRY CATEGORIES -->
+    <div class="category">
+        <h2 class="category-title">By Industry</h2>
+        <div class="gallery">
+            <!-- SaaS/Tech -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">saasproduct.com</div>
+                </div>
+                <div class="template saas">
+                    <div class="vibe-tag">SaaS / Tech</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Built for modern software companies</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Work email">
+                        <button>Start Free Trial</button>
+                    </div>
+                    <p class="privacy">14-day free trial. No credit card.</p>
+                </div>
+                <div class="design-label">SaaS / Tech - Modern Purple</div>
+            </div>
+
+            <!-- Health/Wellness -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">wellnessbrand.com</div>
+                </div>
+                <div class="template health">
+                    <div class="vibe-tag">Health / Wellness</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Calming designs that build trust</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Started</button>
+                    </div>
+                    <p class="privacy">Your wellness journey is private</p>
+                </div>
+                <div class="design-label">Health / Wellness - Forest Mist</div>
+            </div>
+
+            <!-- Finance -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">financepro.com</div>
+                </div>
+                <div class="template finance">
+                    <div class="vibe-tag">Finance / Professional</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Trustworthy designs for serious professionals</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Get Access</button>
+                    </div>
+                    <p class="privacy">Bank-level security. Your data is safe.</p>
+                </div>
+                <div class="design-label">Finance / Professional - Slate</div>
+            </div>
+
+            <!-- Coaching -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">coachwithme.com</div>
+                </div>
+                <div class="template coaching">
+                    <div class="vibe-tag">Coaching / Personal</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Personal designs that tell your story</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Start Creating</button>
+                    </div>
+                    <p class="privacy">Let's grow together. No spam.</p>
+                </div>
+                <div class="design-label">Coaching / Personal - Golden Hour</div>
+            </div>
+
+            <!-- E-commerce -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">shopstore.com</div>
+                </div>
+                <div class="template ecommerce">
+                    <div class="vibe-tag">E-commerce</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">High-converting designs that sell</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Shop Now</button>
+                    </div>
+                    <p class="privacy">Secure checkout. Your data is protected.</p>
+                </div>
+                <div class="design-label">E-commerce - Bold Red</div>
+            </div>
+
+            <!-- Lead Magnet -->
+            <div class="browser-window">
+                <div class="browser-chrome">
+                    <div class="dot dot-red"></div>
+                    <div class="dot dot-yellow"></div>
+                    <div class="dot dot-green"></div>
+                    <div class="url-bar">freeresource.com</div>
+                </div>
+                <div class="template leadmagnet">
+                    <div class="vibe-tag">Lead Magnet</div>
+                    <h2 class="headline">Generate <span>Unlimited</span><br>Templates</h2>
+                    <p class="subheadline">Get instant access to valuable resources</p>
+                    <div class="form-container">
+                        <input type="email" placeholder="Enter your email">
+                        <button>Download Free</button>
+                    </div>
+                    <p class="privacy">Instant delivery. Unsubscribe anytime.</p>
+                </div>
+                <div class="design-label">Lead Magnet - Soft Purple</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

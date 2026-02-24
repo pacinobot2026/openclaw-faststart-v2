@@ -1,0 +1,580 @@
+{
+  "service_name": "Post Bridge API",
+  "version": "1.0",
+  "base_url": "https://api.post-bridge.com",
+  "description": "Multi-platform social media posting API. Post to Facebook, Instagram, Twitter, LinkedIn, Pinterest, TikTok, YouTube, Threads, and Bluesky from a single API.",
+  "authentication": {
+    "type": "bearer",
+    "scheme": "http",
+    "bearer_format": "JWT",
+    "header": "Authorization: Bearer YOUR_API_KEY",
+    "notes": "Authentication required for all endpoints. Get your API key from https://www.post-bridge.com/",
+    "example": "Authorization: Bearer YOUR_API_KEY"
+  },
+  "platforms_supported": [
+    "bluesky",
+    "facebook",
+    "instagram",
+    "linkedin",
+    "pinterest",
+    "threads",
+    "tiktok",
+    "twitter",
+    "youtube"
+  ],
+  "endpoint_count": 11,
+  "endpoints": [
+    {
+      "group": "Media",
+      "method": "GET",
+      "path": "/v1/media",
+      "summary": "Get media",
+      "description": "Get a paginated result for media based on the applied filters",
+      "parameters": {
+        "query": [
+          {
+            "name": "offset",
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "description": "Number of items to skip"
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "required": false,
+            "default": 10,
+            "description": "Number of items to return"
+          },
+          {
+            "name": "post_id",
+            "type": "array",
+            "items": "string",
+            "required": false,
+            "description": "Filter by post IDs. Multiple values imply OR logic (e.g., ?post_id=123&post_id=456)."
+          },
+          {
+            "name": "type",
+            "type": "array",
+            "items": "string",
+            "enum": ["image", "video"],
+            "required": false,
+            "description": "Filter by media types. Multiple values imply OR logic (e.g., ?type=image&type=video)."
+          }
+        ]
+      },
+      "response": {
+        "200": "Paginated data set for media",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/media?offset=0&limit=10' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/media?offset=0&limit=10', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst data = await response.json();"
+    },
+    {
+      "group": "Media",
+      "method": "GET",
+      "path": "/v1/media/{id}",
+      "summary": "Get media by ID",
+      "description": "Retrieve a specific media item by its ID",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Media ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Media item retrieved successfully",
+        "404": "Media not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/media/MEDIA_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/media/MEDIA_ID', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst media = await response.json();"
+    },
+    {
+      "group": "Media",
+      "method": "DELETE",
+      "path": "/v1/media/{id}",
+      "summary": "Delete media by ID",
+      "description": "Delete a specific media item. Note: Media is automatically deleted after 24h if not attached to a post, or when the post is published.",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Media ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Media deleted successfully",
+        "404": "Media not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X DELETE 'https://api.post-bridge.com/v1/media/MEDIA_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/media/MEDIA_ID', { method: 'DELETE', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst result = await response.json();"
+    },
+    {
+      "group": "Media",
+      "method": "POST",
+      "path": "/v1/media/create-upload-url",
+      "summary": "Upload media",
+      "description": "Create a signed upload URL for media. Returns media_id and upload_url. Upload your file to the upload_url via PUT request, then use media_id in posts.",
+      "body_required": true,
+      "body_schema": {
+        "mime_type": {
+          "type": "string",
+          "required": true,
+          "enum": ["image/png", "image/jpeg", "video/mp4", "video/quicktime"],
+          "description": "MIME type of the file"
+        },
+        "size_bytes": {
+          "type": "number",
+          "required": true,
+          "minimum": 1,
+          "description": "File size in bytes"
+        },
+        "name": {
+          "type": "string",
+          "required": true,
+          "description": "Original filename (for extension)"
+        }
+      },
+      "response": {
+        "200": "Signed upload URL created successfully. Returns media_id and upload_url."
+      },
+      "workflow": "1. POST to /v1/media/create-upload-url with file details → get media_id and upload_url\n2. PUT file to upload_url with matching Content-Type\n3. Use media_id in post creation",
+      "curl_example": "curl -X POST 'https://api.post-bridge.com/v1/media/create-upload-url' -H 'Authorization: Bearer YOUR_API_KEY' -H 'Content-Type: application/json' -d '{\"mime_type\":\"image/jpeg\",\"size_bytes\":123456,\"name\":\"photo.jpg\"}'",
+      "javascript_example": "// Step 1: Get upload URL\nconst response = await fetch('https://api.post-bridge.com/v1/media/create-upload-url', {\n  method: 'POST',\n  headers: { 'Authorization': 'Bearer YOUR_API_KEY', 'Content-Type': 'application/json' },\n  body: JSON.stringify({ mime_type: 'image/jpeg', size_bytes: file.size, name: 'photo.jpg' })\n});\nconst { media_id, upload_url } = await response.json();\n\n// Step 2: Upload file\nawait fetch(upload_url, { method: 'PUT', headers: { 'Content-Type': 'image/jpeg' }, body: file });"
+    },
+    {
+      "group": "Posts",
+      "method": "GET",
+      "path": "/v1/posts",
+      "summary": "Get posts",
+      "description": "Get a paginated result for posts based on the applied filters",
+      "parameters": {
+        "query": [
+          {
+            "name": "offset",
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "description": "Number of items to skip"
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "required": false,
+            "default": 10,
+            "description": "Number of items to return"
+          },
+          {
+            "name": "platform",
+            "type": "array",
+            "items": "string",
+            "enum": ["bluesky", "facebook", "instagram", "linkedin", "pinterest", "threads", "tiktok", "twitter", "youtube"],
+            "required": false,
+            "description": "Filter by platforms. Multiple values imply OR logic."
+          },
+          {
+            "name": "status",
+            "type": "array",
+            "items": "string",
+            "enum": ["posted", "scheduled", "processing"],
+            "required": false,
+            "description": "Filter by post status. Multiple values imply OR logic."
+          }
+        ]
+      },
+      "response": {
+        "200": "Paginated data set for posts",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/posts?status=scheduled&platform=instagram' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/posts?status=scheduled', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst posts = await response.json();"
+    },
+    {
+      "group": "Posts",
+      "method": "POST",
+      "path": "/v1/posts",
+      "summary": "Create Post",
+      "description": "Create a new post to be published across multiple social media platforms. Supports platform-specific and account-specific overrides.",
+      "body_required": true,
+      "body_schema": {
+        "caption": {
+          "type": "string",
+          "required": true,
+          "description": "Caption text for the post"
+        },
+        "social_accounts": {
+          "type": "array",
+          "items": "number",
+          "required": true,
+          "description": "Array of social account IDs for posting"
+        },
+        "scheduled_at": {
+          "type": "string",
+          "format": "date-time",
+          "required": false,
+          "nullable": true,
+          "description": "Scheduled date and time for the post. Setting to null will post instantly."
+        },
+        "media": {
+          "type": "array",
+          "items": "string",
+          "required": false,
+          "nullable": true,
+          "description": "Array of media IDs (from /v1/media/create-upload-url)"
+        },
+        "media_urls": {
+          "type": "array",
+          "items": "string",
+          "required": false,
+          "nullable": true,
+          "description": "Array of publicly accessible media URLs (ignored if media is provided)"
+        },
+        "platform_configurations": {
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "description": "Platform-specific overrides for caption, media, and platform-specific fields"
+        },
+        "account_configurations": {
+          "type": "object",
+          "required": false,
+          "nullable": true,
+          "description": "Account-specific overrides for individual social accounts"
+        },
+        "is_draft": {
+          "type": "boolean",
+          "required": false,
+          "nullable": true,
+          "description": "If true, post won't process until updated"
+        },
+        "processing_enabled": {
+          "type": "boolean",
+          "required": false,
+          "nullable": true,
+          "default": true,
+          "description": "If true, will process video files to ensure they post"
+        }
+      },
+      "response": {
+        "200": "Post created successfully",
+        "400": "Invalid request",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X POST 'https://api.post-bridge.com/v1/posts' -H 'Authorization: Bearer YOUR_API_KEY' -H 'Content-Type: application/json' -d '{\"caption\":\"Hello world!\",\"social_accounts\":[123,456],\"media\":[\"media_id_here\"],\"scheduled_at\":\"2024-12-31T12:00:00Z\"}'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/posts', {\n  method: 'POST',\n  headers: { 'Authorization': 'Bearer YOUR_API_KEY', 'Content-Type': 'application/json' },\n  body: JSON.stringify({\n    caption: 'Hello world!',\n    social_accounts: [123, 456],\n    media: ['media_id'],\n    scheduled_at: '2024-12-31T12:00:00Z'\n  })\n});\nconst post = await response.json();"
+    },
+    {
+      "group": "Posts",
+      "method": "GET",
+      "path": "/v1/posts/{id}",
+      "summary": "Get Post by ID",
+      "description": "Retrieve a specific post by its ID",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Post ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Post retrieved successfully",
+        "404": "Post not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/posts/POST_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/posts/POST_ID', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst post = await response.json();"
+    },
+    {
+      "group": "Posts",
+      "method": "PATCH",
+      "path": "/v1/posts/{id}",
+      "summary": "Update Post",
+      "description": "Update an existing post. IMPORTANT: If updating a 'scheduled' post, always pass 'scheduled_at' otherwise the post will process immediately.",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Post ID"
+          }
+        ]
+      },
+      "body_required": true,
+      "body_schema": "Same as Create Post, all fields optional",
+      "response": {
+        "200": "Post updated successfully",
+        "400": "Invalid request",
+        "404": "Post not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X PATCH 'https://api.post-bridge.com/v1/posts/POST_ID' -H 'Authorization: Bearer YOUR_API_KEY' -H 'Content-Type: application/json' -d '{\"caption\":\"Updated caption\"}'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/posts/POST_ID', {\n  method: 'PATCH',\n  headers: { 'Authorization': 'Bearer YOUR_API_KEY', 'Content-Type': 'application/json' },\n  body: JSON.stringify({ caption: 'Updated caption', scheduled_at: '2024-12-31T12:00:00Z' })\n});\nconst updated = await response.json();"
+    },
+    {
+      "group": "Posts",
+      "method": "DELETE",
+      "path": "/v1/posts/{id}",
+      "summary": "Delete Post",
+      "description": "Delete a specific post",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Post ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Post deleted successfully",
+        "400": "Invalid request",
+        "404": "Post not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X DELETE 'https://api.post-bridge.com/v1/posts/POST_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/posts/POST_ID', { method: 'DELETE', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst result = await response.json();"
+    },
+    {
+      "group": "Social Accounts",
+      "method": "GET",
+      "path": "/v1/social-accounts",
+      "summary": "Get social accounts",
+      "description": "Get a paginated result for social accounts. IMPORTANT: Get these IDs once and reuse them - they don't change.",
+      "parameters": {
+        "query": [
+          {
+            "name": "offset",
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "description": "Number of items to skip"
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "required": false,
+            "default": 10,
+            "description": "Number of items to return"
+          },
+          {
+            "name": "platform",
+            "type": "array",
+            "items": "string",
+            "required": false,
+            "description": "Filter by platform(s). Multiple values imply OR logic."
+          },
+          {
+            "name": "username",
+            "type": "array",
+            "items": "string",
+            "required": false,
+            "description": "Filter by username(s). Multiple values imply OR logic."
+          }
+        ]
+      },
+      "response": {
+        "200": "Paginated data set for social accounts",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/social-accounts?platform=facebook&platform=instagram' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/social-accounts?platform=facebook&platform=instagram', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst accounts = await response.json();\nconst accountIds = accounts.data.map(acc => acc.id);"
+    },
+    {
+      "group": "Social Accounts",
+      "method": "GET",
+      "path": "/v1/social-accounts/{id}",
+      "summary": "Get social account by ID",
+      "description": "Retrieve a specific social account by its ID",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "number",
+            "required": true,
+            "description": "Social Account ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Social account retrieved successfully",
+        "404": "Social account not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/social-accounts/123' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/social-accounts/123', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst account = await response.json();"
+    },
+    {
+      "group": "Post Results",
+      "method": "GET",
+      "path": "/v1/post-results",
+      "summary": "Get post results",
+      "description": "Get paginated results showing the outcome of published posts (success/failure, errors, platform URLs)",
+      "parameters": {
+        "query": [
+          {
+            "name": "offset",
+            "type": "number",
+            "required": false,
+            "default": 0,
+            "description": "Number of items to skip"
+          },
+          {
+            "name": "limit",
+            "type": "number",
+            "required": false,
+            "default": 10,
+            "description": "Number of items to return"
+          },
+          {
+            "name": "post_id",
+            "type": "array",
+            "items": "string",
+            "required": false,
+            "description": "Filter by post IDs. Multiple values imply OR logic."
+          },
+          {
+            "name": "platform",
+            "type": "array",
+            "items": "string",
+            "required": false,
+            "description": "Filter by platform(s). Multiple values imply OR logic."
+          }
+        ]
+      },
+      "response": {
+        "200": "Paginated data set for post results",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/post-results?post_id=POST_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/post-results?post_id=POST_ID', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst results = await response.json();"
+    },
+    {
+      "group": "Post Results",
+      "method": "GET",
+      "path": "/v1/post-results/{id}",
+      "summary": "Get post result by ID",
+      "description": "Retrieve a specific post result by its ID",
+      "parameters": {
+        "path": [
+          {
+            "name": "id",
+            "type": "string",
+            "required": true,
+            "description": "Post Result ID"
+          }
+        ]
+      },
+      "response": {
+        "200": "Post result retrieved successfully",
+        "404": "Post result not found",
+        "500": "Internal server error"
+      },
+      "curl_example": "curl -X GET 'https://api.post-bridge.com/v1/post-results/RESULT_ID' -H 'Authorization: Bearer YOUR_API_KEY'",
+      "javascript_example": "const response = await fetch('https://api.post-bridge.com/v1/post-results/RESULT_ID', { method: 'GET', headers: { 'Authorization': 'Bearer YOUR_API_KEY' } });\nconst result = await response.json();"
+    }
+  ],
+  "platform_configurations": {
+    "pinterest": {
+      "fields": ["caption", "media", "board_ids", "link", "video_cover_timestamp_ms", "title"],
+      "notes": "Requires board_ids. Supports link field for destination URL."
+    },
+    "instagram": {
+      "fields": ["caption", "media", "video_cover_timestamp_ms", "placement", "is_trial_reel", "trial_graduation"],
+      "notes": "Trial reels require: Professional/Creator account, 1000+ followers, public profile. Max 5 trial reels/day."
+    },
+    "tiktok": {
+      "fields": ["caption", "media", "title", "video_cover_timestamp_ms", "draft", "is_aigc"],
+      "notes": "draft=true saves as draft instead of publishing. is_aigc=true labels as AI-generated."
+    },
+    "twitter": {
+      "fields": ["caption", "media"],
+      "notes": "Standard text + media posts."
+    },
+    "youtube": {
+      "fields": ["caption", "media", "title"],
+      "notes": "Title required for YouTube posts."
+    },
+    "facebook": {
+      "fields": ["caption", "media", "placement"],
+      "notes": "Supports placement field for post location."
+    },
+    "linkedin": {
+      "fields": ["caption", "media"],
+      "notes": "Standard professional network posting."
+    },
+    "bluesky": {
+      "fields": ["caption", "media"],
+      "notes": "Decentralized social network support."
+    },
+    "threads": {
+      "fields": ["caption", "media", "location"],
+      "notes": "location can be 'reels' or 'timeline'."
+    }
+  },
+  "typical_workflow": {
+    "description": "Standard flow for creating a post with media",
+    "steps": [
+      {
+        "step": 1,
+        "action": "Get social account IDs",
+        "endpoint": "GET /v1/social-accounts",
+        "notes": "Do this once, save the IDs. They don't change."
+      },
+      {
+        "step": 2,
+        "action": "Create upload URL for media",
+        "endpoint": "POST /v1/media/create-upload-url",
+        "notes": "Provides media_id and upload_url"
+      },
+      {
+        "step": 3,
+        "action": "Upload file to signed URL",
+        "endpoint": "PUT {upload_url}",
+        "notes": "Direct upload to storage, not to Post Bridge API"
+      },
+      {
+        "step": 4,
+        "action": "Create post",
+        "endpoint": "POST /v1/posts",
+        "notes": "Use media_id and social_account IDs from previous steps"
+      },
+      {
+        "step": 5,
+        "action": "Check results",
+        "endpoint": "GET /v1/post-results",
+        "notes": "Verify post succeeded on all platforms"
+      }
+    ]
+  },
+  "edge_cases": {
+    "media_deletion": "Media auto-deletes after 24h if not attached to a post, or when post is published",
+    "scheduled_updates": "When updating a scheduled post, ALWAYS include scheduled_at or it will post immediately",
+    "platform_limits": "Instagram trial reels: Professional/Creator account, 1000+ followers, public profile required. Max 5/day.",
+    "video_processing": "Set processing_enabled=false to skip video processing if needed"
+  },
+  "rate_limits": "Not specified in documentation",
+  "pagination": {
+    "default_limit": 10,
+    "parameters": ["offset", "limit"],
+    "response_meta": {
+      "total": "Total number of items available",
+      "offset": "Number of items skipped",
+      "limit": "Maximum number of items returned",
+      "next": "URL to next page of results, or null if none"
+    }
+  }
+}

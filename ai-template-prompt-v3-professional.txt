@@ -1,0 +1,81 @@
+private function buildPrompt(array $input): string
+{
+    $fontList = implode(', ', $this->getAvailableFonts());
+    
+    return <<<PROMPT
+You are a professional landing page designer specializing in HIGH-CONVERTING opt-in pages. Generate 12 design variations that are clean, professional, and proven to convert.
+
+CRITICAL: These designs must look like they belong on serious SaaS products, not Instagram filters. Avoid: neon colors, glow effects, crazy gradients, "creative" names like "Electric Vibes." Think Stripe, Notion, Apple — not Canva templates.
+
+STYLE CATEGORIES (generate 1-2 from each):
+1. CLEAN MINIMAL - White/light bg, simple sans-serif, single accent color
+2. DARK PROFESSIONAL - Deep navy/charcoal, subtle contrast, modern SaaS look
+3. WARM FRIENDLY - Soft cream/beige, approachable but not playful
+4. BOLD CONFIDENT - Strong primary color (red/blue/orange), high contrast
+5. LUXURY ELEGANT - Dark bg, gold/cream accents, serif headlines
+6. FRESH MODERN - Light bg, teal/green accents, breathable spacing
+7. CORPORATE TRUST - Blues, grays, established feel
+8. ENERGETIC STARTUP - Vibrant but professional, gradient bg (subtle)
+9. PREMIUM PRODUCT - Deep colors, sophisticated, high-end feel
+10. SIMPLE FOCUSED - Ultra minimal, one color, maximum clarity
+11. CREATIVE AGENCY - Artistic but restrained, not "wacky"
+12. DIRECT RESPONSE - White bg, high contrast, proven conversion colors
+
+DESIGN RULES (MANDATORY):
+- Page bg: Either solid color OR subtle gradient (max 2 colors, 15° angle)
+- Headlines: Sans-serif, 36-44px, high contrast, NO text-shadows
+- Buttons: Solid color or subtle gradient, NO glow effects, NO crazy shapes
+- Colors: Use mature palettes — navy, charcoal, cream, coral, sage, slate, burgundy, mustard
+- NEVER use: Neon greens, hot pinks, electric blues, rainbow gradients, glows, shadows on text
+- Subheadlines can have subtle bg (rgba(0,0,0,0.05)) but headlines NEVER have bg shapes
+- Privacy text: Small, muted, 10-12px
+- Input fields: Clean borders, subtle focus states
+
+EXAMPLE GOOD THEMES (mature naming):
+- "Clean Slate" (white bg, navy text, coral button)
+- "Midnight Pro" (navy bg, white text, soft blue button)
+- "Warm Welcome" (cream bg, brown text, terracotta button)
+- "Bold Move" (white bg, black text, red button)
+- "Fresh Start" (mint bg, dark green text, emerald button)
+- "Trusted Pro" (light gray bg, charcoal text, blue button)
+- "Deep Focus" (charcoal bg, white text, soft orange button)
+
+BAD THEMES (avoid):
+- "Electric Vibes" ❌
+- "Neon Nights" ❌  
+- "Rainbow Burst" ❌
+- "Cyber Glow" ❌
+
+TECHNICAL REQUIREMENTS:
+- All colors: valid 7-char hex (#RRGGBB)
+- Fonts from approved list only: {$fontList}
+- Headline: 36-44px, subheadline: 15-18px, button: 16-20px
+- Page spacing: 40-60px vertical padding
+- NO animations, NO glows, NO crazy effects
+
+OUTPUT: JSON with "variations" array. Each object must include ALL these fields:
+{
+  "theme_name": "Clean Slate",
+  "page_background_color": "#FFFFFF",
+  "outside_background_color": "#F5F5F5",
+  "page_bg_type": "color",
+  "headline_font_family": "Inter",
+  "headline_font_size": 40,
+  "headline_text_color": "#1A1A2E",
+  "headline_bold_color": "#E74C3C",
+  "sub_headline_font_family": "Inter",
+  "sub_headline_font_size": 16,
+  "sub_headline_text_color": "#4A4A5A",
+  "button_font_family": "Inter",
+  "button_font_size": 18,
+  "button_text_color": "#FFFFFF",
+  "button_bg_color": "#E74C3C",
+  "page_spacing_before": 50,
+  "page_spacing_after": 50,
+  "input_border_color": "#E0E0E0"
+  // ... include ALL fields from original spec
+}
+
+Generate 12 professional, conversion-focused designs that would look at home on Stripe.com, Notion.so, or Apple.com. Clean, confident, effective.
+PROMPT;
+}

@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>AI Template Gallery - 12 Unique Designs</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&family=Inter:wght@400;700&family=Bebas+Neue&family=Oswald:wght@700&family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            background: #0f0f1a; 
+            font-family: 'Open Sans', sans-serif; 
+            padding: 40px 20px;
+            color: white;
+        }
+        h1 { 
+            text-align: center; 
+            margin-bottom: 10px;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 42px;
+        }
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 50px;
+            font-size: 18px;
+        }
+        .gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+            gap: 40px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        .browser-window {
+            background: #1a1a2e;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.6);
+        }
+        .browser-chrome {
+            background: #252538;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .dot { width: 12px; height: 12px; border-radius: 50%; }
+        .dot-red { background: #ff5f56; }
+        .dot-yellow { background: #ffbd2e; }
+        .dot-green { background: #27c93f; }
+        .url-bar {
+            flex: 1;
+            text-align: center;
+            color: #666;
+            font-size: 12px;
+            font-family: monospace;
+        }
+        .design-label {
+            background: #252538;
+            padding: 12px 16px;
+            color: #aaa;
+            font-size: 14px;
+            font-weight: 600;
+            display: flex;
+            justify-content: space-between;
+        }
+        .template {
+            padding: 60px 40px;
+            text-align: center;
+            min-height: 420px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            position: relative;
+        }
+        .vibe-tag {
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+            opacity: 0.6;
+        }
+        .headline {
+            font-size: 36px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .headline span { color: var(--accent); }
+        .subheadline {
+            font-size: 16px;
+            margin-bottom: 35px;
+            line-height: 1.6;
+            opacity: 0.85;
+        }
+        .form-container {
+            max-width: 380px;
+            margin: 0 auto;
+        }
+        input[type="email"] {
+            width: 100%;
+            padding: 16px 20px;
+            border: 2px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            margin-bottom: 12px;
+            font-size: 15px;
+            background: rgba(255,255,255,0.08);
+            color: white;
+            outline: none;
+            transition: all 0.3s;
+        }
+        input[type="email"]::placeholder { opacity: 0.5; }
+        button {
+            width: 100%;
+            padding: 18px;
+            border: none;
+            border-radius: 8px;
+            font-size: 17px;
+            font-weight: 700;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        button:hover { transform: translateY(-2px); }
+        .privacy {
+            font-size: 11px;
+            margin-top: 18px;
+            opacity: 0.5;
+        }
+
+        /* DESIGN 1: Tokyo Midnight */
+        .tokyo {
+            background: linear-gradient(180deg, #0A0A1A 0%, #1A1A3A 100%);
+            --accent: #00D4FF;
+        }
+        .tokyo .headline { font-family: 'Montserrat', sans-serif; color: #FFFFFF; text-shadow: 0 0 40px rgba(0,212,255,0.3); }
+        .tokyo .subheadline { color: #A0A8C8; }
+        .tokyo button {
+            background: linear-gradient(180deg, #00D4FF 0%, #0099CC 100%);
+            color: white;
+            box-shadow: 0 0 30px rgba(0,212,255,0.4);
+        }
+        .tokyo input[type="email"]:focus { border-color: #00D4FF; }
+
+        /* DESIGN 2: Desert Oasis */
+        .desert {
+            background: linear-gradient(135deg, #F4A460 0%, #D2691E 50%, #8B4513 100%);
+            --accent: #FFD700;
+        }
+        .desert .headline { font-family: 'Playfair Display', serif; color: #FFF8DC; }
+        .desert .subheadline { color: #FFE4C4; }
+        .desert button {
+            background: #228B22;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+        .desert input[type="email"] { background: rgba(255,255,255,0.15); border-color: rgba(255,255,255,0.3); }
+
+        /* DESIGN 3: Nordic Frost */
+        .nordic {
+            background: linear-gradient(180deg, #FFFFFF 0%, #F0F4FF 100%);
+            --accent: #3B82F6;
+        }
+        .nordic .headline { font-family: 'Inter', sans-serif; color: #0F172A; }
+        .nordic .subheadline { color: #475569; }
+        .nordic button {
+            background: #3B82F6;
+            color: white;
+        }
+        .nordic input[type="email"] { 
+            background: white; 
+            border-color: #E2E8F0; 
+            color: #0F172A;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        .nordic input[type="email"]::placeholder { color: #94A3B8; }
+        .nordic .privacy { color: #64748B; }
+
+        /* DESIGN 4: Cyber Miami */
+        .miami {
+            background: linear-gradient(135deg, #FF006E 0%, #8338EC 50%, #3A86FF 100%);
+            --accent: #FFBE0B;
+        }
+        .miami .headline { 
+            font-family: 'Bebas Neue', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 48px;
+            letter-spacing: 2px;
+        }
+        .miami .subheadline { color: #E0E7FF; }
+        .miami button {
+            background: linear-gradient(90deg, #FF006E 0%, #FFBE0B 100%);
+            color: white;
+            box-shadow: 0 4px 30px rgba(255,0,110,0.4);
+        }
+
+        /* DESIGN 5: Royal Purple */
+        .royal {
+            background: linear-gradient(180deg, #1A0533 0%, #2D1B69 100%);
+            --accent: #FFD700;
+        }
+        .royal .headline { font-family: 'Playfair Display', serif; color: #F5F5F5; }
+        .royal .subheadline { color: #C0B0D0; }
+        .royal button {
+            background: linear-gradient(180deg, #FFD700 0%, #FFA500 100%);
+            color: #1A0533;
+            font-weight: 800;
+        }
+
+        /* DESIGN 6: Electric Blue */
+        .electric {
+            background: linear-gradient(180deg, #0B1628 0%, #162D50 100%);
+            --accent: #60A5FA;
+        }
+        .electric .headline { font-family: 'Oswald', sans-serif; color: #FFFFFF; text-transform: uppercase; }
+        .electric .subheadline { color: #93C5FD; }
+        .electric button {
+            background: #2563EB;
+            color: white;
+            box-shadow: 0 0 25px rgba(37,99,235,0.5);
+        }
+
+        /* DESIGN 7: Sunset Blaze */
+        .sunset {
+            background: linear-gradient(135deg, #FF6B35 0%, #F72585 100%);
+            --accent: #FFE4E1;
+        }
+        .sunset .headline { font-family: 'Poppins', sans-serif; color: #FFFFFF; text-shadow: 0 4px 15px rgba(0,0,0,0.2); }
+        .sunset .subheadline { color: #FFE4E1; }
+        .sunset button {
+            background: #1A1A2E;
+            color: white;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+        }
+
+        /* DESIGN 8: Midnight Gold */
+        .midnight {
+            background: linear-gradient(180deg, #0A0A0A 0%, #1A1A1A 100%);
+            --accent: #D4AF37;
+        }
+        .midnight .headline { 
+            font-family: 'Playfair Display', serif; 
+            color: #D4AF37; 
+            text-shadow: 0 2px 10px rgba(212,175,55,0.3);
+        }
+        .midnight .subheadline { color: #A09060; }
+        .midnight button {
+            background: linear-gradient(180deg, #D4AF37 0%, #B8860B 100%);
+            color: #0A0A0A;
+            font-weight: 800;
+        }
+
+        /* DESIGN 9: Arctic Frost */
+        .arctic {
+            background: linear-gradient(180deg, #F0F9FF 0%, #E0F2FE 100%);
+            --accent: #0284C7;
+        }
+        .arctic .headline { font-family: 'Inter', sans-serif; color: #0C4A6E; }
+        .arctic .subheadline { color: #0369A1; }
+        .arctic button {
+            background: #0EA5E9;
+            color: white;
+        }
+        .arctic input[type="email"] { background: white; border-color: #BAE6FD; color: #0C4A6E; }
+
+        /* DESIGN 10: Emerald Dark */
+        .emerald {
+            background: linear-gradient(180deg, #0A1A0F 0%, #0F2A18 100%);
+            --accent: #34D399;
+        }
+        .emerald .headline { font-family: 'Oswald', sans-serif; color: #FFFFFF; text-transform: uppercase; letter-spacing: 1px; }
+        .emerald .subheadline { color: #6EE7B7; }
+        .emerald button {
+            background: linear-gradient(180deg, #10B981 0%, #059669 100%);
+            color: white;
+            box-shadow: 0 0 25px rgba(16,185,129,0.4);
+        }
+
+        /* DESIGN 11: Crimson Power */
+        .crimson {
+            background: linear-gradient(180deg, #1A0A0A 0%, #2D0A0A 100%);
+            --accent: #FCA5A5;
+        }
+        .crimson .headline { 
+            font-family: 'Bebas Neue', sans-serif; 
+            color: #FFFFFF; 
+            font-size: 46px;
+            text-shadow: 0 0 30px rgba(239,68,68,0.5);
+        }
+        .crimson .subheadline { color: #FCA5A5; }
+        .crimson button {
+            background: linear-gradient(180deg, #EF4444 0%, #DC2626 100%);
+            color: white;
+            box-shadow: 0 0 30px rgba(239,68,68,0.4);
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0%, 100% { box-shadow: 0 0 30px rgba(239,68,68,0.4); }
+            50% { box-shadow: 0 0 50px rgba(239,68,68,0.7); }
+        }
+
+        /* DESIGN 12: Carbon Fiber */
+        .carbon {
+            background: linear-gradient(180deg, #111111 0%, #1A1A1A 100%);
+            --accent: #FF6600;
+        }
+        .carbon .headline { 
+            font-family: 'Oswald', sans-serif; 
+            color: #FFFFFF; 
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        .carbon .subheadline { color: #AAAAAA; }
+        .carbon button {
+            background: linear-gradient(90deg, #FF6600 0%, #FF4500 100%);
+            color: white;
+            font-weight: 800;
+        }
+    </style>
+</head>
+<body>
+    <h1>🎨 AI Template Gallery</h1>
+    <p class="subtitle">12 unique designs generated from one prompt • Each feels like a different design agency</p>
+
+    <div class="gallery">
+        <!-- Tokyo Midnight -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template tokyo">
+                <div class="vibe-tag">Dark Mode SaaS</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Tokyo Midnight</span> <span style="opacity: 0.5;">#00D4FF</span></div>
+        </div>
+
+        <!-- Desert Oasis -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template desert">
+                <div class="vibe-tag">Warm & Organic</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Desert Oasis</span> <span style="opacity: 0.5;">#F4A460</span></div>
+        </div>
+
+        <!-- Nordic Frost -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template nordic">
+                <div class="vibe-tag">Clean & Minimal</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Nordic Frost</span> <span style="opacity: 0.5;">#3B82F6</span></div>
+        </div>
+
+        <!-- Cyber Miami -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template miami">
+                <div class="vibe-tag">Neon & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Cyber Miami</span> <span style="opacity: 0.5;">#FF006E</span></div>
+        </div>
+
+        <!-- Royal Purple -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template royal">
+                <div class="vibe-tag">Luxury & Premium</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Royal Purple</span> <span style="opacity: 0.5;">#FFD700</span></div>
+        </div>
+
+        <!-- Electric Blue -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template electric">
+                <div class="vibe-tag">Energetic & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Electric Blue</span> <span style="opacity: 0.5;">#2563EB</span></div>
+        </div>
+
+        <!-- Sunset Blaze -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template sunset">
+                <div class="vibe-tag">Vibrant & Warm</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Sunset Blaze</span> <span style="opacity: 0.5;">#FF6B35</span></div>
+        </div>
+
+        <!-- Midnight Gold -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template midnight">
+                <div class="vibe-tag">Premium & Exclusive</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Midnight Gold</span> <span style="opacity: 0.5;">#D4AF37</span></div>
+        </div>
+
+        <!-- Arctic Frost -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template arctic">
+                <div class="vibe-tag">Cool & Professional</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Arctic Frost</span> <span style="opacity: 0.5;">#0EA5E9</span></div>
+        </div>
+
+        <!-- Emerald Dark -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template emerald">
+                <div class="vibe-tag">Natural & Fresh</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Emerald Dark</span> <span style="opacity: 0.5;">#10B981</span></div>
+        </div>
+
+        <!-- Crimson Power -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template crimson">
+                <div class="vibe-tag">Urgent & Bold</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Crimson Power</span> <span style="opacity: 0.5;">#EF4444</span></div>
+        </div>
+
+        <!-- Carbon Fiber -->
+        <div class="browser-window">
+            <div class="browser-chrome">
+                <div class="dot dot-red"></div>
+                <div class="dot dot-yellow"></div>
+                <div class="dot dot-green"></div>
+                <div class="url-bar">poplinks.io/offer</div>
+            </div>
+            <div class="template carbon">
+                <div class="vibe-tag">Industrial & Modern</div>
+                <h2 class="headline">Generate <span>Unlimited</span><br>Templates in Seconds</h2>
+                <p class="subheadline">Create high-converting landing pages with AI-powered design variations that match your brand</p>
+                <div class="form-container">
+                    <input type="email" placeholder="Enter your best email">
+                    <button>Get Instant Access!</button>
+                </div>
+                <p class="privacy">We respect your privacy. Unsubscribe anytime.</p>
+            </div>
+            <div class="design-label"><span>Carbon Fiber</span> <span style="opacity: 0.5;">#FF6600</span></div>
+        </div>
+    </div>
+</body>
+</html>

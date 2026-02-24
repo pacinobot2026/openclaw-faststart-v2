@@ -1,0 +1,28 @@
+# Credentials - NEVER commit
+credentials/
+
+# Temp files
+temp/
+temp_email.json
+test-email.json
+*.tmp
+
+# Large binaries
+*.exe
+*.pptx
+*.zip
+
+# Build artifacts
+api-docs-raw.html
+openclaw-guide-preview.jpg
+openclaw-guide.html
+kanban-board.png
+kanban-visual.html
+
+# Python scripts (dev only)
+*.py
+
+# Chrome extension build
+chrome-extension.zip
+
+.vercel

@@ -1,0 +1,28 @@
+{
+  "timestamp": "2026-02-16T10:01:00-06:00",
+  "apis": {
+    "globalControl": {"status": 401, "message": "Unauthorized - API key expired", "healthy": false},
+    "mintbirdPoplinks": {"status": 200, "message": "OK", "healthy": true},
+    "courseSprout": {"status": 200, "message": "OK", "healthy": true},
+    "letterman": {"status": 200, "message": "OK", "healthy": true},
+    "saasonboard": {"status": 200, "message": "OK", "healthy": true}
+  },
+  "urls": {
+    "chadnicely.com/members": {"status": 200, "redirectsTo": "chadnicely.courseportal.io/login", "healthy": true},
+    "entouragemastermind.org": {"status": 200, "healthy": true},
+    "q.selfmasteryco.net/japplication": {"status": 200, "title": "Julien Survey", "healthy": true},
+    "westvalleyshoutouts.com": {"status": 200, "healthy": true},
+    "chadnicely.courseportal.io/login": {"status": 200, "healthy": true},
+    "selfmasteryco.mintbird.com": {"status": 200, "healthy": true},
+    "selfmasteryco.globalcontrol.io": {"status": 200, "healthy": true},
+    "admin.globalcontrol.io": {"status": 200, "healthy": true},
+    "app.globalcontrol.io/appointment-booking/entrourage-mastermind": {"status": 200, "healthy": true}
+  },
+  "summary": {
+    "apisHealthy": 4,
+    "apisUnhealthy": 1,
+    "urlsHealthy": 9,
+    "urlsUnhealthy": 0,
+    "overallHealthy": false
+  }
+}

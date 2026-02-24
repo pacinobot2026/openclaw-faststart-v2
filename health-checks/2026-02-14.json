@@ -1,0 +1,53 @@
+{
+  "date": "2026-02-14",
+  "checks": [
+    {
+      "time": "10:00 CST",
+      "apis": {
+        "global_control": { "status": "error", "code": 401, "message": "Unauthorized" },
+        "poplinks": { "status": "ok", "code": 200 },
+        "course_sprout": { "status": "ok", "code": 200 },
+        "letterman": { "status": "ok", "code": 200 },
+        "saasonboard": { "status": "ok", "code": 200 }
+      },
+      "urls": {
+        "chadnicely.com/members": { "status": "ok", "code": 200 },
+        "entouragemastermind.org": { "status": "ok", "code": 200 },
+        "q.selfmasteryco.net/japplication": { "status": "ok", "code": 200 },
+        "westvalleyshoutouts.com": { "status": "ok", "code": 200 },
+        "chadnicely.courseportal.io/login": { "status": "ok", "code": 200 },
+        "selfmasteryco.mintbird.com": { "status": "ok", "code": 200 },
+        "selfmasteryco.globalcontrol.io": { "status": "ok", "code": 200 },
+        "admin.globalcontrol.io": { "status": "ok", "code": 200 },
+        "app.globalcontrol.io/appointment-booking/entrourage-mastermind": { "status": "ok", "code": 200 }
+      },
+      "summary": {
+        "apis_ok": 4,
+        "apis_fail": 1,
+        "urls_ok": 9,
+        "urls_fail": 0,
+        "issues": ["GC API 401 Unauthorized - key needs refresh"]
+      }
+    },
+    {
+      "time": "16:00 CST",
+      "apis": {
+        "global_control": { "status": "error", "code": 401, "message": "Unauthorized" },
+        "poplinks": { "status": "ok", "code": 200 },
+        "course_sprout": { "status": "ok", "code": 200 },
+        "letterman": { "status": "ok", "code": 200 },
+        "saasonboard": { "status": "ok", "code": 200 }
+      },
+      "urls": {
+        "all": { "status": "ok", "code": 200, "count": 9 }
+      },
+      "summary": {
+        "apis_ok": 4,
+        "apis_fail": 1,
+        "urls_ok": 9,
+        "urls_fail": 0,
+        "issues": ["GC API 401 Unauthorized - persists from morning"]
+      }
+    }
+  ]
+}

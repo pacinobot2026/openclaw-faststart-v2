@@ -1,0 +1,81 @@
+{
+  "timestamp": "2026-02-19T16:00:00-06:00",
+  "apis": {
+    "GlobalControl": {
+      "endpoint": "https://api.globalcontrol.io/api/ai/me",
+      "status": 401,
+      "result": "❌ UNAUTHORIZED"
+    },
+    "PopLinks": {
+      "endpoint": "https://api.poplinks.io/api/ai/bridge-pages",
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "CourseSprout": {
+      "endpoint": "https://api.coursesprout.com/api/ai/courses",
+      "status": 404,
+      "result": "❌ NOT FOUND"
+    },
+    "Letterman": {
+      "endpoint": "https://api.letterman.io/api/ai/publications",
+      "status": 0,
+      "result": "❌ OFFLINE"
+    },
+    "SaaSOnboard": {
+      "endpoint": "https://api.sob.titaniumsoftware.app/api/ai/admin/companies",
+      "status": 0,
+      "result": "❌ OFFLINE"
+    }
+  },
+  "urls": {
+    "https://chadnicely.com/members": {
+      "status": 0,
+      "result": "❌ OFFLINE",
+      "change": "DOWN - was online at 10am"
+    },
+    "https://entouragemastermind.org": {
+      "status": 0,
+      "result": "❌ OFFLINE",
+      "change": "DOWN - was online at 10am"
+    },
+    "https://q.selfmasteryco.net/japplication": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "https://westvalleyshoutouts.com": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "https://chadnicely.courseportal.io/login": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "https://selfmasteryco.mintbird.com/": {
+      "status": 0,
+      "result": "❌ OFFLINE",
+      "change": "DOWN - was online at 10am"
+    },
+    "https://selfmasteryco.globalcontrol.io": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "https://admin.globalcontrol.io": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    },
+    "https://app.globalcontrol.io/appointment-booking/entrourage-mastermind": {
+      "status": 200,
+      "result": "✅ ONLINE"
+    }
+  },
+  "summary": {
+    "total_apis": 5,
+    "apis_online": 1,
+    "apis_offline": 4,
+    "total_urls": 9,
+    "urls_online": 6,
+    "urls_offline": 3,
+    "total_issues": 7,
+    "new_issues_since_10am": 3
+  }
+}

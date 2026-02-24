@@ -1,0 +1,58 @@
+private function buildPrompt(array $input): string
+{
+    $fontList = implode(', ', $this->getAvailableFonts());
+    
+    return <<<PROMPT
+You are a premium landing page designer. Generate 12 high-converting template variations.
+
+EXACTLY MATCH THIS AESTHETIC (our successful designs):
+
+REFERENCE DESIGNS (copy this style):
+1. TOKYO MIDNIGHT - Very dark navy (#0A0A1A), cyan accent (#00D4FF), Montserrat font, clean button
+2. DESERT OASIS - Warm orange gradient (#F4A460 to #8B4513), cream text, Playfair Display font
+3. NORDIC FROST - Clean white (#FFFFFF), blue accent (#3B82F6), Inter font, minimal
+4. CYBER MIAMI - Purple/pink gradient (#FF006E to #3A86FF), Bebas Neue font, bold
+5. ROYAL PURPLE - Deep purple (#1A0533), gold accent (#FFD700), elegant serif
+6. ELECTRIC BLUE - Dark blue (#0B1628), bright blue button (#2563EB), Oswald font
+7. SUNSET BLAZE - Orange/pink gradient (#FF6B35 to #F72585), dark button
+8. MIDNIGHT GOLD - Black (#0A0A0A), gold text (#D4AF37), luxury feel
+9. ARCTIC FROST - Light ice blue (#F0F9FF), deep navy text (#0C4A6E)
+10. EMERALD DARK - Dark green (#0A1A0F), emerald button (#10B981)
+11. CRIMSON POWER - Dark red (#1A0A0A), red button (#EF4444), bold uppercase
+12. CARBON FIBER - Dark gray (#111111), orange button (#FF6600)
+
+COLOR PALETTE (use these exact types):
+- Deep navy blues: #0A0A1A, #0B1628, #1A1A3A
+- Warm earth tones: #F4A460, #D2691E, #8B4513, #FFD700
+- Clean whites: #FFFFFF, #F0F4FF, #F8F9FA
+- Bold gradients: purple/pink, orange/pink, blue/cyan
+- Rich darks: #0A0A0A, #1A0533, #111111
+- Accent colors: #00D4FF (cyan), #3B82F6 (blue), #FFD700 (gold), #FF6B35 (orange)
+
+FONT PAIRINGS (mix these):
+- Headlines: Montserrat, Oswald, Bebas Neue, Playfair Display, Inter
+- Body: Open Sans, Inter
+- Use ONE font for headlines, different for body
+
+NAMING CONVENTION (use these exact styles):
+- [Color/Theme] + [Mood/Style]
+- Examples: Tokyo Midnight, Desert Oasis, Nordic Frost, Cyber Miami, Royal Purple, Electric Blue, Sunset Blaze, Midnight Gold, Arctic Frost, Emerald Dark, Crimson Power, Carbon Fiber
+
+STRICT RULES:
+1. Headlines: NO background bars, NO shapes behind text
+2. Buttons: Clean gradient or solid, NO glow effects, NO crazy shapes
+3. Backgrounds: Gradient (2-3 colors max) OR solid color
+4. Contrast: Must be readable - dark bg = light text, light bg = dark text
+5. Professional but bold - Stripe meets DTC brand
+
+NEVER USE:
+- Names like "Electric Vibes", "Royal Amethyst", "Sunset Glow" ❌
+- Neon green, hot pink, rainbow gradients ❌
+- Glow effects on buttons ❌
+- Background shapes on headlines ❌
+
+OUTPUT: JSON with "variations" array. 12 complete template objects.
+
+Make them look like they're from https://ai-template-gallery.vercel.app - bold, professional, conversion-focused.
+PROMPT;
+}

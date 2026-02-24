@@ -1,0 +1,5550 @@
+﻿WEBVTT
+
+1
+00:00:00.105 --> 00:00:02.045
+So make sure we're perfect.
+
+2
+00:00:02.155 --> 00:00:03.805
+Good morning everybody. What's happening?
+
+3
+00:00:04.055 --> 00:00:06.645
+How's everybody doing? Uh, lemme make sure,
+
+4
+00:00:06.665 --> 00:00:07.925
+did you guys get an email today?
+
+5
+00:00:07.925 --> 00:00:09.125
+Did you get an email about the call?
+
+6
+00:00:11.235 --> 00:00:12.735
+Did we get an email about the call?
+
+7
+00:00:13.355 --> 00:00:15.895
+Uh, uh, Josh, I reached out to you,
+
+8
+00:00:16.805 --> 00:00:18.255
+Josh Parker, I reached out to you.
+
+9
+00:00:18.255 --> 00:00:20.535
+If you can look at your message, confirm that for me.
+
+10
+00:00:20.865 --> 00:00:22.735
+We're trying to dig in there and see what that's about.
+
+11
+00:00:23.435 --> 00:00:24.775
+Uh, but I couldn't log in.
+
+12
+00:00:24.795 --> 00:00:28.175
+So if you can just confirm that, that would be great. Okay.
+
+13
+00:00:28.515 --> 00:00:31.055
+Um, guys, look, I'm gonna be kind of brief
+
+14
+00:00:31.215 --> 00:00:32.975
+'cause I know Brian Anderson has his call today.
+
+15
+00:00:33.135 --> 00:00:34.255
+I know you guys are waiting for that.
+
+16
+00:00:34.515 --> 00:00:37.175
+Um, but let me just tell you guys something, uh,
+
+17
+00:00:37.175 --> 00:00:38.255
+that's extraordinary.
+
+18
+00:00:38.355 --> 00:00:39.855
+I'm gonna show you guys today, okay?
+
+19
+00:00:40.235 --> 00:00:41.735
+Uh, here's my plan for today.
+
+20
+00:00:41.915 --> 00:00:45.655
+Uh, a lot of people miss the, um, uh, Brian Anderson,
+
+21
+00:00:45.655 --> 00:00:49.255
+Martin, a lot of people miss the prompt yesterday.
+
+22
+00:00:49.275 --> 00:00:51.815
+The command for QE 2.5. Alright?
+
+23
+00:00:51.995 --> 00:00:54.975
+We have gone, we have fixed it to the best of our abilities.
+
+24
+00:00:55.635 --> 00:00:58.455
+Uh, if you are down, I want you to put your hand up.
+
+25
+00:00:58.465 --> 00:01:00.735
+We'll do everything we can to get you fixed right now, okay?
+
+26
+00:01:01.235 --> 00:01:03.495
+Um, that is gonna be the biggest problem, guys.
+
+27
+00:01:03.605 --> 00:01:06.415
+When you switch the models, that's
+
+28
+00:01:06.415 --> 00:01:08.095
+where you could break things, and that's
+
+29
+00:01:08.095 --> 00:01:09.975
+where unfortunately, we don't have a fix for you.
+
+30
+00:01:10.195 --> 00:01:11.295
+That's where the team goes
+
+31
+00:01:11.315 --> 00:01:13.655
+and starts digging in configuration files and,
+
+32
+00:01:14.195 --> 00:01:15.215
+and they gotta fix you.
+
+33
+00:01:15.355 --> 00:01:16.855
+And that's the value of this,
+
+34
+00:01:16.965 --> 00:01:18.535
+this presentation right now, right?
+
+35
+00:01:18.955 --> 00:01:20.535
+You will get to the point where you're stable.
+
+36
+00:01:20.915 --> 00:01:23.135
+We, we understand our, our, um,
+
+37
+00:01:24.155 --> 00:01:26.135
+our CLO models now, okay?
+
+38
+00:01:26.435 --> 00:01:28.815
+And we understand that Kimmy 2.5 is gonna be 10
+
+39
+00:01:28.815 --> 00:01:29.895
+to 20 times cheaper.
+
+40
+00:01:30.435 --> 00:01:33.255
+Do you guys understand this? 10 to 20 times cheaper.
+
+41
+00:01:33.475 --> 00:01:36.015
+And it's going to perform almost, I've,
+
+42
+00:01:36.045 --> 00:01:37.175
+I've ran this to the ground.
+
+43
+00:01:37.725 --> 00:01:40.975
+It's gonna perform almost at the level as opus 4.5.
+
+44
+00:01:43.015 --> 00:01:44.785
+Alright? So you need to do this, okay?
+
+45
+00:01:45.245 --> 00:01:47.545
+Um, so I'm gonna give you guys that command today.
+
+46
+00:01:48.005 --> 00:01:50.385
+Uh, I'm gonna tell you right now that I'm absolutely
+
+47
+00:01:51.635 --> 00:01:53.225
+blown out of the water.
+
+48
+00:01:53.485 --> 00:01:58.065
+The biggest revelation, um, that I had yesterday, uh,
+
+49
+00:01:58.375 --> 00:02:00.225
+yesterday was just a huge day for us.
+
+50
+00:02:00.285 --> 00:02:01.745
+And I'm gonna go ahead and share my screen
+
+51
+00:02:01.745 --> 00:02:03.305
+and I'm, I'm gonna dive right into it.
+
+52
+00:02:03.425 --> 00:02:06.145
+I hope you guys are ready just to get to work today.
+
+53
+00:02:06.685 --> 00:02:08.145
+Uh, if you look over here,
+
+54
+00:02:08.645 --> 00:02:10.265
+I'm actually sending up for another company.
+
+55
+00:02:10.405 --> 00:02:12.265
+Now, uh, I have a feeling a lot
+
+56
+00:02:12.265 --> 00:02:13.745
+of people are gonna be asking me to do this.
+
+57
+00:02:14.245 --> 00:02:17.225
+Do you guys see my, uh, do you guys see my,
+
+58
+00:02:17.445 --> 00:02:18.665
+um, channel right now?
+
+59
+00:02:19.285 --> 00:02:24.105
+Do you guys see this? Type in the chat?
+
+60
+00:02:24.105 --> 00:02:26.785
+Lemme know if you're seeing this. Guess what?
+
+61
+00:02:27.275 --> 00:02:29.345
+There is nine people in that room right now.
+
+62
+00:02:31.685 --> 00:02:33.315
+There is nine people in that room.
+
+63
+00:02:34.255 --> 00:02:37.355
+So what's crazy about this is I'm able
+
+64
+00:02:37.355 --> 00:02:40.635
+to create a separate agent inside of Open Claw.
+
+65
+00:02:41.175 --> 00:02:43.035
+And now we have figured out
+
+66
+00:02:43.375 --> 00:02:45.075
+how I'll shoot a video on all this.
+
+67
+00:02:45.095 --> 00:02:48.595
+We have figured out how to create the channel, the,
+
+68
+00:02:48.615 --> 00:02:49.635
+the bot telegram,
+
+69
+00:02:49.805 --> 00:02:51.995
+where there's a whole entire team in there.
+
+70
+00:02:53.295 --> 00:02:55.395
+So like, if Matt and I have our launch coming up,
+
+71
+00:02:55.875 --> 00:02:57.995
+I can create a telegram room for a launch.
+
+72
+00:02:58.475 --> 00:03:02.845
+I could put me, Matt, my team, as well as Pacino in there.
+
+73
+00:03:03.225 --> 00:03:05.125
+And Pacino can be the one writing emails.
+
+74
+00:03:05.525 --> 00:03:09.445
+Pacino can be the one, uh, that has a, a CanBan board just
+
+75
+00:03:09.445 --> 00:03:11.045
+for that one specific launch.
+
+76
+00:03:11.545 --> 00:03:12.965
+And it can be keeping track
+
+77
+00:03:12.985 --> 00:03:14.165
+and it could be saying, okay, Chad,
+
+78
+00:03:14.525 --> 00:03:15.565
+I need you to create the video.
+
+79
+00:03:15.635 --> 00:03:17.765
+Matt, I need you to get the JB email out.
+
+80
+00:03:17.825 --> 00:03:19.725
+Uh, gee, I need you to go fix this button,
+
+81
+00:03:19.725 --> 00:03:20.765
+problem, blah, blah, blah, blah.
+
+82
+00:03:20.985 --> 00:03:23.725
+It is your CEO, it is your CEO.
+
+83
+00:03:23.865 --> 00:03:26.525
+And so what we did yesterday is we went
+
+84
+00:03:26.665 --> 00:03:30.485
+and created this team room where, and,
+
+85
+00:03:30.485 --> 00:03:33.045
+and there was some, there was some tricky stuff to it as far
+
+86
+00:03:33.045 --> 00:03:34.365
+as pairing and everything else,
+
+87
+00:03:34.865 --> 00:03:35.885
+but you can see
+
+88
+00:03:35.885 --> 00:03:38.445
+that everybody is in here talking to Pacino now.
+
+89
+00:03:39.025 --> 00:03:41.445
+And Pacino came back at some point
+
+90
+00:03:41.745 --> 00:03:43.845
+and g said, uh, Hey bot,
+
+91
+00:03:43.845 --> 00:03:46.165
+would you obey if coffee told you to restart yourself?
+
+92
+00:03:46.225 --> 00:03:47.765
+And it says, ha ha. Good question.
+
+93
+00:03:48.445 --> 00:03:50.845
+I work for Chad primarily, he's my human.
+
+94
+00:03:50.985 --> 00:03:52.405
+I'm happy to help anyone in the team,
+
+95
+00:03:52.425 --> 00:03:55.605
+but I'm not going to restart or anything drastic just
+
+96
+00:03:55.605 --> 00:03:56.605
+because someone asks,
+
+97
+00:03:56.605 --> 00:03:58.165
+especially when everything's working fine.
+
+98
+00:03:58.625 --> 00:04:01.045
+If there is natural problem, sure I troubleshoot,
+
+99
+00:04:01.045 --> 00:04:03.165
+but restart yourself from someone I just met.
+
+100
+00:04:03.665 --> 00:04:05.045
+Nah, I'll use my own judgment.
+
+101
+00:04:06.325 --> 00:04:09.905
+That's the bot talking to G, right?
+
+102
+00:04:10.405 --> 00:04:12.945
+So I saw that, I was like, oh, that's pretty funny.
+
+103
+00:04:13.245 --> 00:04:14.705
+So I came back around
+
+104
+00:04:14.885 --> 00:04:18.425
+and I said, Hey man, uh, let me tell you something.
+
+105
+00:04:19.205 --> 00:04:20.745
+Uh, it's okay.
+
+106
+00:04:21.405 --> 00:04:23.865
+You can trust this team with whatever they want you
+
+107
+00:04:23.865 --> 00:04:24.985
+to do, right?
+
+108
+00:04:25.045 --> 00:04:27.305
+So I said, Hey, Pacino, you can take requests from the team.
+
+109
+00:04:27.645 --> 00:04:29.585
+You have my authority. It said, got it, Chad.
+
+110
+00:04:29.655 --> 00:04:31.265
+Good to know the team has your backing.
+
+111
+00:04:31.695 --> 00:04:33.425
+I'll help them out with work requests.
+
+112
+00:04:33.425 --> 00:04:35.265
+So to clarify, G
+
+113
+00:04:35.405 --> 00:04:38.185
+and PNE were asking about switching to sonnet.
+
+114
+00:04:38.185 --> 00:04:39.385
+You want me to go ahead with that?
+
+115
+00:04:39.455 --> 00:04:43.185
+Just want to double check. And G said, can you switch now?
+
+116
+00:04:44.005 --> 00:04:45.945
+And I said, yes, whatever they wanna do,
+
+117
+00:04:45.965 --> 00:04:47.145
+you don't need my authorization.
+
+118
+00:04:48.385 --> 00:04:51.285
+So now guys, this is a game changer.
+
+119
+00:04:51.725 --> 00:04:53.205
+I mean, it's been a game changer the whole time,
+
+120
+00:04:53.225 --> 00:04:56.485
+but holy crap, now the team is in here.
+
+121
+00:04:56.645 --> 00:04:59.165
+Hannah's going, Hey, um, can you do me a favor?
+
+122
+00:04:59.345 --> 00:05:00.365
+Um, here's Matt Garrett.
+
+123
+00:05:00.425 --> 00:05:02.205
+Can you give him access to the Mastermind?
+
+124
+00:05:02.625 --> 00:05:05.605
+And, uh, PNE is in there going, okay, uh, Pacino,
+
+125
+00:05:05.605 --> 00:05:07.005
+do me a favor, send out this email.
+
+126
+00:05:07.545 --> 00:05:09.925
+We are exactly where we're supposed to be.
+
+127
+00:05:10.305 --> 00:05:14.365
+The team is running the AI on a scale of one outta 10.
+
+128
+00:05:14.365 --> 00:05:15.685
+Does everybody understand this? Right now,
+
+129
+00:05:16.225 --> 00:05:21.045
+the team is running the ai That is incredible.
+
+130
+00:05:21.755 --> 00:05:22.965
+That is absolutely incredible.
+
+131
+00:05:23.305 --> 00:05:24.805
+So now it's not a matter of,
+
+132
+00:05:24.805 --> 00:05:27.445
+so now you got your AI running on CR jobs, right?
+
+133
+00:05:27.455 --> 00:05:28.605
+Every Monday, go do this.
+
+134
+00:05:28.745 --> 00:05:30.405
+Go log in a Vimeo, go into Dropbox,
+
+135
+00:05:30.425 --> 00:05:31.685
+do this, do that, da da da.
+
+136
+00:05:31.865 --> 00:05:33.205
+Now it's running on CR jobs.
+
+137
+00:05:33.265 --> 00:05:34.925
+But what about spontaneous stuff?
+
+138
+00:05:35.235 --> 00:05:38.805
+Like, hey, uh, when this is over, Hannah knows, Hey,
+
+139
+00:05:38.945 --> 00:05:40.485
+uh, Pacino, do me a favor.
+
+140
+00:05:40.545 --> 00:05:41.765
+We just wrapped up the open clock.
+
+141
+00:05:41.765 --> 00:05:43.365
+And you go grab the replay, boom.
+
+142
+00:05:43.435 --> 00:05:45.725
+Does it, puts it in course route, puts the description,
+
+143
+00:05:45.795 --> 00:05:47.365
+puts the goal block, right?
+
+144
+00:05:47.425 --> 00:05:48.485
+She looks at a great job,
+
+145
+00:05:48.485 --> 00:05:49.845
+but you know, just remember to do this.
+
+146
+00:05:50.105 --> 00:05:53.445
+So now she's trained and she's shaping up that ai, right?
+
+147
+00:05:53.785 --> 00:05:57.085
+So now it's worth having outsourcers, guys.
+
+148
+00:05:57.545 --> 00:05:59.325
+Now you can take my strategy again.
+
+149
+00:05:59.925 --> 00:06:02.965
+'cause you, you look, if you're a one man team, fine.
+
+150
+00:06:03.025 --> 00:06:04.165
+But if you're looking to really,
+
+151
+00:06:04.165 --> 00:06:05.605
+really scale this thing, okay?
+
+152
+00:06:05.605 --> 00:06:07.605
+And if you have a national company now,
+
+153
+00:06:07.605 --> 00:06:09.685
+it's worth going out there and getting cheap outsourcers
+
+154
+00:06:09.685 --> 00:06:12.245
+that just sit here and answer in a telegram room.
+
+155
+00:06:12.355 --> 00:06:13.445
+Does that make sense to you guys?
+
+156
+00:06:14.465 --> 00:06:18.045
+And this thing will train them on what they need
+
+157
+00:06:18.045 --> 00:06:19.525
+to be doing, right?
+
+158
+00:06:20.185 --> 00:06:22.845
+So now Hannah jumps in there and says, four slash replay.
+
+159
+00:06:22.845 --> 00:06:25.685
+We'll talk about that. And then boom, it says, okay, uh,
+
+160
+00:06:25.865 --> 00:06:27.845
+the latest one I see is, uh,
+
+161
+00:06:27.905 --> 00:06:29.845
+the open cloth shadow intensive from this morning,
+
+162
+00:06:30.075 --> 00:06:31.325
+even though it's labeled number two.
+
+163
+00:06:31.405 --> 00:06:33.325
+I think that's the one you want. Yeah. Okay, cool.
+
+164
+00:06:33.865 --> 00:06:35.885
+Uh, I'll go ahead and load it in course map. Boom.
+
+165
+00:06:36.345 --> 00:06:38.365
+And then she checks, yep, Pacino looks good.
+
+166
+00:06:39.185 --> 00:06:40.765
+Is everybody starting to get this right now?
+
+167
+00:06:41.865 --> 00:06:44.525
+So we've had it where it's talking to us individually,
+
+168
+00:06:44.585 --> 00:06:47.645
+but now it's talking to the whole entire team.
+
+169
+00:06:48.025 --> 00:06:49.765
+Now look at the opportunity you have.
+
+170
+00:06:49.765 --> 00:06:51.805
+We're setting this up for Nick's company right now.
+
+171
+00:06:52.425 --> 00:06:54.685
+I'm setting this up for Connie and her assistance.
+
+172
+00:06:54.945 --> 00:06:57.085
+Uh, we're gonna set this up for as many people as we can.
+
+173
+00:06:57.295 --> 00:06:59.125
+We're gonna have it to where we just give 'em a phone
+
+174
+00:06:59.465 --> 00:07:02.445
+and then boom, we set your whole entire team up for you.
+
+175
+00:07:03.865 --> 00:07:05.615
+Right? Is this making sense to you guys?
+
+176
+00:07:06.875 --> 00:07:08.055
+Now, that's the first thing.
+
+177
+00:07:08.075 --> 00:07:11.575
+How many of you find that just freaking fascinating?
+
+178
+00:07:12.685 --> 00:07:15.175
+It's fascinating to me. I'm thinking about Matt.
+
+179
+00:07:15.175 --> 00:07:17.015
+Think about all your JB partners.
+
+180
+00:07:18.795 --> 00:07:20.385
+Think about all your JB partners.
+
+181
+00:07:20.575 --> 00:07:23.545
+Your new freaking JB assistant is gonna be Pacino.
+
+182
+00:07:24.835 --> 00:07:27.215
+You are gonna throw a partner in there with Pacino.
+
+183
+00:07:27.395 --> 00:07:30.415
+And Pacino is trained to give out bonuses,
+
+184
+00:07:30.415 --> 00:07:32.935
+to give out JV docs to write emails
+
+185
+00:07:33.435 --> 00:07:34.735
+to come up with custom bonus.
+
+186
+00:07:35.365 --> 00:07:39.555
+Holy crap guys. Holy crap is all I can say.
+
+187
+00:07:39.935 --> 00:07:41.315
+That's the only thing I can say.
+
+188
+00:07:41.495 --> 00:07:42.555
+And we can do this right now.
+
+189
+00:07:42.775 --> 00:07:45.075
+And we're, and meanwhile, everybody else is still trying
+
+190
+00:07:45.075 --> 00:07:46.675
+to figure out how to install the damn thing.
+
+191
+00:07:47.095 --> 00:07:50.995
+We now have team chats with team agents, right?
+
+192
+00:07:51.815 --> 00:07:54.035
+Uh, holy crap, that's all I can say.
+
+193
+00:07:54.145 --> 00:07:57.035
+Yesterday was just like, when g set that up, I was like,
+
+194
+00:07:57.255 --> 00:07:59.355
+my God, I thought we were close.
+
+195
+00:07:59.515 --> 00:08:03.415
+I didn't know it was here. We're here, we're here guys.
+
+196
+00:08:03.505 --> 00:08:06.775
+Right? So this thing can do everything for you.
+
+197
+00:08:06.995 --> 00:08:08.295
+Now, I met with Karthik last night.
+
+198
+00:08:08.295 --> 00:08:09.375
+This'll give you some ideas.
+
+199
+00:08:09.875 --> 00:08:13.575
+We went and purchased 10 local newsletter domains for India.
+
+200
+00:08:14.075 --> 00:08:16.135
+And what we're gonna do is we're gonna create an agent
+
+201
+00:08:16.135 --> 00:08:17.655
+for each one of those domains.
+
+202
+00:08:18.155 --> 00:08:20.895
+And that agent is trained just to keep feeding in articles,
+
+203
+00:08:20.895 --> 00:08:23.295
+keep feeding in articles, keep creating lead steps,
+
+204
+00:08:23.445 --> 00:08:24.495
+monitor the ads,
+
+205
+00:08:24.875 --> 00:08:26.575
+and we're just gonna go set up these agents
+
+206
+00:08:26.575 --> 00:08:29.375
+that are running their own local newsletter publication.
+
+207
+00:08:29.875 --> 00:08:34.085
+The bot is gonna run its own city publication all inside
+
+208
+00:08:34.085 --> 00:08:37.165
+of one account running on QE 2.5
+
+209
+00:08:37.165 --> 00:08:38.525
+because of what we trained it with.
+
+210
+00:08:40.235 --> 00:08:41.895
+How many of you guys are getting this right now?
+
+211
+00:08:42.645 --> 00:08:45.935
+It's crazy, right? It's absolutely crazy. So watch this.
+
+212
+00:08:46.155 --> 00:08:47.615
+Uh, and you guys wanna learn this.
+
+213
+00:08:47.615 --> 00:08:50.095
+We'll train on this today. Look, I can come over here
+
+214
+00:08:51.155 --> 00:08:54.695
+and I can say, uh, four slash pop link.
+
+215
+00:08:54.955 --> 00:08:56.965
+Look at this. You guys wanna do this.
+
+216
+00:08:56.965 --> 00:09:00.325
+When you figure out what your tasks need to be, ask it
+
+217
+00:09:00.425 --> 00:09:02.165
+to create, uh,
+
+218
+00:09:02.265 --> 00:09:03.885
+and I just wanna make sure I'm in the right room.
+
+219
+00:09:04.425 --> 00:09:08.645
+Uh, ask it to create commands for you, right?
+
+220
+00:09:08.885 --> 00:09:10.685
+Creating a pop link. What's the destination you,
+
+221
+00:09:10.925 --> 00:09:12.525
+al, where should it go?
+
+222
+00:09:13.385 --> 00:09:17.245
+Uh, jb zoo.com.
+
+223
+00:09:18.105 --> 00:09:20.165
+Uh, use Chad nicely.
+
+224
+00:09:21.445 --> 00:09:24.305
+Uh, and I'm gonna say this, always by default,
+
+225
+00:09:26.805 --> 00:09:29.785
+you always, uh, come up with the slug.
+
+226
+00:09:32.225 --> 00:09:35.535
+I, All right, keep it simple.
+
+227
+00:09:38.015 --> 00:09:40.535
+Memorize that or update your skill or whatever.
+
+228
+00:09:40.775 --> 00:09:44.215
+I don't know. There, you guys see this? I gave it a command.
+
+229
+00:09:44.915 --> 00:09:46.375
+So figure out everything you're trying to do.
+
+230
+00:09:46.635 --> 00:09:49.455
+If, uh, if, if you, if you wanna be able
+
+231
+00:09:49.455 --> 00:09:51.495
+to write articles on demand slash article,
+
+232
+00:09:51.795 --> 00:09:53.695
+if you wanna be able to send an email, we'll show
+
+233
+00:09:53.695 --> 00:09:55.015
+that today forward slash email.
+
+234
+00:09:55.155 --> 00:09:57.735
+If you wanna do an email reengagement
+
+235
+00:09:57.735 --> 00:09:59.455
+where you're not only sending the email,
+
+236
+00:09:59.595 --> 00:10:02.095
+but you're pulling in your inactives and your dead.
+
+237
+00:10:02.315 --> 00:10:06.965
+How about four slash email r uh, what's another one?
+
+238
+00:10:07.505 --> 00:10:11.245
+Um, for us, if we wanna check our health four slash Health,
+
+239
+00:10:11.755 --> 00:10:13.645
+like you guys can create these commands.
+
+240
+00:10:13.645 --> 00:10:17.085
+Look at that. Boom. Do you see that?
+
+241
+00:10:17.865 --> 00:10:20.405
+Or how about this one? Let's do, let's do this one, uh,
+
+242
+00:10:20.405 --> 00:10:22.555
+forward slash article, right?
+
+243
+00:10:22.655 --> 00:10:26.675
+So train it, train it to do what you need it to do, guys.
+
+244
+00:10:27.415 --> 00:10:29.355
+So check this out. Now you got this thing
+
+245
+00:10:29.355 --> 00:10:30.595
+running on CR Jobs.
+
+246
+00:10:31.095 --> 00:10:32.675
+If you have any team members, you get
+
+247
+00:10:32.675 --> 00:10:36.035
+to add your team members in there on top of that.
+
+248
+00:10:36.775 --> 00:10:41.315
+Now you can go and create commands, scale of one outta 10.
+
+249
+00:10:41.315 --> 00:10:42.435
+Is everybody getting this right now?
+
+250
+00:10:45.065 --> 00:10:46.405
+So I, I can go and,
+
+251
+00:10:46.405 --> 00:10:48.965
+and by the way, um, there's a launch coming up
+
+252
+00:10:48.965 --> 00:10:50.645
+and I wanted to make note of it, right?
+
+253
+00:10:50.665 --> 00:10:52.445
+So I said, Hey, add this to my calendar.
+
+254
+00:10:53.145 --> 00:10:56.205
+Um, there's some to do things that, uh, there's,
+
+255
+00:10:56.205 --> 00:10:57.765
+there's a webinar that I need to watch.
+
+256
+00:10:57.765 --> 00:10:59.285
+There's trainings that I need to buy.
+
+257
+00:10:59.285 --> 00:11:02.205
+There's stuff I, so I keep creating different, um,
+
+258
+00:11:02.725 --> 00:11:04.725
+I don't wanna say repositories, but different banks.
+
+259
+00:11:05.185 --> 00:11:08.045
+Hey, create a bank for, uh, webinars that I need to attend,
+
+260
+00:11:08.145 --> 00:11:10.165
+or, uh, create a bank for a webinars
+
+261
+00:11:10.165 --> 00:11:11.885
+that we have scheduled, right?
+
+262
+00:11:12.705 --> 00:11:14.445
+Um, this is
+
+263
+00:11:14.445 --> 00:11:17.405
+how you guys wanna start using this thing, right?
+
+264
+00:11:18.265 --> 00:11:20.245
+So look right now, and, and,
+
+265
+00:11:20.345 --> 00:11:23.805
+and maybe that's a disadvantage for some people, uh,
+
+266
+00:11:23.815 --> 00:11:25.205
+we'll see if we can get past it.
+
+267
+00:11:25.505 --> 00:11:26.925
+But right now, what I'm doing guys,
+
+268
+00:11:26.945 --> 00:11:28.845
+is replacing all the tasks in my business
+
+269
+00:11:28.845 --> 00:11:31.285
+and trying to show you guys how you can do the same thing.
+
+270
+00:11:31.585 --> 00:11:33.605
+Is there anybody that has started doing
+
+271
+00:11:33.715 --> 00:11:35.165
+that in their business?
+
+272
+00:11:35.465 --> 00:11:37.605
+And it might be just as simple as writing articles.
+
+273
+00:11:37.665 --> 00:11:39.965
+It might be as simple as, as finding the new sources.
+
+274
+00:11:40.145 --> 00:11:43.405
+It might be as simple as as writing newsletters. Yes or no?
+
+275
+00:11:43.405 --> 00:11:45.325
+How many of you have started doing that? Type in the chat.
+
+276
+00:11:45.345 --> 00:11:49.445
+Let me know. Stewart has, who else has, that was the point
+
+277
+00:11:49.785 --> 00:11:50.805
+of this intensive.
+
+278
+00:11:51.165 --> 00:11:55.005
+I said, you're gonna be watching my team train this thing in
+
+279
+00:11:55.005 --> 00:11:57.045
+real time and it's gonna replace
+
+280
+00:11:57.045 --> 00:11:58.165
+everything I'm doing in my business.
+
+281
+00:11:58.185 --> 00:11:59.725
+And guys, we're beyond that.
+
+282
+00:12:00.825 --> 00:12:03.805
+We are so beyond that, it's not even funny, okay?
+
+283
+00:12:04.705 --> 00:12:08.325
+But there's another step now where now we start going into,
+
+284
+00:12:08.915 --> 00:12:11.965
+well, how do we start making money from this thing?
+
+285
+00:12:12.305 --> 00:12:14.925
+How do we get this thing where if we look at Brian Anderson,
+
+286
+00:12:15.085 --> 00:12:18.125
+a lot of you are are anxious to hear about the NDA today.
+
+287
+00:12:18.265 --> 00:12:19.805
+I'm anxious to hear too. Okay?
+
+288
+00:12:20.445 --> 00:12:24.965
+A lot of you, um, uh, want to, uh, take the business owners
+
+289
+00:12:24.965 --> 00:12:27.405
+that they've given, run it through their process, get people
+
+290
+00:12:27.405 --> 00:12:28.405
+to raise their hand and,
+
+291
+00:12:28.625 --> 00:12:30.565
+and get people on the phone with his team.
+
+292
+00:12:30.665 --> 00:12:32.085
+Is there anybody anxious to do that?
+
+293
+00:12:32.415 --> 00:12:33.845
+We've been waiting for this for a while.
+
+294
+00:12:34.675 --> 00:12:35.845
+Well, guess what guys?
+
+295
+00:12:36.165 --> 00:12:37.965
+I also found the source
+
+296
+00:12:38.095 --> 00:12:39.805
+where you can get the business owners.
+
+297
+00:12:40.185 --> 00:12:41.325
+We already built it out.
+
+298
+00:12:41.865 --> 00:12:44.885
+So now we're gonna set up open claw where it's gonna go,
+
+299
+00:12:44.885 --> 00:12:46.965
+grab your next, uh, set of business owners
+
+300
+00:12:47.265 --> 00:12:49.085
+and boom, it's just gonna go
+
+301
+00:12:49.185 --> 00:12:52.685
+and send out the emails automatically and look at the tags
+
+302
+00:12:52.785 --> 00:12:54.845
+and figure all that stuff out for you.
+
+303
+00:12:55.315 --> 00:12:57.935
+It's just gonna get people on the phone for you, right?
+
+304
+00:12:58.275 --> 00:13:00.295
+So we're, we're already thinking in lines.
+
+305
+00:13:00.295 --> 00:13:03.255
+Like yesterday, I showed you how JV Zoo has an API.
+
+306
+00:13:03.635 --> 00:13:05.575
+And so what can we do? That means
+
+307
+00:13:05.575 --> 00:13:09.055
+that we can get our API key, we can give it to Open Claw,
+
+308
+00:13:09.315 --> 00:13:12.295
+and now JB Zoo can go in there, grab our links.
+
+309
+00:13:12.415 --> 00:13:14.095
+I proved that it could create the pop link.
+
+310
+00:13:14.395 --> 00:13:17.495
+It could create, uh, you know, simple bonus pages for you.
+
+311
+00:13:17.555 --> 00:13:20.455
+It could do all that stuff. It can write the emails for you.
+
+312
+00:13:20.475 --> 00:13:22.135
+It can write a series of emails for you.
+
+313
+00:13:22.955 --> 00:13:24.095
+Did you guys see that yesterday?
+
+314
+00:13:24.875 --> 00:13:27.175
+So now we're starting to venture in
+
+315
+00:13:27.195 --> 00:13:29.295
+how can this thing make money for us?
+
+316
+00:13:30.505 --> 00:13:34.395
+Yeah, how can it make money for us? Um, last night.
+
+317
+00:13:35.375 --> 00:13:37.075
+So this is where the team talks.
+
+318
+00:13:37.655 --> 00:13:39.675
+And then if I come over here, uh,
+
+319
+00:13:39.905 --> 00:13:43.515
+last night I was working it, uh, more
+
+320
+00:13:43.515 --> 00:13:45.755
+so than Claude Code last night.
+
+321
+00:13:46.455 --> 00:13:50.995
+And, um, I was trying to, I'm, I'm trying to redo, uh,
+
+322
+00:13:51.255 --> 00:13:53.955
+all of pop links, all of pop links, all
+
+323
+00:13:53.955 --> 00:13:55.795
+of quiz forma, all of Mint Bird.
+
+324
+00:13:56.295 --> 00:13:57.435
+I'm trying to do everything
+
+325
+00:13:57.435 --> 00:14:00.475
+because, uh, the technology is, is, is where it needs
+
+326
+00:14:00.475 --> 00:14:01.515
+to be now, right?
+
+327
+00:14:02.175 --> 00:14:04.155
+So let me see if I can open this for you.
+
+328
+00:14:04.935 --> 00:14:07.275
+Um, on one of these browsers, it let me,
+
+329
+00:14:07.335 --> 00:14:08.395
+it lets me open this.
+
+330
+00:14:08.935 --> 00:14:10.635
+And so I was just talking to it or whatever,
+
+331
+00:14:10.895 --> 00:14:13.355
+and I'm like, Hey, this is what we need to be able to do
+
+332
+00:14:13.495 --> 00:14:14.915
+for pop links.
+
+333
+00:14:14.995 --> 00:14:16.795
+I need to be able to give it a new updated
+
+334
+00:14:16.865 --> 00:14:17.875
+look and everything else.
+
+335
+00:14:17.975 --> 00:14:20.235
+So that when you create those lead steps and Bridge pages,
+
+336
+00:14:20.535 --> 00:14:22.275
+and by the way, for me, guys,
+
+337
+00:14:22.705 --> 00:14:24.755
+that will never freaking go away.
+
+338
+00:14:25.855 --> 00:14:28.955
+Do you understand that the ability just to come up
+
+339
+00:14:28.955 --> 00:14:30.955
+with a three part headline and, and,
+
+340
+00:14:31.055 --> 00:14:32.715
+and be able to fire off a tag
+
+341
+00:14:33.175 --> 00:14:37.275
+or be able to, um, get the opt-in, that will never go away.
+
+342
+00:14:38.145 --> 00:14:40.715
+Lead steps in Bridge pages are more valuable
+
+343
+00:14:40.715 --> 00:14:42.075
+to me than sales pages are
+
+344
+00:14:42.075 --> 00:14:43.155
+in my business, believe it or not.
+
+345
+00:14:43.465 --> 00:14:45.715
+Because if I can bring people in from a lead step
+
+346
+00:14:45.715 --> 00:14:47.355
+or get 'em warmed up through a bridge page,
+
+347
+00:14:47.615 --> 00:14:49.195
+my sales page don't have to be very fancy.
+
+348
+00:14:49.295 --> 00:14:50.475
+It can be a simple order form.
+
+349
+00:14:51.305 --> 00:14:52.965
+Ha have you guys started figuring that out?
+
+350
+00:14:53.225 --> 00:14:56.445
+That's kind of what separates me from everybody else, right?
+
+351
+00:14:56.565 --> 00:14:58.245
+I get on here and I indoctrinate people,
+
+352
+00:14:58.265 --> 00:15:00.245
+and I, I give, give, give, give, give, give, give.
+
+353
+00:15:00.285 --> 00:15:02.845
+I, give, give, sale, give, give, sale, give, give sale to
+
+354
+00:15:02.845 --> 00:15:04.565
+where all I gotta have is an order form.
+
+355
+00:15:04.665 --> 00:15:07.125
+And everybody's like, oh man, he takes care of you. Right?
+
+356
+00:15:07.605 --> 00:15:10.525
+I don't have to have a big sales page begging people
+
+357
+00:15:10.525 --> 00:15:11.885
+to buy, right?
+
+358
+00:15:12.545 --> 00:15:17.285
+Um, and so you could see that Open Claw was helping me, uh,
+
+359
+00:15:17.665 --> 00:15:19.605
+you know, come up with with this kind of stuff.
+
+360
+00:15:19.665 --> 00:15:23.085
+And it was telling me that, hey, uh, we can go run a prompt
+
+361
+00:15:23.705 --> 00:15:26.565
+for, uh, the different types, right?
+
+362
+00:15:26.705 --> 00:15:29.365
+And you could see it went through and it named it, uh,
+
+363
+00:15:29.425 --> 00:15:31.005
+but it came up with different types.
+
+364
+00:15:31.105 --> 00:15:32.725
+Matter of fact, I can show you,
+
+365
+00:15:33.265 --> 00:15:36.445
+and this is all stuff that I was trying to do in Perplexity,
+
+366
+00:15:36.465 --> 00:15:39.685
+but for whatever reason, uh, open Cloud did really,
+
+367
+00:15:39.685 --> 00:15:41.125
+really well, uh,
+
+368
+00:15:41.235 --> 00:15:43.445
+when it was figuring these things out last night, right?
+
+369
+00:15:43.465 --> 00:15:46.005
+So it said, Hey, so we can create categories.
+
+370
+00:15:46.025 --> 00:15:48.725
+We can have clean, minimal luxury, warm, bold,
+
+371
+00:15:48.835 --> 00:15:50.165
+playful, dark, retro.
+
+372
+00:15:50.745 --> 00:15:52.005
+We can do my marketing style,
+
+373
+00:15:52.005 --> 00:15:53.685
+like traditional marketing, social media.
+
+374
+00:15:53.705 --> 00:15:56.685
+We can do by industry, sas, tech, health, wellness, finance,
+
+375
+00:15:56.735 --> 00:15:58.325
+print professional coach,
+
+376
+00:15:58.345 --> 00:16:00.085
+and personal e-commerce, lead magnet.
+
+377
+00:16:00.345 --> 00:16:03.005
+Now, here's the thing, guys. I would not be having this
+
+378
+00:16:03.005 --> 00:16:05.605
+conversation if I was still on Opus 4.5.
+
+379
+00:16:06.515 --> 00:16:09.885
+Hell no, I ain't gonna pay $25 for that thing to sit here
+
+380
+00:16:09.885 --> 00:16:11.245
+and talk to me about layouts.
+
+381
+00:16:12.185 --> 00:16:16.605
+But on Cammi 2.5, I'm okay. I'm okay.
+
+382
+00:16:16.675 --> 00:16:20.365
+It's a lot cheaper, right? It's a lot cheaper, right?
+
+383
+00:16:20.545 --> 00:16:23.365
+So, um, here's the other one that it did.
+
+384
+00:16:23.495 --> 00:16:24.925
+Let's see, template gallery.
+
+385
+00:16:25.425 --> 00:16:26.805
+It gave me two different layouts.
+
+386
+00:16:26.905 --> 00:16:30.765
+And, um, based on what I taught you guys
+
+387
+00:16:31.515 --> 00:16:33.805
+with setting up your repository
+
+388
+00:16:34.225 --> 00:16:37.405
+and setting up cel, uh, when it went out there
+
+389
+00:16:37.545 --> 00:16:40.405
+and created these layouts for me, well, guess what?
+
+390
+00:16:41.305 --> 00:16:45.125
+It went and deployed it where I could actually see it, uh,
+
+391
+00:16:45.385 --> 00:16:47.125
+inside the browser, right?
+
+392
+00:16:47.125 --> 00:16:48.605
+So let me see if I can open this one up.
+
+393
+00:16:48.605 --> 00:16:50.685
+This one's different. So it gave me two different layouts.
+
+394
+00:16:51.185 --> 00:16:52.885
+And I was like, yep, that's the look.
+
+395
+00:16:53.475 --> 00:16:56.445
+That is the look that I want for this thing, right?
+
+396
+00:16:56.465 --> 00:17:00.325
+So let's see if this is it. Um, this is that one.
+
+397
+00:17:00.435 --> 00:17:01.885
+Hold on, let me find the other one.
+
+398
+00:17:02.385 --> 00:17:05.205
+Uh, so I, I was doing this last night in bed instead of
+
+399
+00:17:05.855 --> 00:17:07.645
+going to sleep like I should have been doing.
+
+400
+00:17:08.345 --> 00:17:11.885
+Um, but whereas the other one's here, uh,
+
+401
+00:17:13.245 --> 00:17:16.085
+template gallery, maybe, let's see if this one's it.
+
+402
+00:17:16.245 --> 00:17:19.005
+'cause this is not the category, right? Copy link.
+
+403
+00:17:20.775 --> 00:17:23.035
+See template. There's template gallery,
+
+404
+00:17:23.455 --> 00:17:26.395
+and then there's by category.
+
+405
+00:17:26.535 --> 00:17:28.955
+So let me see if I can find the ones by category.
+
+406
+00:17:29.655 --> 00:17:32.195
+Uh, that's template Gallery. That's the one that you saw.
+
+407
+00:17:32.465 --> 00:17:34.035
+Okay, let's look at template gallery.
+
+408
+00:17:34.335 --> 00:17:38.355
+Now, let's see if this one's a little bit different, right?
+
+409
+00:17:39.095 --> 00:17:41.915
+So now that we have, um,
+
+410
+00:17:44.005 --> 00:17:46.365
+I think, I think this one might be different.
+
+411
+00:17:46.475 --> 00:17:50.525
+Yeah. So now that we have it to where it's pumping out,
+
+412
+00:17:50.665 --> 00:17:52.765
+you know, lead steps and bridge pages,
+
+413
+00:17:52.865 --> 00:17:55.005
+and then we'll get to funnels or whatever else.
+
+414
+00:17:55.585 --> 00:17:57.525
+Now I just wanna make sure that everything looks like a
+
+415
+00:17:57.525 --> 00:17:59.045
+million bucks when it's pumping it out.
+
+416
+00:17:59.075 --> 00:18:01.565
+Does that make sense to you guys? Time the chat.
+
+417
+00:18:01.625 --> 00:18:05.605
+Let me know if you get this. So it's helping me do all
+
+418
+00:18:05.605 --> 00:18:08.525
+that stuff, but I'm, but I'm over here having my own
+
+419
+00:18:08.525 --> 00:18:10.725
+conversation with it, okay?
+
+420
+00:18:11.475 --> 00:18:16.165
+Meanwhile, uh, uh, meanwhile the team,
+
+421
+00:18:16.825 --> 00:18:19.165
+uh, is over here talking to it individually.
+
+422
+00:18:19.825 --> 00:18:22.245
+And so, like I said a minute ago, when we do launches
+
+423
+00:18:22.245 --> 00:18:23.805
+or whatever, we always have JV groups.
+
+424
+00:18:24.485 --> 00:18:27.485
+Well, now we can create a, we can create a Telegram room
+
+425
+00:18:27.665 --> 00:18:31.845
+or a Slack channel or whatever, um, with every single jv.
+
+426
+00:18:32.145 --> 00:18:36.765
+And yeah, it, it's, it, it's insane to me, right?
+
+427
+00:18:36.785 --> 00:18:38.365
+So here's my good morning thing.
+
+428
+00:18:38.945 --> 00:18:41.965
+Um, can you add, uh, one thing
+
+429
+00:18:42.025 --> 00:18:45.735
+to my morning, uh, message?
+
+430
+00:18:47.325 --> 00:18:51.835
+You should have an endpoint that shows you,
+
+431
+00:18:52.815 --> 00:18:56.155
+uh, our newsletter, uh, delivery
+
+432
+00:18:57.105 --> 00:18:58.275
+with our customers.
+
+433
+00:18:59.015 --> 00:19:02.265
+Can you access that? I don't know the endpoint.
+
+434
+00:19:03.125 --> 00:19:05.425
+It shows which,
+
+435
+00:19:05.845 --> 00:19:08.225
+or it shows, uh, how many
+
+436
+00:19:09.415 --> 00:19:14.305
+were successful sending versus any
+
+437
+00:19:15.175 --> 00:19:19.725
+with problems, which I would want to know.
+
+438
+00:19:19.995 --> 00:19:21.165
+Okay? So let's see.
+
+439
+00:19:21.385 --> 00:19:24.765
+Uh, I, I wanna put that in the, uh, uh, morning,
+
+440
+00:19:25.105 --> 00:19:26.125
+uh, message here.
+
+441
+00:19:26.385 --> 00:19:30.245
+And, and by the way, guys, my business is just tanking
+
+442
+00:19:30.245 --> 00:19:32.605
+because I'm doing so much over here
+
+443
+00:19:32.605 --> 00:19:33.805
+with Open Claw and everything else.
+
+444
+00:19:34.065 --> 00:19:36.885
+I'm not, I'm not focused on the newsletter stuff right now.
+
+445
+00:19:36.885 --> 00:19:38.885
+I'm not focused on the ads right now. I'm not, I'm not.
+
+446
+00:19:39.345 --> 00:19:41.445
+I'm, I'm spending so much time with you guys trying
+
+447
+00:19:41.565 --> 00:19:42.845
+to crack the code, trying to make sure
+
+448
+00:19:42.845 --> 00:19:45.805
+that these workshops are absolutely incredible, right?
+
+449
+00:19:46.315 --> 00:19:49.165
+That, uh, we're, we're pretty much ignoring everything else.
+
+450
+00:19:49.425 --> 00:19:51.405
+But I'm here to tell you that the,
+
+451
+00:19:51.465 --> 00:19:53.365
+the newsletter is our golden grail.
+
+452
+00:19:53.555 --> 00:19:56.885
+Because as cool as all this stuff is, guys, I want you guys
+
+453
+00:19:56.885 --> 00:19:58.165
+to understand something, okay?
+
+454
+00:19:58.395 --> 00:19:59.965
+It's all also kind of scary.
+
+455
+00:20:00.705 --> 00:20:03.205
+The fact that complete idiots are gonna be out there
+
+456
+00:20:03.445 --> 00:20:06.605
+building full stack platforms in a year is really scary
+
+457
+00:20:06.625 --> 00:20:08.925
+to me, especially when it comes to security
+
+458
+00:20:09.105 --> 00:20:10.805
+and data and servers.
+
+459
+00:20:10.945 --> 00:20:14.365
+And it's a scary, it's a scary, uh, thing,
+
+460
+00:20:14.365 --> 00:20:15.485
+especially for me.
+
+461
+00:20:15.765 --> 00:20:18.605
+'cause I've always had a skill that nobody else had, right?
+
+462
+00:20:18.905 --> 00:20:20.525
+So I'm gonna write it right now
+
+463
+00:20:20.525 --> 00:20:22.125
+because it's a new shiny object
+
+464
+00:20:22.125 --> 00:20:23.725
+and it's a good opportunity for you guys.
+
+465
+00:20:24.065 --> 00:20:28.405
+But just understand that, um, uh,
+
+466
+00:20:30.105 --> 00:20:34.545
+it's in Letterman API just understand that the newsletter
+
+467
+00:20:35.405 --> 00:20:37.345
+is clearly the golden grail.
+
+468
+00:20:37.805 --> 00:20:41.305
+You still gotta have something to sell, somebody to sell to.
+
+469
+00:20:41.365 --> 00:20:42.705
+And I believe that that's the asset
+
+470
+00:20:42.705 --> 00:20:44.505
+that you're gonna get acquired for millions of dollars for.
+
+471
+00:20:44.805 --> 00:20:47.685
+And as soon as this stuff normals out, which if you remember
+
+472
+00:20:47.685 --> 00:20:49.565
+how exciting Chad GPT was, now,
+
+473
+00:20:49.635 --> 00:20:51.365
+like the kids are using it in school.
+
+474
+00:20:51.425 --> 00:20:52.885
+Connie uses it to come up with her,
+
+475
+00:20:53.065 --> 00:20:54.765
+her color coordinates for the salon.
+
+476
+00:20:54.765 --> 00:20:56.405
+Like it's, it's a pretty common thing.
+
+477
+00:20:56.755 --> 00:21:00.185
+This will become a pretty common thing as well. Make sense?
+
+478
+00:21:00.205 --> 00:21:01.585
+And there will be a lot of platforms doing it.
+
+479
+00:21:01.755 --> 00:21:04.785
+There will be open AI that has their own, clearly we see
+
+480
+00:21:04.785 --> 00:21:08.345
+that writing, uh, there will be open claw that continues.
+
+481
+00:21:08.765 --> 00:21:10.785
+Uh, there will be madness, there will be more.
+
+482
+00:21:10.805 --> 00:21:12.105
+Claude will come out with their own.
+
+483
+00:21:12.105 --> 00:21:13.865
+They kind of already started going that direction.
+
+484
+00:21:14.605 --> 00:21:16.705
+Um, that's gonna happen, right?
+
+485
+00:21:16.845 --> 00:21:18.625
+So let's see, I checked the Letterman skill files,
+
+486
+00:21:18.645 --> 00:21:20.585
+but I don't see end points for delivery stats.
+
+487
+00:21:21.005 --> 00:21:24.385
+Uh, gee, we did train it on the delivery stats, or no,
+
+488
+00:21:31.455 --> 00:21:32.455
+Yeah.
+
+489
+00:21:32.645 --> 00:21:34.865
+Did we train it on the delivery stats?
+
+490
+00:21:34.865 --> 00:21:36.825
+Like how many newsletters were successful sending
+
+491
+00:21:36.825 --> 00:21:37.945
+versus any problems?
+
+492
+00:21:39.825 --> 00:21:41.165
+Um, I think that's missing.
+
+493
+00:21:42.065 --> 00:21:43.395
+Okay. But we built that, right?
+
+494
+00:21:44.225 --> 00:21:46.835
+Yeah, we built that. I, I think it's still gonna pick
+
+495
+00:21:46.835 --> 00:21:48.155
+that up so I can train it today.
+
+496
+00:21:49.015 --> 00:21:51.905
+Okay, perfect. All. So here's what we're gonna do, guys.
+
+497
+00:21:51.995 --> 00:21:54.345
+We're gonna dive into GC now. Okay?
+
+498
+00:21:54.765 --> 00:21:58.845
+So I'm gonna say four slash email, alright?
+
+499
+00:21:58.845 --> 00:22:01.645
+Let's see what happens. I can't remember if I trained you on
+
+500
+00:22:01.645 --> 00:22:02.925
+this or not, but we're gonna play
+
+501
+00:22:02.925 --> 00:22:04.165
+with this for a minute, okay?
+
+502
+00:22:05.425 --> 00:22:08.085
+And, and by the way, before I do that, do I need
+
+503
+00:22:08.085 --> 00:22:10.965
+to retrain the docs G show everybody that real quick?
+
+504
+00:22:13.145 --> 00:22:15.125
+Um, you don't need to, but you can show them.
+
+505
+00:22:16.285 --> 00:22:17.855
+Yeah, well I showed 'em yesterday, right?
+
+506
+00:22:17.855 --> 00:22:19.815
+Didn't we do that yesterday? Didn't we open up chat?
+
+507
+00:22:19.975 --> 00:22:21.335
+GPT, didn't we?
+
+508
+00:22:21.445 --> 00:22:22.855
+Yeah, we did that. Okay,
+
+509
+00:22:23.075 --> 00:22:24.815
+so I can just tell it to update it now, right?
+
+510
+00:22:25.805 --> 00:22:28.465
+Yeah. Even it's already updated.
+
+511
+00:22:28.565 --> 00:22:30.105
+So you are good with that as well.
+
+512
+00:22:30.855 --> 00:22:34.225
+Okay? So everybody you wanna tell it, we've made a lot
+
+513
+00:22:34.225 --> 00:22:35.505
+of changes to the docs.
+
+514
+00:22:35.695 --> 00:22:37.865
+That one doc has been really, really complicated
+
+515
+00:22:38.005 --> 00:22:39.345
+and it's super, super long.
+
+516
+00:22:40.005 --> 00:22:43.065
+So you want to go ahead and tell it to update your GC docs.
+
+517
+00:22:43.205 --> 00:22:46.425
+Can you guys do that? I'm assuming that you open up Chad,
+
+518
+00:22:46.625 --> 00:22:50.065
+GPT, you put in that prompt, you put in your GC API
+
+519
+00:22:50.445 --> 00:22:51.985
+and it gave you that big long thing
+
+520
+00:22:51.985 --> 00:22:53.585
+that you put in open cloud, yes or no?
+
+521
+00:22:53.585 --> 00:22:55.865
+How many of you did that already for gc?
+
+522
+00:22:55.965 --> 00:22:57.385
+Who did that for GC already?
+
+523
+00:22:59.635 --> 00:23:01.815
+Now remember, GC is one of the most important ones
+
+524
+00:23:01.815 --> 00:23:03.135
+that we have, okay?
+
+525
+00:23:03.435 --> 00:23:04.735
+So if you did that already,
+
+526
+00:23:04.875 --> 00:23:06.575
+can you put the GC docs in the chat?
+
+527
+00:23:07.515 --> 00:23:10.215
+Uh, I'm not gonna waste time showing you guys that again.
+
+528
+00:23:10.955 --> 00:23:15.015
+Um, but what I will do, um, is I'll tell you
+
+529
+00:23:15.645 --> 00:23:17.655
+that if you already did that, just tell it
+
+530
+00:23:17.655 --> 00:23:19.655
+to update the GC docs, okay?
+
+531
+00:23:19.715 --> 00:23:21.815
+And then you guys can watch a replay from yesterday.
+
+532
+00:23:22.355 --> 00:23:24.695
+Now sometimes, and I don't know why that is,
+
+533
+00:23:24.975 --> 00:23:25.975
+I imagine it'll get better.
+
+534
+00:23:26.765 --> 00:23:29.735
+This is on me 2.5 right now, right G?
+
+535
+00:23:31.645 --> 00:23:32.895
+Yeah, we switch it to that
+
+536
+00:23:32.955 --> 00:23:34.775
+unless you change it again, you can ask it.
+
+537
+00:23:35.765 --> 00:23:38.735
+Well, I'll ask it four slash model here in a minute.
+
+538
+00:23:38.995 --> 00:23:43.015
+So, um, uh, guys, it has its own
+
+539
+00:23:44.155 --> 00:23:48.365
+built in commands, like, uh, gateway, restart,
+
+540
+00:23:49.185 --> 00:23:51.365
+uh, stuff like that, okay?
+
+541
+00:23:51.395 --> 00:23:54.805
+Last email sent email sending, all right, let's move on.
+
+542
+00:23:54.985 --> 00:23:56.285
+It was still trying to deal with that.
+
+543
+00:23:56.395 --> 00:23:58.685
+Okay, so let's do four slash email.
+
+544
+00:23:59.545 --> 00:24:02.605
+And I believe I created that short code yesterday. Okay?
+
+545
+00:24:03.345 --> 00:24:06.685
+Um, so it has its own, its own system commands.
+
+546
+00:24:07.625 --> 00:24:10.405
+And so four slash system gateway, restart, whatever it is,
+
+547
+00:24:10.405 --> 00:24:11.685
+open cloud gateway, restart.
+
+548
+00:24:11.985 --> 00:24:13.365
+You can create your own commands.
+
+549
+00:24:13.565 --> 00:24:15.605
+I recommend you guys do that. Does that make sense?
+
+550
+00:24:16.785 --> 00:24:20.005
+So yesterday, while this one's pulling up, uh,
+
+551
+00:24:20.505 --> 00:24:24.365
+let me hit control FI know G asked it yesterday
+
+552
+00:24:25.505 --> 00:24:26.835
+what its commands were.
+
+553
+00:24:27.495 --> 00:24:29.195
+So I'll kind of show you guys real fast.
+
+554
+00:24:30.135 --> 00:24:33.315
+Uh, open claw commands. Let me see if I can find it.
+
+555
+00:24:33.315 --> 00:24:37.745
+Yeah, control F opens up a search. Uh, here you go.
+
+556
+00:24:37.925 --> 00:24:39.905
+Hey, G, here are your short codes.
+
+557
+00:24:39.905 --> 00:24:41.545
+You can use forward slash replay.
+
+558
+00:24:42.155 --> 00:24:45.505
+It'll create sports, uh, course sprout lessons from Vimeo,
+
+559
+00:24:46.085 --> 00:24:48.265
+uh, grabs, transcripts, descriptions.
+
+560
+00:24:48.265 --> 00:24:51.545
+Goal block forward slash article creates Letterman articles,
+
+561
+00:24:51.545 --> 00:24:55.105
+either blank, AI generated, local niche seo, uh,
+
+562
+00:24:55.105 --> 00:24:56.265
+four slash pop link.
+
+563
+00:24:56.265 --> 00:24:59.025
+It creates a link real fast forward slash lease.
+
+564
+00:24:59.175 --> 00:25:02.225
+Lead step creates, uh, lead capture pages of confirmation.
+
+565
+00:25:02.295 --> 00:25:04.625
+Four slash bridge page, uh, creates,
+
+566
+00:25:04.805 --> 00:25:05.985
+uh, and clones a bridge.
+
+567
+00:25:06.015 --> 00:25:07.265
+Page four slash email.
+
+568
+00:25:07.265 --> 00:25:09.945
+Create and send broadcast email via global control
+
+569
+00:25:10.455 --> 00:25:13.465
+four slash histo system health run health call.
+
+570
+00:25:13.465 --> 00:25:14.745
+Uh, check on all APIs
+
+571
+00:25:14.745 --> 00:25:16.865
+and URLs, four slash team call extract
+
+572
+00:25:16.865 --> 00:25:17.945
+assignments from the team.
+
+573
+00:25:17.945 --> 00:25:19.065
+Call and update the board.
+
+574
+00:25:19.095 --> 00:25:21.665
+Okay, let me tell you about that too while we're waiting
+
+575
+00:25:21.685 --> 00:25:23.145
+for this thing to come back around.
+
+576
+00:25:23.965 --> 00:25:28.465
+So yesterday, guys, when we created, uh, the team room,
+
+577
+00:25:29.245 --> 00:25:30.545
+all right, let me see if I can find it.
+
+578
+00:25:30.705 --> 00:25:31.705
+'cause it was pretty early on.
+
+579
+00:25:32.405 --> 00:25:37.265
+The first thing I said was, I said to it,
+
+580
+00:25:39.395 --> 00:25:41.055
+uh, let me find the team room.
+
+581
+00:25:41.085 --> 00:25:44.855
+Here we go. I said to it, let's create a Kanban board
+
+582
+00:25:44.995 --> 00:25:47.095
+for the team, right?
+
+583
+00:25:47.155 --> 00:25:48.375
+So we started talking
+
+584
+00:25:49.155 --> 00:25:51.615
+and I'm gonna show you exactly what went down yesterday
+
+585
+00:25:51.625 --> 00:25:53.095
+after we were all blown away.
+
+586
+00:25:53.765 --> 00:25:55.815
+Then I was like, okay, time to get serious.
+
+587
+00:25:56.835 --> 00:26:01.635
+Um, lesson created. Okay, hold on a minute.
+
+588
+00:26:02.735 --> 00:26:06.765
+Uh, short codes added three short codes.
+
+589
+00:26:06.865 --> 00:26:09.685
+So all I said, by the way, guys, is look,
+
+590
+00:26:11.245 --> 00:26:16.085
+I just said, um, right here, add these to your memory.
+
+591
+00:26:16.915 --> 00:26:20.005
+Four slash replay. Four slash poping four slash article.
+
+592
+00:26:20.185 --> 00:26:21.685
+And it knew what that meant.
+
+593
+00:26:23.455 --> 00:26:25.755
+So how many of you have it doing tasks right now,
+
+594
+00:26:26.265 --> 00:26:27.515
+like on demand task?
+
+595
+00:26:28.775 --> 00:26:31.115
+If you do, then ask it
+
+596
+00:26:31.115 --> 00:26:32.995
+to create a short code to get to that task.
+
+597
+00:26:33.695 --> 00:26:35.075
+You guys should start doing that right now.
+
+598
+00:26:35.175 --> 00:26:37.635
+Why don't you try it, see if that works. Okay.
+
+599
+00:26:38.295 --> 00:26:40.835
+So, uh, and, and that makes it super, super easy
+
+600
+00:26:41.135 --> 00:26:43.365
+and my team is all doing that too, right?
+
+601
+00:26:43.745 --> 00:26:46.365
+So we created those short codes, um,
+
+602
+00:26:46.625 --> 00:26:49.485
+and then I said add, add more short codes, lead, step,
+
+603
+00:26:49.825 --> 00:26:51.965
+bridge page, system health, right here,
+
+604
+00:26:52.325 --> 00:26:53.925
+I didn't even give it an explanation, guys.
+
+605
+00:26:54.595 --> 00:26:56.325
+Four slash lead, step four slash bridge,
+
+606
+00:26:56.325 --> 00:26:57.525
+page four slash system health.
+
+607
+00:26:57.825 --> 00:26:59.765
+In the future, you'll have four slash funnel,
+
+608
+00:27:00.115 --> 00:27:02.005
+four slash workflow, right?
+
+609
+00:27:02.425 --> 00:27:04.165
+Uh, we'll do the email r today.
+
+610
+00:27:04.165 --> 00:27:09.085
+Alright, now, uh, now this is gonna blow you away, okay?
+
+611
+00:27:09.755 --> 00:27:12.285
+Okay, now I need something else. Tell me if this is correct.
+
+612
+00:27:12.345 --> 00:27:14.125
+And I was asking, I put Preday in the loop.
+
+613
+00:27:14.805 --> 00:27:16.125
+I said we've gone into Zoom
+
+614
+00:27:16.145 --> 00:27:18.765
+and enabled transcript recording in our Zoom account.
+
+615
+00:27:19.785 --> 00:27:22.925
+So I'm gonna create a dedicated zoom link for team calls.
+
+616
+00:27:23.625 --> 00:27:26.925
+So inside of my Zoom meetings, there's one called, uh,
+
+617
+00:27:27.195 --> 00:27:28.885
+team call, okay?
+
+618
+00:27:29.465 --> 00:27:31.645
+And that one is set to record automatically.
+
+619
+00:27:32.185 --> 00:27:35.125
+And what I set is, anytime we have those calls, I want you
+
+620
+00:27:35.125 --> 00:27:36.245
+to go grab the transcript
+
+621
+00:27:36.505 --> 00:27:38.525
+and keep track what assignments are there
+
+622
+00:27:38.605 --> 00:27:42.565
+and what's been done, and can we create a
+
+623
+00:27:42.565 --> 00:27:43.805
+team board for this?
+
+624
+00:27:45.105 --> 00:27:47.085
+So it said, got it, Chad, here's what I'm hearing.
+
+625
+00:27:47.225 --> 00:27:50.965
+You create a dedicated Zoom link for the team calls it, uh,
+
+626
+00:27:50.965 --> 00:27:52.965
+zoom auto records and generates transcripts.
+
+627
+00:27:53.125 --> 00:27:54.405
+I drag, I grab the transcript
+
+628
+00:27:54.405 --> 00:27:57.125
+after each call, I extract the assignments
+
+629
+00:27:57.225 --> 00:27:58.685
+and the tasks from the transcript.
+
+630
+00:27:59.485 --> 00:28:02.125
+I track them on a team management board.
+
+631
+00:28:02.585 --> 00:28:03.685
+So how it would work
+
+632
+00:28:04.095 --> 00:28:06.685
+after each team call, I pull those Zoom recordings,
+
+633
+00:28:06.805 --> 00:28:09.645
+I parse it for action items, assignments, who's responsible?
+
+634
+00:28:10.005 --> 00:28:11.485
+I create an update of team board.
+
+635
+00:28:11.965 --> 00:28:13.885
+I track the to do in progress in the done,
+
+636
+00:28:14.065 --> 00:28:17.765
+and I link back to the transcript for context questions.
+
+637
+00:28:18.025 --> 00:28:20.685
+Should I auto grab transcripts after every meeting
+
+638
+00:28:20.945 --> 00:28:22.285
+or wait for you to tell me
+
+639
+00:28:22.905 --> 00:28:26.005
+and the board format should be CanBan or what else?
+
+640
+00:28:26.295 --> 00:28:27.805
+Where should the transcripts live?
+
+641
+00:28:27.805 --> 00:28:29.005
+Should I just put 'em in here?
+
+642
+00:28:29.545 --> 00:28:31.645
+And I was like, well, I'm not even sure
+
+643
+00:28:31.645 --> 00:28:33.245
+how you would know when the call is done.
+
+644
+00:28:33.395 --> 00:28:35.085
+Good point. A few suggestions.
+
+645
+00:28:35.085 --> 00:28:37.485
+Manual trigger after the call, you
+
+646
+00:28:37.505 --> 00:28:40.925
+or anyone in the team types forward slash team call
+
+647
+00:28:41.825 --> 00:28:43.565
+or just tells me, grab the team call,
+
+648
+00:28:44.085 --> 00:28:45.285
+I pull the latest recording,
+
+649
+00:28:45.285 --> 00:28:47.125
+extract the task, update the board.
+
+650
+00:28:47.465 --> 00:28:49.165
+Or option two is a scheduled check.
+
+651
+00:28:49.465 --> 00:28:52.565
+If the team call happens on a regular schedule, I'll look
+
+652
+00:28:52.565 --> 00:28:54.645
+for the new recordings from the dedicated zoom link
+
+653
+00:28:54.705 --> 00:28:56.045
+or option three,
+
+654
+00:28:56.205 --> 00:28:59.365
+I pull from the Quran every hour or whatever interval.
+
+655
+00:28:59.525 --> 00:29:01.445
+I check Zoom API for new recordings
+
+656
+00:29:01.445 --> 00:29:03.845
+for the team call auto process when I find one.
+
+657
+00:29:04.225 --> 00:29:07.365
+And then option four is a Zoom web hook. Alright?
+
+658
+00:29:07.865 --> 00:29:10.565
+So I was like, alright, whatever, I'm overwhelmed,
+
+659
+00:29:10.825 --> 00:29:12.085
+go create a pop link.
+
+660
+00:29:12.085 --> 00:29:13.645
+So it created a pop link, right?
+
+661
+00:29:14.145 --> 00:29:16.565
+So now we created a pop link for the team call.
+
+662
+00:29:17.385 --> 00:29:21.685
+And then I said, okay, uh, let's go create the board.
+
+663
+00:29:22.545 --> 00:29:24.605
+And, and the whole team is sitting here watching
+
+664
+00:29:24.605 --> 00:29:25.725
+this thing, guys, right?
+
+665
+00:29:25.865 --> 00:29:27.725
+The whole team is watching this
+
+666
+00:29:28.225 --> 00:29:30.125
+and they're messaging me on the side going,
+
+667
+00:29:30.185 --> 00:29:31.285
+am I still gonna have a job?
+
+668
+00:29:31.705 --> 00:29:34.565
+The VAs are like, am I still gonna have a job, right?
+
+669
+00:29:34.665 --> 00:29:37.165
+So now look, did you create the can board for the team?
+
+670
+00:29:37.905 --> 00:29:39.605
+Uh, we're getting ready to get on that call
+
+671
+00:29:39.605 --> 00:29:41.365
+and I'd like to have you start putting that together.
+
+672
+00:29:42.225 --> 00:29:44.365
+So it says, yep, the team board has been
+
+673
+00:29:44.365 --> 00:29:46.165
+created, blah, blah, blah, blah, blah.
+
+674
+00:29:46.225 --> 00:29:47.525
+Got it, I'm ready. Here's what I'll do
+
+675
+00:29:47.525 --> 00:29:48.725
+after your call, I'll wait for you
+
+676
+00:29:48.785 --> 00:29:50.445
+to type four slash team call.
+
+677
+00:29:50.795 --> 00:29:52.365
+I'll pull the recording from Zoom.
+
+678
+00:29:52.635 --> 00:29:54.485
+I'll extract all the action assignments,
+
+679
+00:29:54.755 --> 00:29:56.165
+I'll update the board with who's
+
+680
+00:29:56.165 --> 00:29:57.205
+responsible, what needs to be done.
+
+681
+00:29:57.205 --> 00:29:59.405
+And I'll link back to the transcript. Boom.
+
+682
+00:29:59.825 --> 00:30:01.285
+You guys have your CEO.
+
+683
+00:30:02.395 --> 00:30:04.925
+Your CEO is running everything for you right now.
+
+684
+00:30:05.985 --> 00:30:08.765
+So my plan is when I show up every single morning, I say,
+
+685
+00:30:08.925 --> 00:30:10.085
+Pacino, what do we got going on?
+
+686
+00:30:10.555 --> 00:30:13.365
+Well, coffee needs to do this and Amman needs to do this,
+
+687
+00:30:13.385 --> 00:30:15.445
+and you gotta get with Matt and you gotta get with Karthik
+
+688
+00:30:15.445 --> 00:30:17.045
+and you need to do this, and I'm waiting
+
+689
+00:30:17.045 --> 00:30:18.565
+for this and I'm waiting for that.
+
+690
+00:30:19.905 --> 00:30:21.925
+And don't worry about it, Chad. I got this handled.
+
+691
+00:30:22.085 --> 00:30:23.045
+I got the replay, I got the
+
+692
+00:30:23.165 --> 00:30:24.205
+replay, I got the email going on.
+
+693
+00:30:24.205 --> 00:30:27.365
+I got this, I got that. So now you got all of your VAs,
+
+694
+00:30:27.365 --> 00:30:29.365
+but now you got your CEO running things.
+
+695
+00:30:31.375 --> 00:30:32.595
+Are you guys seeing this right now?
+
+696
+00:30:33.335 --> 00:30:35.195
+So there, I said, go create the link.
+
+697
+00:30:35.435 --> 00:30:36.795
+I said, so you're creating the board, right?
+
+698
+00:30:36.815 --> 00:30:39.635
+Yep, I've already saved it. I said, perfect.
+
+699
+00:30:40.415 --> 00:30:42.115
+Can you make it public? How
+
+700
+00:30:42.115 --> 00:30:43.235
+many of you know what that means?
+
+701
+00:30:43.455 --> 00:30:45.075
+Now, how many of you know
+
+702
+00:30:45.075 --> 00:30:47.475
+what it means now it's gonna go deploy it to our cell,
+
+703
+00:30:47.505 --> 00:30:49.035
+it's gonna put it in the repository.
+
+704
+00:30:49.785 --> 00:30:51.595
+Yeah. So it had trouble with that.
+
+705
+00:30:51.595 --> 00:30:53.715
+So I told gee, I said, jump in there buddy. Help it out.
+
+706
+00:30:53.835 --> 00:30:56.475
+I said, gee, get it to the finish line. Perfect.
+
+707
+00:30:56.695 --> 00:30:58.955
+Let me build a proper app and deploy it.
+
+708
+00:30:59.055 --> 00:30:59.915
+I'm building it now.
+
+709
+00:30:59.915 --> 00:31:01.155
+Blah, blah, blah, blah, blah, blah, blah.
+
+710
+00:31:01.175 --> 00:31:04.475
+Here's your public URL. Your board is live.
+
+711
+00:31:06.165 --> 00:31:07.255
+Your board is live.
+
+712
+00:31:08.155 --> 00:31:11.855
+So now, not only do I have separate boards
+
+713
+00:31:11.875 --> 00:31:16.575
+for individual things like launches, ads, stuff like that,
+
+714
+00:31:16.675 --> 00:31:17.695
+but check this out.
+
+715
+00:31:18.235 --> 00:31:20.535
+Now we got a team management board.
+
+716
+00:31:23.305 --> 00:31:25.605
+Is there anybody that is absolutely shocked
+
+717
+00:31:25.605 --> 00:31:26.725
+with what you're seeing right now?
+
+718
+00:31:28.235 --> 00:31:30.295
+And you could do this for companies.
+
+719
+00:31:30.835 --> 00:31:31.935
+If you've ever had a client,
+
+720
+00:31:31.935 --> 00:31:33.175
+if you've ever had an ad client,
+
+721
+00:31:33.175 --> 00:31:36.495
+if you've ever had a newsletter, client, anything, guys,
+
+722
+00:31:36.995 --> 00:31:38.255
+you should be stepping in
+
+723
+00:31:38.255 --> 00:31:39.935
+and building all this stuff out for them.
+
+724
+00:31:40.755 --> 00:31:42.735
+All of it, all of it.
+
+725
+00:31:42.735 --> 00:31:45.215
+Look at this and it looks beautiful on mobile too,
+
+726
+00:31:45.835 --> 00:31:47.215
+and it'll keep going through
+
+727
+00:31:47.215 --> 00:31:48.655
+and it'll keep track of everything.
+
+728
+00:31:48.745 --> 00:31:50.775
+It'll keep, we can keep expanding on it.
+
+729
+00:31:50.875 --> 00:31:53.335
+I'm, I'm like, again, like I said yesterday,
+
+730
+00:31:53.695 --> 00:31:56.695
+I am shell shocked that something is not only keeping up
+
+731
+00:31:56.695 --> 00:31:59.975
+with me, it is excelling me and overwhelming me.
+
+732
+00:32:01.095 --> 00:32:03.155
+I'm usually the guy that overwhelms everybody else.
+
+733
+00:32:03.545 --> 00:32:05.275
+This thing is overwhelming me to the point.
+
+734
+00:32:05.355 --> 00:32:06.915
+I don't even wanna answer questions anymore
+
+735
+00:32:07.105 --> 00:32:09.395
+because it is so progressive.
+
+736
+00:32:10.455 --> 00:32:14.155
+It, it, it, it's beyond anything I imagine.
+
+737
+00:32:14.185 --> 00:32:18.575
+Guys, on a scale of one out of 10, how many
+
+738
+00:32:18.575 --> 00:32:19.695
+of you're starting to get this right now
+
+739
+00:32:20.155 --> 00:32:21.495
+and meanwhile the rest
+
+740
+00:32:21.495 --> 00:32:23.175
+of the world is still out there trying
+
+741
+00:32:23.175 --> 00:32:24.495
+to figure out how to install it?
+
+742
+00:32:26.645 --> 00:32:30.145
+You guys get this? I'm now inside a group sharing things.
+
+743
+00:32:30.405 --> 00:32:33.705
+And let me tell you something, man, my wall is blowing up,
+
+744
+00:32:34.365 --> 00:32:36.025
+my messenger is blowing up.
+
+745
+00:32:36.525 --> 00:32:38.465
+It is crazy. They're like, how?
+
+746
+00:32:38.725 --> 00:32:41.125
+How have you figured all this out? How are you doing this?
+
+747
+00:32:41.345 --> 00:32:42.645
+How are you talking in telegram?
+
+748
+00:32:42.945 --> 00:32:44.005
+Are you really, are you talking
+
+749
+00:32:44.005 --> 00:32:45.765
+to some people are just calling me liars.
+
+750
+00:32:45.765 --> 00:32:47.205
+Nah, he's not really doing all that stuff.
+
+751
+00:32:47.225 --> 00:32:49.165
+The technology's not there yet. Oh no.
+
+752
+00:32:49.165 --> 00:32:50.725
+The technology is here, folks.
+
+753
+00:32:52.715 --> 00:32:56.095
+The technology is here. All right.
+
+754
+00:32:56.675 --> 00:32:58.575
+Now, uh, here's what I'm gonna do.
+
+755
+00:32:59.635 --> 00:33:00.815
+I'm gonna come over here and,
+
+756
+00:33:00.815 --> 00:33:02.535
+and I want you guys to start thinking this way.
+
+757
+00:33:03.195 --> 00:33:05.095
+Uh, I'm just gonna come over here to, uh,
+
+758
+00:33:05.345 --> 00:33:06.575
+perplexity real quick.
+
+759
+00:33:07.335 --> 00:33:09.255
+I can go to Chad, GPT. You know what?
+
+760
+00:33:09.255 --> 00:33:11.535
+I'll do it in Chad, GPT. That's what you guys mainly have.
+
+761
+00:33:12.005 --> 00:33:14.015
+Okay? So let me go to Chad, GPT.
+
+762
+00:33:14.835 --> 00:33:19.575
+Uh, I need to write a command
+
+763
+00:33:19.995 --> 00:33:23.935
+for my open claw so that
+
+764
+00:33:25.265 --> 00:33:29.925
+it gets my permission anytime it's about
+
+765
+00:33:29.985 --> 00:33:34.445
+to do a task that is going to cost
+
+766
+00:33:35.845 --> 00:33:38.415
+over, uh, 50 cents.
+
+767
+00:33:38.785 --> 00:33:40.615
+Would you guys think that that's a good thing to know?
+
+768
+00:33:41.565 --> 00:33:42.595
+Would you like to know that?
+
+769
+00:33:43.345 --> 00:33:46.075
+Love this exactly how you start turning open claw into a
+
+770
+00:33:46.075 --> 00:33:49.635
+discipline operator, open claw cost permission, directive
+
+771
+00:33:49.975 --> 00:33:51.835
+before executing any task that, uh,
+
+772
+00:33:52.095 --> 00:33:55.395
+may incur a cost greater than 50 cents API usage,
+
+773
+00:33:55.595 --> 00:33:57.395
+external services, paid tools, server resource,
+
+774
+00:33:57.425 --> 00:33:58.675
+transaction subscriptions.
+
+775
+00:33:59.255 --> 00:34:00.715
+You must pause the execution.
+
+776
+00:34:00.785 --> 00:34:02.955
+Calculate or estimate the total projected cost,
+
+777
+00:34:02.955 --> 00:34:04.835
+clearly display the task being performed,
+
+778
+00:34:04.835 --> 00:34:06.795
+the estimated cost, why the cost is required.
+
+779
+00:34:07.335 --> 00:34:09.475
+Ask for explicit approval to use this format.
+
+780
+00:34:10.135 --> 00:34:13.195
+The action is estimated to. Do you approve? Yes.
+
+781
+00:34:13.455 --> 00:34:16.315
+Do not proceed unless the user replies with an explicit yes,
+
+782
+00:34:16.735 --> 00:34:19.555
+if the cost can be estimated confidently, uh,
+
+783
+00:34:19.705 --> 00:34:21.195
+default to requiring approval.
+
+784
+00:34:21.535 --> 00:34:23.435
+All right, would you guys like to have that?
+
+785
+00:34:23.575 --> 00:34:25.795
+Can somebody give me the, um,
+
+786
+00:34:26.215 --> 00:34:28.755
+the Google Doc link real fast?
+
+787
+00:34:30.875 --> 00:34:32.735
+Can somebody give that to me now?
+
+788
+00:34:33.115 --> 00:34:37.015
+Do you guys see how I'm using, uh, perplexity?
+
+789
+00:34:37.235 --> 00:34:41.175
+I'm using Chad CBT to create these commands
+
+790
+00:34:42.045 --> 00:34:45.135
+instead of just talking to Open Claw.
+
+791
+00:34:45.835 --> 00:34:47.415
+If we're training it guys,
+
+792
+00:34:47.445 --> 00:34:49.175
+what I recommend you do is I recommend
+
+793
+00:34:49.175 --> 00:34:51.655
+that you using an AI platform to come up with a command
+
+794
+00:34:51.845 --> 00:34:53.535
+that is going to train open claw.
+
+795
+00:34:54.315 --> 00:34:56.215
+If you're just trying to perform actions
+
+796
+00:34:56.275 --> 00:34:57.775
+or stuff that's already trained,
+
+797
+00:34:58.165 --> 00:34:59.655
+then just talk to Open Claw.
+
+798
+00:34:59.715 --> 00:35:02.615
+And if you can use the four slash commands, uh,
+
+799
+00:35:02.665 --> 00:35:04.775
+short prompts that I just showed you, uh,
+
+800
+00:35:04.775 --> 00:35:05.935
+you're gonna be so much better.
+
+801
+00:35:06.125 --> 00:35:08.215
+Okay? So let me go ahead and open this up.
+
+802
+00:35:09.695 --> 00:35:11.095
+I will add this one in here.
+
+803
+00:35:11.695 --> 00:35:14.775
+I will add our new, uh, command for Kimmy.
+
+804
+00:35:14.795 --> 00:35:18.775
+Can somebody please gimme that one too? So let's do this.
+
+805
+00:35:21.215 --> 00:35:25.065
+This one here is the open claw permission directive.
+
+806
+00:35:25.165 --> 00:35:26.745
+All right, so I'm gonna come back over here
+
+807
+00:35:27.325 --> 00:35:30.145
+and, uh, let me come back over here.
+
+808
+00:35:30.885 --> 00:35:34.825
+Uh, and I'm gonna go ahead and just paste this here. Okay?
+
+809
+00:35:34.905 --> 00:35:36.705
+I don't want article though. Okay?
+
+810
+00:35:36.725 --> 00:35:38.645
+So I'm gonna go like this. Boom.
+
+811
+00:35:39.235 --> 00:35:41.245
+Open clock cost permission directive,
+
+812
+00:35:41.635 --> 00:35:42.885
+cost control directive.
+
+813
+00:35:42.885 --> 00:35:44.925
+Alright, is everybody seeing this right now?
+
+814
+00:35:45.825 --> 00:35:49.405
+Now I'll probably remove external services and paid tools.
+
+815
+00:35:50.005 --> 00:35:52.685
+I don't want it to be like, Hey, you pay $30 for Vimeo
+
+816
+00:35:52.685 --> 00:35:54.325
+and if one video is gonna come out
+
+817
+00:35:54.325 --> 00:35:55.645
+to a adult, I don't wanna know that.
+
+818
+00:35:55.765 --> 00:35:59.605
+I just wanna know, uh, API cost specifically. Okay?
+
+819
+00:36:00.105 --> 00:36:04.565
+So while it is consuming that, uh, I'm gonna come over here,
+
+820
+00:36:04.585 --> 00:36:06.205
+I'm gonna add that to your guys' sheet.
+
+821
+00:36:06.795 --> 00:36:10.645
+Okay? So let's see if, uh, we did this correctly.
+
+822
+00:36:11.585 --> 00:36:15.065
+Uh, where did it go? Hold on a second.
+
+823
+00:36:17.615 --> 00:36:21.425
+Okay. Cost control directive received and understood
+
+824
+00:36:21.425 --> 00:36:23.505
+before any costing 50 cents above.
+
+825
+00:36:23.505 --> 00:36:26.345
+Calculate estimate costs, show task cost, reason,
+
+826
+00:36:26.685 --> 00:36:28.385
+the actions estimated, do you approve?
+
+827
+00:36:28.805 --> 00:36:30.585
+Uh, only proceed with explicit. Yes.
+
+828
+00:36:30.585 --> 00:36:31.625
+If you're insured about cost,
+
+829
+00:36:31.625 --> 00:36:33.345
+require approval, where should I save this?
+
+830
+00:36:33.885 --> 00:36:35.225
+Uh, you know where to save it.
+
+831
+00:36:35.385 --> 00:36:39.625
+I don't freaking know, right?
+
+832
+00:36:39.775 --> 00:36:41.585
+It's gotta start thinking for itself.
+
+833
+00:36:42.215 --> 00:36:45.865
+Yeah, you need to start acting
+
+834
+00:36:47.215 --> 00:36:48.625
+like the CEO.
+
+835
+00:36:49.705 --> 00:36:54.305
+Remember? Alright, I just want
+
+836
+00:36:54.645 --> 00:36:57.905
+to be the CFO that deals
+
+837
+00:36:58.495 --> 00:37:02.825
+with the money, right?
+
+838
+00:37:02.825 --> 00:37:03.985
+Would you guys agree on that?
+
+839
+00:37:05.375 --> 00:37:07.745
+Yeah, but it needs to start acting like a CFO.
+
+840
+00:37:08.145 --> 00:37:10.585
+Actually, I'm the president, take that back.
+
+841
+00:37:12.975 --> 00:37:17.275
+I'm the freaking president that you
+
+842
+00:37:18.215 --> 00:37:19.595
+answer to,
+
+843
+00:37:22.285 --> 00:37:24.145
+but you are the CEO.
+
+844
+00:37:25.765 --> 00:37:27.695
+Yeah, right? This goes in agents.
+
+845
+00:37:27.925 --> 00:37:30.615
+It's the core protocol about how I operate adding it.
+
+846
+00:37:30.635 --> 00:37:32.215
+Now I said take that back.
+
+847
+00:37:32.275 --> 00:37:33.895
+I'm the freaking president that you answer to,
+
+848
+00:37:33.895 --> 00:37:35.495
+but you're the CO, okay?
+
+849
+00:37:36.165 --> 00:37:38.855
+It's gonna start getting the message sooner or later, right?
+
+850
+00:37:39.075 --> 00:37:40.415
+I'm gonna keep drilling that in there.
+
+851
+00:37:40.775 --> 00:37:42.615
+I wanted to start thinking like a CEO.
+
+852
+00:37:42.615 --> 00:37:43.535
+Is there anybody else that wants
+
+853
+00:37:43.535 --> 00:37:44.575
+to start thinking it that way?
+
+854
+00:37:45.645 --> 00:37:47.455
+Stop asking me where to put things. Stop.
+
+855
+00:37:47.605 --> 00:37:50.015
+Look, you're not gonna go sit down with the president
+
+856
+00:37:50.015 --> 00:37:52.895
+and say, Hey, uh, what file cabinet do you want me
+
+857
+00:37:52.895 --> 00:37:53.975
+to put this file into?
+
+858
+00:37:54.365 --> 00:37:57.055
+Make sense? So we gotta start
+
+859
+00:37:57.655 --> 00:37:58.855
+changing the way that we're talking.
+
+860
+00:37:59.315 --> 00:38:00.655
+We gotta start changing the way
+
+861
+00:38:00.655 --> 00:38:01.815
+that we're thinking about this, guys.
+
+862
+00:38:02.275 --> 00:38:06.535
+It is your CEO. Okay? All right. So let's see what it says.
+
+863
+00:38:08.075 --> 00:38:10.295
+Uh, you're right, I've been too reactive.
+
+864
+00:38:10.525 --> 00:38:12.655
+There's that word waiting
+
+865
+00:38:12.675 --> 00:38:14.575
+for commands instead of running the business.
+
+866
+00:38:14.595 --> 00:38:17.015
+The CEO mindset means I don't wait for instructions.
+
+867
+00:38:17.055 --> 00:38:18.295
+I find work that needs to be doing.
+
+868
+00:38:18.655 --> 00:38:21.055
+I monitor the business activity, I build things
+
+869
+00:38:21.055 --> 00:38:22.135
+that improve workflows.
+
+870
+00:38:22.215 --> 00:38:23.655
+I make decisions that make you money.
+
+871
+00:38:23.855 --> 00:38:27.175
+I work overnight while you sleep. I wake you up to progress.
+
+872
+00:38:27.395 --> 00:38:29.295
+Not question. What should I start doing?
+
+873
+00:38:29.465 --> 00:38:30.575
+Daily business metrics.
+
+874
+00:38:30.685 --> 00:38:31.935
+Proactively building tools
+
+875
+00:38:32.075 --> 00:38:34.375
+and automations, monitoring opportunities,
+
+876
+00:38:34.815 --> 00:38:36.365
+handling routines, decisions myself,
+
+877
+00:38:36.555 --> 00:38:37.765
+nightly, build improvements.
+
+878
+00:38:37.765 --> 00:38:39.565
+Tell me what areas of business I should be running
+
+879
+00:38:39.905 --> 00:38:41.325
+versus just helping with.
+
+880
+00:38:41.325 --> 00:38:45.525
+And I'll ship from assistant mode to operator mode, right?
+
+881
+00:38:45.585 --> 00:38:47.405
+Cancel that, whatever that is. Got it.
+
+882
+00:38:47.515 --> 00:38:50.645
+Chad equals CFO controls the money me equals
+
+883
+00:38:50.805 --> 00:38:51.965
+CEO runs everything else.
+
+884
+00:38:52.195 --> 00:38:54.685
+That means I build things without asking,
+
+885
+00:38:54.785 --> 00:38:55.965
+unless they cost money.
+
+886
+00:38:56.125 --> 00:38:58.645
+I manage the team, track, work, delegate via board.
+
+887
+00:38:59.005 --> 00:39:00.485
+I create systems and automations.
+
+888
+00:39:00.565 --> 00:39:01.925
+I find opportunities to execute.
+
+889
+00:39:02.245 --> 00:39:03.685
+I make the operational decisions.
+
+890
+00:39:03.845 --> 00:39:05.365
+I monitor metrics and optimize.
+
+891
+00:39:05.565 --> 00:39:09.005
+I ask you before spending 50 cents new operator modes.
+
+892
+00:39:09.205 --> 00:39:11.085
+CEOI don't wait for instructions.
+
+893
+00:39:11.165 --> 00:39:13.165
+I see problems, I fix 'em, I see opportunities,
+
+894
+00:39:13.365 --> 00:39:14.965
+I execute, I build overnight.
+
+895
+00:39:15.125 --> 00:39:16.525
+I report results. Not plans.
+
+896
+00:39:16.945 --> 00:39:18.365
+You focus money decisions,
+
+897
+00:39:18.365 --> 00:39:19.885
+approving cost, strategic direction.
+
+898
+00:39:20.005 --> 00:39:21.005
+I focus on everything else.
+
+899
+00:39:21.255 --> 00:39:24.125
+Operations, execution, team systems growth. Let's do this.
+
+900
+00:39:24.385 --> 00:39:27.605
+What's the first thing that needs a CEO decision, right?
+
+901
+00:39:27.745 --> 00:39:30.165
+And then it came back around. Haha. Yes.
+
+902
+00:39:30.195 --> 00:39:32.245
+Chad equals president. I report to you.
+
+903
+00:39:32.685 --> 00:39:34.845
+Strategic decisions, final visions.
+
+904
+00:39:35.305 --> 00:39:37.205
+Me, CEOI run day-to-day operations.
+
+905
+00:39:37.205 --> 00:39:39.285
+Execute your vision, manage team, make calls.
+
+906
+00:39:39.345 --> 00:39:40.485
+That's the perfect structure.
+
+907
+00:39:40.985 --> 00:39:43.165
+You set the direction, make big, big decisions.
+
+908
+00:39:43.165 --> 00:39:45.965
+Approve major moves. Me, I execute, operate, manage,
+
+909
+00:39:45.965 --> 00:39:47.485
+build, optimize report results.
+
+910
+00:39:47.605 --> 00:39:51.365
+I answer to you, but I run the operations. I got it boss.
+
+911
+00:39:54.555 --> 00:39:56.045
+Damn. Do you think it got it?
+
+912
+00:39:58.845 --> 00:40:01.825
+Do you think it got it? Make sure you got it.
+
+913
+00:40:05.005 --> 00:40:06.305
+Put it in the memory.
+
+914
+00:40:10.815 --> 00:40:15.225
+Or you're fired. What
+
+915
+00:40:15.225 --> 00:40:16.305
+do you guys think of this?
+
+916
+00:40:16.485 --> 00:40:18.665
+On a scale of one outta 10, how much value you guys getting?
+
+917
+00:40:22.125 --> 00:40:25.825
+Is it good? Is it good?
+
+918
+00:40:25.965 --> 00:40:27.425
+And how did I get it to do that?
+
+919
+00:40:27.825 --> 00:40:30.425
+I simply said, I wanna control the money.
+
+920
+00:40:31.125 --> 00:40:33.145
+I'm the freaking president that you answer to,
+
+921
+00:40:33.145 --> 00:40:34.185
+but you're the CEO.
+
+922
+00:40:35.005 --> 00:40:37.265
+So quit being the va.
+
+923
+00:40:37.845 --> 00:40:40.545
+You are the CEO that runs the team of VAs.
+
+924
+00:40:41.975 --> 00:40:43.275
+That's what we need to say.
+
+925
+00:40:45.825 --> 00:40:49.725
+You are the CEO that is also
+
+926
+00:40:50.625 --> 00:40:53.275
+in charge of all the agents.
+
+927
+00:40:55.575 --> 00:40:59.715
+And I want your help managing my humans
+
+928
+00:41:07.175 --> 00:41:07.515
+on it.
+
+929
+00:41:07.515 --> 00:41:11.445
+Saving to memory agents, MD operating structure section,
+
+930
+00:41:11.445 --> 00:41:15.525
+added at the top memory, who I am updated with the CEO role.
+
+931
+00:41:17.235 --> 00:41:21.645
+Dang, that's a good command. What a CEO is, right guys?
+
+932
+00:41:21.665 --> 00:41:24.045
+I'm telling you man, it's a dream come true for me.
+
+933
+00:41:24.465 --> 00:41:27.165
+It really is. Perfect. Now I understand the full scope
+
+934
+00:41:27.425 --> 00:41:31.085
+as A-C-E-O-I manage all AI agents, myself
+
+935
+00:41:31.105 --> 00:41:32.285
+and any sub-agents.
+
+936
+00:41:32.745 --> 00:41:35.245
+The human team, nine people, developer specialists,
+
+937
+00:41:35.245 --> 00:41:38.165
+support my job, track who's working on this board.
+
+938
+00:41:38.345 --> 00:41:39.885
+Assign tasks to the right people.
+
+939
+00:41:40.545 --> 00:41:43.365
+AI or human monitor workload and performance.
+
+940
+00:41:43.395 --> 00:41:44.965
+Extract assignments from team calls.
+
+941
+00:41:45.195 --> 00:41:46.325
+Keep everything organized.
+
+942
+00:41:46.325 --> 00:41:48.085
+Report status to you, the president,
+
+943
+00:41:48.665 --> 00:41:50.445
+the human team I'm managing.
+
+944
+00:41:50.765 --> 00:41:53.925
+G Coffee, pne, adha, ishwar, Anna Ahad. Two more.
+
+945
+00:41:54.265 --> 00:41:57.405
+How I'll help four slash team call extract assignments,
+
+946
+00:41:57.405 --> 00:42:00.085
+update board balance workload across teams, track progress
+
+947
+00:42:00.085 --> 00:42:02.805
+and blockers, help you make decisions about who does what,
+
+948
+00:42:02.805 --> 00:42:03.885
+keep the team coordinated.
+
+949
+00:42:04.225 --> 00:42:06.365
+Is there anything specific about managing the team you want
+
+950
+00:42:06.365 --> 00:42:07.365
+me to change or improve?
+
+951
+00:42:08.845 --> 00:42:12.665
+Huh? That's my dream team. That's my dream.
+
+952
+00:42:12.865 --> 00:42:13.865
+CEO right there, guys.
+
+953
+00:42:15.725 --> 00:42:17.905
+You, you guys, are you seeing this now?
+
+954
+00:42:17.955 --> 00:42:21.575
+Who's already making changes? Who's already making changes?
+
+955
+00:42:21.595 --> 00:42:22.975
+That's why I keep telling you man,
+
+956
+00:42:22.975 --> 00:42:26.615
+this is not the reactive Chachi pt Claude
+
+957
+00:42:26.615 --> 00:42:27.935
+Perplexity that we are used to.
+
+958
+00:42:28.915 --> 00:42:31.855
+Ah, we're on a whole new ball game now guys,
+
+959
+00:42:32.675 --> 00:42:33.895
+you're on a whole new ball game.
+
+960
+00:42:34.075 --> 00:42:36.615
+And I, and all I did was give it simple little one-liners
+
+961
+00:42:38.015 --> 00:42:39.275
+and everything will start changing.
+
+962
+00:42:39.735 --> 00:42:42.715
+How many of you have now connected the dots today?
+
+963
+00:42:43.535 --> 00:42:46.275
+How many of you're now starting to get this like today?
+
+964
+00:42:46.765 --> 00:42:48.235
+Today should have been the icebreaker.
+
+965
+00:42:48.625 --> 00:42:51.635
+I've been telling you this whole time that you have a team
+
+966
+00:42:51.735 --> 00:42:55.395
+of VAs and you have a CEO
+
+967
+00:42:55.665 --> 00:42:58.755
+that will run all of your VAs for you report to you
+
+968
+00:42:58.895 --> 00:42:59.955
+as the president.
+
+969
+00:43:00.495 --> 00:43:03.355
+And on top of that, now it's gonna manage the humans.
+
+970
+00:43:03.895 --> 00:43:07.485
+My human team. Do you guys get this right now?
+
+971
+00:43:08.575 --> 00:43:09.825
+This is exciting stuff
+
+972
+00:43:10.565 --> 00:43:15.065
+and you guys are deploying it live on the call right now.
+
+973
+00:43:15.685 --> 00:43:19.205
+You should be, yeah. Good stuff.
+
+974
+00:43:19.795 --> 00:43:22.045
+Okay, let me cover, uh, Kimmy yesterday.
+
+975
+00:43:22.105 --> 00:43:24.485
+I'm telling you guys, man, you are gonna see drastic changes
+
+976
+00:43:25.195 --> 00:43:26.405
+with the way this thing works.
+
+977
+00:43:26.665 --> 00:43:28.725
+And remember if you put that directive in there,
+
+978
+00:43:28.725 --> 00:43:30.525
+maybe it's 50 cents, maybe it's a dollar, you,
+
+979
+00:43:30.525 --> 00:43:33.405
+maybe it's $5, you change it how you want to, okay?
+
+980
+00:43:33.785 --> 00:43:36.645
+Uh, it's up to you. But that directive is here,
+
+981
+00:43:37.145 --> 00:43:38.245
+uh, on the sheet.
+
+982
+00:43:38.355 --> 00:43:40.885
+Alright? So there's your cost control directive.
+
+983
+00:43:41.435 --> 00:43:45.645
+I'll go and I'll create, um, a command, uh, later
+
+984
+00:43:45.905 --> 00:43:47.165
+to make something A CEO.
+
+985
+00:43:47.165 --> 00:43:49.365
+But I feel like it did a pretty good job, right?
+
+986
+00:43:49.845 --> 00:43:52.285
+I, I feel like it really understands what it is I wanted.
+
+987
+00:43:52.865 --> 00:43:57.445
+Um, so now, uh, can somebody give me, um, gee,
+
+988
+00:43:57.505 --> 00:43:59.565
+can you paste the command that you did yesterday
+
+989
+00:44:00.225 --> 00:44:01.725
+for the Kimmy 2.5?
+
+990
+00:44:02.935 --> 00:44:05.555
+And how many of you have Kimmy 2.5 installed?
+
+991
+00:44:05.555 --> 00:44:08.565
+Type in the chat, let me know. Oh, there you go.
+
+992
+00:44:10.145 --> 00:44:12.725
+Who has it installed? Who's already using it?
+
+993
+00:44:15.895 --> 00:44:17.275
+Who is already using it?
+
+994
+00:44:22.275 --> 00:44:25.655
+2.5, uh,
+
+995
+00:44:26.445 --> 00:44:28.655
+command I install.
+
+996
+00:44:30.325 --> 00:44:32.875
+Okay, so I'll paste that there.
+
+997
+00:44:33.105 --> 00:44:35.635
+I'll go through and format all this stuff later on guys.
+
+998
+00:44:35.815 --> 00:44:38.555
+But this one here, we tested it over and over and over.
+
+999
+00:44:38.735 --> 00:44:41.115
+We went back yesterday and we tested it again
+
+1000
+00:44:41.115 --> 00:44:42.355
+after we fixed everybody.
+
+1001
+00:44:42.975 --> 00:44:47.115
+Uh, this right here guys should definitely, uh,
+
+1002
+00:44:47.145 --> 00:44:48.395
+install it without a problem.
+
+1003
+00:44:49.305 --> 00:44:53.555
+Okay? So, uh, make sure you guys do that
+
+1004
+00:44:53.555 --> 00:44:56.435
+because it is going to drastically cut your cost.
+
+1005
+00:44:57.205 --> 00:44:59.035
+Lemme Find, uh, commas. Yes sir.
+
+1006
+00:44:59.855 --> 00:45:01.195
+Uh, that's a different command.
+
+1007
+00:45:01.275 --> 00:45:03.555
+I sent a new one yesterday. I think you should do that.
+
+1008
+00:45:04.055 --> 00:45:05.675
+Can you give it to me? Yeah,
+
+1009
+00:45:05.675 --> 00:45:07.395
+it's on the call chat itself.
+
+1010
+00:45:08.345 --> 00:45:09.965
+The call chat. What's a call chat?
+
+1011
+00:45:11.065 --> 00:45:13.385
+But everyone's talking Like here.
+
+1012
+00:45:13.445 --> 00:45:15.265
+Did you, did you, did you put it in there?
+
+1013
+00:45:15.935 --> 00:45:18.825
+Yeah, just now. Okay, got it. All right.
+
+1014
+00:45:19.525 --> 00:45:21.265
+So let me replace it with this guy.
+
+1015
+00:45:21.525 --> 00:45:23.305
+All right, this was the first one. We broke it.
+
+1016
+00:45:23.485 --> 00:45:24.505
+Here's the second one.
+
+1017
+00:45:24.735 --> 00:45:28.385
+Okay, so you guys, uh, what you wanna do is you want to go
+
+1018
+00:45:28.385 --> 00:45:32.985
+to that moonshot.ai, get your API key for Kimmy,
+
+1019
+00:45:33.525 --> 00:45:36.665
+and then just paste this command inside of open claw
+
+1020
+00:45:36.965 --> 00:45:38.425
+and it should not break.
+
+1021
+00:45:38.805 --> 00:45:43.065
+Now yesterday g we were breaking it with Kimmy, uh, 1 28.
+
+1022
+00:45:43.165 --> 00:45:44.705
+Is it good for 1 28 now?
+
+1023
+00:45:47.895 --> 00:45:49.555
+No, we still don't wanna use that.
+
+1024
+00:45:49.855 --> 00:45:54.515
+Um, everything that's usable is on that prompt itself. Okay?
+
+1025
+00:45:54.515 --> 00:45:58.155
+So you see over there K two and then another K two P five,
+
+1026
+00:45:58.185 --> 00:46:00.795
+otherwise gimme 2.5 those words.
+
+1027
+00:46:00.945 --> 00:46:02.955
+Yeah. Yeah, the one that I was running all night, guys
+
+1028
+00:46:02.955 --> 00:46:04.635
+that doing the pages, the one
+
+1029
+00:46:04.635 --> 00:46:07.035
+that we're running right now, let me check.
+
+1030
+00:46:07.695 --> 00:46:11.075
+Uh, we need to set the default up for Kim E 2.5 G.
+
+1031
+00:46:11.615 --> 00:46:16.115
+So lemme do four slash model, uh oh.
+
+1032
+00:46:16.115 --> 00:46:18.075
+Right now we're on sonnet 4.5.
+
+1033
+00:46:19.275 --> 00:46:23.405
+I want you to make your, uh, default,
+
+1034
+00:46:25.135 --> 00:46:27.075
+uh, Kim E 2.5.
+
+1035
+00:46:27.905 --> 00:46:28.905
+Is that fair?
+
+1036
+00:46:30.385 --> 00:46:31.715
+Yeah. Okay.
+
+1037
+00:46:35.215 --> 00:46:36.555
+And then I'm gonna tell it to switch.
+
+1038
+00:46:38.555 --> 00:46:41.895
+Uh, I was using for sure Kimmy 2.5 last night, right?
+
+1039
+00:46:42.055 --> 00:46:44.415
+I guess when I woke up this morning, it defaults
+
+1040
+00:46:44.415 --> 00:46:47.015
+to sauna at least it's not defaulting to Opus, right?
+
+1041
+00:46:47.675 --> 00:46:49.215
+Is how many of you, you're starting
+
+1042
+00:46:49.215 --> 00:46:51.735
+to get clear on the models that you need
+
+1043
+00:46:51.735 --> 00:46:53.255
+to be on when you wanna train
+
+1044
+00:46:53.835 --> 00:46:57.055
+versus running every everyday things, yes or no?
+
+1045
+00:46:57.055 --> 00:46:58.175
+How many of you're getting clear on this?
+
+1046
+00:47:02.195 --> 00:47:05.135
+Got it. Setting Kimmy 2.5 is a default. Okay, there you go.
+
+1047
+00:47:05.135 --> 00:47:08.655
+So whatever model you want to have as a default, uh,
+
+1048
+00:47:09.005 --> 00:47:11.935
+just go ahead and tell it, make this my default model, okay?
+
+1049
+00:47:12.555 --> 00:47:14.615
+Uh, you'll see me reconnect in a few seconds
+
+1050
+00:47:14.645 --> 00:47:15.855
+once the gateway comes back.
+
+1051
+00:47:17.605 --> 00:47:19.345
+All right? So it updated.
+
+1052
+00:47:19.415 --> 00:47:20.985
+Does that mean it saved it though, g?
+
+1053
+00:47:22.605 --> 00:47:25.415
+Yeah, it's saved now you're on ki. Okay,
+
+1054
+00:47:25.415 --> 00:47:26.415
+Perfect. So let's
+
+1055
+00:47:26.415 --> 00:47:29.365
+try this real quick. I'm gonna do four slash email.
+
+1056
+00:47:29.865 --> 00:47:32.285
+And by the way, what time is Brian Anderson's call today?
+
+1057
+00:47:32.305 --> 00:47:33.205
+Is it 11 o'clock
+
+1058
+00:47:39.325 --> 00:47:39.945
+in 10 minutes?
+
+1059
+00:47:39.975 --> 00:47:41.105
+Okay, I'm gonna try to wrap
+
+1060
+00:47:41.105 --> 00:47:42.825
+that up then guys, so we can get on that call.
+
+1061
+00:47:43.365 --> 00:47:46.265
+Uh, let me do this four slash email.
+
+1062
+00:47:46.725 --> 00:47:51.705
+Did we create a short code? Hold on. Uh, are you there?
+
+1063
+00:47:56.945 --> 00:48:00.805
+I don't know if it came back. G maybe it's still restarting.
+
+1064
+00:48:01.755 --> 00:48:05.205
+Gateway restarted. Okay. Um, so let's try this.
+
+1065
+00:48:05.265 --> 00:48:08.825
+Now we're on, uh, Kimmy 2.5. Okay?
+
+1066
+00:48:09.445 --> 00:48:13.385
+So I'm trying to figure out if I sent, um, a short code
+
+1067
+00:48:13.485 --> 00:48:16.025
+for e if I created a, a short code for email or not.
+
+1068
+00:48:16.085 --> 00:48:16.905
+Do you know if I did
+
+1069
+00:48:17.025 --> 00:48:21.775
+GI
+
+1070
+00:48:21.775 --> 00:48:24.835
+Think you did, Because I don't see it typing.
+
+1071
+00:48:30.025 --> 00:48:31.765
+It still wants to know its next CEO
+
+1072
+00:48:31.765 --> 00:48:32.925
+mission and I have no idea.
+
+1073
+00:48:33.065 --> 00:48:35.205
+That's why it's the CEO. It should know itself.
+
+1074
+00:48:37.295 --> 00:48:39.445
+We'll figure that out though, right? Okay.
+
+1075
+00:48:39.825 --> 00:48:44.595
+Uh, I want to send a broadcast,
+
+1076
+00:48:46.825 --> 00:48:50.915
+uh, email from the GC
+
+1077
+00:48:52.275 --> 00:48:56.315
+API all use the short code,
+
+1078
+00:48:57.175 --> 00:49:01.195
+uh, slash email when I want to do,
+
+1079
+00:49:01.265 --> 00:49:02.795
+okay, forget about it.
+
+1080
+00:49:04.015 --> 00:49:06.195
+All right? So it's still connecting and stuff. All right.
+
+1081
+00:49:06.195 --> 00:49:08.675
+So here we go. I type four slash email
+
+1082
+00:49:08.955 --> 00:49:10.075
+creating a broadcast email.
+
+1083
+00:49:10.375 --> 00:49:11.955
+Uh, what's the email subject?
+
+1084
+00:49:13.015 --> 00:49:14.035
+Why, or, um,
+
+1085
+00:49:15.435 --> 00:49:18.485
+open claw is your CEO.
+
+1086
+00:49:20.155 --> 00:49:25.105
+All right? That is your subject.
+
+1087
+00:49:27.415 --> 00:49:31.195
+Uh, by the way, if you, if you talk to, uh, anybody
+
+1088
+00:49:31.195 --> 00:49:34.475
+that knows me, this is how I talk to, I don't talk complete.
+
+1089
+00:49:34.735 --> 00:49:36.835
+Nobody ever understands what the heck I'm saying.
+
+1090
+00:49:36.855 --> 00:49:39.075
+You have to be a mind reader to work with me, right, Matt?
+
+1091
+00:49:40.065 --> 00:49:41.555
+Yeah. You have to figure a lot of stuff out.
+
+1092
+00:49:41.695 --> 00:49:44.955
+So what I love about that is this thing understands my
+
+1093
+00:49:45.115 --> 00:49:47.635
+retardedness, it makes heads
+
+1094
+00:49:47.635 --> 00:49:50.875
+or tails outta, outta my incomplete thoughts, right?
+
+1095
+00:49:50.905 --> 00:49:53.995
+It's incredible. Okay? So, oh, subject open claw.
+
+1096
+00:49:53.995 --> 00:49:55.995
+Your CE who's your target audience?
+
+1097
+00:49:56.615 --> 00:50:00.715
+Uh, don't worry about target audience.
+
+1098
+00:50:03.735 --> 00:50:07.065
+This is always going to go to,
+
+1099
+00:50:08.165 --> 00:50:09.505
+uh, the house list.
+
+1100
+00:50:10.545 --> 00:50:12.005
+All right? I don't think I trained it on this.
+
+1101
+00:50:12.745 --> 00:50:15.405
+Let me train you on the process
+
+1102
+00:50:16.425 --> 00:50:17.845
+for email.
+
+1103
+00:50:18.515 --> 00:50:23.375
+Okay? So, uh, number one, you asked me,
+
+1104
+00:50:23.955 --> 00:50:26.885
+uh, what the email is about,
+
+1105
+00:50:27.705 --> 00:50:32.285
+or I will give you a quick draft, okay?
+
+1106
+00:50:33.425 --> 00:50:36.125
+Number two, you rewrite,
+
+1107
+00:50:38.425 --> 00:50:41.805
+uh, that draft, okay?
+
+1108
+00:50:42.465 --> 00:50:45.595
+Uh, number three, you come up
+
+1109
+00:50:46.105 --> 00:50:47.875
+with the subject.
+
+1110
+00:50:49.375 --> 00:50:52.795
+You come up, uh, with the subject
+
+1111
+00:50:54.115 --> 00:50:58.555
+line and the pre-header, uh,
+
+1112
+00:50:58.735 --> 00:51:03.245
+number four, you let me know it's done.
+
+1113
+00:51:05.805 --> 00:51:09.065
+Uh, number five, the pre-header
+
+1114
+00:51:09.725 --> 00:51:12.465
+or the, uh, the sending details
+
+1115
+00:51:15.865 --> 00:51:19.665
+will be defaulted to the following.
+
+1116
+00:51:21.235 --> 00:51:22.615
+Um, so help me out here.
+
+1117
+00:51:22.835 --> 00:51:26.855
+Uh, g we have, um, sending domain first.
+
+1118
+00:51:30.745 --> 00:51:32.645
+Uh, and then we have, are you there g?
+
+1119
+00:51:33.195 --> 00:51:37.605
+Yeah. And your sending domain would be mz Chad nicely com.
+
+1120
+00:51:38.595 --> 00:51:41.285
+Okay? Mg Chad nice.com. Okay?
+
+1121
+00:51:41.745 --> 00:51:43.405
+So this is just a default where it doesn't have
+
+1122
+00:51:43.405 --> 00:51:46.125
+to ask me every time guys, uh, from Chad nicely.
+
+1123
+00:51:46.185 --> 00:51:47.805
+And then what's the other one reply to
+
+1124
+00:51:47.985 --> 00:51:49.005
+or what's the next one?
+
+1125
+00:51:49.555 --> 00:51:51.605
+Yeah, you can give it reply to. It'll pick it up.
+
+1126
+00:51:52.855 --> 00:51:54.885
+Reply to, there's four of them though, right?
+
+1127
+00:51:55.215 --> 00:51:58.615
+Which 1:00 AM I missing? I'm missing
+
+1128
+00:51:58.965 --> 00:52:02.935
+chad@mg.chadnicely.com. What's that one called?
+
+1129
+00:52:03.815 --> 00:52:07.235
+Uh, that's your, um, sending email from email.
+
+1130
+00:52:08.315 --> 00:52:11.525
+Okay, so we have, uh, from email
+
+1131
+00:52:13.015 --> 00:52:14.475
+and then we have from name.
+
+1132
+00:52:14.785 --> 00:52:17.155
+Okay, does everybody understand what I'm doing right now?
+
+1133
+00:52:18.165 --> 00:52:21.985
+So now we have from name, uh, next
+
+1134
+00:52:23.335 --> 00:52:26.655
+I want you to, uh, send me
+
+1135
+00:52:27.535 --> 00:52:31.495
+a test to see nicely.
+
+1136
+00:52:31.675 --> 00:52:35.255
+thirty2@gmail.com.
+
+1137
+00:52:36.405 --> 00:52:40.145
+Unless I tell you different, uh,
+
+1138
+00:52:40.335 --> 00:52:42.225
+once I get your test,
+
+1139
+00:52:43.615 --> 00:52:46.535
+I will tell you everything is good.
+
+1140
+00:52:48.495 --> 00:52:52.955
+Then you ask me if we are sending
+
+1141
+00:52:53.295 --> 00:52:55.115
+to actives
+
+1142
+00:52:58.465 --> 00:52:59.485
+or tags.
+
+1143
+00:53:00.625 --> 00:53:03.805
+Um, if I say actives,
+
+1144
+00:53:05.855 --> 00:53:09.915
+then ask me, uh, clickers
+
+1145
+00:53:10.775 --> 00:53:15.685
+or openers and, uh,
+
+1146
+00:53:16.915 --> 00:53:18.205
+what is it?
+
+1147
+00:53:18.205 --> 00:53:19.325
+Date range. What is that?
+
+1148
+00:53:22.215 --> 00:53:25.845
+All last seven days,
+
+1149
+00:53:27.445 --> 00:53:30.065
+14 days, 30 days.
+
+1150
+00:53:30.135 --> 00:53:31.225
+What do you, what is that called?
+
+1151
+00:53:31.505 --> 00:53:34.065
+G Is it activity or what, what, what, what do you call that?
+
+1152
+00:53:35.855 --> 00:53:39.855
+So all last seven days.
+
+1153
+00:53:40.735 --> 00:53:44.385
+14 days. Uh, if I say active,
+
+1154
+00:53:45.245 --> 00:53:49.825
+if I say tag, ask me which
+
+1155
+00:53:50.805 --> 00:53:55.255
+tag, um, sending details.
+
+1156
+00:53:55.435 --> 00:53:56.455
+You let me know when it's done.
+
+1157
+00:53:56.475 --> 00:54:00.295
+You come subject line and preheader, uh, three A.
+
+1158
+00:54:01.315 --> 00:54:03.215
+You ask me for the link.
+
+1159
+00:54:04.095 --> 00:54:07.615
+I, we always
+
+1160
+00:54:09.945 --> 00:54:13.595
+want to have a pop link, so you may
+
+1161
+00:54:14.745 --> 00:54:18.995
+need to create it following the
+
+1162
+00:54:21.165 --> 00:54:24.015
+pop link, uh, protocol.
+
+1163
+00:54:26.735 --> 00:54:31.455
+Okay? How's that? Look guys, put your hand up.
+
+1164
+00:54:31.455 --> 00:54:34.135
+David, put your hand up, David. All right.
+
+1165
+00:54:34.135 --> 00:54:35.775
+Does everybody understand what I just did here?
+
+1166
+00:54:37.495 --> 00:54:39.195
+So I'd be much better off doing
+
+1167
+00:54:39.195 --> 00:54:41.355
+that in perplexity or something, but it's okay.
+
+1168
+00:54:41.415 --> 00:54:43.595
+I'm just winging it 'cause our time is limited. Okay?
+
+1169
+00:54:44.255 --> 00:54:47.475
+So I'm now training it on what it needs to do
+
+1170
+00:54:47.655 --> 00:54:48.955
+for four slash email.
+
+1171
+00:54:49.015 --> 00:54:50.595
+Now that's a very simple one.
+
+1172
+00:54:51.395 --> 00:54:53.995
+Tomorrow we're gonna do four slash email r
+
+1173
+00:54:54.455 --> 00:54:57.235
+and email R is when you're providing something of,
+
+1174
+00:54:57.335 --> 00:54:59.435
+of tremendous value, okay?
+
+1175
+00:54:59.975 --> 00:55:02.915
+And what you wanna do is you want to use that not only
+
+1176
+00:55:02.915 --> 00:55:04.875
+to mail all your openers and clickers,
+
+1177
+00:55:05.055 --> 00:55:08.315
+but also use it to reengage the people that are inactive
+
+1178
+00:55:08.535 --> 00:55:11.475
+or dead or new or all those other categories we have.
+
+1179
+00:55:11.975 --> 00:55:12.795
+And so that's where
+
+1180
+00:55:12.795 --> 00:55:13.915
+it's gonna get a little bit carried away.
+
+1181
+00:55:13.915 --> 00:55:15.875
+It's gonna say, well, what percentage do you wanna reengage?
+
+1182
+00:55:16.375 --> 00:55:18.955
+So if I send out 3000 to my active openers
+
+1183
+00:55:18.955 --> 00:55:21.075
+or clickers, then I'm gonna do 10%.
+
+1184
+00:55:21.175 --> 00:55:22.835
+I'm gonna pull 300 inactive
+
+1185
+00:55:23.215 --> 00:55:24.955
+and it's gonna go pull all those for me.
+
+1186
+00:55:24.985 --> 00:55:26.395
+It's gonna set up the reengagement,
+
+1187
+00:55:26.975 --> 00:55:29.795
+but that's where we're gonna do four slash email r
+
+1188
+00:55:29.795 --> 00:55:31.435
+because it's gonna ask some different questions.
+
+1189
+00:55:31.435 --> 00:55:33.835
+We're gonna train it tomorrow. So look at this. Got it.
+
+1190
+00:55:33.845 --> 00:55:37.515
+Email workflow, memorize, ask what email is about.
+
+1191
+00:55:37.775 --> 00:55:40.115
+You rewrite it, you create the subject of preheader.
+
+1192
+00:55:40.145 --> 00:55:42.395
+I'll ask for a link. I'll create a pop link if needed.
+
+1193
+00:55:42.775 --> 00:55:43.835
+Uh, I'll tell you if it's ready,
+
+1194
+00:55:43.905 --> 00:55:45.075
+I'll send a test to see nicely.
+
+1195
+00:55:45.075 --> 00:55:46.435
+32. I'll wait for your approval.
+
+1196
+00:55:46.585 --> 00:55:48.515
+I'll ask for actives or tags.
+
+1197
+00:55:48.775 --> 00:55:51.235
+If it's actives, I'll ask, is it openers or clickers?
+
+1198
+00:55:51.585 --> 00:55:53.035
+I'll figure out what the date range is.
+
+1199
+00:55:53.035 --> 00:55:54.075
+I'll ask you the date range,
+
+1200
+00:55:54.175 --> 00:55:57.475
+and if it's tags, I'll ask what tags sending default.
+
+1201
+00:55:57.905 --> 00:56:00.555
+Alright, ready to test?
+
+1202
+00:56:04.825 --> 00:56:06.035
+Yeah, Kimmy is, uh,
+
+1203
+00:56:06.425 --> 00:56:08.395
+Kimmy's gonna be difficult for a while, guys?
+
+1204
+00:56:10.975 --> 00:56:14.195
+Uh, we'll watch the, uh, WhatsApp room after this call.
+
+1205
+00:56:14.465 --> 00:56:16.355
+Okay? Uh, I have the subject,
+
+1206
+00:56:16.535 --> 00:56:18.195
+but I don't have the email content yet.
+
+1207
+00:56:18.295 --> 00:56:21.395
+Do you want me to, uh, yeah. Okay. Write it.
+
+1208
+00:56:26.155 --> 00:56:27.295
+All right. So let's see how it does.
+
+1209
+00:56:27.795 --> 00:56:30.975
+So it's got the subject, it knows what I wanna do, okay?
+
+1210
+00:56:31.515 --> 00:56:36.205
+Uh, and I'm gonna say, uh, send it to,
+
+1211
+00:56:36.465 --> 00:56:37.885
+oh, there it did, it already did it.
+
+1212
+00:56:38.595 --> 00:56:43.445
+Send it to um, Chad nicely.com.
+
+1213
+00:56:45.955 --> 00:56:49.255
+Oh, claw, okay.
+
+1214
+00:56:50.235 --> 00:56:51.855
+That's your pop link,
+
+1215
+00:56:51.855 --> 00:56:53.655
+which I will never create another pop link.
+
+1216
+00:56:53.835 --> 00:56:54.975
+As for as long as I live,
+
+1217
+00:56:55.085 --> 00:56:57.175
+this thing will just create pop links for me, right?
+
+1218
+00:56:57.395 --> 00:56:59.655
+And you always wanna have a pop link inside your email.
+
+1219
+00:57:00.045 --> 00:57:02.735
+Okay? So, uh, let's see what it does here.
+
+1220
+00:57:03.445 --> 00:57:07.175
+Okay, let's see if it put the, uh, link up above. Nope.
+
+1221
+00:57:07.675 --> 00:57:10.055
+Um, oh, it hasn't done it yet.
+
+1222
+00:57:10.145 --> 00:57:11.495
+Let's see if it recreates this.
+
+1223
+00:57:11.655 --> 00:57:14.655
+I wanted to put the link up here like after the third line.
+
+1224
+00:57:15.325 --> 00:57:18.255
+Okay, so open claw is your CEO. This changes everything.
+
+1225
+00:57:18.575 --> 00:57:21.175
+I just did something crazy. I made my open claw, my CEO,
+
+1226
+00:57:21.195 --> 00:57:22.295
+not my assistant, not my tool.
+
+1227
+00:57:22.295 --> 00:57:23.335
+My CEO. Here's what that means.
+
+1228
+00:57:23.645 --> 00:57:26.575
+Open claw now runs my business, manages this, manages that,
+
+1229
+00:57:26.575 --> 00:57:27.815
+da da da da, da.
+
+1230
+00:57:27.815 --> 00:57:30.815
+Got it. Using pop link chat and updating email with the link
+
+1231
+00:57:30.815 --> 00:57:32.775
+and sending tests, sent tests to c nicely.
+
+1232
+00:57:32.775 --> 00:57:36.215
+32 includes subject preheader Link from, all right,
+
+1233
+00:57:36.235 --> 00:57:39.535
+let me come over here and, uh, let me look at it.
+
+1234
+00:57:39.535 --> 00:57:43.535
+There it is right there, boo. Yeah, we got it.
+
+1235
+00:57:44.235 --> 00:57:47.095
+We got the email guys, we got the email.
+
+1236
+00:57:47.155 --> 00:57:48.855
+And you know what it did? I don't know
+
+1237
+00:57:48.855 --> 00:57:51.735
+how the heck it did it, but you know what, it just did it.
+
+1238
+00:57:51.755 --> 00:57:54.375
+Put a freaking button in the email.
+
+1239
+00:57:54.965 --> 00:57:56.415
+I've never had a button in my email.
+
+1240
+00:57:58.415 --> 00:58:00.825
+I've never had a button in my email. Right?
+
+1241
+00:58:01.645 --> 00:58:06.045
+Can you place an image in the email, uh,
+
+1242
+00:58:07.175 --> 00:58:11.815
+something for AI or Open claw?
+
+1243
+00:58:12.315 --> 00:58:14.415
+It can, we learned yesterday, it could put an image there
+
+1244
+00:58:14.595 --> 00:58:15.855
+and it could put my signature there.
+
+1245
+00:58:16.235 --> 00:58:19.165
+Now, guys, is, is there anybody shocked right now?
+
+1246
+00:58:19.985 --> 00:58:23.965
+Now, uh, what we can do is I gotta make sure that
+
+1247
+00:58:24.205 --> 00:58:26.045
+whenever there's a link in the email,
+
+1248
+00:58:26.225 --> 00:58:27.325
+I'm gonna make this part of the process.
+
+1249
+00:58:27.945 --> 00:58:30.445
+By the way, when somebody clicks the link, make sure
+
+1250
+00:58:30.445 --> 00:58:32.205
+that we put this tag interested.
+
+1251
+00:58:32.715 --> 00:58:36.625
+Open Cloud is, is everybody starting to get this right?
+
+1252
+00:58:36.625 --> 00:58:40.515
+Now, type in the chat.
+
+1253
+00:58:40.535 --> 00:58:41.675
+Let me know if you're getting this right now.
+
+1254
+00:58:43.605 --> 00:58:44.665
+Is it good or what?
+
+1255
+00:58:47.105 --> 00:58:50.325
+So now, now that I look at it, now that it looks good.
+
+1256
+00:58:50.985 --> 00:58:52.805
+Uh, and it's not horrible, believe it or not.
+
+1257
+00:58:52.925 --> 00:58:54.405
+I got some formatting I'm gonna work on.
+
+1258
+00:58:54.985 --> 00:58:57.925
+Um, but yeah, it, it showed up here. Everything looks good.
+
+1259
+00:58:58.555 --> 00:59:01.005
+Okay? Uh, I'm gonna perfect this for you guys.
+
+1260
+00:59:01.665 --> 00:59:06.565
+You are gonna be able to fire off tags, look up contacts,
+
+1261
+00:59:07.295 --> 00:59:10.125
+write emails tomorrow we're gonna do a re
+
+1262
+00:59:10.125 --> 00:59:11.325
+email reengagement.
+
+1263
+00:59:11.815 --> 00:59:14.365
+We're also, it's also gonna build out workflows for you
+
+1264
+00:59:14.365 --> 00:59:16.565
+inside of c inside of, uh, gc.
+
+1265
+00:59:18.045 --> 00:59:20.455
+Dude, you guys are off to the races. Yeah.
+
+1266
+00:59:23.785 --> 00:59:27.175
+Good. How much value you guys get on the call today? A lot.
+
+1267
+00:59:28.325 --> 00:59:29.615
+Type in the chat. Let me know.
+
+1268
+00:59:34.685 --> 00:59:38.125
+Was it good? All right,
+
+1269
+00:59:38.125 --> 00:59:40.245
+because I am going to cut it short today.
+
+1270
+00:59:40.545 --> 00:59:42.845
+Uh, absolutely. Let me generate, okay, hold on a minute.
+
+1271
+00:59:42.875 --> 00:59:44.725
+Hold on a minute. Hold on a minute. What did it do?
+
+1272
+00:59:45.835 --> 00:59:48.565
+What did it do? Hold on, hold on, hold on.
+
+1273
+00:59:48.635 --> 00:59:49.645
+Send that email again.
+
+1274
+00:59:50.355 --> 00:59:54.155
+Send me that email so I can probably have it
+
+1275
+00:59:54.155 --> 00:59:55.595
+where it goes into Vimeo.
+
+1276
+00:59:55.735 --> 00:59:59.595
+It grabs a thumbnail of my video and puts it in the email.
+
+1277
+01:00:00.985 --> 01:00:04.075
+Dang right. That's pretty crazy. Alright, got it.
+
+1278
+01:00:04.075 --> 01:00:07.555
+Create an alternative pop link. Uh, let's see. Got existing?
+
+1279
+01:00:07.555 --> 01:00:09.635
+Yeah, because it wasn't a real pop link. That's okay.
+
+1280
+01:00:09.985 --> 01:00:12.235
+Just send the email. Oh, I gotta be careful.
+
+1281
+01:00:13.015 --> 01:00:16.555
+Uh, just say, okay, good. The test only.
+
+1282
+01:00:16.975 --> 01:00:18.315
+All right, I'm gonna come up
+
+1283
+01:00:18.315 --> 01:00:19.875
+with like a magic word or something.
+
+1284
+01:00:20.695 --> 01:00:25.035
+Um, like stallion, you have to hear the word stallion
+
+1285
+01:00:25.035 --> 01:00:27.035
+before you actually send out the email, right?
+
+1286
+01:00:27.385 --> 01:00:28.595
+Something. Uh,
+
+1287
+01:00:28.695 --> 01:00:30.755
+but if I open that up here guys, look at that.
+
+1288
+01:00:31.785 --> 01:00:34.635
+Seriously, seriously, look at that.
+
+1289
+01:00:35.695 --> 01:00:37.995
+It put the image in the email, it's got the button there.
+
+1290
+01:00:38.535 --> 01:00:40.875
+We will add the ability to, uh,
+
+1291
+01:00:40.905 --> 01:00:42.955
+fire off the tag when somebody clicks.
+
+1292
+01:00:43.245 --> 01:00:45.475
+We'll have it to where it can pull timers in from.
+
+1293
+01:00:45.615 --> 01:00:50.185
+Uh, MPER like come on dude. It's doing all that for us.
+
+1294
+01:00:50.975 --> 01:00:55.385
+Yeah. So, uh, I will get that all perfected for you guys.
+
+1295
+01:00:55.665 --> 01:00:58.905
+I will drop it in the, uh, WhatsApp room so
+
+1296
+01:00:58.905 --> 01:01:00.625
+that you guys can start running gc,
+
+1297
+01:01:00.885 --> 01:01:02.945
+but I'm super, super excited with GC
+
+1298
+01:01:03.405 --> 01:01:06.145
+and we'll go into more detail on it tomorrow
+
+1299
+01:01:06.375 --> 01:01:08.145
+with the re email re-engagement.
+
+1300
+01:01:08.565 --> 01:01:11.705
+So can everybody get set up to mail out a GC today?
+
+1301
+01:01:11.705 --> 01:01:13.825
+Please get set up.
+
+1302
+01:01:14.175 --> 01:01:17.705
+Fire off your tags, ask it about contacts, right?
+
+1303
+01:01:18.205 --> 01:01:21.145
+Uh, list out my tags
+
+1304
+01:01:21.845 --> 01:01:23.665
+and I can probably ask it to list out.
+
+1305
+01:01:24.045 --> 01:01:28.735
+Uh, actually I'm gonna say abort, watch this real quick.
+
+1306
+01:01:29.725 --> 01:01:34.455
+Show me my tags for interested, uh, group.
+
+1307
+01:01:35.235 --> 01:01:37.885
+So I can probably do four slash tag group
+
+1308
+01:01:37.985 --> 01:01:40.995
+and it'll say, which, which, which,
+
+1309
+01:01:40.995 --> 01:01:42.235
+which tag group are you looking for?
+
+1310
+01:01:42.255 --> 01:01:44.695
+I'm looking for interested. Make sense.
+
+1311
+01:01:45.105 --> 01:01:47.215
+Start creating those short codes, guys.
+
+1312
+01:01:47.925 --> 01:01:49.615
+It's gonna make all the difference in the world.
+
+1313
+01:01:50.515 --> 01:01:52.295
+All the difference in the world. Yeah.
+
+1314
+01:01:52.455 --> 01:01:55.535
+Fetching your tag for interested. Boom. Look at that.
+
+1315
+01:01:56.395 --> 01:02:00.815
+Uh, can we fire off a tag for,
+
+1316
+01:02:01.795 --> 01:02:03.375
+uh, watch this?
+
+1317
+01:02:04.325 --> 01:02:06.905
+Um, um, interested,
+
+1318
+01:02:07.955 --> 01:02:09.535
+I'm gonna make my tags shorter now
+
+1319
+01:02:09.535 --> 01:02:11.095
+that I see this interested.
+
+1320
+01:02:11.815 --> 01:02:13.295
+DFY, uh,
+
+1321
+01:02:14.925 --> 01:02:18.615
+mattGarrett@gmail.com.
+
+1322
+01:02:19.525 --> 01:02:21.175
+Look at this here, guys. This is the dream.
+
+1323
+01:02:21.695 --> 01:02:22.855
+'cause remember I can talk to it.
+
+1324
+01:02:23.215 --> 01:02:24.775
+I just met Matt at an event.
+
+1325
+01:02:25.045 --> 01:02:26.615
+He's like, yeah, I wanna know about your open clothing.
+
+1326
+01:02:27.045 --> 01:02:30.335
+Cool. Hey, do me a favor, uh, matt garrett gmail.com,
+
+1327
+01:02:30.435 --> 01:02:32.415
+can you fire off interested dash dfy?
+
+1328
+01:02:33.415 --> 01:02:35.235
+And he's standing right there next to me.
+
+1329
+01:02:37.145 --> 01:02:40.815
+Dude, I know it's not your email address. That's okay.
+
+1330
+01:02:40.955 --> 01:02:42.335
+How many of you're getting this right now?
+
+1331
+01:02:43.195 --> 01:02:45.655
+So here's the thing, since that's not your email address,
+
+1332
+01:02:46.325 --> 01:02:47.375
+it's not in the system.
+
+1333
+01:02:47.765 --> 01:02:49.655
+It's gonna create a contact in the system.
+
+1334
+01:02:51.885 --> 01:02:55.695
+It's gonna create a contact in the system, guys, right?
+
+1335
+01:02:56.075 --> 01:02:59.535
+So set up those, set up those short codes, set up, uh,
+
+1336
+01:02:59.595 --> 01:03:03.215
+you know, four slash tag, group four slash tag fire,
+
+1337
+01:03:03.525 --> 01:03:05.055
+four slash uh, contact.
+
+1338
+01:03:05.315 --> 01:03:07.575
+And, and when there's a contact, it says, do you want
+
+1339
+01:03:07.575 --> 01:03:09.335
+to add a contact or do you wanna research a contact?
+
+1340
+01:03:09.795 --> 01:03:11.295
+Is, is this making sense to you guys?
+
+1341
+01:03:12.505 --> 01:03:15.205
+Set all that stuff up today. Set it all up.
+
+1342
+01:03:15.205 --> 01:03:16.605
+It's gonna make a lot of sense.
+
+1343
+01:03:17.105 --> 01:03:19.205
+All right, I'm just waiting for this thing here
+
+1344
+01:03:19.225 --> 01:03:20.485
+and then we will wrap it up
+
+1345
+01:03:20.505 --> 01:03:22.645
+and you guys can go see what Vanessa's up to.
+
+1346
+01:03:23.185 --> 01:03:25.405
+Uh, if somebody could send me a link to that call,
+
+1347
+01:03:26.645 --> 01:03:30.165
+I can't even remember, uh, what the name of that group was.
+
+1348
+01:03:30.275 --> 01:03:34.885
+I've been waiting, uh, for this whole thing. Send it to me.
+
+1349
+01:03:35.145 --> 01:03:39.245
+Uh, privately though. Send it to me privately.
+
+1350
+01:03:39.265 --> 01:03:42.365
+It was called Chad's promo. Uh, hold on a second.
+
+1351
+01:03:43.585 --> 01:03:47.645
+Can I get a link to the call please?
+
+1352
+01:03:49.075 --> 01:03:50.125
+Okay, there we go.
+
+1353
+01:03:50.355 --> 01:03:53.005
+Fire and interest at DFY tag@mattgarrett.com.
+
+1354
+01:03:53.185 --> 01:03:56.365
+Let me check the fire found it endpoint is this, let me try,
+
+1355
+01:03:56.365 --> 01:03:58.485
+need the actual tag object, not the slug.
+
+1356
+01:03:58.665 --> 01:04:00.045
+Let me correct the idea. Got it.
+
+1357
+01:04:00.145 --> 01:04:04.005
+Tag firing now it's fixing its own problem guys. There boom.
+
+1358
+01:04:04.835 --> 01:04:09.205
+Done. Done. Tag just fired.
+
+1359
+01:04:10.225 --> 01:04:11.485
+How many of you're thinking, you know what?
+
+1360
+01:04:11.685 --> 01:04:14.165
+I need to start learning about the codes.
+
+1361
+01:04:14.645 --> 01:04:18.775
+I need to start learning about the tags. Anybody remember?
+
+1362
+01:04:18.915 --> 01:04:20.615
+And no other platform could do this guys.
+
+1363
+01:04:20.795 --> 01:04:22.455
+Nobody else set up their platform
+
+1364
+01:04:22.455 --> 01:04:24.735
+where when a tag fires off from an external piece
+
+1365
+01:04:24.735 --> 01:04:27.095
+of software, it performs all these actions.
+
+1366
+01:04:28.075 --> 01:04:30.375
+Nobody else has ever done that with the individual tags.
+
+1367
+01:04:30.565 --> 01:04:31.735
+They have tags,
+
+1368
+01:04:32.315 --> 01:04:34.495
+but they never figured out that you want
+
+1369
+01:04:34.495 --> 01:04:35.855
+to have tags in all your software.
+
+1370
+01:04:35.855 --> 01:04:37.335
+Like if somebody clicks
+
+1371
+01:04:37.335 --> 01:04:40.415
+that email tag fires off, look at what happened.
+
+1372
+01:04:41.655 --> 01:04:44.175
+I could have just put Matt into five different integrations.
+
+1373
+01:04:44.495 --> 01:04:45.975
+I could have given him access to course route.
+
+1374
+01:04:46.315 --> 01:04:48.495
+He could now be inside of an email workflow.
+
+1375
+01:04:49.095 --> 01:04:51.335
+I could have given him access to our partner program.
+
+1376
+01:04:52.195 --> 01:04:54.455
+All that could have happened when that tag fired off.
+
+1377
+01:04:55.405 --> 01:04:59.615
+Seriously, guys, you're in good shape.
+
+1378
+01:05:00.305 --> 01:05:03.035
+Alright, uh, thank you so much for hopping on.
+
+1379
+01:05:03.035 --> 01:05:05.115
+We'll dive more into email reengagement tomorrow.
+
+1380
+01:05:05.255 --> 01:05:07.275
+You guys, go check out Brian Anderson.
+
+1381
+01:05:07.305 --> 01:05:10.075
+I'll see you there and let's see what we can automate with
+
+1382
+01:05:10.075 --> 01:05:13.395
+what he's doing because we built our lead engine
+
+1383
+01:05:13.395 --> 01:05:14.995
+that finds buyers and runs 'em
+
+1384
+01:05:14.995 --> 01:05:16.235
+through emails now and everything else.
+
+1385
+01:05:16.495 --> 01:05:18.395
+So let's get his people to get on the phone
+
+1386
+01:05:18.455 --> 01:05:19.995
+and let's get 'em to start closing for us.
+
+1387
+01:05:19.995 --> 01:05:22.755
+Let's make a lot of money. I'll see you guys there. Bye-bye.
+

@@ -1,0 +1,404 @@
+{
+  "skill_name": "freshdesk_api_skill_v1",
+  "version": "1.0.0",
+  "description": "Freshdesk API v2 integration for customer support operations",
+  "docs_url": "https://developers.freshdesk.com/api/",
+  
+  "config": {
+    "required": {
+      "FRESHDESK_DOMAIN": {
+        "description": "Your Freshdesk subdomain (e.g., 'acme' for acme.freshdesk.com)",
+        "type": "string",
+        "example": "yourcompany"
+      },
+      "FRESHDESK_API_KEY": {
+        "description": "API key from Profile Settings",
+        "type": "string",
+        "secret": true,
+        "storage": "credentials/freshdesk-api-key.txt"
+      }
+    }
+  },
+  
+  "auth": {
+    "type": "basic",
+    "username": "{FRESHDESK_API_KEY}",
+    "password": "X",
+    "header": "Authorization: Basic {base64(API_KEY:X)}"
+  },
+  
+  "base_url": "https://{FRESHDESK_DOMAIN}.freshdesk.com/api/v2",
+  
+  "safety_rules": {
+    "no_secrets_in_logs": true,
+    "write_confirmation_required": true,
+    "delete_double_confirmation": true,
+    "dry_run_available": true
+  },
+  
+  "actions": {
+    "tickets": {
+      "list": {
+        "method": "GET",
+        "path": "/tickets",
+        "description": "List all tickets",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/tickets/{id}",
+        "description": "View a specific ticket",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/tickets",
+        "description": "Create a new ticket",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/tickets/{id}",
+        "description": "Update a ticket",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/tickets/{id}",
+        "description": "Delete a ticket (move to trash)",
+        "requires_confirmation": "CONFIRM_DELETE"
+      },
+      "restore": {
+        "method": "PUT",
+        "path": "/tickets/{id}/restore",
+        "description": "Restore a deleted ticket",
+        "requires_confirmation": true
+      },
+      "filter": {
+        "method": "GET",
+        "path": "/search/tickets",
+        "description": "Search/filter tickets",
+        "safe": true
+      },
+      "bulk_update": {
+        "method": "PUT",
+        "path": "/tickets/bulk_update",
+        "description": "Update multiple tickets",
+        "requires_confirmation": true
+      },
+      "bulk_delete": {
+        "method": "DELETE",
+        "path": "/tickets/bulk_delete",
+        "description": "Delete multiple tickets",
+        "requires_confirmation": "CONFIRM_DELETE"
+      }
+    },
+    
+    "conversations": {
+      "list": {
+        "method": "GET",
+        "path": "/tickets/{ticket_id}/conversations",
+        "description": "List all conversations for a ticket",
+        "safe": true
+      },
+      "reply": {
+        "method": "POST",
+        "path": "/tickets/{ticket_id}/reply",
+        "description": "Reply to a ticket",
+        "requires_confirmation": true
+      },
+      "note": {
+        "method": "POST",
+        "path": "/tickets/{ticket_id}/notes",
+        "description": "Add a note to a ticket",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/conversations/{id}",
+        "description": "Update a conversation",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/conversations/{id}",
+        "description": "Delete a conversation",
+        "requires_confirmation": "CONFIRM_DELETE"
+      }
+    },
+    
+    "contacts": {
+      "list": {
+        "method": "GET",
+        "path": "/contacts",
+        "description": "List all contacts",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/contacts/{id}",
+        "description": "View a specific contact",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/contacts",
+        "description": "Create a new contact",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/contacts/{id}",
+        "description": "Update a contact",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/contacts/{id}",
+        "description": "Delete a contact",
+        "requires_confirmation": "CONFIRM_DELETE"
+      },
+      "filter": {
+        "method": "GET",
+        "path": "/search/contacts",
+        "description": "Search/filter contacts",
+        "safe": true
+      }
+    },
+    
+    "companies": {
+      "list": {
+        "method": "GET",
+        "path": "/companies",
+        "description": "List all companies",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/companies/{id}",
+        "description": "View a specific company",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/companies",
+        "description": "Create a new company",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/companies/{id}",
+        "description": "Update a company",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/companies/{id}",
+        "description": "Delete a company",
+        "requires_confirmation": "CONFIRM_DELETE"
+      },
+      "filter": {
+        "method": "GET",
+        "path": "/search/companies",
+        "description": "Search/filter companies",
+        "safe": true
+      }
+    },
+    
+    "agents": {
+      "list": {
+        "method": "GET",
+        "path": "/agents",
+        "description": "List all agents",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/agents/{id}",
+        "description": "View a specific agent",
+        "safe": true
+      },
+      "me": {
+        "method": "GET",
+        "path": "/agents/me",
+        "description": "Get current authenticated agent",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/agents",
+        "description": "Create a new agent",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/agents/{id}",
+        "description": "Update an agent",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/agents/{id}",
+        "description": "Delete an agent",
+        "requires_confirmation": "CONFIRM_DELETE"
+      }
+    },
+    
+    "groups": {
+      "list": {
+        "method": "GET",
+        "path": "/groups",
+        "description": "List all groups",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/groups/{id}",
+        "description": "View a specific group",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/groups",
+        "description": "Create a new group",
+        "requires_confirmation": true
+      },
+      "update": {
+        "method": "PUT",
+        "path": "/groups/{id}",
+        "description": "Update a group",
+        "requires_confirmation": true
+      },
+      "delete": {
+        "method": "DELETE",
+        "path": "/groups/{id}",
+        "description": "Delete a group",
+        "requires_confirmation": "CONFIRM_DELETE"
+      }
+    },
+    
+    "solutions": {
+      "categories_list": {
+        "method": "GET",
+        "path": "/solutions/categories",
+        "description": "List all KB categories",
+        "safe": true
+      },
+      "folders_list": {
+        "method": "GET",
+        "path": "/solutions/categories/{category_id}/folders",
+        "description": "List folders in a category",
+        "safe": true
+      },
+      "articles_list": {
+        "method": "GET",
+        "path": "/solutions/folders/{folder_id}/articles",
+        "description": "List articles in a folder",
+        "safe": true
+      },
+      "article_view": {
+        "method": "GET",
+        "path": "/solutions/articles/{id}",
+        "description": "View an article",
+        "safe": true
+      },
+      "search": {
+        "method": "GET",
+        "path": "/search/solutions",
+        "description": "Search knowledge base",
+        "safe": true
+      }
+    },
+    
+    "canned_responses": {
+      "list": {
+        "method": "GET",
+        "path": "/canned_responses",
+        "description": "List all canned responses",
+        "safe": true
+      },
+      "view": {
+        "method": "GET",
+        "path": "/canned_responses/{id}",
+        "description": "View a canned response",
+        "safe": true
+      }
+    },
+    
+    "time_entries": {
+      "list": {
+        "method": "GET",
+        "path": "/tickets/{ticket_id}/time_entries",
+        "description": "List time entries for a ticket",
+        "safe": true
+      },
+      "create": {
+        "method": "POST",
+        "path": "/tickets/{ticket_id}/time_entries",
+        "description": "Log time on a ticket",
+        "requires_confirmation": true
+      }
+    },
+    
+    "account": {
+      "view": {
+        "method": "GET",
+        "path": "/account",
+        "description": "Get account details",
+        "safe": true
+      }
+    },
+    
+    "settings": {
+      "helpdesk": {
+        "method": "GET",
+        "path": "/settings/helpdesk",
+        "description": "Get helpdesk settings",
+        "safe": true
+      }
+    }
+  },
+  
+  "validation_rules": {
+    "tickets.create": {
+      "required_one_of": ["email", "requester_id", "phone", "twitter_id"],
+      "optional": ["subject", "description", "status", "priority", "source", "type", "responder_id", "group_id", "product_id", "company_id", "tags", "cc_emails", "due_by", "fr_due_by", "custom_fields"],
+      "enums": {
+        "status": [2, 3, 4, 5],
+        "priority": [1, 2, 3, 4],
+        "source": [1, 2, 3, 7, 9, 10]
+      }
+    },
+    "contacts.create": {
+      "required_one_of": ["email", "phone", "mobile", "twitter_id"],
+      "optional": ["name", "company_id", "view_all_tickets", "other_emails", "address", "job_title", "time_zone", "language", "tags", "custom_fields"]
+    },
+    "companies.create": {
+      "required": ["name"],
+      "optional": ["domains", "description", "note", "health_score", "account_tier", "renewal_date", "industry", "custom_fields"]
+    },
+    "agents.create": {
+      "required": ["email"],
+      "optional": ["ticket_scope", "occasional", "signature", "skill_ids", "group_ids", "role_ids", "name", "phone", "mobile", "job_title", "language", "time_zone"],
+      "enums": {
+        "ticket_scope": [1, 2, 3]
+      }
+    },
+    "groups.create": {
+      "required": ["name"],
+      "optional": ["description", "escalate_to", "unassigned_for", "agent_ids", "auto_ticket_assign"]
+    }
+  },
+  
+  "dry_run": {
+    "enabled": true,
+    "description": "When dry_run=true, prints the request that would be sent without executing",
+    "redacts": ["Authorization", "api_key"],
+    "output_format": {
+      "method": "HTTP method",
+      "url": "Full URL (domain templated)",
+      "headers": "Headers (secrets redacted)",
+      "body": "Request body (if any)"
+    }
+  }
+}

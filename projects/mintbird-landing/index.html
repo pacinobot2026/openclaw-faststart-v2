@@ -1,0 +1,1043 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mintbird Platinum - Build Funnels in Minutes, Not Days</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --primary: #7c3aed;
+            --primary-dark: #5b21b6;
+            --accent: #10b981;
+            --dark: #0f172a;
+            --darker: #020617;
+            --gray: #64748b;
+            --light-gray: #94a3b8;
+            --white: #ffffff;
+            --gradient: linear-gradient(135deg, #7c3aed 0%, #a855f7 50%, #ec4899 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--darker);
+            color: var(--white);
+            line-height: 1.7;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Sticky Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(2, 6, 23, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+            padding: 16px 0;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .header-cta {
+            padding: 12px 24px;
+            background: var(--gradient);
+            border: none;
+            border-radius: 8px;
+            color: white;
+            font-weight: 600;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .header-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Hero */
+        .hero {
+            padding: 140px 0 80px;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 150%;
+            height: 100%;
+            background: radial-gradient(ellipse at center top, rgba(124, 58, 237, 0.15) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(124, 58, 237, 0.15);
+            border: 1px solid rgba(124, 58, 237, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #a78bfa;
+            margin-bottom: 24px;
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            font-weight: 900;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero h1 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.25rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: white;
+            background: var(--gradient);
+            border: none;
+            border-radius: 12px;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.4);
+        }
+
+        .hero-cta svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .price-tag {
+            margin-top: 20px;
+            font-size: 1rem;
+            color: var(--gray);
+        }
+
+        .price-tag .old {
+            text-decoration: line-through;
+            color: #ef4444;
+        }
+
+        .price-tag .new {
+            color: var(--accent);
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Video Section */
+        .video-section {
+            padding: 40px 0 80px;
+        }
+
+        .video-wrapper {
+            max-width: 900px;
+            margin: 0 auto;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+            border: 1px solid rgba(255,255,255,0.1);
+            aspect-ratio: 16/9;
+            background: var(--dark);
+        }
+
+        .video-wrapper iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-header h2 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 800;
+            margin-bottom: 16px;
+        }
+
+        .section-header p {
+            font-size: 1.1rem;
+            color: var(--light-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .problems-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+        }
+
+        .problem-card {
+            padding: 32px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: border-color 0.3s;
+        }
+
+        .problem-card:hover {
+            border-color: rgba(239, 68, 68, 0.3);
+        }
+
+        .problem-card .icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .problem-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #ef4444;
+        }
+
+        .problem-card p {
+            color: var(--light-gray);
+        }
+
+        /* Solution Section */
+        .solution {
+            padding: 100px 0;
+            background: linear-gradient(180deg, var(--dark) 0%, var(--darker) 100%);
+        }
+
+        .solution-header h2 span {
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        /* Features */
+        .features {
+            padding: 100px 0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
+        }
+
+        .feature-card {
+            padding: 36px;
+            background: linear-gradient(135deg, rgba(124, 58, 237, 0.1) 0%, rgba(236, 72, 153, 0.05) 100%);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(124, 58, 237, 0.2);
+        }
+
+        .feature-card .icon {
+            width: 56px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            border-radius: 14px;
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+        }
+
+        .feature-card p {
+            color: var(--light-gray);
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+        }
+
+        @media (max-width: 900px) {
+            .steps {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .step {
+            text-align: center;
+            position: relative;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            border-radius: 50%;
+            font-size: 2rem;
+            font-weight: 800;
+            margin: 0 auto 24px;
+        }
+
+        .step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 12px;
+        }
+
+        .step p {
+            color: var(--light-gray);
+        }
+
+        /* What You Get */
+        .what-you-get {
+            padding: 100px 0;
+        }
+
+        .checklist {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .check-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            padding: 20px 0;
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .check-icon {
+            flex-shrink: 0;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            border-radius: 50%;
+            font-size: 0.9rem;
+        }
+
+        .check-item h4 {
+            font-size: 1.1rem;
+            margin-bottom: 4px;
+        }
+
+        .check-item p {
+            color: var(--light-gray);
+            font-size: 0.95rem;
+        }
+
+        .check-item .value {
+            margin-left: auto;
+            color: var(--accent);
+            font-weight: 600;
+            white-space: nowrap;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .testimonials-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 24px;
+            margin-top: 60px;
+        }
+
+        .testimonial {
+            padding: 32px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+        }
+
+        .testimonial p {
+            color: var(--light-gray);
+            font-style: italic;
+            margin-bottom: 20px;
+            line-height: 1.8;
+        }
+
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .testimonial-author .avatar {
+            width: 48px;
+            height: 48px;
+            background: var(--gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+
+        .testimonial-author .name {
+            font-weight: 600;
+        }
+
+        /* Guarantee */
+        .guarantee {
+            padding: 100px 0;
+            text-align: center;
+        }
+
+        .guarantee-box {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 60px;
+            background: linear-gradient(135deg, rgba(16, 185, 129, 0.1) 0%, rgba(16, 185, 129, 0.02) 100%);
+            border: 2px solid rgba(16, 185, 129, 0.3);
+            border-radius: 24px;
+        }
+
+        .guarantee-box .icon {
+            font-size: 4rem;
+            margin-bottom: 24px;
+        }
+
+        .guarantee-box h2 {
+            font-size: 2rem;
+            margin-bottom: 16px;
+        }
+
+        .guarantee-box p {
+            color: var(--light-gray);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 120px 0;
+            text-align: center;
+            position: relative;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(124, 58, 237, 0.2) 0%, transparent 60%);
+            pointer-events: none;
+        }
+
+        .final-cta .container {
+            position: relative;
+        }
+
+        .final-cta h2 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 900;
+            margin-bottom: 20px;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            color: var(--light-gray);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .price-box {
+            margin: 40px auto;
+            padding: 40px;
+            max-width: 500px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 20px;
+        }
+
+        .price-box .original {
+            font-size: 1.5rem;
+            color: var(--gray);
+            text-decoration: line-through;
+        }
+
+        .price-box .current {
+            font-size: 4rem;
+            font-weight: 900;
+            background: var(--gradient);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .price-box .savings {
+            display: inline-block;
+            margin-top: 12px;
+            padding: 8px 20px;
+            background: rgba(16, 185, 129, 0.2);
+            border-radius: 50px;
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* FAQ */
+        .faq {
+            padding: 100px 0;
+            background: var(--dark);
+        }
+
+        .faq-list {
+            max-width: 800px;
+            margin: 60px auto 0;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .faq-question {
+            width: 100%;
+            padding: 24px 0;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-align: left;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-question:hover {
+            color: #a78bfa;
+        }
+
+        .faq-question span {
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding-bottom: 24px;
+            color: var(--light-gray);
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+
+        .faq-item.active .faq-question span {
+            transform: rotate(45deg);
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 0;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: var(--gray);
+        }
+
+        footer a {
+            color: var(--light-gray);
+            text-decoration: none;
+            margin: 0 12px;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
+        /* Animations */
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+
+        .float {
+            animation: float 3s ease-in-out infinite;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="logo">🐦 Mintbird</div>
+            <a href="#pricing" class="header-cta">Get Platinum →</a>
+        </div>
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <div class="badge">🚀 Limited Time Offer</div>
+            <h1>Build High-Converting Funnels <span>In Minutes, Not Days</span></h1>
+            <p>The fastest, most intuitive funnel builder ever created. No tech skills required. Just drag, drop, and start selling.</p>
+            <a href="#pricing" class="hero-cta">
+                Get Mintbird Platinum
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <p class="price-tag">
+                <span class="old">$1,997</span> → <span class="new">$997</span> (Save $1,000 Today)
+            </p>
+        </div>
+    </section>
+
+    <!-- Video -->
+    <section class="video-section">
+        <div class="container">
+            <div class="video-wrapper">
+                <!-- Replace with actual video embed -->
+                <div style="display:flex;align-items:center;justify-content:center;height:100%;background:linear-gradient(135deg,#1e1b4b,#312e81);">
+                    <div style="text-align:center;">
+                        <div style="font-size:4rem;margin-bottom:20px;">▶️</div>
+                        <p style="color:#a5b4fc;">Watch the Full Demo (1:13:16)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem -->
+    <section class="problem">
+        <div class="container">
+            <div class="section-header">
+                <h2>Tired of Fighting Your Funnel Builder?</h2>
+                <p>You shouldn't need a computer science degree just to sell your product online.</p>
+            </div>
+            <div class="problems-grid">
+                <div class="problem-card">
+                    <div class="icon">😤</div>
+                    <h3>Complicated Setup</h3>
+                    <p>Hours wasted connecting pages, payments, and integrations that should just work.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">💸</div>
+                    <h3>Expensive Monthly Fees</h3>
+                    <p>$297/month for software that still makes you feel like a beginner.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🐌</div>
+                    <h3>Slow Page Builders</h3>
+                    <p>Laggy editors that make every change feel like pulling teeth.</p>
+                </div>
+                <div class="problem-card">
+                    <div class="icon">🔧</div>
+                    <h3>Constant Tech Issues</h3>
+                    <p>Broken funnels, missing orders, and support tickets that go nowhere.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution -->
+    <section class="solution">
+        <div class="container">
+            <div class="section-header solution-header">
+                <h2>Introducing <span>Mintbird</span></h2>
+                <p>The funnel builder that finally gets out of your way and lets you sell.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features -->
+    <section class="features">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything You Need. Nothing You Don't.</h2>
+                <p>Unlimited everything. No restrictions. No hidden fees.</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="icon">📄</div>
+                    <h3>Unlimited Sales Pages</h3>
+                    <p>Create stunning, high-converting sales pages in minutes with our AI-assisted editor.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📈</div>
+                    <h3>Unlimited Funnels</h3>
+                    <p>Build complete sales funnels with upsells, downsells, and order bumps — all drag-and-drop.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎯</div>
+                    <h3>Built-In Split Testing</h3>
+                    <p>Test variations and find winners automatically. No third-party tools needed.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">⚡</div>
+                    <h3>Lightning Fast Editor</h3>
+                    <p>Finally, a page builder that keeps up with your ideas. Zero lag, instant previews.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">🎨</div>
+                    <h3>100+ Pro Templates</h3>
+                    <p>Designed by the team trusted by the biggest launches. Just customize and go live.</p>
+                </div>
+                <div class="feature-card">
+                    <div class="icon">📊</div>
+                    <h3>Real-Time Analytics</h3>
+                    <p>Track every click, sale, and conversion from one beautiful dashboard.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <h2>Build a Funnel in Under 2 Minutes</h2>
+                <p>We're not exaggerating. Watch the demo and see for yourself.</p>
+            </div>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Create Your Sales Page</h3>
+                    <p>Pick a template or let AI build it. Customize with drag-and-drop. Done in minutes.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Add Upsells & Bumps</h3>
+                    <p>Clone your page or pick another template. Stack offers to maximize every sale.</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Build Your Funnel</h3>
+                    <p>Drag your pages into the funnel. Connect payments. You're live. It's that simple.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You Get -->
+    <section class="what-you-get" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <h2>Everything Included in Platinum</h2>
+                <p>One payment. Lifetime access. No monthly fees.</p>
+            </div>
+            <div class="checklist">
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Unlimited Funnels & Pages</h4>
+                        <p>Create as many as you want. No limits, no extra fees.</p>
+                    </div>
+                    <span class="value">$997 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Unlimited Upsells, Downsells & Bumps</h4>
+                        <p>Stack offers and maximize every transaction automatically.</p>
+                    </div>
+                    <span class="value">$497 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>100+ Professional Templates</h4>
+                        <p>Designed by the Pixabuild team. Ready to customize and launch.</p>
+                    </div>
+                    <span class="value">$497 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Multi-Client Manager</h4>
+                        <p>Add unlimited clients. Manage everything from one dashboard.</p>
+                    </div>
+                    <span class="value">$997 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Mintbird Ad Suite</h4>
+                        <p>Connect to Meta & Google. Track your real ad performance alongside funnel stats.</p>
+                    </div>
+                    <span class="value">$997 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Partner Program</h4>
+                        <p>Turn customers into affiliates. Built-in affiliate management.</p>
+                    </div>
+                    <span class="value">$497 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>7-Day Build Your Offer Workshop</h4>
+                        <p>Chad personally guides you from idea to live funnel in 7 days.</p>
+                    </div>
+                    <span class="value">$497 value</span>
+                </div>
+                <div class="check-item">
+                    <div class="check-icon">✓</div>
+                    <div>
+                        <h4>Global Integrations Hub</h4>
+                        <p>Connect to 100+ CRMs, email tools, and apps with one click.</p>
+                    </div>
+                    <span class="value">$497 value</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Real Users Are Saying</h2>
+            </div>
+            <div class="testimonials-grid">
+                <div class="testimonial">
+                    <p>"I've used all the well-known funnel builders and they were both complex and drained the bank. Mintbird is so fast and easy — I turn to it for every launch now."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">RB</div>
+                        <div>
+                            <div class="name">Robert B.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"Mintbird is more intuitive than any website builder I've ever used. And what's coming in the future will blow you away. This one is a no-brainer."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">PG</div>
+                        <div>
+                            <div class="name">Paul G.</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="testimonial">
+                    <p>"I was an original beta tester. I've used a lot of different funnel builders, and Mintbird is by far the EASIEST and FASTEST I've ever used."</p>
+                    <div class="testimonial-author">
+                        <div class="avatar">CK</div>
+                        <div>
+                            <div class="name">Courtney K.</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Guarantee -->
+    <section class="guarantee">
+        <div class="container">
+            <div class="guarantee-box">
+                <div class="icon">🛡️</div>
+                <h2>30-Day Money-Back Guarantee</h2>
+                <p>Jump in, build your first funnel, and see how it feels. If you're not completely obsessed within 30 days, we'll refund every penny. No questions asked.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="container">
+            <h2>Ready to Build Funnels That Actually Convert?</h2>
+            <p>Join thousands of entrepreneurs who switched to Mintbird and never looked back.</p>
+            
+            <div class="price-box">
+                <div class="original">$1,997</div>
+                <div class="current">$997</div>
+                <div class="savings">You Save $1,000 Today</div>
+            </div>
+
+            <a href="https://www.jvzoo.com/b/113823/424211/1" class="hero-cta">
+                Get Mintbird Platinum Now
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <p style="margin-top:20px;color:var(--gray);">One-time payment • Lifetime access • 30-day guarantee</p>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What is Mintbird?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Mintbird is an all-in-one funnel and sales page builder designed to be the fastest and easiest on the market. Create unlimited pages, funnels, upsells, and more — all with drag-and-drop simplicity.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Do I need technical skills?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely not. If you can drag and drop, you can build with Mintbird. Our templates and AI assistance make it possible for complete beginners to create professional funnels.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Are there monthly fees?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>With Platinum, you pay once and get lifetime access. No monthly fees, no per-funnel charges, no hidden costs.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        What payment gateways are supported?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Mintbird integrates with Stripe, PayPal, and other major payment processors. Setup takes just a few clicks.</p>
+                    </div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">
+                        Is there a money-back guarantee?
+                        <span>+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! You get a full 30-day money-back guarantee. Try Mintbird risk-free and if it's not for you, we'll refund every penny.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2026 Mintbird. All rights reserved.</p>
+            <div style="margin-top:12px;">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Close all
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                
+                // Open clicked if wasn't active
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

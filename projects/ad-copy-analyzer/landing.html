@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ad Copy Analyzer - Write Ads That Convert</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: #0a0a0f;
+            color: #fff;
+            line-height: 1.6;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            background: rgba(10, 10, 15, 0.8);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .nav-cta {
+            padding: 12px 28px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 8px;
+            color: #fff;
+            font-weight: 600;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .nav-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        }
+
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 40px 80px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle at 30% 30%, rgba(102, 126, 234, 0.15) 0%, transparent 50%),
+                        radial-gradient(circle at 70% 70%, rgba(118, 75, 162, 0.15) 0%, transparent 50%);
+            animation: pulse 15s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+        }
+
+        .hero-content {
+            max-width: 900px;
+            text-align: center;
+            position: relative;
+            z-index: 1;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(102, 126, 234, 0.15);
+            border: 1px solid rgba(102, 126, 234, 0.3);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            color: #a5b4fc;
+            margin-bottom: 30px;
+        }
+
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #fff 0%, #a5b4fc 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            color: #8892b0;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        .hero-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 18px 40px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border: none;
+            border-radius: 12px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .hero-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 40px rgba(102, 126, 234, 0.4);
+        }
+
+        .hero-cta svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .hero-note {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #495670;
+        }
+
+        /* Problem Section */
+        .problem {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, #0a0a0f 0%, #111118 100%);
+        }
+
+        .problem-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .problem h2 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            color: #fff;
+        }
+
+        .problem-text {
+            font-size: 1.2rem;
+            color: #8892b0;
+            margin-bottom: 50px;
+        }
+
+        .pain-points {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            text-align: left;
+        }
+
+        .pain-point {
+            padding: 25px;
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 12px;
+        }
+
+        .pain-point .icon {
+            font-size: 2rem;
+            margin-bottom: 15px;
+        }
+
+        .pain-point h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #ef4444;
+        }
+
+        .pain-point p {
+            font-size: 0.95rem;
+            color: #8892b0;
+        }
+
+        /* Features Section */
+        .features {
+            padding: 100px 40px;
+            background: #111118;
+        }
+
+        .features-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+
+        .features-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .features-header p {
+            font-size: 1.1rem;
+            color: #8892b0;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            padding: 35px;
+            background: rgba(255,255,255,0.02);
+            border: 1px solid rgba(255,255,255,0.05);
+            border-radius: 16px;
+            transition: transform 0.3s, border-color 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(102, 126, 234, 0.3);
+        }
+
+        .feature-card .icon {
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-radius: 12px;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .feature-card p {
+            color: #8892b0;
+            font-size: 0.95rem;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            padding: 100px 40px;
+            background: linear-gradient(180deg, #111118 0%, #0a0a0f 100%);
+        }
+
+        .how-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .how-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        .how-header p {
+            color: #8892b0;
+            font-size: 1.1rem;
+        }
+
+        .steps {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            flex-wrap: wrap;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .step {
+            flex: 1;
+            min-width: 250px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .step-number {
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 50%;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin: 0 auto 20px;
+        }
+
+        .step h3 {
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+        }
+
+        .step p {
+            color: #8892b0;
+            font-size: 0.95rem;
+        }
+
+        /* Social Proof */
+        .social-proof {
+            padding: 80px 40px;
+            background: #0a0a0f;
+            text-align: center;
+        }
+
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 80px;
+            flex-wrap: wrap;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .stat {
+            text-align: center;
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .stat-label {
+            color: #8892b0;
+            font-size: 1rem;
+            margin-top: 5px;
+        }
+
+        /* Final CTA */
+        .final-cta {
+            padding: 120px 40px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(ellipse at center, rgba(102, 126, 234, 0.15) 0%, transparent 70%);
+        }
+
+        .final-cta-content {
+            position: relative;
+            z-index: 1;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .final-cta h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .final-cta p {
+            font-size: 1.2rem;
+            color: #8892b0;
+            margin-bottom: 40px;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px;
+            text-align: center;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            color: #495670;
+            font-size: 0.9rem;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            nav {
+                padding: 15px 20px;
+            }
+
+            .hero {
+                padding: 100px 20px 60px;
+            }
+
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1.1rem;
+            }
+
+            .problem h2,
+            .features-header h2,
+            .how-header h2,
+            .final-cta h2 {
+                font-size: 2rem;
+            }
+
+            .stats {
+                gap: 40px;
+            }
+
+            .stat-number {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">🎯 AdCopyAnalyzer</div>
+        <a href="index.html" class="nav-cta">Try It Free</a>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <div class="badge">✨ Instant AI-Powered Analysis</div>
+            <h1>Stop Guessing.<br>Start Converting.</h1>
+            <p>Get instant, actionable feedback on your ad copy. Know exactly what's working and what's killing your conversions.</p>
+            <a href="index.html" class="hero-cta">
+                Analyze Your Ad Now
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+            <p class="hero-note">Free to use • No signup required • Results in seconds</p>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="problem">
+        <div class="problem-content">
+            <h2>Writing Ads is Hard.</h2>
+            <p class="problem-text">You spend hours crafting the perfect ad, launch it, and... crickets. Low CTR. No conversions. Wasted ad spend. Sound familiar?</p>
+            <div class="pain-points">
+                <div class="pain-point">
+                    <div class="icon">💸</div>
+                    <h3>Wasted Ad Spend</h3>
+                    <p>Bad copy burns through your budget before you can blink</p>
+                </div>
+                <div class="pain-point">
+                    <div class="icon">🎯</div>
+                    <h3>Guessing Game</h3>
+                    <p>You have no idea what's actually wrong with your ads</p>
+                </div>
+                <div class="pain-point">
+                    <div class="icon">⏰</div>
+                    <h3>Endless Revisions</h3>
+                    <p>Testing blindly costs time you don't have</p>
+                </div>
+                <div class="pain-point">
+                    <div class="icon">📉</div>
+                    <h3>Low Conversions</h3>
+                    <p>Your ads get clicks but nobody's buying</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="features-header">
+            <h2>Know Exactly What to Fix</h2>
+            <p>Our analyzer breaks down your ad copy into 6 critical components and tells you precisely how to improve each one.</p>
+        </div>
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon">📢</div>
+                <h3>Headline Power Score</h3>
+                <p>Is your headline stopping the scroll? We analyze length, power words, and attention-grabbing elements.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">💡</div>
+                <h3>Clarity Analysis</h3>
+                <p>Confused readers don't convert. We check readability and whether your message is crystal clear.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">❤️</div>
+                <h3>Emotional Appeal</h3>
+                <p>Great ads trigger emotions. We identify which psychological triggers you're using (or missing).</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">⚡</div>
+                <h3>Urgency Detection</h3>
+                <p>No urgency = no action. We spot time-sensitive language that drives immediate response.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">🎯</div>
+                <h3>CTA Effectiveness</h3>
+                <p>Your call-to-action makes or breaks the ad. We analyze if it's clear, compelling, and actionable.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon">✨</div>
+                <h3>Power Word Scanner</h3>
+                <p>Certain words sell. We scan for proven high-converting language and suggest additions.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="how-it-works">
+        <div class="how-header">
+            <h2>How It Works</h2>
+            <p>Get actionable insights in under 10 seconds</p>
+        </div>
+        <div class="steps">
+            <div class="step">
+                <div class="step-number">1</div>
+                <h3>Paste Your Ad</h3>
+                <p>Enter your headline and body copy into the analyzer</p>
+            </div>
+            <div class="step">
+                <div class="step-number">2</div>
+                <h3>Get Your Score</h3>
+                <p>See instant ratings across 6 critical metrics</p>
+            </div>
+            <div class="step">
+                <div class="step-number">3</div>
+                <h3>Fix & Convert</h3>
+                <p>Follow the specific suggestions to improve your ad</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Social Proof -->
+    <section class="social-proof">
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-number">10K+</div>
+                <div class="stat-label">Ads Analyzed</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">47%</div>
+                <div class="stat-label">Avg. CTR Increase</div>
+            </div>
+            <div class="stat">
+                <div class="stat-number">3 sec</div>
+                <div class="stat-label">Analysis Time</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="final-cta">
+        <div class="final-cta-content">
+            <h2>Ready to Write Ads That Actually Convert?</h2>
+            <p>Stop leaving money on the table. Get instant feedback on your ad copy and start seeing results.</p>
+            <a href="index.html" class="hero-cta">
+                Analyze Your Ad — It's Free
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6"/></svg>
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>Built with 🎬 by Pacino • © 2026 Ad Copy Analyzer</p>
+    </footer>
+</body>
+</html>
