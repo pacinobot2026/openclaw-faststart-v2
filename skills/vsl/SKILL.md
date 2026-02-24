@@ -156,55 +156,204 @@ Do not summarize.
 
 ## VSL_POWERPOINT_AUTOBUILDER Mode
 
-**Streamlined version:** Takes a finished script → outputs finished MP4 video automatically.
+**Streamlined version:** Takes a finished script → outputs finished MP4 video with PERFECT voice sync.
 
-**When to use:** Script already written, just need fast video render.
+**When to use:** Script already written, need fast professional video render.
 
-**Process:**
-1. **Slide Creation** - Break script into slides (max 8 words each, dramatic pacing)
-2. **Voice Generation** - Send full script to ElevenLabs, generate single MP3
-3. **Timing Logic** - Calculate slide duration: `max(2.5s, 0.45s per word)`, cap at 6s
-4. **Video Style** - 9:16 vertical, black background, white bold text, centered, subtle fade (0.3s)
-5. **Render Engine** - Generate HTML slides, render to MP4 with voice
-6. **Output** - Return video_path, audio_path, total_slides, duration_seconds
+---
 
-**Visual Style:**
-- Format: 9:16 vertical
-- Background: black (#000000)
-- Text: white (#FFFFFF)
-- Font: bold sans-serif, centered both axes
+### ⚠️ REQUIRED: ASK FIRST (EVERY TIME)
+
+**Before doing ANYTHING, ask the user:**
+
+1. **"Background: WHITE or BLACK?"**
+   - Default if no answer: WHITE
+
+2. **"Format: 9:16 or 16:9?"**
+   - Default if no answer: 9:16
+
+**DO NOT proceed without asking. This is NON-NEGOTIABLE.**
+
+---
+
+### Process (6 Steps)
+
+1. **Ask User Preferences** - Background color + format (see above)
+2. **Slide Creation** - Break script into slides (smart word count rules)
+3. **Voice Generation** - Generate voice.mp3 via ElevenLabs
+4. **Voice Sync** - Extract word timestamps, sync slides to audio PERFECTLY
+5. **Render Engine** - Generate HTML slides, render to MP4 with synced timing
+6. **Output** - Return video + audio + timing data
+
+---
+
+### Design / Style Rules
+
+**Background & Text:**
+- Background: USER CHOICE (white or black)
+- Text color: AUTO-CONTRAST
+  - White BG → Black text
+  - Black BG → White text
+
+**Typography:**
+- Font: Modern clean sans (Inter / Montserrat / Helvetica / Arial)
+- Two sizes only:
+  - **Headline slides:** Very large (fills screen)
+  - **Body slides:** Medium (readable)
+- More whitespace + tighter line spacing
+- Text vertically centered
+
+**Format:**
+- 9:16 (vertical) or 16:9 (horizontal) based on user choice
+- No images, logos, or background music
 - Transitions: 0.3s fade
-- No images, logos, or music
 
-**Slide Rules:**
-- Maximum 8 words per slide
-- One idea per slide
-- Remove filler words
-- Capitalize for impact
-- Add emphasis slides: "READ THAT AGAIN." / "LET THAT SINK IN."
+---
 
-**Timing Formula:**
+### Font Size Auto-Fit (CRITICAL)
+
+Font size must auto-fit based on word count:
+
+- **≤4 words:** HUGE (fills screen, ~120-140px)
+- **5-8 words:** LARGE (~80-100px)
+- **9-14 words:** MEDIUM (~60-72px)
+
+**Rule:** If text would be too small, SPLIT INTO MORE SLIDES.
+Never allow tiny text. Readability > slide count.
+
+---
+
+### Slide Word Count Rules
+
+- **Target:** 4-8 words per slide (sweet spot)
+- **Maximum:** 14 words (avoid if possible)
+- **If >10 words:** Consider splitting into 2 slides
+- **Emphasis slides:** 2-4 words, 0.6-0.9s duration ("READ THAT AGAIN.")
+
+Remove filler words: um, uh, like, you know, basically, actually
+
+---
+
+### Speed / Pacing (MAKE IT PUNCHY)
+
+**NEW TIMING FORMULA:**
 ```javascript
-duration = max(2.5 seconds, 0.45 seconds × word_count)
-// Never exceed 6 seconds per slide
+slide_duration = clamp(
+  0.22 * word_count + 0.35,
+  0.9,  // minimum 0.9s (fast!)
+  2.2   // maximum 2.2s
+)
 ```
 
-**Output Format:**
+**"HIT" slides (emphasis):**
+- Duration: 0.6s - 0.9s
+- Examples: "READ THAT AGAIN." / "LET THAT SINK IN."
+
+**Goal:** Pacing feels like TikTok / modern VSL (fast, not slow).
+
+---
+
+### Perfect Voice Sync (MOST IMPORTANT) ⚠️
+
+**YOU ARE NOT ALLOWED TO GUESS TIMING.**
+
+Slides MUST sync to the audio using word-level timestamps.
+
+**Required Method:**
+
+1. **Generate voice.mp3** from ElevenLabs
+
+2. **Get word timestamps** using ONE of:
+   - Whisper with timestamps flag (`--word_timestamps`)
+   - Forced alignment tool (aeneas / gentle)
+   - Any ElevenLabs alignment feature (if available)
+
+3. **Build slide timings from timestamps:**
+   ```javascript
+   slide.start_time = timestamp_of_first_word
+   slide.end_time = timestamp_of_last_word + 0.15s
+   slide.duration = end_time - start_time
+   ```
+
+4. **Render slideshow** using exact timings
+
+5. **Verify sync:**
+   - Total slide times must match audio length within 0.2s
+   - If mismatch, re-time and re-render
+
+**Quality Check:**
+- ✅ No slide stays on screen while audio moves to next sentence
+- ✅ No long pauses unless intentionally used for emphasis
+- ✅ Text is always readable on mobile
+- ✅ Pacing feels fast and engaging
+
+---
+
+### Output Format
+
+**Files:**
+- `vsl_final.mp4` - Final video with voice
+- `voice.mp3` - Audio track
+- `slides.json` - Timing data
+
+**slides.json structure:**
 ```json
 {
-  "video_path": "/outputs/vsl_final.mp4",
-  "audio_path": "/outputs/voice.mp3",
-  "total_slides": 45,
-  "duration_seconds": 420
+  "slides": [
+    {
+      "slide_index": 1,
+      "text": "YOU'RE ABOUT TO SEE SOMETHING",
+      "start_time": 0.0,
+      "end_time": 1.8,
+      "duration": 1.8,
+      "word_count": 5
+    },
+    ...
+  ],
+  "total_duration": 480.5,
+  "total_slides": 85,
+  "format": "9:16",
+  "background": "white"
 }
 ```
 
-**Usage:**
-```
-[Paste script here]
+---
 
-Execute VSL_POWERPOINT_AUTOBUILDER mode
+### Usage
+
+**Step 1: Ask preferences**
 ```
+Before starting:
+"Background: WHITE or BLACK?"
+"Format: 9:16 or 16:9?"
+```
+
+**Step 2: Paste script + execute**
+```
+[Paste finished script]
+
+Execute VSL_POWERPOINT_AUTOBUILDER
+```
+
+**Step 3: Autobuilder runs full pipeline**
+- Generates slides
+- Creates voice
+- Syncs timing
+- Renders video
+- Returns output
+
+---
+
+### Quality Standards (Non-Negotiable)
+
+✅ **User preferences asked FIRST** (background + format)
+✅ **Font size auto-fits** based on word count
+✅ **Pacing feels punchy** (0.9s - 2.2s per slide)
+✅ **Voice sync is PERFECT** (word-level timestamps)
+✅ **Text is readable** on mobile devices
+✅ **No timing guesswork** - all synced to audio
+
+**If any standard is not met, the output is NOT acceptable.**
 
 ---
 

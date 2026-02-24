@@ -1,32 +1,67 @@
-# VSL PowerPoint Autobuilder - Usage Guide
+# VSL PowerPoint Autobuilder V2 - Usage Guide
+
+## ⚠️ CRITICAL: Always Ask User Preferences FIRST
+
+**Before running autobuilder, ALWAYS ask:**
+
+1. **"Background: WHITE or BLACK?"** (default: WHITE)
+2. **"Format: 9:16 or 16:9?"** (default: 9:16)
+
+**DO NOT proceed without asking. This is NON-NEGOTIABLE.**
+
+---
 
 ## Quick Start
 
-**Input:** Long-form script (any text file)
-**Output:** Finished 9:16 vertical MP4 video with voiceover
+**Input:** Long-form script + user preferences
+**Output:** Finished MP4 video with PERFECTLY synced voiceover
 
 ---
 
 ## How to Use
 
-### 1. Save Your Script
+### 1. Ask User Preferences
+```
+"Background: WHITE or BLACK?"
+"Format: 9:16 or 16:9?"
+```
+
+### 2. Save Your Script
 ```bash
-# Save script to a text file
 echo "Your script here..." > script.txt
 ```
 
-### 2. Run Autobuilder
+### 3. Run Autobuilder V2
 ```bash
-node skills/vsl/powerpoint-autobuilder.js script.txt
+# With user preferences
+node skills/vsl/powerpoint-autobuilder-v2.js script.txt --bg=white --format=9:16
 ```
 
-### 3. Check Output
+### 4. Generate Voice
+```bash
+cd vsl-output-v2
+node ../skills/vsl/generate-voice.js
 ```
-vsl-output/
-├── manifest.json          # Video configuration
-├── timing.txt             # Slide timing reference
+
+### 5. Sync Slides to Voice
+```bash
+node ../skills/vsl/sync-voice-to-slides.js
+```
+
+### 6. Render Final Video
+```bash
+node ../skills/vsl/render-final.js
+```
+
+### 7. Check Output
+```
+vsl-output-v2/
+├── vsl_final.mp4          # Final video with synced voice
+├── voice.mp3              # Generated voice
+├── slides.json            # Synced timing data
+├── manifest-presync.json  # Pre-sync manifest
 └── slides/
-    ├── slide-001.html     # Generated slides
+    ├── slide-001.html     # Generated HTML slides
     ├── slide-002.html
     └── ...
 ```
