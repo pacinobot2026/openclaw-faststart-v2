@@ -138,6 +138,28 @@
 **Team Zoom Call Link:** chadnicely.com/teamcall  
 *(Dedicated link for team meetings - has transcript recording enabled)*
 
+## Shortcode Commands
+
+### /makelive
+**Created:** 2026-02-25  
+**Purpose:** Deploy any project to Vercel with one command
+
+**When Chad says `/makelive`:**
+1. Commit & push to GitHub
+2. Ensure Vercel project connected to GitHub
+3. Trigger Vercel deployment via API
+4. Return live URL + confirm auto-deploy enabled
+
+**Full workflow:** `workflows/makelive-command.md`
+
+**Tokens:**
+- Vercel: `credentials/vercel-token.txt`
+- GitHub: `vizard-clips-app/.env.local` (GITHUB_TOKEN)
+
+**Response format:** GitHub URL + Live Vercel URL + Auto-deploy status
+
+---
+
 ## Important Lessons Learned
 
 ### 🔥 SALES PAGE DIRECTIVE - THE NEW STANDARD (2026-02-24 2:06 AM)
@@ -235,6 +257,12 @@ Built Operator Version combining both directives. Chad: "this is sooo good"
 - Price framing = founder pricing = strategic
 
 **This is THE conversion intelligence model. Combined with 10-element directive = complete persuasion system.**
+
+### 🔴 ABSOLUTE RULE: VIDEOS ALWAYS HORIZONTAL (2026-02-24)
+**VSLs and video content: ALWAYS 16:9 (horizontal) unless explicitly stated otherwise.**
+- Default format: 16:9
+- Never assume vertical/9:16
+- Only use vertical if Chad specifically requests it
 
 ### 🔴 ABSOLUTE RULE: JOURNAL WITHOUT BEING ASKED
 Chad should NEVER have to remind me to:
@@ -1317,6 +1345,31 @@ See `memory/onboardingprocessbuild.md` for complete journey, all learnings, and 
 ---
 
 ## 🎬 Key Workflows
+
+### VSL (Video Sales Letter) Skill (Created 2026-02-24)
+**Full automation:** Sales page → Script → Voice → Slides → MP4 video
+
+**What it does:**
+1. Analyzes sales page (extracts messaging, proof, pricing)
+2. Writes high-conversion script (6-10 min, spoken language)
+3. Generates voice narration (ElevenLabs)
+4. Creates slides programmatically
+5. Renders final MP4 with FFmpeg
+
+**Purpose:** Demonstrate full OpenClaw automation capability - "Tell me to make a VSL → 20 minutes later, finished video"
+
+**Command format:**
+```
+Create VSL for [sales page URL]
+```
+
+**Output:** Professional video sales letter matching page messaging exactly
+
+**Status:** Skill documented, Phase 1 complete (script + voice), Phase 2 in progress (slides + render)
+
+**Location:** `skills/vsl/SKILL.md`
+
+---
 
 ### Vizard Automation Pipeline (Built 2026-02-20)
 **Full automation:** Vimeo → Vizard AI → Review Dashboard → Post Bridge → Social Media

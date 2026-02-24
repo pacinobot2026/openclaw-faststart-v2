@@ -34,6 +34,7 @@
 | **Bridge Page Clone** | Clone & update PopLinks bridge pages | `workflows/bridge-page-complete.md` |
 | **Newsletter Hour Weekly** | Pre-call setup (Zoom, emails, broadcast) | `workflows/newsletter-hour-weekly.md` |
 | **Goal Block Framework** | How to write engaging goal blocks | `workflows/goal-block-framework.md` |
+| **/makelive Command** | GitHub push → Vercel deploy → Live URL | `workflows/makelive-command.md` |
 
 ---
 
