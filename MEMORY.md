@@ -138,25 +138,11 @@
 **Team Zoom Call Link:** chadnicely.com/teamcall  
 *(Dedicated link for team meetings - has transcript recording enabled)*
 
-## Shortcode Commands
+## Command Reference
 
-### /makelive
-**Created:** 2026-02-25  
-**Purpose:** Deploy any project to Vercel with one command
+**All shortcodes documented in:** `SHORTCODES.md`
 
-**When Chad says `/makelive`:**
-1. Commit & push to GitHub
-2. Ensure Vercel project connected to GitHub
-3. Trigger Vercel deployment via API
-4. Return live URL + confirm auto-deploy enabled
-
-**Full workflow:** `workflows/makelive-command.md`
-
-**Tokens:**
-- Vercel: `credentials/vercel-token.txt`
-- GitHub: `vizard-clips-app/.env.local` (GITHUB_TOKEN)
-
-**Response format:** GitHub URL + Live Vercel URL + Auto-deploy status
+Examples: `/makelive`, `/replay`, `/article`, `/broadcast`, `/poplink`
 
 ---
 
@@ -263,6 +249,11 @@ Built Operator Version combining both directives. Chad: "this is sooo good"
 - Default format: 16:9
 - Never assume vertical/9:16
 - Only use vertical if Chad specifically requests it
+
+**VSL Length: 5-6 minutes (ideal duration)**
+- Long enough to build value and handle objections
+- Short enough to maintain attention
+- Script should be ~1,200-1,500 words
 
 ### 🔴 ABSOLUTE RULE: JOURNAL WITHOUT BEING ASKED
 Chad should NEVER have to remind me to:

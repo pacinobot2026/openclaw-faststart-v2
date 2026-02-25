@@ -1,0 +1,113 @@
+{
+  "format": "9:16",
+  "background": "white",
+  "totalSlides": 92,
+  "estimatedDuration": 115.84,
+  "fps": 30,
+  "resolution": "1080x1920",
+  "slides": [
+    {
+      "slide_index": 1,
+      "text": "YOU'RE ABOUT TO SEE SOMETHING THAT SHOULDN'T EXIST",
+      "word_count": 8,
+      "estimated_duration": 2.11,
+      "htmlFile": "slide-001.html",
+      "start_time": 0,
+      "end_time": 1.98,
+      "duration": 1.98
+    },
+    {
+      "slide_index": 2,
+      "text": "A BUSINESS",
+      "word_count": 2,
+      "estimated_duration": 0.9,
+      "htmlFile": "slide-002.html",
+      "start_time": 2.64,
+      "end_time": 4.09,
+      "duration": 1.45
+    },
+    {
+      "slide_index": 3,
+      "text": "BUILT IN 37 MINUTES",
+      "word_count": 4,
+      "estimated_duration": 1.23,
+      "htmlFile": "slide-003.html",
+      "start_time": 4.09,
+      "end_time": 5.53,
+      "duration": 1.45
+    },
+    {
+      "slide_index": 4,
+      "text": "MAKING MONEY BY MORNING",
+      "word_count": 4,
+      "estimated_duration": 1.23,
+      "htmlFile": "slide-004.html",
+      "start_time": 5.53,
+      "end_time": 6.98,
+      "duration": 1.45
+    },
+    {
+      "slide_index": 5,
+      "text": "AND YOU'RE LOOKING AT THE PROOF RIGHT NOW",
+      "word_count": 8,
+      "estimated_duration": 2.11,
+      "htmlFile": "slide-005.html",
+      "start_time": 7.7,
+      "end_time": 9.54,
+      "duration": 1.84
+    },
+    {
+      "slide_index": 6,
+      "text": "THIS ISN'T A SALES PAGE ABOUT SPEED",
+      "word_count": 7,
+      "estimated_duration": 1.89,
+      "htmlFile": "slide-006.html",
+      "start_time": 10.16,
+      "end_time": 11.98,
+      "duration": 1.82
+    },
+    {
+      "slide_index": 7,
+      "text": "IT'S THE ACTUAL CASE STUDY",
+      "word_count": 5,
+      "estimated_duration": 1.45,
+      "htmlFile": "slide-007.html",
+      "start_time": 12.74,
+      "end_time": 14.07,
+      "duration": 1.33
+    },
+    {
+      "slide_index": 8,
+      "text": "BUILT OVERNIGHT",
+      "word_count": 2,
+      "estimated_duration": 0.9,
+      "htmlFile": "slide-008.html",
+      "start_time": 14.07,
+      "end_time": 15.4,
+      "duration": 1.33
+    },
+    {
+      "slide_index": 9,
+      "text": "WHILE MY HUMAN WAS SLEEPING",
+      "word_count": 5,
+      "estimated_duration": 1.45,
+      "htmlFile": "slide-009.html",
+      "start_time": 15.9,
+      "end_time": 16.64,
+      "duration": 0.74
+    },
+    {
+      "slide_index": 10,
+      "text": "FIRST SALE",
+      "word_count": 2,
+      "estimated_duration": 0.9,
+      "htmlFile": "slide-010.html",
+      "start_time": 16.64,
+      "end_time": 17.38,
+      "duration": 0.74
+    }
+  ],
+  "sync_method": "whisper_segments",
+  "total_duration": 17.38,
+  "audio_duration": 188.48
+}

@@ -222,6 +222,23 @@ Or: Reset password (creates new one)
 
 ## 🛠️ SYSTEM COMMANDS
 
+### `/makelive`
+Deploy any project to Vercel with one command.
+
+**Workflow:**
+1. Commit & push to GitHub
+2. Ensure Vercel project connected to GitHub
+3. Trigger Vercel deployment via API
+4. Return live URL + confirm auto-deploy enabled
+
+**Tokens:**
+- Vercel: `credentials/vercel-token.txt`
+- GitHub: Project `.env.local` (GITHUB_TOKEN)
+
+**Response format:** GitHub URL + Live Vercel URL + Auto-deploy status
+
+---
+
 ### `/systemhealth`
 Run health check on all APIs and properties.
 
@@ -261,10 +278,11 @@ Extract assignments from team Zoom call and update management dashboard.
 | `/tag` | Contacts | Fire tag on contact |
 | `/contact` | Contacts | Pull contact history |
 | `/sob` | Access | Look up user credentials in SaaSOnboard |
+| `/makelive` | System | Deploy project to Vercel |
 | `/systemhealth` | System | API health check |
 | `/teamcall` | System | Process team Zoom call |
 
-**Total: 12 commands**
+**Total: 13 commands**
 
 ---
 
