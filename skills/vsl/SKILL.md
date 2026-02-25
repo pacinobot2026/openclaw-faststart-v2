@@ -588,3 +588,13 @@ vsl-output/
 
 **Skill Status:** Ready for implementation
 **Next Step:** Build automation pipeline (script → voice → slides → video)
+
+ # #   V i d e o   L e n g t h   G u i d e l i n e s 
+ 
+ * * T a r g e t   d u r a t i o n :   5 - 6   m i n u t e s * * 
+ -   I d e a l   V S L   l e n g t h   f o r   c o n v e r s i o n 
+ -   L o n g   e n o u g h   t o   b u i l d   v a l u e   a n d   h a n d l e   o b j e c t i o n s 
+ -   S h o r t   e n o u g h   t o   m a i n t a i n   a t t e n t i o n 
+ -   S c r i p t   s h o u l d   b e   ~ 1 , 2 0 0 - 1 , 5 0 0   w o r d s 
+  
+ 
