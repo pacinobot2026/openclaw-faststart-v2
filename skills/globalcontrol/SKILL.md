@@ -168,6 +168,103 @@ API key location: `credentials/titanium-api-keys.txt` (GC_API_KEY)
 }
 ```
 
+### 🔥 WORKFLOW FLOW CREATION (CONFIRMED WORKING 2026-02-26)
+
+**You CAN create full workflows with email sequences via API!**
+
+#### Two-Step Process:
+1. **POST /workflows** - Create workflow container
+2. **PUT /workflows/{id}** - Add flows (emails, timers, etc.)
+
+#### Full Workflow Creation Example:
+```json
+PUT /workflows/{workflowId}
+{
+  "name": "My Email Sequence",
+  "domainId": "6688551acfe6ae024a58f9f6",
+  "smtpConfig": {
+    "domain": "mg.chadnicely.com",
+    "integrationId": "628e75aa84279536ff4eb41a",
+    "accountId": "668854e8cfe6ae024a58ef72"
+  },
+  "flows": [
+    {
+      "type": "SEND_EMAIL",
+      "status": true,
+      "index": 0,
+      "label": "Email 1 - Welcome",
+      "data": {
+        "preview": "Welcome to the program!",
+        "from_name": "Chad Nicely",
+        "from_email": "chad",
+        "reply_to": "support@nicelysupport.com",
+        "subject": "Welcome! Here's what's next...",
+        "body": "<p>Hey there!</p><p>Welcome to the program.</p><p>Chad</p>"
+      }
+    },
+    {
+      "type": "TIMER",
+      "status": true,
+      "index": 1,
+      "label": "Wait 1 Day",
+      "data": {
+        "waitFor": "1",
+        "timeIn": "days"
+      }
+    },
+    {
+      "type": "SEND_EMAIL",
+      "status": true,
+      "index": 2,
+      "label": "Email 2 - Follow Up",
+      "data": {
+        "preview": "Quick follow up",
+        "from_name": "Chad Nicely",
+        "from_email": "chad",
+        "reply_to": "support@nicelysupport.com",
+        "subject": "Quick follow up...",
+        "body": "<p>Hey!</p><p>Just checking in.</p><p>Chad</p>"
+      }
+    }
+  ]
+}
+```
+
+#### Flow Types:
+
+| Type | Purpose | Data Fields |
+|------|---------|-------------|
+| `SEND_EMAIL` | Send email | `subject`, `body`, `from_name`, `from_email`, `reply_to`, `preview` |
+| `TIMER` | Wait period | `waitFor` (number), `timeIn` ("minutes", "hours", "days") |
+| `ADD_TAG` | Fire tag | `tagGroupId`, `tagId` |
+| `MOVE_WORKFLOW` | Move contact | `workflowGroupId`, `workflowId` |
+| `SPLIT_WORKFLOW` | A/B split | `splits` array with paths |
+
+#### Timer Data Examples:
+```json
+{"waitFor": "10", "timeIn": "minutes"}
+{"waitFor": "1", "timeIn": "hours"}
+{"waitFor": "1", "timeIn": "days"}
+```
+
+#### Key Rules:
+- Flows array in PUT **replaces** existing flows
+- Use `index` to order flows (0, 1, 2...)
+- Set `status: true` for active flows
+- Each flow gets its own `_id` after creation
+
+#### Chad's Default SMTP Config:
+```json
+{
+  "domainId": "6688551acfe6ae024a58f9f6",
+  "smtpConfig": {
+    "domain": "mg.chadnicely.com",
+    "integrationId": "628e75aa84279536ff4eb41a",
+    "accountId": "668854e8cfe6ae024a58ef72"
+  }
+}
+```
+
 ### Sub Users (2 endpoints)
 | Method | Path | Description |
 |--------|------|-------------|

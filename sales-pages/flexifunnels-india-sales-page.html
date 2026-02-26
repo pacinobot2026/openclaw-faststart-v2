@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FlexiFunnels: Why India's #1 Funnel Builder Is Crushing ClickFunnels</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.8;
+            color: #1a1a1a;
+            background: #ffffff;
+        }
+        
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 100%);
+            color: #ffffff;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .hero-eyebrow {
+            color: #ffd700;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8em;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        
+        .hero h1 span {
+            color: #ffd700;
+        }
+        
+        .hero-sub {
+            font-size: 1.4em;
+            color: #cccccc;
+            margin-bottom: 30px;
+        }
+        
+        .proof-bar {
+            background: rgba(255, 215, 0, 0.1);
+            border: 1px solid #ffd700;
+            border-radius: 8px;
+            padding: 15px 30px;
+            display: inline-block;
+            margin-top: 20px;
+        }
+        
+        .proof-bar span {
+            color: #ffd700;
+            font-weight: bold;
+        }
+        
+        /* Content Sections */
+        section {
+            padding: 60px 20px;
+        }
+        
+        h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #1a1a1a;
+        }
+        
+        h3 {
+            font-size: 1.5em;
+            margin: 30px 0 15px;
+            color: #1a1a1a;
+        }
+        
+        p {
+            margin-bottom: 20px;
+            font-size: 1.1em;
+        }
+        
+        .highlight {
+            background: #fff3cd;
+            padding: 3px 8px;
+            font-weight: bold;
+        }
+        
+        .bold {
+            font-weight: bold;
+        }
+        
+        /* Comparison Section */
+        .comparison {
+            background: #f8f9fa;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        
+        .comparison-table th,
+        .comparison-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .comparison-table th {
+            background: #1a1a1a;
+            color: #fff;
+        }
+        
+        .check {
+            color: #28a745;
+            font-size: 1.3em;
+        }
+        
+        .cross {
+            color: #dc3545;
+            font-size: 1.3em;
+        }
+        
+        /* Objection Section */
+        .objection {
+            background: #1a1a1a;
+            color: #ffffff;
+            padding: 60px 20px;
+        }
+        
+        .objection h2 {
+            color: #ffd700;
+        }
+        
+        .objection-item {
+            background: rgba(255, 255, 255, 0.05);
+            border-left: 4px solid #ffd700;
+            padding: 20px;
+            margin: 20px 0;
+        }
+        
+        .objection-item h4 {
+            color: #ffd700;
+            margin-bottom: 10px;
+        }
+        
+        /* Future Vision */
+        .future {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #ffffff;
+            padding: 80px 20px;
+        }
+        
+        .future h2 {
+            color: #ffffff;
+        }
+        
+        .scenario {
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 10px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .scenario h4 {
+            color: #ffd700;
+            margin-bottom: 15px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            background: #ffd700;
+            color: #1a1a1a;
+            padding: 80px 20px;
+            text-align: center;
+        }
+        
+        .cta-section h2 {
+            color: #1a1a1a;
+        }
+        
+        .price {
+            font-size: 3em;
+            font-weight: 800;
+            margin: 20px 0;
+        }
+        
+        .price-note {
+            font-size: 1.2em;
+            margin-bottom: 30px;
+        }
+        
+        .cta-button {
+            display: inline-block;
+            background: #1a1a1a;
+            color: #ffd700;
+            padding: 20px 60px;
+            font-size: 1.3em;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: transform 0.3s;
+        }
+        
+        .cta-button:hover {
+            transform: scale(1.05);
+        }
+        
+        /* Guarantee */
+        .guarantee {
+            background: #f8f9fa;
+            border: 3px solid #28a745;
+            border-radius: 10px;
+            padding: 40px;
+            margin: 40px auto;
+            max-width: 600px;
+            text-align: center;
+        }
+        
+        .guarantee h3 {
+            color: #28a745;
+        }
+        
+        /* Stats */
+        .stats {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .stat-item {
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #ffd700;
+        }
+        
+        .stat-label {
+            font-size: 0.9em;
+            color: #666;
+        }
+        
+        /* Testimonial */
+        .testimonial {
+            background: #f8f9fa;
+            border-left: 4px solid #ffd700;
+            padding: 30px;
+            margin: 30px 0;
+            font-style: italic;
+        }
+        
+        .testimonial-author {
+            font-style: normal;
+            font-weight: bold;
+            margin-top: 15px;
+        }
+        
+        /* Urgency Banner */
+        .urgency {
+            background: #dc3545;
+            color: #ffffff;
+            padding: 15px;
+            text-align: center;
+            font-weight: bold;
+        }
+        
+        /* Lists */
+        ul {
+            margin: 20px 0 20px 30px;
+        }
+        
+        li {
+            margin-bottom: 10px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .stats {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Urgency Banner -->
+<div class="urgency">
+    ⚡ FOUNDER PRICING ENDS SOON — Lock In Lifetime Access Before Rates Increase
+</div>
+
+<!-- Hero Section -->
+<section class="hero">
+    <div class="container">
+        <div class="hero-eyebrow">🇮🇳 Built In India. Built For The World.</div>
+        <h1>While You Were Struggling With ClickFunnels...<br><span>17,500+ Indian Entrepreneurs Built Empires With This</span></h1>
+        <p class="hero-sub">The funnel builder that creates high-converting pages from a single sentence.<br>No coding. No design skills. No American price tags.</p>
+        <div class="proof-bar">
+            <span>₹100+ Crores</span> generated by FlexiFunnels users | <span>1,900+</span> 5-Star Reviews | <span>4.8/5</span> Rating
+        </div>
+    </div>
+</section>
+
+<!-- Opening Hook -->
+<section>
+    <div class="container">
+        <p><strong>Let me tell you what's happening right now in India.</strong></p>
+        
+        <p>Thousands of course creators, coaches, and agency owners are waking up to notifications that look like this:</p>
+        
+        <p style="background: #e8f5e9; padding: 20px; border-radius: 8px; font-family: monospace;">
+            "New Sale: ₹49,999 - Premium Coaching Package"<br>
+            "New Lead Captured - Webinar Funnel"<br>
+            "Upsell Accepted: ₹9,999 - VIP Access"
+        </p>
+        
+        <p>These aren't tech wizards. They aren't spending lakhs on developers. They aren't pulling their hair out trying to figure out why their ClickFunnels page looks like it was designed in 2010.</p>
+        
+        <p>They're using <strong>FlexiFunnels</strong> — and the game has completely changed.</p>
+        
+        <h3>Here's The Uncomfortable Truth Nobody Wants To Admit</h3>
+        
+        <p>If you're an Indian entrepreneur using American funnel software, you're playing with a handicap.</p>
+        
+        <p>You're paying <span class="highlight">$297/month</span> ($3,564/year) for ClickFunnels while your competitor down the street paid <span class="highlight">₹50,000 once</span> and never looked back.</p>
+        
+        <p>You're watching tutorials made for American businesses, trying to adapt strategies that don't work in Indian markets.</p>
+        
+        <p>You're fighting with payment gateway integrations that treat India like an afterthought.</p>
+        
+        <p>And worst of all? <strong>You're spending more time BUILDING funnels than actually SELLING.</strong></p>
+        
+        <p>Meanwhile, the entrepreneurs who discovered FlexiFunnels are operating in a completely different reality.</p>
+    </div>
+</section>
+
+<!-- Stats Section -->
+<section style="background: #1a1a1a; color: #fff;">
+    <div class="container">
+        <h2 style="color: #ffd700; text-align: center;">The Numbers Don't Lie</h2>
+        <div class="stats">
+            <div class="stat-item">
+                <div class="stat-number">17,500+</div>
+                <div class="stat-label">Active Businesses</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">₹100 Cr+</div>
+                <div class="stat-label">Revenue Generated</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">1,900+</div>
+                <div class="stat-label">5-Star Reviews</div>
+            </div>
+            <div class="stat-item">
+                <div class="stat-number">7 min</div>
+                <div class="stat-label">Avg. Page Build Time</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Identity Transformation -->
+<section>
+    <div class="container">
+        <h2>This Isn't About Software. It's About Who You Become.</h2>
+        
+        <p>Let me ask you something.</p>
+        
+        <p>Right now, when you think about building a new funnel, what's your first feeling?</p>
+        
+        <p>Excitement? Or dread?</p>
+        
+        <p>If it's dread — if launching a simple landing page feels like preparing for war — you're not alone. <strong>But you are stuck.</strong></p>
+        
+        <p>The entrepreneurs crushing it in 2025 and beyond share one trait: <strong>they move FAST.</strong></p>
+        
+        <p>They have an idea on Monday and a live, converting funnel by Tuesday.</p>
+        
+        <p>They test offers quickly. They iterate without fear. They treat funnels like experiments, not engineering projects.</p>
+        
+        <p>FlexiFunnels doesn't just give you a tool. <strong>It transforms you from a struggling technician into a confident operator.</strong></p>
+        
+        <p>You stop being the person who says "I'll launch it next month."</p>
+        
+        <p>You become the person who says "It's already live. Let's see what the data says."</p>
+        
+        <p><strong>That identity shift is worth more than any software feature.</strong></p>
+    </div>
+</section>
+
+<!-- Differentiation -->
+<section class="comparison">
+    <div class="container">
+        <h2>Why FlexiFunnels Destroys The Competition</h2>
+        
+        <p>Let's stop pretending all funnel builders are created equal.</p>
+        
+        <p>ClickFunnels was revolutionary — in 2014. Kajabi is beautiful — if you want to pay American prices forever. Leadpages is fine — if "fine" is your standard.</p>
+        
+        <p><strong>FlexiFunnels was built differently. Here's why:</strong></p>
+        
+        <table class="comparison-table">
+            <tr>
+                <th>Feature</th>
+                <th>FlexiFunnels</th>
+                <th>ClickFunnels</th>
+                <th>Kajabi</th>
+            </tr>
+            <tr>
+                <td>AI Page Generation</td>
+                <td><span class="check">✓</span> Full page from 1 prompt</td>
+                <td><span class="cross">✗</span> None</td>
+                <td><span class="cross">✗</span> None</td>
+            </tr>
+            <tr>
+                <td>Pricing Model</td>
+                <td><span class="check">✓</span> One-time ₹50,000</td>
+                <td><span class="cross">✗</span> $297/month forever</td>
+                <td><span class="cross">✗</span> $199/month forever</td>
+            </tr>
+            <tr>
+                <td>Indian Payment Gateways</td>
+                <td><span class="check">✓</span> Razorpay, PayU, Instamojo native</td>
+                <td><span class="cross">✗</span> Limited, clunky</td>
+                <td><span class="cross">✗</span> Stripe only (problems in India)</td>
+            </tr>
+            <tr>
+                <td>WhatsApp Marketing</td>
+                <td><span class="check">✓</span> Built-in AI tools</td>
+                <td><span class="cross">✗</span> Not available</td>
+                <td><span class="cross">✗</span> Not available</td>
+            </tr>
+            <tr>
+                <td>Facebook CAPI</td>
+                <td><span class="check">✓</span> One-click setup</td>
+                <td><span class="cross">✗</span> Complex manual setup</td>
+                <td><span class="cross">✗</span> Limited</td>
+            </tr>
+            <tr>
+                <td>Page Load Speed</td>
+                <td><span class="check">✓</span> Sub-2 second globally</td>
+                <td><span class="cross">✗</span> Often 5+ seconds in India</td>
+                <td><span class="cross">✗</span> 3-4 seconds average</td>
+            </tr>
+            <tr>
+                <td>Support Timezone</td>
+                <td><span class="check">✓</span> IST - Same as you</td>
+                <td><span class="cross">✗</span> US timezone delays</td>
+                <td><span class="cross">✗</span> US timezone delays</td>
+            </tr>
+        </table>
+        
+        <p>This isn't bias. This is math.</p>
+        
+        <p>Over 3 years, ClickFunnels costs you <strong>₹8,91,000</strong> in subscriptions alone.</p>
+        
+        <p>FlexiFunnels? <strong>₹50,000. Once. Forever yours.</strong></p>
+        
+        <p>That's ₹8,41,000 you keep in your pocket. That's 16x your investment saved.</p>
+    </div>
+</section>
+
+<!-- The AI Revolution -->
+<section>
+    <div class="container">
+        <h2>The AI Advantage That Changes Everything</h2>
+        
+        <p>Here's what building a funnel looked like in 2023:</p>
+        
+        <ul>
+            <li>Spend 3 hours picking a template</li>
+            <li>Spend 5 hours customizing it</li>
+            <li>Spend 2 hours writing copy</li>
+            <li>Spend 2 hours fixing mobile responsiveness</li>
+            <li>Launch something you're not even proud of</li>
+        </ul>
+        
+        <p><strong>Here's what it looks like with FlexiFunnels AI in 2025:</strong></p>
+        
+        <p style="background: #e3f2fd; padding: 20px; border-radius: 8px;">
+            <strong>You type:</strong> "Create a webinar registration page for my digital marketing course targeting small business owners in tier-2 cities"
+        </p>
+        
+        <p style="background: #e8f5e9; padding: 20px; border-radius: 8px;">
+            <strong>7 minutes later:</strong> A complete, conversion-optimized landing page with headline, bullet points, social proof sections, countdown timer, and mobile-perfect design. Ready to publish.
+        </p>
+        
+        <p>This isn't a gimmick. This is <strong>17,500+ businesses</strong> already doing this daily.</p>
+        
+        <p>The AI doesn't just save time. <strong>It removes the gap between your vision and execution.</strong></p>
+        
+        <p>No more "I know what I want but can't build it."</p>
+        
+        <p>No more settling for templates that don't match your brand.</p>
+        
+        <p>No more hiring designers for every campaign.</p>
+    </div>
+</section>
+
+<!-- Future Visualization -->
+<section class="future">
+    <div class="container">
+        <h2>Close Your Eyes. See Your Future.</h2>
+        
+        <div class="scenario">
+            <h4>📅 90 Days From Now — Morning</h4>
+            <p>You wake up to your phone buzzing. Not alarm. Notifications.</p>
+            <p>₹12,000 sale while you slept. Another ₹8,500. A webinar registration from someone who found your funnel through a Facebook ad you set up last week.</p>
+            <p>You built that entire campaign — ad copy, landing page, email sequence, checkout page — in one afternoon using FlexiFunnels AI.</p>
+            <p>Your competitor is still "working on" their funnel. You're collecting payments.</p>
+        </div>
+        
+        <div class="scenario">
+            <h4>📅 6 Months From Now — The Compound Effect</h4>
+            <p>You've launched 12 different offers this year. Not because you're a workaholic. Because launching is now EASY.</p>
+            <p>Some flopped. Some did okay. Two became evergreen machines generating ₹3-5 lakhs monthly on autopilot.</p>
+            <p>Your friends who are still "figuring out tech" are amazed. "How do you move so fast?"</p>
+            <p>You smile. You know the secret. <strong>Speed is the new smart.</strong></p>
+        </div>
+    </div>
+</section>
+
+<!-- Objection Handling -->
+<section class="objection">
+    <div class="container">
+        <h2>Every Doubt You Have (Exposed And Eliminated)</h2>
+        
+        <div class="objection-item">
+            <h4>"I'm not technical. What if I can't figure it out?"</h4>
+            <p>FlexiFunnels was DESIGNED for non-technical people. The AI literally builds pages from plain English sentences. If you can describe what you want, you can build it. Plus, support is in your timezone, speaking your language.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"I already invested in ClickFunnels/Kajabi. Switching feels painful."</h4>
+            <p>Calculate this: How much will you pay over the next 2 years? ₹5-7 lakhs? FlexiFunnels pays for itself in the first 2 months of savings. The "pain" of switching is actually the pain of staying — you just haven't done the math.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"What if Indian software isn't as good as American software?"</h4>
+            <p>17,500+ businesses and ₹100+ crores in revenue say otherwise. FlexiFunnels has features American software STILL doesn't have — like native WhatsApp marketing, Razorpay integration, and AI page generation. Built for Indian markets means built BETTER for you.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"₹50,000 is still a lot of money for me right now."</h4>
+            <p>Understood. But let's be real: if you can't invest ₹50,000 in your business infrastructure, you don't have a budget problem — you have a revenue problem. And that revenue problem exists BECAUSE you don't have proper funnels. This investment solves the root cause.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"What if my niche is different? Will this work for me?"</h4>
+            <p>Course creators. Coaches. Agencies. E-commerce. Consultants. Real estate. Finance. Health & fitness. We have case studies across ALL of these. The AI adapts to YOUR business, not the other way around.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"I tried funnel builders before and failed."</h4>
+            <p>You didn't fail at funnels. You failed at COMPLICATED funnel builders. FlexiFunnels exists specifically because the founders watched people struggle with bloated American software. This is the solution to what you experienced.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"What about support if something breaks?"</h4>
+            <p>Support team operates in IST. 1,900+ 5-star reviews. 4.8/5 rating across platforms. When was the last time you got same-day support from an American SaaS company? Exactly.</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"Will this still be around in 5 years?"</h4>
+            <p>FlexiFunnels has 17,500+ paying customers and growing 40% year over year. They're profitable. They're expanding. Compare that to American startups burning VC money hoping to survive. Who's the safer bet?</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"I need to think about it."</h4>
+            <p>What's there to think about? You're either going to build funnels or you're not. If you're going to build them, you need a tool. This is the best tool for Indian entrepreneurs at a fraction of the cost. The only question is: how many more months will you delay?</p>
+        </div>
+        
+        <div class="objection-item">
+            <h4>"Can I see it work first?"</h4>
+            <p>Visit flexifunnels.com. Watch the demos. See the AI build a page in real-time. Read the 1,900+ reviews. The proof is overwhelming. At some point, you have to stop researching and start building.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Logical Breakdown -->
+<section>
+    <div class="container">
+        <h2>The Math That Makes This Inevitable</h2>
+        
+        <p>Let's break this down with brutal honesty:</p>
+        
+        <h3>Scenario A: You Don't Get FlexiFunnels</h3>
+        <ul>
+            <li>Continue paying $297/month for ClickFunnels = ₹2,97,000/year</li>
+            <li>Continue struggling with slow page loads in India</li>
+            <li>Continue fighting payment gateway integrations</li>
+            <li>Continue waiting for US-timezone support</li>
+            <li>Launch maybe 2-3 funnels this year because it's painful</li>
+        </ul>
+        
+        <h3>Scenario B: You Get FlexiFunnels Today</h3>
+        <ul>
+            <li>Pay ₹50,000 once. Never again.</li>
+            <li>Launch your first AI-generated funnel this week</li>
+            <li>Native Razorpay/PayU — payments just work</li>
+            <li>Support responds while you're still awake</li>
+            <li>Launch 10-15 funnels this year because it's EASY</li>
+        </ul>
+        
+        <p><strong>The difference in output alone could mean ₹10-50 lakhs in additional revenue.</strong></p>
+        
+        <p>But let's be conservative. Let's say FlexiFunnels helps you generate just ONE extra sale per month that you wouldn't have made otherwise.</p>
+        
+        <p>If your average sale is ₹5,000, that's ₹60,000/year from ONE extra monthly sale.</p>
+        
+        <p>Your investment: ₹50,000.<br>
+        Your return: ₹60,000+ in year one alone.</p>
+        
+        <p><strong>That's not an expense. That's a 120% ROI asset.</strong></p>
+    </div>
+</section>
+
+<!-- Social Proof -->
+<section style="background: #f8f9fa;">
+    <div class="container">
+        <h2>What 17,500+ Entrepreneurs Already Know</h2>
+        
+        <div class="testimonial">
+            "Switched from ClickFunnels 18 months ago. Best decision ever. Saved over ₹5 lakhs AND my pages convert better because they actually load fast in India."
+            <div class="testimonial-author">— Rahul M., Digital Marketing Agency Owner</div>
+        </div>
+        
+        <div class="testimonial">
+            "The AI feature is insane. I described my coaching offer and had a complete funnel in 20 minutes. Would have taken me 2 days before."
+            <div class="testimonial-author">— Priya S., Business Coach</div>
+        </div>
+        
+        <div class="testimonial">
+            "Finally a funnel builder that understands Indian payment systems. Razorpay integration took 2 minutes. TWO MINUTES."
+            <div class="testimonial-author">— Vikram T., Course Creator</div>
+        </div>
+        
+        <div class="testimonial">
+            "My team used to dread funnel projects. Now they actually enjoy it because FlexiFunnels is so intuitive. Client delivery time cut in half."
+            <div class="testimonial-author">— Anita K., Agency Founder</div>
+        </div>
+    </div>
+</section>
+
+<!-- CTA Section -->
+<section class="cta-section">
+    <div class="container">
+        <h2>The Market Is Splitting Into Two Groups</h2>
+        
+        <p style="font-size: 1.2em;"><strong>Group 1:</strong> Entrepreneurs who keep paying American prices for American software built for American problems. They move slow. They spend more. They wonder why their competitors are ahead.</p>
+        
+        <p style="font-size: 1.2em;"><strong>Group 2:</strong> Entrepreneurs who recognized the shift. Who grabbed Indian-built, AI-powered tools designed for Indian markets. Who launch fast, pay once, and compound their advantage every single month.</p>
+        
+        <p style="font-size: 1.3em; margin: 30px 0;"><strong>Which group will you be in 12 months from now?</strong></p>
+        
+        <div class="price">₹50,000</div>
+        <div class="price-note">One-Time Investment. Lifetime Access. No Monthly Fees. Ever.</div>
+        
+        <a href="https://flexifunnels.com" class="cta-button">Get FlexiFunnels Now →</a>
+        
+        <div class="guarantee">
+            <h3>🛡️ Risk-Free Guarantee</h3>
+            <p>Try FlexiFunnels for 14 days. Build pages. Test the AI. Explore everything. If you don't agree it's the best funnel builder for Indian entrepreneurs, get a full refund. No questions. No hassle.</p>
+        </div>
+        
+        <p style="margin-top: 40px; font-size: 1.1em;"><strong>Founder pricing won't last forever.</strong> As FlexiFunnels grows (40% year over year), prices will increase. Lock in lifetime access at current rates before the next price revision.</p>
+    </div>
+</section>
+
+<!-- Final Close -->
+<section>
+    <div class="container">
+        <h2>One Year From Today</h2>
+        
+        <p>You'll be somewhere.</p>
+        
+        <p>You'll either be an entrepreneur with a library of high-converting funnels generating leads and sales on autopilot...</p>
+        
+        <p>Or you'll still be "planning" to fix your funnel situation.</p>
+        
+        <p>The entrepreneurs winning in India right now aren't smarter than you. They aren't luckier than you. They just made the decision to get the right tools — and they made it FASTER.</p>
+        
+        <p><strong>FlexiFunnels is that tool.</strong></p>
+        
+        <p>17,500+ businesses can't all be wrong.</p>
+        
+        <p>₹100+ crores in generated revenue can't be a fluke.</p>
+        
+        <p>1,900+ five-star reviews can't be fake.</p>
+        
+        <p>The only question is: <strong>Will you act on what you now know?</strong></p>
+        
+        <p style="text-align: center; margin-top: 40px;">
+            <a href="https://flexifunnels.com" class="cta-button" style="background: #ffd700; color: #1a1a1a;">Claim Your FlexiFunnels Access →</a>
+        </p>
+        
+        <p style="text-align: center; margin-top: 30px; color: #666;">
+            🇮🇳 Built in India. Built for Indian Entrepreneurs. Built to Win.
+        </p>
+    </div>
+</section>
+
+</body>
+</html>

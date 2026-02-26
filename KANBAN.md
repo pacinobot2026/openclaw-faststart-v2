@@ -8,22 +8,20 @@ Drop tasks in **Backlog**. I'll pick them up during heartbeats or when you say "
 <!-- Add new tasks here. Format: - [ ] Task description | priority | notes -->
 
 ### Team / Delegated
-- [ ] Follow up with Gaurav & Pranay - finish OpenClaw containers | priority: high | notes: dev team task
-- [ ] Follow up with Travis - ad bonuses status | priority: med | notes: affiliate stuff
+- [ ] Follow up with Gaurav & Pranay - finish OpenClaw containers | priority: high | notes: dev team task - needs Chad to check status with team
+- [ ] Follow up with Travis - ad bonuses status | priority: med | notes: affiliate stuff - needs Chad to reach out
 
 ### Business Development
-- [ ] Brian Anderson NDA offer - find out deal status | priority: high | notes: partnership?
-- [ ] Write JV script for Zoo launch (Karthik) | priority: med | notes: affiliate launch
+- [ ] Brian Anderson NDA offer - find out deal status | priority: high | notes: partnership? - needs Chad's context on this deal
 
 ### OpenClaw Platform
-- [ ] Get OpenClaw ads running | priority: high | notes: ✅ Campaign plan drafted - see projects/openclaw-ad-campaign-plan.md
-- [ ] Finish OpenClaw webinar | priority: high | notes: launch prep (needs context from Chad)
+- [ ] Finish OpenClaw webinar | priority: high | notes: launch prep (needs content/context from Chad)
 
 ### Content / Video
-- [ ] Keep shooting membership videos | priority: med | notes: ongoing content
+- [ ] Keep shooting membership videos | priority: med | notes: ongoing content production
 
 ### Social Engagement
-- [ ] Meet with Hannah - set up wall engagement management | priority: med | notes: SYSTEM READY - see workflows/wall-engagement-system.md
+- [ ] Meet with Hannah - set up wall engagement management | priority: med | notes: SYSTEM READY - see workflows/wall-engagement-system.md - needs Chad to coordinate meeting
 
 
 ## 🟡 In Progress
@@ -36,6 +34,7 @@ Drop tasks in **Backlog**. I'll pick them up during heartbeats or when you say "
 ## 🟢 Done
 <!-- Completed tasks (I'll move them here) -->
 
+- [x] Write JV script for Zoo launch (Karthik) | completed: 2026-02-26 1:30 AM | output: projects/zoo-launch-jv-script.md - Comprehensive affiliate recruitment script with emails, follow-ups, FAQ, assets checklist
 - [x] Set up system for handling hooks on wall | completed: 2026-02-25 | output: workflows/wall-engagement-system.md
 - [x] Figure out short-form video workflow (Vizard) | completed: 2026-02-25 | output: workflows/vizard-short-form-workflow.md
 - [x] Set up OpenClaw true schedule (automation/cron) | completed: 2026-02-25 | output: 13 cron jobs configured

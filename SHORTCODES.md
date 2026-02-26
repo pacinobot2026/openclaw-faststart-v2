@@ -4,7 +4,102 @@ Quick commands for common tasks. Say the shortcode to trigger the workflow.
 
 ---
 
+## 🚀 BUSINESS COMMANDS
+
+### `/create business`
+**PRODUCT CREATION ENGINE — FULL REVENUE MODE**
+
+End-to-end product creation, launch, and scale system. 6 structured stages:
+
+**STAGE 1 — OPPORTUNITY INTELLIGENCE**
+Generate 10 product opportunities. For each:
+- Target buyer, painful problem, demand indicators
+- Market price range, 2-3 competitors
+- Profit potential (low/medium/high)
+- Score: urgency, speed to revenue, competition, scalability
+→ Output: Opportunity Report with best pick
+
+**STAGE 2 — PRODUCT ARCHITECTURE**
+Business Blueprint:
+- Core offer + unique positioning
+- Pricing strategy + upsell/backend potential
+- Traffic entry point + fulfillment model
+- Revenue model (one-time/subscription/hybrid)
+→ Don't proceed if blueprint is weak
+
+**STAGE 3 — BUILD + DEPLOY**
+Using available skills:
+- Create product asset
+- Build sales page (Next.js)
+- Push to GitHub (pacinobot2026)
+- Deploy to Vercel → live URL
+- Create Stripe product + checkout link
+- Connect checkout to page
+- Set up automated delivery
+- Create 5-min VSL script (pattern interrupt → problem → solution → mechanism → offer stack → CTA)
+- Generate VSL audio via ElevenLabs TTS
+- Upload to Vimeo
+- Embed VSL on sales page
+→ Output: Live sales page URL, VSL script, Vimeo URL, Stripe checkout
+
+**STAGE 4 — TRAFFIC + CONVERSION ASSETS**
+A) Organic: 1 launch post, 5 follow-ups, 10 hooks, 5 authority posts
+B) Paid Ads: 5 short hooks, 3 long-form, 2 retargeting, 10 headlines
+C) Email Sequence (7 emails) — **FOR NON-BUYERS TO CONVERT**
+1. Announcement → 2. Problem agitation → 3. Solution breakdown
+4. Mechanism deep dive → 5. Objection handling → 6. Urgency → 7. Final call
+Each email: subject, preview, body, CTA
+*(These target people who viewed but didn't buy)*
+
+**→ BUILD IN GC:** Create workflow via API with all 7 emails + timers between them
+
+**STAGE 5 — ACTIVE TRAFFIC DEPLOYMENT**
+- Publish organic posts
+- Schedule follow-ups
+- Launch paid ads (if connected)
+- Set budget, targeting, tracking events
+- Install pixels if missing
+- Monitor early signals
+→ If accounts not connected, state required credentials and pause that step only
+
+**STAGE 6 — OPTIMIZATION + SCALE PLAN**
+- 3 optimization levers
+- 3 scaling strategies
+- 1 long-term brand expansion opportunity
+- Daily revenue target + scaling threshold
+
+**FINAL OUTPUT REQUIREMENTS:**
+✅ Sales page URL
+✅ Stripe product ID + checkout link
+✅ Product delivery link
+✅ VSL script
+✅ Ad copy set
+✅ Email sequence
+✅ Traffic deployment confirmation
+
+**Rules:** No fake urgency. No fake proof. No exaggerated income claims. Build sustainable revenue assets.
+
+---
+
 ## 📧 EMAIL COMMANDS
+
+### `/emailstats`
+Get email performance stats from Global Control.
+
+**Workflow:**
+1. Ask: "Broadcast or Workflow?"
+2. User answers → Ask: "What date?" (or confirm date range)
+3. Pull stats from GC and return:
+```
+Subject: [subject line]
+Sent: X | Opens: X | Clicks: X
+```
+
+**API Endpoints:**
+- Broadcast: `POST /email-reports/broadcast`
+- Workflow: `POST /email-reports/workflow`
+
+---
 
 ### `/broadcast`
 Create and send broadcast email via Global Control.
