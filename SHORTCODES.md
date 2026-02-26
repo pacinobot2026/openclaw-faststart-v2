@@ -9,7 +9,17 @@ Quick commands for common tasks. Say the shortcode to trigger the workflow.
 ### `/create business`
 **PRODUCT CREATION ENGINE — FULL REVENUE MODE**
 
-End-to-end product creation, launch, and scale system. 6 structured stages:
+End-to-end product creation, launch, and scale system. 6 structured stages.
+
+**⚡ BUSINESS BOARD INTEGRATION:**
+When starting `/create business`:
+1. **Create business entry** in Business Board (vizard-clips-app.vercel.app/businesses)
+2. **Auto-populate tasks** across columns (Marketing, Follow-up, Research, Delivery)
+3. **Add resources** as they're created (sales page URL, Stripe link, VSL, GitHub repo, etc.)
+4. **Mark tasks DONE** as each stage completes
+5. **Track progress** via the board's progress bars
+
+**API:** `POST /api/businesses` with `action: 'add'` or `action: 'update'`
 
 **STAGE 1 — OPPORTUNITY INTELLIGENCE**
 Generate 10 product opportunities. For each:

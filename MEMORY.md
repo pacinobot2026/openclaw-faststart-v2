@@ -90,6 +90,36 @@
 
 **NEVER just create an empty lesson and stop. All 6 steps. Every time.**
 
+### 🔴 /CREATE BUSINESS → BUSINESS BOARD INTEGRATION (MEMORIZED 2026-02-26)
+
+**When running `/create business`:**
+
+1. **Create business in Board FIRST** (vizard-clips-app.vercel.app/businesses)
+   - API: `POST /api/businesses` with `action: 'add'`
+   - Name = product name (e.g., "ReviewRush")
+   - Default columns: Marketing, Follow-up, Research, Delivery
+
+2. **Auto-populate tasks** across columns:
+   - Marketing: VSL script, VSL audio, VSL slides, Sales page copy, Ad hooks, Launch posts
+   - Follow-up: Email sequence (7 emails), Retargeting ads, Non-buyer conversion
+   - Research: Market analysis, Competitor research, Pricing validation
+   - Delivery: Product assets, Stripe setup, GitHub repo, Vercel deploy, Automation
+
+3. **Add resources** as they're created:
+   - Sales page URL
+   - Stripe checkout link
+   - VSL (Vimeo/hosted URL)
+   - GitHub repo
+   - Email sequence (GC workflow)
+
+4. **Mark tasks DONE** as each stage completes (add 'done' label)
+
+5. **Progress tracking** via board's built-in progress bars
+
+**This is mandatory for EVERY `/create business` run. Board = source of truth.**
+
+---
+
 ### 🔴 LETTERMAN ARTICLE WORKFLOW (MEMORIZED 2026-02-13)
 
 **Before creating ANY article, ASK:**
