@@ -27,6 +27,8 @@ export default async function handler(req, res) {
       mode: 'payment',
       success_url: 'https://openclaw-faststart-v2.vercel.app/success?session_id={CHECKOUT_SESSION_ID}',
       cancel_url: 'https://openclaw-faststart-v2.vercel.app/',
+    }, {
+      stripeAccount: process.env.STRIPE_ACCOUNT_ID || 'acct_1T4AreCDxYH1XF8F',
     });
 
     res.status(200).json({ url: session.url });
