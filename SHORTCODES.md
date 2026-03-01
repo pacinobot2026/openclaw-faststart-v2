@@ -13,7 +13,7 @@ End-to-end product creation, launch, and scale system. 6 structured stages.
 
 **⚡ BUSINESS BOARD INTEGRATION (MANDATORY):**
 When starting `/create business`:
-1. **Create business entry** in Business Board (vizard-clips-app.vercel.app/businesses)
+1. **Create business entry** in Business Board (boards.nicelycontrol.com/businesses)
 2. **Auto-populate tasks** across columns (Marketing, Follow-up, Research, Delivery)
 3. **Add resources** as they're created (sales page URL, Stripe link, VSL, GitHub repo, etc.)
 4. **Mark tasks DONE** as each stage completes
@@ -22,7 +22,7 @@ When starting `/create business`:
 **⚠️ CRITICAL:** After EVERY stage completion → Update Business Board (or tell Chad what to update)
 
 **API:** `POST /api/businesses` with `action: 'add'` or `action: 'update'`
-**Board URL:** https://vizard-clips-app.vercel.app/businesses
+**Board URL:** https://boards.nicelycontrol.com/businesses
 
 **STAGE 1 — OPPORTUNITY INTELLIGENCE**
 Generate 10 product opportunities. For each:
@@ -121,6 +121,27 @@ Build professional Next.js sales page and deploy to Vercel.
 3. Push to GitHub (pacinobot2026)
 4. Deploy to Vercel
 5. Return live URL
+
+---
+
+### `/create course`
+Create and deploy a complete online course in Course Sprout.
+
+**Workflow:**
+1. Ask for course topic and target audience
+2. Generate course structure:
+   - Course title and description
+   - Chapter breakdown (4-8 chapters)
+   - Lesson titles for each chapter
+3. Create course in Course Sprout via API
+4. Auto-generate lesson content:
+   - Short description (1-2 sentences)
+   - Long description (detailed breakdown)
+   - Goal blocks (points + engagement prompts)
+5. Set up course access and pricing
+6. Return course URL and enrollment link
+
+**Output:** Live course URL + admin dashboard link
 
 ---
 
@@ -500,6 +521,7 @@ Extract assignments from team Zoom call and update management dashboard.
 |-----------|----------|---------|
 | `/create business` | Business | Full 6-stage product creation engine |
 | `/salespage` | Business | Build Next.js sales page + deploy |
+| `/create course` | Business | Create complete online course in Course Sprout |
 | `/salescopy` | Business | Generate high-converting sales copy |
 | `/vsl` | Business | Create VSL script + audio + video |
 | `/videoavatar` | Business | Generate AI avatar video |
@@ -524,3 +546,4 @@ Extract assignments from team Zoom call and update management dashboard.
 ---
 
 *Last updated: 2026-03-01*
+

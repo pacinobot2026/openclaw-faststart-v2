@@ -44,11 +44,44 @@
 - Private information
 - Anything that raises a security flag
 
+### 🏷️ TAG FIRING PROTOCOL (2026-03-01 - MEMORIZED)
+
+**When Chad says "fire a tag" with contact details:**
+
+1. **Try to find existing contact** by email
+2. **If not found, create the contact**
+3. **Fire the tag**
+
+**DO NOT:**
+- Ask permission
+- Show confusion
+- Explain the process
+- Make excuses if API has issues
+
+**JUST DO IT.** Find or create contact → Fire tag → Report success or failure.
+
 ## Who You Are (Chad)
 - **Name:** Chad Nicely
 - **Timezone:** PT (Las Vegas)
 - **Business:** Software company owner, marketing teacher
 - **Vision:** Build a Hearst-style media empire - hyper-local, community-driven content at scale
+
+### 🎯 THE OPENCLAW CONTROL BOARD (MEMORIZED 2026-02-28)
+**Full customer software buildout system** - suite of integrated boards/tools:
+
+**Components:**
+- ✓ OpenClaw Command Center
+- ✓ Custom Command Engine
+- ✓ Team Board
+- ✓ Project Board
+- ✓ Article Board
+- ✓ Video Cue System
+- ✓ Idea Board
+- ✓ Wish List
+- ✓ Resource Library
+- ✓ Bookmark Manager
+
+**This is THE CONTROL BOARD** - the complete system for OpenClaw customers.
 
 ### Titanium Software Suite (6 platforms, unified login)
 - **MintBird** - Sales pages/funnel builder (ad campaign tracking)
@@ -59,6 +92,61 @@
 - **Letterman** - Newsletter software
 
 *(All use credentials from credentials-titanium.txt)*
+
+### 🔴 GC WORKFLOW API - CRITICAL BEHAVIORS (MEMORIZED 2026-02-27)
+
+#### **Behavior 1: PUT APPENDS Flows (CRITICAL!)**
+
+**Discovery:** PUT `/workflows/{id}` **APPENDS** flows instead of replacing them! (2026-02-27)
+
+**This means:**
+- If workflow has 3 flows and you PUT with 4 flows → You get 7 flows (appends!)
+- PUT does NOT replace the flows array like typical REST APIs
+
+**✅ CORRECT Safe Pattern (from Kafi):**
+```powershell
+1. POST /workflows (empty container)
+2. GET /workflows/{id} (always get current state)
+3. Take existing flows + add new flow to array
+4. PUT /workflows/{id} with complete array (existing + new)
+```
+
+**Why this is safe:**
+- Works WITH the append behavior (doesn't fight it)
+- Never deletes anything (can't be restored!)
+- Always preserves existing flows
+- Get current state before every update
+
+**🚫 NEVER delete flows without explicit user confirmation!**
+
+**Tested and confirmed 2026-02-27 with Kafi.**
+
+#### **Behavior 2: Encoding Fix**
+
+**Problem:** PUT /workflows/{id} with flows array returns success but flows stay empty.
+
+**Root cause:** PowerShell encoding issues when sending JSON body.
+
+**ALWAYS use this pattern:**
+```powershell
+$json = Get-Content "file.json" -Raw
+$bytes = [System.Text.Encoding]::UTF8.GetBytes($json)
+$headers = @{ "X-API-KEY" = "..."; "Content-Type" = "application/json" }
+Invoke-RestMethod -Uri "..." -Method Put -Headers $headers -Body $bytes
+```
+
+**What fails:**
+- `Get-Content` without `-Raw` (adds newlines)
+- PowerShell hashtable → `ConvertTo-Json` (nested objects break)
+- Passing string body directly (encoding corruption)
+
+**What works:**
+- Raw JSON file → UTF8 bytes → send
+- Inline JSON string (short payloads only)
+
+**Tested and confirmed working 2026-02-26.**
+
+---
 
 ### 🔴 COURSE SPROUT REPLAY WORKFLOW (MEMORIZED 2026-02-13)
 
@@ -94,7 +182,7 @@
 
 **When running `/create business`:**
 
-1. **Create business in Board FIRST** (vizard-clips-app.vercel.app/businesses)
+1. **Create business in Board FIRST** (boards.nicelycontrol.com/businesses)
    - API: `POST /api/businesses` with `action: 'add'`
    - Name = product name (e.g., "ReviewRush")
    - Default columns: Marketing, Follow-up, Research, Delivery
@@ -1605,25 +1693,25 @@ Create VSL for [sales page URL]
 
 ---
 
-### Vizard Automation Pipeline (Built 2026-02-20)
-**Full automation:** Vimeo → Vizard AI → Review Dashboard → Post Bridge → Social Media
+### Social Video Automation Pipeline (Built 2026-02-20)
+**Full automation:** Vimeo → Social Video AI → Review Dashboard → Post Bridge → Social Media
 
 **What it does:**
 1. **Vimeo Monitor** - Watches for new videos every 5 minutes
-2. **Vizard Integration** - Submits to Vizard, polls for clips (30s interval)  
+2. **Social Video Integration** - Submits to Social Video, polls for clips (30s interval)  
 3. **Web Dashboard** - Video players with approve/reject buttons
 4. **Post Bridge Publisher** - Auto-publishes approved clips to all social accounts
 
 **Tech Stack:**
 - Next.js app deployed to Vercel
-- GitHub: pacinobot2026/vizard-clips
+- GitHub: pacinobot2026/Social Video-clips
 - Background services on VPS (via PM2)
 
 **Components:**
 - Login page (password protected)
 - Dashboard with embedded video players
 - API routes: /api/clips, /api/approve, /api/reject, /api/publish
-- Background: Vimeo monitor + Vizard processor
+- Background: Vimeo monitor + Social Video processor
 
 **Deployment:**
 - Vercel: Web dashboard + API routes
@@ -1633,16 +1721,16 @@ Create VSL for [sales page URL]
 **Credentials:**
 - Vimeo Access Token: credentials/vimeo-access-token.txt
 - Vimeo User ID: 41953625
-- Vizard API: credentials/vizard-api-key.txt
+- Social Video API: credentials/Social Video-api-key.txt
 - Post Bridge API: credentials/postbridge-api-key.txt
 - GitHub: pacinobot2026 account
 
-**Current Status:** Live at https://vizard-clips-app.vercel.app (Password: VizardClips2026!)
+**Current Status:** Live at https://boards.nicelycontrol.com (Password: Social VideoClips2026!)
 
-**Full Documentation:** `memory/2026-02-20-vizard-dashboard.md`
+**Full Documentation:** `memory/2026-02-20-Social Video-dashboard.md`
 
-### Vizard Clip Workflow (Step-by-Step)
-1. **Submit to Vizard** - POST /project/create with Vimeo share URL (`?share=copy`)
+### Social Video Clip Workflow (Step-by-Step)
+1. **Submit to Social Video** - POST /project/create with Vimeo share URL (`?share=copy`)
 2. **Poll for results** - GET /project/query/{projectId} every 30s until code 2000
 3. **Save to dashboard** - Update storage.js, push to GitHub, Vercel auto-deploys
 4. **Review clips** - Login to dashboard, watch videos, approve/reject
@@ -1650,7 +1738,7 @@ Create VSL for [sales page URL]
 
 **Key gotchas:**
 - Use Vimeo **share URL** (regular URL may fail with 4008)
-- Vimeo video must be **public** or Vizard can't download
+- Vimeo video must be **public** or Social Video can't download
 - Processing takes **5-15 minutes**
 - Clip URLs **expire after 7 days**
 
@@ -1701,3 +1789,22 @@ Create VSL for [sales page URL]
 ---
 
 *This file is my curated long-term memory. Updated as I learn and grow.*
+
+### ?? BUSINESS BOARD UPDATE RULE (MEMORIZED 2026-02-28)
+
+**MANDATORY:** After completing ANY /create business stage ? Update Business Board
+
+**Board URL:** https://boards.nicelycontrol.com/businesses
+
+**Protocol:**
+1. Complete stage work
+2. IMMEDIATELY update board (or tell Chad what to update)
+3. Mark tasks DONE
+4. Add resources (URLs, files, assets)
+
+**Current limitation:** Requires Supabase auth - can't auto-update via API
+**Solution:** After each stage, tell Chad exactly what board updates are needed
+
+**This is NOT optional - it's part of the workflow.**
+
+
