@@ -162,6 +162,148 @@
 
 ---
 
+
+## 11. Mindvalley - Unlimited Abundance
+**File:** `11-mindvalley-unlimited-abundance.jpg`
+
+**Type:** Membership/Subscription  
+**Key Features:**
+- "Now Available In United Kingdom" - geographic expansion
+- Subscription model: "as low as $1 a day"
+- Large value claim: "50+ transformational programs"
+- Video with play button (Christie Marie Sheldon featured)
+- Clean, professional design with purple accent
+- "28.9 hours of TRAINING" + "Start Today INSTANT ACCESS"
+- Purple CTA button: "Join the program"
+- Low barrier to entry pricing
+
+**Price Point:** ~$30/month (implied from "$1 a day")
+
+---
+
+## 12. Launch Formula - 6 & 7-Figure Launches
+**File:** `12-launch-formula-6-7-figure.jpg`
+
+**Type:** Course/Launch System  
+**Key Features:**
+- Social proof banner: "AS SEEN ON" (Forbes, Entrepreneur, Business Insider, Inc., Huffington Post)
+- Results-focused headline: "1000+ Students Run 6 & 7-Figure Launches"
+- Negative positioning: "Without 'Freebie Seekers' Who Suck Away Their Time & Energy"
+- "BATTLE TESTED" + "Pay-To-Play" system emphasis
+- Product mockup showing multiple devices (desktop, tablet, phone)
+- Two-step opt-in visible (name/email ? phone ? "Go To Step #2")
+- Instant access emphasis
+- Turquoise/teal accent color
+
+---
+
+## 13. Selena Soo - Publicity Services
+**File:** `13-selena-soo-publicity-services.jpg`
+
+**Type:** Service/Coaching  
+**Key Features:**
+- Clean, professional service page
+- "WORK WITH US" navigation prominent
+- Social proof banner (Fast Company, Forbes, Huffington Post, Entrepreneur, Marie Claire, "I Will Teach You To Be Rich")
+- Large lifestyle hero image (joyful, approachable)
+- Service title: "PUBLICITY SERVICES"
+- 4 checkmarked benefits with detailed explanations
+- VIP coaching program positioning
+- Yellow CTA button: "APPLY HERE"
+- White background with strategic use of imagery
+- Addresses objections: "You've got the skills and tools..."
+
+---
+
+## 14. Smile Direct Club - Clear Aligners
+**File:** `14-smile-direct-club-aligners.jpg`
+
+**Type:** Physical Product/Service  
+**Key Features:**
+- Direct comparison: "half the cost of braces"
+- Purple brand color (consistent throughout)
+- Lifestyle hero image (happy, confident person singing)
+- Trustpilot review widget (5-star rating visible)
+- Two CTA buttons: "AM I A CANDIDATE?" (purple)
+- Limited time offers section below fold
+- Geographic relevance: "Sign in" with UK flag
+- Multiple offer cards visible (impression kit, free 3D scan, teeth whitening)
+- Professional photography with natural lighting
+
+---
+
+## 15. 4 Week Shred - Fat Loss Program
+**File:** `15-4-week-shred-fat-loss.jpg`
+
+**Type:** Fitness Program  
+**Key Features:**
+- Bold claim: "most INSANE fat loss program ever created"
+- Result promise: "LOSE UP TO HALF YOUR BODY FAT"
+- Dramatic before/after style imagery (fit female athlete)
+- Large video player below headline
+- High-contrast design (dark background, bright blue CTA section)
+- "PURCHASE TODAY" button (top right)
+- "(WITH EQUALLY INSANE RESULTS)" proof promise
+- Hand-drawn style arrow pointing to video
+- Athletic/intense positioning
+
+---
+
+## 16. Tiny Offer - Digital Products
+**File:** `16-tiny-offer-digital-products.jpg`
+
+**Type:** Course/System  
+**Key Features:**
+- Headline: "LAUNCH YOUR DIGITAL PRODUCTS IN 1/100TH OF THE TIME"
+- Free positioning: "BRING IN NEW CUSTOMERS WITH ADS (FOR FREE)"
+- Video with red badge: "COULD DIGITAL PRODUCT TINY OFFER® FUNNELS WORK FOR YOU? WATCH THIS!"
+- Yellow CTA: ">> GET ACCESS FOR $47 NOW"
+- Social proof stats (dark boxes with checkmarks):
+  - "Over 26,255 digital products sold"
+  - "Consultant responsible for $5M+ in Client Revenue Gain"
+  - "Generated $4.2M in sales in 2 years"
+- Gray/yellow color scheme
+- Professional but accessible design
+
+**Price Point:** $47
+
+---
+
+## 17. Flux Academy - Web Design
+**File:** `17-flux-academy-web-design.jpg`
+
+**Type:** Course/Training  
+**Key Features:**
+- Bold purple typography: "EARN MORE WITH WEB DESIGN"
+- Social proof: "2,184 Students" with avatar row
+- Instructor featured: "with Ran Segall"
+- Large video player (primary CTA)
+- Minimal, clean design
+- 3-column feature breakdown below video:
+  - "PROVEN PROFESSIONAL PROCESS"
+  - "REAL WORLD EXAMPLES AND ACTIONABLE ADVICE"
+  - "IN-DEPTH FEEDBACK FROM EXPERIENCED PROFESSIONALS"
+- Purple and white color scheme
+- "Enroll Now" button (top right)
+
+---
+
+## 18. Yogalates London - Online Classes
+**File:** `18-yogalates-london-online-classes.jpg`
+
+**Type:** Online Classes/Membership  
+**Key Features:**
+- Serif headline typography (elegant)
+- "LIVE ONLINE CLASSES" emphasis
+- Seasonal offer: "Get 2023 off to a flying start"
+- Hero image: instructor in yoga pose outdoors
+- Purple accent on image: "Winter term online"
+- Teal/turquoise brand color
+- Banner notification: "Tune into live classes from the comfort of home"
+- Clean, wellness-focused design
+- Local business (London) with online expansion
+
+---
 ## Usage Notes
 
 **When creating sales pages, reference these for:**
@@ -182,3 +324,5 @@
 **Location:** `vault/sales-pages/`  
 **Format:** JPG images + this index  
 **Last Updated:** 2026-03-01
+
+
