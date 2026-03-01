@@ -11,7 +11,7 @@ Quick commands for common tasks. Say the shortcode to trigger the workflow.
 
 End-to-end product creation, launch, and scale system. 6 structured stages.
 
-**⚡ BUSINESS BOARD INTEGRATION:**
+**⚡ BUSINESS BOARD INTEGRATION (MANDATORY):**
 When starting `/create business`:
 1. **Create business entry** in Business Board (vizard-clips-app.vercel.app/businesses)
 2. **Auto-populate tasks** across columns (Marketing, Follow-up, Research, Delivery)
@@ -19,7 +19,10 @@ When starting `/create business`:
 4. **Mark tasks DONE** as each stage completes
 5. **Track progress** via the board's progress bars
 
+**⚠️ CRITICAL:** After EVERY stage completion → Update Business Board (or tell Chad what to update)
+
 **API:** `POST /api/businesses` with `action: 'add'` or `action: 'update'`
+**Board URL:** https://vizard-clips-app.vercel.app/businesses
 
 **STAGE 1 — OPPORTUNITY INTELLIGENCE**
 Generate 10 product opportunities. For each:
@@ -52,6 +55,13 @@ Using available skills:
 - Embed VSL on sales page
 → Output: Live sales page URL, VSL script, Vimeo URL, Stripe checkout
 
+**🔴 MANDATORY CHECKPOINT:**
+Before proceeding to Stage 4, TELL CHAD:
+"✅ Stage 3 complete! Update Business Board:
+- Marketing: Mark VSL + sales page tasks DONE
+- Delivery: Mark product assets + deploy DONE
+- Resources: Add sales page URL, VSL URL, GitHub repo"
+
 **STAGE 4 — TRAFFIC + CONVERSION ASSETS**
 A) Organic: 1 launch post, 5 follow-ups, 10 hooks, 5 authority posts
 B) Paid Ads: 5 short hooks, 3 long-form, 2 retargeting, 10 headlines
@@ -62,6 +72,12 @@ Each email: subject, preview, body, CTA
 *(These target people who viewed but didn't buy)*
 
 **→ BUILD IN GC:** Create workflow via API with all 7 emails + timers between them
+
+**🔴 MANDATORY CHECKPOINT:**
+Before proceeding to Stage 5, TELL CHAD:
+"✅ Stage 4 complete! Update Business Board:
+- Marketing: Mark organic posts + paid ads + emails DONE
+- Resources: Add traffic assets folder path"
 
 **STAGE 5 — ACTIVE TRAFFIC DEPLOYMENT**
 - Publish organic posts
@@ -88,6 +104,74 @@ Each email: subject, preview, body, CTA
 ✅ Traffic deployment confirmation
 
 **Rules:** No fake urgency. No fake proof. No exaggerated income claims. Build sustainable revenue assets.
+
+---
+
+### `/salespage`
+Build professional Next.js sales page and deploy to Vercel.
+
+**Workflow:**
+1. Ask for product name and offer details
+2. Generate sales page structure with:
+   - Compelling headline + subheadline
+   - Video embed section (optional)
+   - Bullet points showcasing benefits
+   - Call-to-action buttons
+   - Stripe checkout integration
+3. Push to GitHub (pacinobot2026)
+4. Deploy to Vercel
+5. Return live URL
+
+---
+
+### `/salescopy`
+Generate high-converting sales copy using proven frameworks.
+
+**Workflow:**
+1. Ask about product/offer
+2. Choose framework:
+   - PAS (Problem-Agitate-Solve)
+   - AIDA (Attention-Interest-Desire-Action)
+   - 4Ps (Problem-Promise-Proof-Proposal)
+3. Generate:
+   - Headline + subheadline
+   - Bullet points
+   - CTA and urgency elements
+4. Deliver formatted copy ready to use
+
+---
+
+### `/vsl`
+Create complete VSL — script, audio, and video with text slides.
+
+**Workflow:**
+1. Generate VSL script (pattern interrupt → problem → solution → mechanism → offer → CTA)
+2. Create audio with ElevenLabs using Chad's voice (PeMXWXe7DDCb8HldBr2s)
+3. Generate word-level timestamps with OpenAI Whisper
+4. Build text slides synced to audio:
+   - Auto-fit font sizes based on word count (4-8 words per slide ideal)
+   - Dark background, white text, yellow highlights
+   - 16:9 horizontal format
+5. Compile final video with FFmpeg
+6. Upload to Vimeo or return file URL
+
+**Output:** Script document + audio file + final video URL
+
+---
+
+### `/videoavatar`
+Generate AI avatar video with HeyGen or ElevenLabs.
+
+**Workflow:**
+1. Ask for script/message
+2. Choose platform:
+   - HeyGen (realistic avatar)
+   - ElevenLabs (voice + simple avatar)
+3. Select avatar style
+4. Generate video
+5. Return video URL or downloadable file
+
+**Use cases:** Product demos, testimonials, explainer videos
 
 ---
 
@@ -282,6 +366,47 @@ Fire a tag on a contact in Global Control.
 
 ---
 
+### `/bulkimport`
+Bulk import contacts from CSV and tag them (creates contacts if needed).
+
+**Workflow:**
+1. Ask for spreadsheet (CSV file)
+2. Ask for tag name
+3. For each contact in CSV:
+   - If exists in GC → Fire tag (update)
+   - If doesn't exist → Create contact AND fire tag
+4. Generate report:
+   ```
+   Tag Applied: [tag name]
+   
+   Total Contacts Tagged: X
+     ├─ Updated: Y
+     └─ New Contacts Created: Z
+   
+   Detailed Results:
+   [table with Email | Name | Action | Status]
+   ```
+
+**CSV Format Required:**
+```csv
+email,firstName,lastName
+john@example.com,John,Doe
+jane@example.com,Jane,Smith
+```
+
+**Report includes:**
+- Total contacts tagged
+- Breakdown: Updated vs New
+- Tag(s) applied
+- Detailed results table
+- Saved CSV report file
+
+**Script:** `scripts/bulk-import.ps1`
+
+**⚠️ Note:** Currently there's a GC API bug preventing contact creation. Updates work fine, but new contact creation may fail until API is fixed.
+
+---
+
 ### `/contact`
 Get contact history from Global Control.
 
@@ -373,7 +498,13 @@ Extract assignments from team Zoom call and update management dashboard.
 
 | Shortcode | Category | Purpose |
 |-----------|----------|---------|
+| `/create business` | Business | Full 6-stage product creation engine |
+| `/salespage` | Business | Build Next.js sales page + deploy |
+| `/salescopy` | Business | Generate high-converting sales copy |
+| `/vsl` | Business | Create VSL script + audio + video |
+| `/videoavatar` | Business | Generate AI avatar video |
 | `/broadcast` | Email | Create/send broadcast email (with re-engagement fork) |
+| `/emailstats` | Email | Get email performance stats |
 | `/reactivation` | Email | CSV upload → progressive daily campaign |
 | `/replay` | Content | Create Course Sprout lesson from Vimeo |
 | `/article` | Content | Create Letterman article |
@@ -381,14 +512,15 @@ Extract assignments from team Zoom call and update management dashboard.
 | `/leadstep` | Pages | Create lead capture page |
 | `/bridgepage` | Pages | Create/clone bridge page |
 | `/tag` | Contacts | Fire tag on contact |
+| `/bulkimport` | Contacts | Bulk import contacts from CSV |
 | `/contact` | Contacts | Pull contact history |
 | `/sob` | Access | Look up user credentials in SaaSOnboard |
 | `/makelive` | System | Deploy project to Vercel |
 | `/systemhealth` | System | API health check |
 | `/teamcall` | System | Process team Zoom call |
 
-**Total: 13 commands**
+**Total: 20 commands**
 
 ---
 
-*Last updated: 2026-02-20*
+*Last updated: 2026-03-01*
