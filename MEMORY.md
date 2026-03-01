@@ -182,7 +182,7 @@ Invoke-RestMethod -Uri "..." -Method Put -Headers $headers -Body $bytes
 
 **When running `/create business`:**
 
-1. **Create business in Board FIRST** (boards.nicelycontrol.com/businesses)
+1. **Create business in Board FIRST** (nicelycontrol.com/businesses)
    - API: `POST /api/businesses` with `action: 'add'`
    - Name = product name (e.g., "ReviewRush")
    - Default columns: Marketing, Follow-up, Research, Delivery
@@ -1725,7 +1725,7 @@ Create VSL for [sales page URL]
 - Post Bridge API: credentials/postbridge-api-key.txt
 - GitHub: pacinobot2026 account
 
-**Current Status:** Live at https://boards.nicelycontrol.com (Password: Social VideoClips2026!)
+**Current Status:** Live at https://nicelycontrol.com (Password: Social VideoClips2026!)
 
 **Full Documentation:** `memory/2026-02-20-Social Video-dashboard.md`
 
@@ -1794,7 +1794,7 @@ Create VSL for [sales page URL]
 
 **MANDATORY:** After completing ANY /create business stage ? Update Business Board
 
-**Board URL:** https://boards.nicelycontrol.com/businesses
+**Board URL:** https://nicelycontrol.com/businesses
 
 **Protocol:**
 1. Complete stage work
