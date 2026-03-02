@@ -343,17 +343,21 @@ Create shortened PopLink quickly.
 ---
 
 ### `/leadstep`
-Create lead capture page in PopLinks.
+Create lead capture page in PopLinks with AI-generated 3-part headline.
 
 **Workflow:**
-1. Ask for page name
-2. Ask for headline/offer
-3. Ask for domain (or default to chadnicely.com)
-4. Ask for URL slug
-5. Create via PopLinks lead page API
-6. Set up confirmation page
+1. Ask: "What's the hook?"
+2. I figure out EVERYTHING else:
+   - Page name
+   - 3-part headline (pre-headline → main headline → sub-headline)
+   - Domain (chadnicely.com)
+   - Clean URL slug
+3. Create via PopLinks API
+4. Return live URL
 
-**Example:** Capture leads for webinar, product launch, free download
+**ONE QUESTION. That's it. I handle the rest.**
+
+**Example:** User says "AI assistant that works 24/7" → I create full page with headlines + URL
 
 ---
 
