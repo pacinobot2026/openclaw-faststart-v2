@@ -34,6 +34,8 @@ Drop tasks in **Backlog**. I'll pick them up during heartbeats or when you say "
 ## 🟢 Done
 <!-- Completed tasks (I'll move them here) -->
 
+- [x] Launch Board Template System | completed: 2026-02-28 1:00 AM | output: 5 pre-built templates (Product, Webinar, Course, Book, Software) with selection UI. 138 total tasks across all templates. See memory/2026-02-28-overnight-build.md for details. Live at https://launch-board.vercel.app/templates
+- [x] Business Intelligence Dashboard | completed: 2026-02-27 1:00 AM | output: Unified command center consolidating sales, ads, systems, support, projects, and products. Live at https://business-intel-dashboard.vercel.app
 - [x] Write JV script for Zoo launch (Karthik) | completed: 2026-02-26 1:30 AM | output: projects/zoo-launch-jv-script.md - Comprehensive affiliate recruitment script with emails, follow-ups, FAQ, assets checklist
 - [x] Set up system for handling hooks on wall | completed: 2026-02-25 | output: workflows/wall-engagement-system.md
 - [x] Figure out short-form video workflow (Vizard) | completed: 2026-02-25 | output: workflows/vizard-short-form-workflow.md

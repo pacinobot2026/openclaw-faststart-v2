@@ -1,6 +1,6 @@
 # MEMORY.md - Long-Term Memory
 
-*Last updated: 2026-02-22*
+*Last updated: 2026-03-02*
 
 ## Who I Am
 - **Name:** Pacino 🎬
@@ -81,19 +81,26 @@
 
 **JUST DO IT.** Find or create contact → Fire tag → Report success or failure.
 
-### 📝 /LEADSTEP WORKFLOW (2026-03-02 - MEMORIZED)
+### 📝 /LEADSTEP WORKFLOW (2026-03-03 - MEMORIZED)
 
 **ONE QUESTION ONLY. I figure out everything else.**
 
 **Workflow:**
 1. Ask: "What's the hook?"
-2. I automatically handle:
+2. **Use MasterCopywriter skill** to generate:
+   - 3-part headline (pre → main → sub) **WITH HTML formatting** (`<b>`, `<i>`, `<u>`)
+   - Compelling bullets (mechanism-based)
+   - Strong CTA copy
+3. I automatically handle:
    - Page name (derived from hook)
-   - 3-part headline (pre → main → sub)
    - Domain (chadnicely.com - always)
    - URL slug (clean, short, relevant)
-3. Create via PopLinks API
-4. Return live URL
+4. Create via PopLinks API with formatted headlines
+5. **Return ONLY 2 URLs:**
+   ```
+   Lead Page: https://chadnicely.com/slug
+   Thank You: https://chadnicely.com/slug-thanks
+   ```
 
 **NEVER ask about:**
 - Page name
@@ -101,7 +108,13 @@
 - URL slug
 - Any other details
 
-**Chad's directive:** "All I ever want you to do is ask what the hook is… you figure out the rest. It's too many questions from you. Memorize that."
+**NEVER show:**
+- SEO metadata
+- Images
+- Detailed breakdowns
+- Anything except the 2 URLs
+
+**Chad's directive:** "All I ever want you to do is ask what the hook is… you figure out the rest. It's too many questions from you. Memorize that. All I ever want you to give me 2 urls the leadstep and the thank you page memorize that I don't need seo meta image showing ever."
 
 ## Who You Are (Chad)
 - **Name:** Chad Nicely
@@ -332,6 +345,26 @@ Invoke-RestMethod -Uri "..." -Method Put -Headers $headers -Body $bytes
 **All shortcodes documented in:** `SHORTCODES.md`
 
 Examples: `/makelive`, `/replay`, `/article`, `/broadcast`, `/poplink`
+
+### 🎨 COPYWRITING RULE (MEMORIZED 2026-03-02)
+
+**When running `/leadstep` or `/bridgepage`:**
+1. Ask for the hook
+2. **ALWAYS use MasterCopywriter skill** (`skills/mastercopywriter/SKILL.md`)
+3. Generate proper copy:
+   - 3-part headline (pre → main → sub)
+   - Compelling bullets (mechanism-based)
+   - Strong CTA copy
+4. **ALWAYS add HTML formatting to headlines:**
+   - `<b>` for bold emphasis on key mechanism words
+   - `<i>` for italic emphasis on emotional/speed words
+   - `<u>` for underline on critical differentiators
+   - Example: "MintBird's <b>Drag-and-Drop System</b> Builds Complete Sales Funnels In <i>Minutes</i>"
+5. Build page with optimized copy
+
+**NO MORE GENERIC HEADLINES!** Every page gets proper copywriting with formatting from now on.
+
+**Skill location:** `skills/mastercopywriter/SKILL.md`
 
 ---
 

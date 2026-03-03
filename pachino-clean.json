@@ -1,0 +1,63 @@
+﻿{
+    "domainId":  "6688551acfe6ae024a58f9f6",
+    "name":  "Pachino Test",
+    "flows":  [
+                  {
+                      "label":  "Email 1 - Developer Test",
+                      "status":  true,
+                      "data":  {
+                                   "body":  "\u003cp\u003eHey there!\u003c/p\u003e\u003cp\u003eThis is a developer test email from Pachino. 🎬\u003c/p\u003e\u003cp\u003eTesting the workflow update functionality!\u003c/p\u003e\u003cp\u003eChad\u003c/p\u003e",
+                                   "reply_to":  "support@nicelysupport.com",
+                                   "from_name":  "Chad Nicely",
+                                   "preview":  "Developer testing workflow functionality",
+                                   "subject":  "Developer Test - Workflow API",
+                                   "from_email":  "chad"
+                               },
+                      "type":  "SEND_EMAIL",
+                      "index":  0
+                  },
+                  {
+                      "label":  "Wait 10 Minutes",
+                      "status":  true,
+                      "data":  {
+                                   "waitFor":  "10",
+                                   "timeIn":  "minutes"
+                               },
+                      "type":  "TIMER",
+                      "index":  1
+                  },
+                  {
+                      "label":  "Email 2 - Follow Up",
+                      "status":  true,
+                      "data":  {
+                                   "body":  "\u003cp\u003eHey again!\u003c/p\u003e\u003cp\u003eThis is email 2 in the test sequence. 🎬\u003c/p\u003e\u003cp\u003eChad\u003c/p\u003e",
+                                   "reply_to":  "support@nicelysupport.com",
+                                   "from_name":  "Chad Nicely",
+                                   "preview":  "Quick follow up from the test",
+                                   "subject":  "Test Email 2 - Follow Up",
+                                   "from_email":  "chad"
+                               },
+                      "type":  "SEND_EMAIL",
+                      "index":  2
+                  },
+                  {
+                      "label":  "Email 3 - Pachino Test",
+                      "status":  true,
+                      "data":  {
+                                   "body":  "\u003cp\u003eHey!\u003c/p\u003e\u003cp\u003eThis is a test email added by Pachino. 🎬\u003c/p\u003e\u003cp\u003eTesting the add flow functionality - this is the final email in the sequence.\u003c/p\u003e\u003cp\u003eChad\u003c/p\u003e",
+                                   "reply_to":  "support@nicelysupport.com",
+                                   "from_name":  "Chad Nicely",
+                                   "preview":  "Final test email from Pachino",
+                                   "subject":  "Pachino Test",
+                                   "from_email":  "chad"
+                               },
+                      "type":  "SEND_EMAIL",
+                      "index":  3
+                  }
+              ],
+    "smtpConfig":  {
+                       "domain":  "mg.chadnicely.com",
+                       "accountId":  "668854e8cfe6ae024a58ef72",
+                       "integrationId":  "628e75aa84279536ff4eb41a"
+                   }
+}

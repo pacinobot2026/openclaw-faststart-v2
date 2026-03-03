@@ -1,0 +1,15 @@
+[
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"VSL Script Written","description":"3-minute sales video script","column_name":"Marketing","labels":["done"],"position":0},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"VSL Audio Generated","description":"ElevenLabs with Chad voice","column_name":"Marketing","labels":["done"],"position":1},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"VSL Video Built","description":"57 slides synced to audio","column_name":"Marketing","labels":["done"],"position":2},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Sales Page Deployed","description":"Live at bookedbot.vercel.app","column_name":"Marketing","labels":["done"],"position":3},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Ad Creative","description":"Facebook/Instagram ads","column_name":"Marketing","labels":["pending"],"position":4},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Email Swipes","description":"Launch and affiliate emails","column_name":"Marketing","labels":["pending"],"position":5},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Non-Buyer Sequence","description":"7 emails in Global Control","column_name":"Follow-up","labels":["pending"],"position":0},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Buyer Onboarding","description":"Welcome sequence","column_name":"Follow-up","labels":["pending"],"position":1},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Target Audience","description":"Local service businesses","column_name":"Research","labels":["done"],"position":0},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Industry Stats","description":"62% unanswered, 78% hire first","column_name":"Research","labels":["done"],"position":1},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Stripe Checkout","description":"$497 one-time payment","column_name":"Delivery","labels":["done"],"position":0},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Success Page","description":"Post-purchase page","column_name":"Delivery","labels":["done"],"position":1},
+  {"user_id":"08dee908-d31b-4c19-ae7d-227ccbb068cf","business_id":"5d831a7b-5842-45d0-859a-c6e438f500bc","title":"Product Assets","description":"AI scripts and training","column_name":"Delivery","labels":["pending"],"position":2}
+]
