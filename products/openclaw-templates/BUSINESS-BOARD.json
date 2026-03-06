@@ -1,0 +1,78 @@
+{
+  "name": "OpenClaw Business Templates",
+  "status": "Building",
+  "created": "2026-03-05",
+  "columns": {
+    "Marketing": [
+      {
+        "task": "Sales page",
+        "status": "done",
+        "url": "https://nicelycontrol.vercel.app/products/openclaw-templates"
+      },
+      {
+        "task": "VSL script",
+        "status": "done"
+      },
+      {
+        "task": "VSL video",
+        "status": "pending"
+      },
+      {
+        "task": "Launch email sequence",
+        "status": "pending"
+      }
+    ],
+    "Delivery": [
+      {
+        "task": "Stripe products",
+        "status": "pending",
+        "note": "Chad creating now"
+      },
+      {
+        "task": "Checkout integration",
+        "status": "pending"
+      },
+      {
+        "task": "Course Sprout delivery area",
+        "status": "pending"
+      },
+      {
+        "task": "Template files (E-Commerce)",
+        "status": "in-progress"
+      },
+      {
+        "task": "Template files (Coaching)",
+        "status": "in-progress"
+      },
+      {
+        "task": "Template files (Local Service)",
+        "status": "in-progress"
+      }
+    ],
+    "Research": [
+      {
+        "task": "Product architecture",
+        "status": "done"
+      },
+      {
+        "task": "Pricing validation",
+        "status": "done"
+      }
+    ]
+  },
+  "resources": [
+    {
+      "name": "Sales Page",
+      "url": "https://nicelycontrol.vercel.app/products/openclaw-templates"
+    },
+    {
+      "name": "VSL Script",
+      "path": "products/openclaw-templates/vsl-script.md"
+    },
+    {
+      "name": "Product Details",
+      "path": "products/openclaw-templates/PRODUCT-DETAILS.md"
+    }
+  ],
+  "revenue_target": "$10k/month in 90 days"
+}

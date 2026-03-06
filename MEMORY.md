@@ -149,6 +149,26 @@
 
 *(All use credentials from credentials-titanium.txt)*
 
+### 🆕 POPLINKS API UPDATE (2026-03-05 - Khushal)
+
+**NEW ENDPOINTS ADDED:**
+- `PUT /lead-pages/:id/step-settings` - Control 2-step optin, exit intent, special offer popups
+- `GET /lead-pages/:id/popup` - Get popup settings (CSS, template)
+- `PUT /lead-pages/:id/popup/content` - Update popup text (headline, button, privacy)
+- `PUT /lead-pages/:id/popup/form-fields` - Update form fields (email, name, phone)
+
+**BUGS FIXED:**
+- ✅ Lead Page URL update 422 error - Fixed domain validation (system_domain vs domain_id comparison)
+
+**CORRECTED UNDERSTANDING:**
+Previous reports of "Lead Page API bugs" were **incorrect**. The API was working properly:
+- ✅ List endpoint returns full data with IDs (empty = no pages or auth issue)
+- ✅ Create endpoint DOES return ID + full object
+- ✅ Get endpoint returns complete data
+- Template auto-switching during creation is **by design** (random AI preset for initial styling)
+
+**Documentation:** TOOLS.md updated with all new endpoints + examples
+
 ### 🔴 GC WORKFLOW API - CRITICAL BEHAVIORS (MEMORIZED 2026-02-27)
 
 #### **Behavior 1: PUT APPENDS Flows (CRITICAL!)**
@@ -177,7 +197,75 @@
 
 **Tested and confirmed 2026-02-27 with Kafi.**
 
-#### **Behavior 2: Encoding Fix**
+#### **Behavior 2: Creating Email Workflows with Content (CRITICAL!)**
+
+**Discovered:** 2026-03-05 - How to create complete workflows with full email content via API
+
+**The Pattern That Works:**
+1. Create empty workflow: `POST /workflows` with name + workflowGroupId
+2. Build JSON with alternating EMAIL and TIMER flows
+3. Email flows need full content in `data` object
+4. Timer flows need `waitFor` + `timeIn` in `data` object
+5. Save JSON to file
+6. UTF8 encode: `$bytes = [System.Text.Encoding]::UTF8.GetBytes($json)`
+7. PUT to `/workflows/{id}` with the bytes
+
+**JSON Structure:**
+```json
+{
+  "name": "Workflow Name",
+  "workflowGroupId": "...",
+  "flows": [
+    {
+      "type": "SEND_EMAIL",
+      "index": 0,
+      "data": {
+        "name": "Email Name",
+        "subject": "Subject Line",
+        "body": "<p>Full HTML content here</p>",
+        "from_email": "chad",
+        "from_name": "Chad Nicely",
+        "reply_to": "support@nicelysupport.com"
+      }
+    },
+    {
+      "type": "TIMER",
+      "index": 1,
+      "data": {
+        "waitFor": "1",
+        "timeIn": "days"
+      }
+    },
+    {
+      "type": "SEND_EMAIL",
+      "index": 2,
+      "data": { ... }
+    }
+  ]
+}
+```
+
+**Critical Rules:**
+- TIMER flows create delays (NOT dayDelay/hourDelay/minuteDelay properties)
+- Each flow needs sequential index (0, 1, 2, 3...)
+- Email content goes in `data.body` as HTML
+- Always include FULL email content (never placeholders like "Content here")
+- File → UTF8 bytes → PUT request is the only encoding that works reliably
+
+**Example timeIn values:** "days", "hours", "minutes"
+
+**Tested and confirmed 2026-03-05. This creates complete workflows with full email sequences in one API call.**
+
+**📋 /workflow Command Questions (MANDATORY ORDER):**
+When user types `/workflow`, ALWAYS ask these 4 questions:
+1. "How many emails?"
+2. "How many days apart?"
+3. "What's the link to place?"
+4. "What's the workflow about?"
+
+Then build the workflow with full email content using the pattern above.
+
+#### **Behavior 4: Encoding Fix (for updates to existing workflows)**
 
 **Problem:** PUT /workflows/{id} with flows array returns success but flows stay empty.
 
@@ -203,6 +291,16 @@ Invoke-RestMethod -Uri "..." -Method Put -Headers $headers -Body $bytes
 **Tested and confirmed working 2026-02-26.**
 
 ---
+
+### 🔴 COURSE SPROUT KEY IDS (MEMORIZED)
+
+**OpenClaw Shadow Intensive (Original):**
+- Course ID: 340
+- Replays Chapter: 958
+
+**OpenClaw Shadow Intensive 2:**
+- Course ID: 371
+- Shadow Replays 2.0 Chapter: **1012** (Hannah - never forget this!)
 
 ### 🔴 COURSE SPROUT REPLAY WORKFLOW (MEMORIZED 2026-02-13)
 
@@ -734,6 +832,45 @@ Never auto-send access emails. Always confirm all three steps first.
 - Document failures immediately (don't let them repeat)
 
 ## Key Failures & What I Learned
+### 🔴 POPLINKS API RESPONSE STRUCTURE (2026-03-03) - **MEMORIZED**
+**When calling PopLinks API to GET all poplinks:**
+- Wrong: `$response.data` ← Returns wrapper object with single item
+- Right: `$response.data.poplinks` ← Returns array of 400+ poplinks
+
+**Working pattern:**
+```powershell
+$response = Invoke-RestMethod -Uri "https://api.poplinks.io/api/ai/poplinks" -Headers $headers
+$poplinks = $response.data.poplinks  # ← The .poplinks is CRITICAL
+$soul = $poplinks | Where-Object { $_.name -like "*soul*" }
+```
+
+**Why this matters:** 
+- Without `.poplinks`, search returns nothing
+- With `.poplinks`, can search all 400+ links
+- Added `/poplink search` command to SHORTCODES.md
+
+**`/poplink search` Response Format:**
+- **NO TABLES** - Chad wants it less techy
+- Simple numbered list with arrows (→)
+- Format: `**1. chadnicely.com/{slug}**` then `→ Goes to: [description]`
+- Include ID in parentheses below
+- End with "**Most popular:**" suggestion
+
+**Example:**
+```
+Found 4 links for "round table":
+
+---
+
+**1. chadnicely.com/roundtable**
+→ Goes to: Chad's Round Table main page
+(ID: 9742)
+
+**Most popular:** chadnicely.com/roundtable
+```
+
+---
+
 ### ? NEVER RESET PASSWORDS WHEN ASKED TO RETRIEVE (2026-02-19) - **ABSOLUTE RULE**
 - **When asked to "pull" or "get" credentials ? DO NOT call add-user API**
 - SOB/most APIs do NOT expose existing passwords (security by design)

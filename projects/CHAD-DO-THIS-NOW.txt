@@ -1,0 +1,52 @@
+=================================================================
+🔥 CHAD - FINAL 2 STEPS TO GO LIVE (2 MINUTES)
+=================================================================
+
+YOUR VSL VIDEO IS HERE:
+C:\Users\Administrator\.openclaw\workspace\projects\local-newsletter-playbook-vsl.mp4
+
+-----------------------------------------------------------------
+STEP 1: VIMEO (1 minute)
+-----------------------------------------------------------------
+1. Go to: https://vimeo.com/upload
+2. Drag the VSL video file (location above)
+3. Set privacy: "Anyone"  
+4. Copy the video ID from URL: vimeo.com/XXXXXXX
+   
+   YOUR VIDEO ID: ______________
+
+-----------------------------------------------------------------
+STEP 2: STRIPE (1 minute)
+-----------------------------------------------------------------
+1. Go to: https://dashboard.stripe.com/test/products/create
+2. Product name: Local Newsletter Playbook
+3. Price: $197
+4. Click "Save" then "Create payment link"
+5. Success URL: https://local-newsletter-playbook.vercel.app/thank-you
+6. Copy the link: https://buy.stripe.com/test_XXXXX
+   
+   YOUR STRIPE LINK: ______________
+
+-----------------------------------------------------------------
+STEP 3: UPDATE PAGE (30 seconds)
+-----------------------------------------------------------------
+cd C:\Users\Administrator\.openclaw\workspace\local-newsletter-playbook
+
+Open: app\page.tsx
+
+Find line ~27: Replace 1045678901 with YOUR VIDEO ID
+Find line ~127: Replace test_REPLACE_WITH_YOUR_LINK with YOUR STRIPE LINK
+
+Save. Then run:
+
+git add app/page.tsx
+git commit -m "Add live VSL and Stripe checkout"
+git push origin main
+
+=================================================================
+✅ DONE! PAGE GOES LIVE IN 60 SECONDS!
+=================================================================
+
+Test it: https://local-newsletter-playbook.vercel.app
+
+Ready to sell! 🚀💰

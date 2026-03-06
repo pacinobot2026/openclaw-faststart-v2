@@ -232,6 +232,10 @@ X-API-KEY: {{apiToken}}
 | **Update Description** | PUT | `/lead-pages/:id/description` | Body: `{is_textblock_enabled, textblock_content?}` |
 | **Update Bullets** | PUT | `/lead-pages/:id/bullets` | Body: `{bullet_title?, bullets: [{name, rotation_number?}]}` - REPLACES all bullets |
 | **Update Template** | PUT | `/lead-pages/:id/template` | Body: `{template_id}` - Regenerates CSS |
+| **Update Step Settings** | PUT | `/lead-pages/:id/step-settings` | Body: `{two_step_optin?, exit_intent_popup?, special_offer_popup?}` - Enable/disable popup behaviors |
+| **Get Popup Settings** | GET | `/lead-pages/:id/popup` | Returns popup CSS styling and template |
+| **Update Popup Content** | PUT | `/lead-pages/:id/popup/content` | Body: `{headline?, sub_headline?, button_text?, privacy_statement?, redirect?}` |
+| **Update Popup Form Fields** | PUT | `/lead-pages/:id/popup/form-fields` | Body: `{email?, name?, phone?}` (each with enable, placeholder, required) |
 
 #### Lead Page Create Body
 ```json
@@ -276,6 +280,48 @@ X-API-KEY: {{apiToken}}
 }
 ```
 *Note: ALL existing bullets are DELETED and replaced with the provided array.*
+
+#### Lead Page Step Settings Update Body
+```json
+{
+  "two_step_optin": true,
+  "exit_intent_popup": false,
+  "special_offer_popup": true
+}
+```
+*Controls popup behaviors: 2-step (button → popup with form), exit intent, and special offers.*
+
+#### Lead Page Popup Content Update Body
+```json
+{
+  "headline": "Wait! Get Your Free Guide",
+  "sub_headline": "Enter your email below",
+  "button_text": "Get Instant Access",
+  "privacy_statement": "We respect your privacy. Unsubscribe anytime.",
+  "redirect": "https://yoursite.com/thank-you"
+}
+```
+
+#### Lead Page Popup Form Fields Update Body
+```json
+{
+  "email": {
+    "enabled": true,
+    "placeholder": "Your email address",
+    "required": true
+  },
+  "name": {
+    "enabled": true,
+    "placeholder": "Your first name",
+    "required": false
+  },
+  "phone": {
+    "enabled": false,
+    "placeholder": "Your phone number",
+    "required": false
+  }
+}
+```
 
 #### Lead Page SEO Update Body
 ```json

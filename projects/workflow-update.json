@@ -1,0 +1,17 @@
+﻿{
+    "flows":  [
+                  {
+                      "email":  {
+                                    "subject":  "You\u0027re in! Here\u0027s what happens next...",
+                                    "body":  "Hey {first_name},\n\nYou\u0027re officially registered for the AI Business Builder Live Training on March 4th at 8:00 PM EST.\n\nHere\u0027s what\u0027s about to happen:\n\nOver the next 5 days, I\u0027m going to send you a few emails that will completely change how you think about building an online business.\n\nNo theory. No fluff. Just the raw truth about why most people never make it... and what the ones who DO make it are doing differently.\n\nTomorrow: I\u0027m going to show you the #1 reason you\u0027re stuck (and it\u0027s not what you think).\n\nSee you in your inbox,\nChad\n\nP.S. Save this date/time: March 4th at 8:00 PM EST. You don\u0027t want to miss this.",
+                                    "fromName":  "Chad Nicely"
+                                },
+                      "delay":  {
+                                    "hours":  0,
+                                    "minutes":  0
+                                },
+                      "name":  "Email 1 - Registration Confirmed",
+                      "action":  "SEND_EMAIL"
+                  }
+              ]
+}

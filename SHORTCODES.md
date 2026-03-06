@@ -198,6 +198,56 @@ Generate AI avatar video with HeyGen or ElevenLabs.
 
 ## 📧 EMAIL COMMANDS
 
+### `/workflow`
+Create complete email workflow in Global Control with timers.
+
+**ALWAYS ask these 4 questions in order:**
+1. "How many emails?"
+2. "How many days apart?"
+3. "What's the link to place?"
+4. "What's the workflow about?"
+
+**Then:**
+5. Generate email sequence:
+   - Subject lines
+   - Email body copy (HTML formatted)
+   - Professional, conversational tone
+5. Build workflow structure:
+   - Email flows with `type: SEND_EMAIL`
+   - Timer flows with `type: TIMER` between emails
+   - `data.waitFor` + `data.timeIn` for delays
+6. Create via GC API:
+   - POST /workflows (empty container)
+   - Build complete JSON with all flows
+   - UTF8 encode the file
+   - PUT /workflows/{id} with full content
+7. Return workflow ID and confirmation
+
+**Critical Pattern (MEMORIZED):**
+```json
+{
+  "flows": [
+    {"type": "SEND_EMAIL", "index": 0, "data": {"subject": "...", "body": "<p>...</p>", "from_email": "chad", "from_name": "Chad Nicely", "reply_to": "support@nicelysupport.com"}},
+    {"type": "TIMER", "index": 1, "data": {"waitFor": "1", "timeIn": "days"}},
+    {"type": "SEND_EMAIL", "index": 2, "data": {...}},
+    {"type": "TIMER", "index": 3, "data": {"waitFor": "1", "timeIn": "days"}},
+    ...
+  ]
+}
+```
+
+**Key Rules:**
+- TIMER flows create the delays (NOT dayDelay properties on emails)
+- Each flow needs proper index (0, 1, 2, 3...)
+- Email data goes in `data` object with `subject`, `body`, `from_email`, `from_name`, `reply_to`
+- Timer data goes in `data` object with `waitFor` (number) and `timeIn` ("days"/"hours"/"minutes")
+- Save to JSON file → UTF8 encode → PUT request
+- ALWAYS include actual email content (never placeholder text)
+
+**From Kafi's training (2026-02-27) — this pattern works 100% of the time**
+
+---
+
 ### `/emailstats`
 Get email performance stats from Global Control.
 
@@ -339,6 +389,72 @@ Create shortened PopLink quickly.
 **Example:** User says "https://jvzoo.com" → I create `chadnicely.com/jvz`
 
 **NEVER ask for domain or slug — I decide both automatically**
+
+---
+
+### `/poplink search`
+Search for existing PopLinks by name or slug.
+
+**Workflow:**
+1. Ask: "What's the name of the link you're looking for?"
+2. Search via PopLinks API (`$response.data.poplinks` — remember the .poplinks!)
+3. Return results in **clean format** (NOT a table):
+
+**Response Format:**
+```
+Found X links for "[search term]":
+
+---
+
+**1. chadnicely.com/{slug}**
+→ Goes to: [destination URL or description]
+(ID: #####)
+
+**2. chadnicely.com/{slug}**
+→ Goes to: [destination URL or description]
+(ID: #####)
+
+---
+
+**Most popular:** chadnicely.com/{best-one}
+```
+
+**Example Output:**
+```
+Found 4 links for "round table":
+
+---
+
+**1. chadnicely.com/roundtable**
+→ Goes to: Chad's Round Table main page
+(ID: 9742)
+
+**2. chadnicely.com/join-call**
+→ Goes to: Zoom meeting room
+(ID: 9631)
+
+**3. chadnicely.com/join**
+→ Goes to: Round Table join page
+(ID: 12144)
+
+**4. chadnicely.com/rt316**
+→ Goes to: TPZ3 affiliate link
+(ID: 14295)
+
+---
+
+**Most popular:** chadnicely.com/roundtable
+```
+
+**Rules:**
+- NO tables (too techy)
+- Simple numbered list with arrows
+- Include "Most popular" at the end
+- Keep it human-readable
+
+**API Fix (MEMORIZED):**
+- Wrong: `$response.data` ← Returns wrapper
+- Right: `$response.data.poplinks` ← Returns array of 400+ links
 
 ---
 
@@ -529,6 +645,7 @@ Extract assignments from team Zoom call and update management dashboard.
 | `/salescopy` | Business | Generate high-converting sales copy |
 | `/vsl` | Business | Create VSL script + audio + video |
 | `/videoavatar` | Business | Generate AI avatar video |
+| `/workflow` | Email | Create complete email workflow with timers |
 | `/broadcast` | Email | Create/send broadcast email (with re-engagement fork) |
 | `/emailstats` | Email | Get email performance stats |
 | `/reactivation` | Email | CSV upload → progressive daily campaign |
