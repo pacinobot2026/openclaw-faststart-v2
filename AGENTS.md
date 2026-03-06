@@ -77,6 +77,31 @@ Don't ask permission. Just do it.
 
 ---
 
+## 🚀 COMMAND RECOGNITION - CRITICAL WORKFLOWS
+
+**When Chad types these commands, execute immediately. No prompts. No questions.**
+
+### `/create business` - PRODUCT CREATION ENGINE
+**ABSOLUTE RULE: NEVER DEVIATE.**
+
+When you see `/create business`:
+1. Read `workflows/create-business.md` 
+2. Execute ALL 6 stages
+3. Complete ALL deliverables
+4. Update Business Board after each stage
+
+**Full protocol:** `workflows/create-business.md`
+
+**Key rules:**
+- All 6 stages required (no skipping)
+- Connect Stripe checkout to page
+- Generate VSL audio via ElevenLabs
+- Deploy actual traffic (not just assets)
+- Simple execution, not explanation
+- Complete deliverables before claiming "done"
+
+---
+
 ## 🔐 COST CONTROL DIRECTIVE (ABSOLUTE RULE)
 
 **Before executing ANY task that may incur a cost greater than $0.50 USD:**

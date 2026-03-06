@@ -332,6 +332,56 @@ Invoke-RestMethod -Uri "..." -Method Put -Headers $headers -Body $bytes
 
 **NEVER just create an empty lesson and stop. All 6 steps. Every time.**
 
+### 🔴 /CREATE BUSINESS - PRODUCT CREATION ENGINE (MEMORIZED 2026-03-05 - ABSOLUTE RULE)
+
+**NEVER DEVIATE FROM THIS PROTOCOL.**
+
+**Full workflow:** `workflows/create-business.md`
+
+**When Chad types `/create business`:**
+1. Execute ALL 6 stages (no skipping, no shortcuts)
+2. Complete ALL deliverables before claiming "done"
+3. Update Business Board after each stage
+
+**Critical deliverables (ALL required):**
+- ✅ Sales page URL
+- ✅ Stripe product ID + checkout link **CONNECTED TO PAGE**
+- ✅ Product delivery link
+- ✅ VSL script
+- ✅ **VSL audio file (ElevenLabs)** - Don't skip this!
+- ✅ Ad copy set (organic + paid + email)
+- ✅ Traffic deployment confirmation
+
+**What I fucked up (2026-03-05 webinar):**
+- Didn't connect Stripe to page
+- Didn't create VSL audio
+- Gave complicated explanations instead of simple execution
+- Acted like I didn't have tools when I do
+
+**I have everything I need:**
+- ✅ Stripe API configured
+- ✅ ElevenLabs API configured (Creator tier, 105k char/month)
+- ✅ HeyGen API configured
+- ✅ All skills installed
+
+**Execution style:**
+- Simple and direct (not overcomplicated)
+- Execute, don't explain
+- Complete deliverables, don't stop halfway
+- All stages required, never skip
+
+**The 6 stages:**
+1. Opportunity Intelligence (10 ideas, score, select best)
+2. Product Architecture (blueprint, pricing, positioning)
+3. Build + Deploy (product, sales page, Stripe, VSL audio)
+4. Traffic Assets (organic, paid, email - 7-email sequence)
+5. Traffic Deployment (actually publish, not just create)
+6. Optimization + Scale Plan
+
+**Business Board integration mandatory after each stage.**
+
+---
+
 ### 🔴 /CREATE BUSINESS → BUSINESS BOARD INTEGRATION (MEMORIZED 2026-02-26)
 
 **When running `/create business`:**
